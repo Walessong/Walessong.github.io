@@ -11,7 +11,9 @@
 
 <title>Auto_deploy | Hugo Narrow</title>
 
-<meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
+<meta name="description" content="Github Action自动部署 （1）Github创建一个新的仓库，用于存放Hugo的主文件
+（2）前往Setttings -&gt; Developer Settings -&gt; Personal access tokens，创建一个token(classic)
+（3）token选择永不过..." />
 <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
 <meta name="author" content="Hugo Narrow" />
 <meta name="language" content="en-US" />
@@ -29,7 +31,8 @@
 <meta property="og:url" content="https://Walessong.github.io/posts/auto_deploy/">
   <meta property="og:site_name" content="Hugo Narrow">
   <meta property="og:title" content="Auto_deploy">
-  <meta property="og:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
+  <meta property="og:description" content="Github Action自动部署 （1）Github创建一个新的仓库，用于存放Hugo的主文件
+（2）前往Setttings -&gt; Developer Settings -&gt; Personal access tokens，创建一个token(classic)">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -41,13 +44,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://Walessong.github.io/images/og-default.avif">
   <meta name="twitter:title" content="Auto_deploy">
-  <meta name="twitter:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
+  <meta name="twitter:description" content="Github Action自动部署 （1）Github创建一个新的仓库，用于存放Hugo的主文件
+（2）前往Setttings -&gt; Developer Settings -&gt; Personal access tokens，创建一个token(classic)">
 
 
   <meta itemprop="name" content="Auto_deploy">
-  <meta itemprop="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
+  <meta itemprop="description" content="Github Action自动部署 （1）Github创建一个新的仓库，用于存放Hugo的主文件
+（2）前往Setttings -&gt; Developer Settings -&gt; Personal access tokens，创建一个token(classic)">
   <meta itemprop="datePublished" content="2025-08-06T23:00:38+08:00">
   <meta itemprop="dateModified" content="2025-08-06T23:00:38+08:00">
+  <meta itemprop="wordCount" content="546">
   <meta itemprop="image" content="https://Walessong.github.io/images/og-default.avif">
 
 
@@ -253,6 +259,8 @@
 
 
 
+
+  
 
 
 
@@ -1079,9 +1087,31 @@
 
       
       
+        <div class="flex items-center gap-2">
+          
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24" aria-label="Reading time"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+          <span
+            >2 minute</span
+          >
+        </div>
+      
 
 
       
+      
+        <div class="flex items-center gap-2">
+          
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24" aria-label="Word count"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+</svg>
+          <span>546 words</span>
+        </div>
       
 
     </div>
@@ -1100,7 +1130,146 @@
 
   
   <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
+    <h3 id="github-action自动部署">Github Action自动部署</h3>
+<ul>
+<li>
+<p>（1）Github创建一个新的仓库，用于存放Hugo的主文件</p>
+</li>
+<li>
+<p>（2）前往<code>Setttings -&gt; Developer Settings -&gt; Personal access tokens</code>，创建一个token(classic)</p>
+</li>
+</ul>
+<p><a href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken1.png">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="false"
+        data-gallery-type="auto">
+  <div class="image-container">
     
+    <img
+      src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken1.png"
+      alt=""
+      
+      loading="lazy"
+      decoding="async" 
+      data-gallery-src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken1.png"
+      data-gallery-alt=""
+      data-gallery-title="" /></div>
+
+  </figure></a></p>
+<ul>
+<li>（3）token选择永不过期，并勾选 <strong>repo</strong> 和 <strong>workflow</strong> 选项</li>
+</ul>
+<p><a href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken2.png">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="false"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken2.png"
+      alt=""
+      
+      loading="lazy"
+      decoding="async" 
+      data-gallery-src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken2.png"
+      data-gallery-alt=""
+      data-gallery-title="" /></div>
+
+  </figure></a></p>
+<ul>
+<li>（4）为保证安全，将生成的token，保存的仓库的变量中，前往<code>Settings -&gt; Secrets and variables -&gt; Actions</code>中设置</li>
+</ul>
+<p><a href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken3.png">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="false"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken3.png"
+      alt=""
+      
+      loading="lazy"
+      decoding="async" 
+      data-gallery-src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/createToken3.png"
+      data-gallery-alt=""
+      data-gallery-title="" /></div>
+
+  </figure></a></p>
+<p><a href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/setToken1.png">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="false"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/setToken1.png"
+      alt=""
+      
+      loading="lazy"
+      decoding="async" 
+      data-gallery-src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/setToken1.png"
+      data-gallery-alt=""
+      data-gallery-title="" /></div>
+
+  </figure></a></p>
+<ul>
+<li>（5）在hugo主文件创建一个<code>.github/workflows/xxxx.yaml</code>文件，将以下内容复制进去，想具体了解更多，可查看【<a href="https://docs.github.com/zh/actions">Github Action文档</a>】</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>1<br>     2<br>     3<br>     4<br>     5<br>     6<br>     7<br>     8<br>     9<br>    10<br>    11<br>    12<br>    13<br>    14<br>    15<br>    16<br>    17<br>    18<br>    19<br>    20<br>    21<br>    22<br>    23<br>    24<br>    25<br>    26<br>    27<br>    28<br>    29<br>    30<br>    31<br>    32<br>    33<br>    34</th>
+          <th>name: deploy<br>    <br>    # 代码提交到main分支时触发github action<br>    on:<br>      push:<br>        branches:<br>          - main<br>    <br>    jobs:<br>      deploy:<br>        runs-on: ubuntu-latest<br>        steps:<br>            - name: Checkout<br>              uses: actions/checkout@v4<br>              with:<br>                  fetch-depth: 0<br>    <br>            - name: Setup Hugo<br>              uses: peaceiris/actions-hugo@v3<br>              with:<br>                  hugo-version: &ldquo;latest&rdquo;<br>                  extended: true<br>    <br>            - name: Build Web<br>              run: hugo -D<br>    <br>            - name: Deploy Web<br>              uses: peaceiris/actions-gh-pages@v4<br>              with:<br>                  PERSONAL_TOKEN: ${{ secrets.你的token变量名 }}<br>                  EXTERNAL_REPOSITORY: 你的github名/你的仓库名<br>                  PUBLISH_BRANCH: main<br>                  PUBLISH_DIR: ./public<br>                  commit_message: auto deploy</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<ul>
+<li>（6）在hugo主文件创建<code>.gitignore</code>文件，来避免提交不必要的文件</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>1<br>    2<br>    3<br>    4<br>    5<br>    6<br>    7</th>
+          <th># 自动生成的文件<br>    public<br>    resources<br>    .hugo_build.lock<br>    <br>    # hugo命令<br>    hugo.exe</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<ul>
+<li>（7）将hugo的主文件上传到仓库，上传成功后会触发Github Action，来自动部署你的静态页面</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>1<br>    2<br>    3<br>    4<br>    5<br>    6</th>
+          <th>git init<br>    git add .<br>    git commit -m &ldquo;first commit&rdquo;<br>    git branch -M main<br>    git remote add origin {你的github仓库地址}<br>    git push -u origin main</th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<p><a href="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/githubActionRun.png">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="false"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/githubActionRun.png"
+      alt=""
+      
+      loading="lazy"
+      decoding="async" 
+      data-gallery-src="https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/githubActionRun.png"
+      data-gallery-alt=""
+      data-gallery-title="" /></div>
+
+  </figure></a></p>
+
   </article>
 
   
@@ -1656,7 +1825,15 @@
         aria-label="Table of Contents Navigation">
           
           <div id="toc-content">
-            <nav id="TableOfContents"></nav>
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#github-action自动部署">Github Action自动部署</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
           </div>
       </nav>
     </div>

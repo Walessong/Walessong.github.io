@@ -13,7 +13,7 @@
       <link>https://Walessong.github.io/posts/auto_deploy/</link>
       <pubDate>Wed, 06 Aug 2025 23:00:38 +0800</pubDate>
       <guid>https://Walessong.github.io/posts/auto_deploy/</guid>
-      <description></description>
+      <description>&lt;h3 id=&#34;github-action自动部署&#34;&gt;Github Action自动部署&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;（1）Github创建一个新的仓库，用于存放Hugo的主文件&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;（2）前往&lt;code&gt;Setttings -&amp;gt; Developer Settings -&amp;gt; Personal access tokens&lt;/code&gt;，创建一个token(classic)&lt;/p&gt;</description>
     </item>
     <item>
       <title>MyFirstBlog</title>
