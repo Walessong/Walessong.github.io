@@ -2,6 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://Walessong.github.io/</loc>
+    <lastmod>2025-08-06T23:39:31+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://Walessong.github.io/zh-cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://Walessong.github.io/ja/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-FR"
+                href="https://Walessong.github.io/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://Walessong.github.io/"
+                />
+  </url><url>
     <loc>https://Walessong.github.io/posts/auto_deploy/</loc>
     <lastmod>2025-08-06T23:00:38+08:00</lastmod>
   </url><url>
@@ -332,29 +355,6 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="https://Walessong.github.io/categories/test/"
-                />
-  </url><url>
-    <loc>https://Walessong.github.io/</loc>
-    <lastmod>2023-01-01T08:00:00-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://Walessong.github.io/zh-cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://Walessong.github.io/ja/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-FR"
-                href="https://Walessong.github.io/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://Walessong.github.io/"
                 />
   </url><url>
     <loc>https://Walessong.github.io/archives/</loc>
