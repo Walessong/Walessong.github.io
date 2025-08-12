@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://Walessong.github.io/posts/introduction_to_pcb/</loc>
+    <lastmod>2025-08-12T20:50:25+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/posts/</loc>
+    <lastmod>2025-08-12T20:50:25+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://Walessong.github.io/zh-cn/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://Walessong.github.io/ja/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-FR"
+                href="https://Walessong.github.io/fr/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://Walessong.github.io/posts/"
+                />
+  </url><url>
     <loc>https://Walessong.github.io/about/</loc>
     <lastmod>2025-08-07T00:05:21+08:00</lastmod>
   </url><url>
@@ -30,29 +56,6 @@
   </url><url>
     <loc>https://Walessong.github.io/posts/auto_deploy/</loc>
     <lastmod>2025-08-06T23:00:38+08:00</lastmod>
-  </url><url>
-    <loc>https://Walessong.github.io/posts/</loc>
-    <lastmod>2025-08-06T23:00:38+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://Walessong.github.io/zh-cn/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://Walessong.github.io/ja/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-FR"
-                href="https://Walessong.github.io/fr/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://Walessong.github.io/posts/"
-                />
   </url><url>
     <loc>https://Walessong.github.io/posts/myfirstblog/</loc>
     <lastmod>2025-08-06T01:25:14+08:00</lastmod>
@@ -356,8 +359,6 @@
                 hreflang="en-US"
                 href="https://Walessong.github.io/categories/test/"
                 />
-  </url><url>
-    <loc>https://Walessong.github.io/posts/</loc>
   </url><url>
     <loc>https://Walessong.github.io/archives/</loc>
     <xhtml:link
