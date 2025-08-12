@@ -2046,43 +2046,45 @@ Configuration Frontmatter Configuration YAML Collapse Copy --- katex: true …
 </div>
 <style>
 .hero-section {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(94, 234, 212, 0.05) 100%);
+  border-radius: 2rem;
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .hero-section h1 {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
 }
 
-.hero-section > em {
-  display: block;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.hero-section blockquote {
-  border-left: 4px solid #667eea;
+.hero-section h2 {
+  color: #6366f1;
+  border-left: 4px solid #6366f1;
   padding-left: 1rem;
-  font-style: italic;
-  margin: 1.5rem 0;
-}
-
-.hero-section ul {
-  list-style: none;
-  padding-left: 0;
+  margin: 2rem 0;
 }
 
 .hero-section ul li {
-  margin: 0.5rem 0;
-  padding-left: 1rem;
+  margin: 1rem 0;
+  padding: 0.8rem 1.2rem;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 1rem;
+  border-left: 4px solid #6366f1;
+  transition: all 0.3s ease;
+}
+
+.hero-section ul li:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: translateX(10px);
 }
 </style>
 
