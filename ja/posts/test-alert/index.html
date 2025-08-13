@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1196,8 +1194,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="githubスタイルアラートテスト">GitHubスタイルアラートテスト</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="githubスタイルアラートテスト">GitHubスタイルアラートテスト</h1>
 <p>この記事は新しいGitHubスタイルアラート機能と折りたたみ機能をテストするために使用されます。</p>
 <h2 id="アラート構文">アラート構文</h2>
 <h3 id="ノートアラート">ノートアラート</h3>
@@ -3233,7 +3233,82 @@
 
 <p>これらのアラートは、ユーザーがコンテンツの重要性とコンテキストをよりよく理解するのに役立ち、ドキュメントの可読性とユーザーエクスペリエンスを向上させます。</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#アラート構文">アラート構文</a>
+      <ul>
+        <li><a href="#ノートアラート">ノートアラート</a></li>
+        <li><a href="#ヒントアラート">ヒントアラート</a></li>
+        <li><a href="#重要アラート">重要アラート</a></li>
+        <li><a href="#警告アラート">警告アラート</a></li>
+        <li><a href="#注意アラート">注意アラート</a></li>
+      </ul>
+    </li>
+    <li><a href="#折りたたみ機能">折りたたみ機能</a>
+      <ul>
+        <li><a href="#折りたたみ可能なノートアラート">折りたたみ可能なノートアラート</a></li>
+        <li><a href="#折りたたみ可能なヒントアラート">折りたたみ可能なヒントアラート</a></li>
+        <li><a href="#折りたたみ可能な重要アラート">折りたたみ可能な重要アラート</a></li>
+        <li><a href="#折りたたみ可能な警告アラート">折りたたみ可能な警告アラート</a></li>
+        <li><a href="#折りたたみ可能な注意アラート">折りたたみ可能な注意アラート</a>
+          <ul>
+            <li><a href="#サブ見出し">サブ見出し</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#通常の引用ブロック">通常の引用ブロック</a></li>
+    <li><a href="#多言語サポート">多言語サポート</a></li>
+    <li><a href="#ネストしたコンテンツテスト">ネストしたコンテンツテスト</a></li>
+    <li><a href="#使用例">使用例</a>
+      <ul>
+        <li><a href="#ドキュメント説明">ドキュメント説明</a></li>
+        <li><a href="#ベストプラクティス">ベストプラクティス</a></li>
+        <li><a href="#重要な設定">重要な設定</a></li>
+        <li><a href="#セキュリティリマインダー">セキュリティリマインダー</a></li>
+        <li><a href="#破壊的操作">破壊的操作</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -3317,7 +3392,6 @@
   </div>
 
 
-
   
   
 
@@ -3394,7 +3468,6 @@
       </div>
     </div>
   </nav>
-
 
 
 
@@ -3884,7 +3957,6 @@ Mermaidチャー …
     
 
   </section>
-
 
 
 

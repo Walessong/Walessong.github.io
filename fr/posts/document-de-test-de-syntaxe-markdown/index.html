@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1200,8 +1198,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="titre-1">Titre 1</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="titre-1">Titre 1</h1>
 <p>Ceci est un paragraphe sous un titre de niveau 1.</p>
 <h2 id="titre-2">Titre 2</h2>
 <p>Ceci est un paragraphe sous un titre de niveau 2.</p>
@@ -2697,7 +2697,91 @@ $$</p>
 </ol>
 </div>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#titre-2">Titre 2</a>
+      <ul>
+        <li><a href="#titre-3">Titre 3</a>
+          <ul>
+            <li><a href="#titre-4">Titre 4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#paragraphes-et-formatage-de-texte">Paragraphes et Formatage de Texte</a></li>
+    <li><a href="#citations">Citations</a></li>
+    <li><a href="#listes">Listes</a>
+      <ul>
+        <li><a href="#liste-non-ordonnée">Liste Non Ordonnée</a></li>
+        <li><a href="#liste-ordonnée">Liste Ordonnée</a></li>
+        <li><a href="#liste-de-tâches-cases-à-cocher">Liste de Tâches (Cases à Cocher)</a></li>
+        <li><a href="#liste-de-définitions">Liste de Définitions</a></li>
+      </ul>
+    </li>
+    <li><a href="#code">Code</a>
+      <ul>
+        <li><a href="#code-en-ligne">Code en Ligne</a></li>
+        <li><a href="#blocs-de-code">Blocs de Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#tableaux">Tableaux</a></li>
+    <li><a href="#ligne-horizontale">Ligne Horizontale</a></li>
+    <li><a href="#images">Images</a></li>
+    <li><a href="#liens">Liens</a></li>
+    <li><a href="#notes-de-bas-de-page">Notes de Bas de Page</a></li>
+    <li><a href="#texte-surligné">Texte Surligné</a></li>
+    <li><a href="#exposant-et-indice">Exposant et Indice</a></li>
+    <li><a href="#touches-de-clavier">Touches de Clavier</a></li>
+    <li><a href="#abréviations">Abréviations</a></li>
+    <li><a href="#formule-mathématique-si-katex-est-supporté">Formule Mathématique (si KaTeX est supporté)</a></li>
+    <li><a href="#avertissements-si-supportés">Avertissements (si supportés)</a></li>
+    <li><a href="#détails-si-supportés">Détails (si supportés)</a></li>
+    <li><a href="#test-de-contenu-mixte">Test de Contenu Mixte</a>
+      <ul>
+        <li><a href="#liste-complexe">Liste Complexe</a></li>
+        <li><a href="#tableau-complexe">Tableau Complexe</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -2781,7 +2865,6 @@ $$</p>
   </div>
 
 
-
   
   
 
@@ -2861,10 +2944,8 @@ $$</p>
 
 
 
-
   
   
-
 
 
 

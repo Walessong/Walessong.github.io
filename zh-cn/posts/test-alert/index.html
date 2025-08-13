@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1196,8 +1194,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="github-风格提示框测试">GitHub 风格提示框测试</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="github-风格提示框测试">GitHub 风格提示框测试</h1>
 <p>本文用于测试新的 GitHub 风格提示框功能和折叠功能。</p>
 <h2 id="提示框语法">提示框语法</h2>
 <h3 id="注意提示框">注意提示框</h3>
@@ -3233,7 +3233,82 @@
 
 <p>这些提示框可以帮助用户更好地理解内容的重要性和上下文，提升文档的可读性和用户体验。</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#提示框语法">提示框语法</a>
+      <ul>
+        <li><a href="#注意提示框">注意提示框</a></li>
+        <li><a href="#提示提示框">提示提示框</a></li>
+        <li><a href="#重要提示框">重要提示框</a></li>
+        <li><a href="#警告提示框">警告提示框</a></li>
+        <li><a href="#注意提示框-1">注意提示框</a></li>
+      </ul>
+    </li>
+    <li><a href="#折叠功能">折叠功能</a>
+      <ul>
+        <li><a href="#可折叠的注意提示框">可折叠的注意提示框</a></li>
+        <li><a href="#可折叠的提示提示框">可折叠的提示提示框</a></li>
+        <li><a href="#可折叠的重要提示框">可折叠的重要提示框</a></li>
+        <li><a href="#可折叠的警告提示框">可折叠的警告提示框</a></li>
+        <li><a href="#可折叠的注意提示框-1">可折叠的注意提示框</a>
+          <ul>
+            <li><a href="#子标题">子标题</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#普通引用块">普通引用块</a></li>
+    <li><a href="#多语言支持">多语言支持</a></li>
+    <li><a href="#嵌套内容测试">嵌套内容测试</a></li>
+    <li><a href="#使用场景示例">使用场景示例</a>
+      <ul>
+        <li><a href="#文档说明">文档说明</a></li>
+        <li><a href="#最佳实践">最佳实践</a></li>
+        <li><a href="#重要配置">重要配置</a></li>
+        <li><a href="#安全提醒">安全提醒</a></li>
+        <li><a href="#破坏性操作">破坏性操作</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -3317,7 +3392,6 @@
   </div>
 
 
-
   
   
 
@@ -3394,7 +3468,6 @@
       </div>
     </div>
   </nav>
-
 
 
 
@@ -3887,7 +3960,6 @@ JavaScript JAVASCRIPT 折叠 复制 function …
     
 
   </section>
-
 
 
 

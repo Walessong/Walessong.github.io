@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1200,8 +1198,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="一级标题">一级标题</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="一级标题">一级标题</h1>
 <p>这是一级标题下的段落。</p>
 <h2 id="二级标题">二级标题</h2>
 <p>这是二级标题下的段落。</p>
@@ -2697,7 +2697,91 @@ $$</p>
 </ol>
 </div>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#二级标题">二级标题</a>
+      <ul>
+        <li><a href="#三级标题">三级标题</a>
+          <ul>
+            <li><a href="#四级标题">四级标题</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#段落和文本格式">段落和文本格式</a></li>
+    <li><a href="#引用块">引用块</a></li>
+    <li><a href="#列表">列表</a>
+      <ul>
+        <li><a href="#无序列表">无序列表</a></li>
+        <li><a href="#有序列表">有序列表</a></li>
+        <li><a href="#任务列表复选框">任务列表（复选框）</a></li>
+        <li><a href="#定义列表">定义列表</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码">代码</a>
+      <ul>
+        <li><a href="#行内代码">行内代码</a></li>
+        <li><a href="#代码块">代码块</a></li>
+      </ul>
+    </li>
+    <li><a href="#表格">表格</a></li>
+    <li><a href="#水平分割线">水平分割线</a></li>
+    <li><a href="#图片">图片</a></li>
+    <li><a href="#链接">链接</a></li>
+    <li><a href="#脚注">脚注</a></li>
+    <li><a href="#高亮文本">高亮文本</a></li>
+    <li><a href="#上标和下标">上标和下标</a></li>
+    <li><a href="#键盘按键">键盘按键</a></li>
+    <li><a href="#缩写">缩写</a></li>
+    <li><a href="#数学公式如果支持-katex">数学公式（如果支持 KaTeX）</a></li>
+    <li><a href="#提示框如果支持">提示框（如果支持）</a></li>
+    <li><a href="#详情如果支持">详情（如果支持）</a></li>
+    <li><a href="#混合内容测试">混合内容测试</a>
+      <ul>
+        <li><a href="#复杂列表">复杂列表</a></li>
+        <li><a href="#复杂表格">复杂表格</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -2781,7 +2865,6 @@ $$</p>
   </div>
 
 
-
   
   
 
@@ -2861,10 +2944,8 @@ $$</p>
 
 
 
-
   
   
-
 
 
 

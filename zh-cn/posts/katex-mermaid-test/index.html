@@ -230,8 +230,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1045,9 +1045,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1210,8 +1208,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="katex-和-mermaid-测试">KaTeX 和 Mermaid 测试</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="katex-和-mermaid-测试">KaTeX 和 Mermaid 测试</h1>
 <p>本文用于测试 KaTeX 数学公式渲染和 Mermaid 图表功能。</p>
 <h2 id="mermaid-图表测试">Mermaid 图表测试</h2>
 <h3 id="流程图">流程图</h3>
@@ -1330,7 +1330,85 @@
 <hr>
 <p>这个测试页面展示了 KaTeX 和 Mermaid 的各种功能，包括复杂的数学公式和多种类型的图表。</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mermaid-图表测试">Mermaid 图表测试</a>
+      <ul>
+        <li><a href="#流程图">流程图</a></li>
+        <li><a href="#序列图">序列图</a></li>
+        <li><a href="#甘特图">甘特图</a></li>
+      </ul>
+    </li>
+    <li><a href="#katex-测试">KaTeX 测试</a>
+      <ul>
+        <li><a href="#行内公式">行内公式</a></li>
+        <li><a href="#块级公式">块级公式</a>
+          <ul>
+            <li><a href="#二次公式">二次公式</a></li>
+            <li><a href="#欧拉公式">欧拉公式</a></li>
+            <li><a href="#积分公式">积分公式</a></li>
+            <li><a href="#矩阵表示">矩阵表示</a></li>
+            <li><a href="#求和公式">求和公式</a></li>
+            <li><a href="#微分方程">微分方程</a></li>
+            <li><a href="#傅里叶变换">傅里叶变换</a></li>
+            <li><a href="#泰勒级数">泰勒级数</a></li>
+          </ul>
+        </li>
+        <li><a href="#复杂数学表达式">复杂数学表达式</a>
+          <ul>
+            <li><a href="#概率密度函数">概率密度函数</a></li>
+            <li><a href="#麦克斯韦方程组">麦克斯韦方程组</a></li>
+            <li><a href="#薛定谔方程">薛定谔方程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#组合测试">组合测试</a>
+      <ul>
+        <li><a href="#带公式的流程图">带公式的流程图</a></li>
+        <li><a href="#数学概念解释">数学概念解释</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -1412,7 +1490,6 @@
       </div>
     </div>
   </div>
-
 
 
   
@@ -1509,7 +1586,6 @@
       </div>
     </div>
   </nav>
-
 
 
 
@@ -1841,7 +1917,6 @@ JavaScript JAVASCRIPT 折叠 复制 function …
     
 
   </section>
-
 
 
 

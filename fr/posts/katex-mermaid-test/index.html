@@ -230,8 +230,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1045,9 +1045,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1210,8 +1208,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="test-katex-et-mermaid">Test KaTeX et Mermaid</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="test-katex-et-mermaid">Test KaTeX et Mermaid</h1>
 <p>Cet article est utilisé pour tester le rendu des formules mathématiques KaTeX et la fonctionnalité des graphiques Mermaid.</p>
 <h2 id="test-des-graphiques-mermaid">Test des Graphiques Mermaid</h2>
 <h3 id="diagramme-de-flux">Diagramme de Flux</h3>
@@ -1330,7 +1330,85 @@
 <hr>
 <p>Cette page de test montre diverses fonctionnalités de KaTeX et Mermaid, incluant des formules mathématiques complexes et plusieurs types de graphiques.</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#test-des-graphiques-mermaid">Test des Graphiques Mermaid</a>
+      <ul>
+        <li><a href="#diagramme-de-flux">Diagramme de Flux</a></li>
+        <li><a href="#diagramme-de-séquence">Diagramme de Séquence</a></li>
+        <li><a href="#diagramme-de-gantt">Diagramme de Gantt</a></li>
+      </ul>
+    </li>
+    <li><a href="#test-katex">Test KaTeX</a>
+      <ul>
+        <li><a href="#formules-en-ligne">Formules en Ligne</a></li>
+        <li><a href="#formules-en-bloc">Formules en Bloc</a>
+          <ul>
+            <li><a href="#formule-quadratique">Formule Quadratique</a></li>
+            <li><a href="#formule-deuler">Formule d&rsquo;Euler</a></li>
+            <li><a href="#formule-dintégrale">Formule d&rsquo;Intégrale</a></li>
+            <li><a href="#représentation-matricielle">Représentation Matricielle</a></li>
+            <li><a href="#formule-de-sommation">Formule de Sommation</a></li>
+            <li><a href="#équation-différentielle">Équation Différentielle</a></li>
+            <li><a href="#transformée-de-fourier">Transformée de Fourier</a></li>
+            <li><a href="#série-de-taylor">Série de Taylor</a></li>
+          </ul>
+        </li>
+        <li><a href="#expressions-mathématiques-complexes">Expressions Mathématiques Complexes</a>
+          <ul>
+            <li><a href="#fonction-de-densité-de-probabilité">Fonction de Densité de Probabilité</a></li>
+            <li><a href="#équations-de-maxwell">Équations de Maxwell</a></li>
+            <li><a href="#équation-de-schrödinger">Équation de Schrödinger</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#test-de-combinaison">Test de Combinaison</a>
+      <ul>
+        <li><a href="#diagramme-de-flux-avec-formules">Diagramme de Flux avec Formules</a></li>
+        <li><a href="#explication-de-concept-mathématique">Explication de Concept Mathématique</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -1412,7 +1490,6 @@
       </div>
     </div>
   </div>
-
 
 
   
@@ -1509,7 +1586,6 @@
       </div>
     </div>
   </nav>
-
 
 
 
@@ -1839,7 +1915,6 @@
     
 
   </section>
-
 
 
 

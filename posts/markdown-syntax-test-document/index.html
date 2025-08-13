@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1200,8 +1198,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="heading-1">Heading 1</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="heading-1">Heading 1</h1>
 <p>This is a paragraph under a level 1 heading.</p>
 <h2 id="heading-2">Heading 2</h2>
 <p>This is a paragraph under a level 2 heading.</p>
@@ -2697,7 +2697,91 @@ $$</p>
 </ol>
 </div>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading-2">Heading 2</a>
+      <ul>
+        <li><a href="#heading-3">Heading 3</a>
+          <ul>
+            <li><a href="#heading-4">Heading 4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#paragraphs-and-text-formatting">Paragraphs and Text Formatting</a></li>
+    <li><a href="#blockquotes">Blockquotes</a></li>
+    <li><a href="#lists">Lists</a>
+      <ul>
+        <li><a href="#unordered-list">Unordered List</a></li>
+        <li><a href="#ordered-list">Ordered List</a></li>
+        <li><a href="#task-list-checkbox">Task List (Checkbox)</a></li>
+        <li><a href="#definition-list">Definition List</a></li>
+      </ul>
+    </li>
+    <li><a href="#code">Code</a>
+      <ul>
+        <li><a href="#inline-code">Inline Code</a></li>
+        <li><a href="#code-blocks">Code Blocks</a></li>
+      </ul>
+    </li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#horizontal-rule">Horizontal Rule</a></li>
+    <li><a href="#images">Images</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a href="#footnotes">Footnotes</a></li>
+    <li><a href="#highlighted-text">Highlighted Text</a></li>
+    <li><a href="#superscript-and-subscript">Superscript and Subscript</a></li>
+    <li><a href="#keyboard-keys">Keyboard Keys</a></li>
+    <li><a href="#abbreviations">Abbreviations</a></li>
+    <li><a href="#math-formula-if-katex-supported">Math Formula (if KaTeX supported)</a></li>
+    <li><a href="#admonitions-if-supported">Admonitions (if supported)</a></li>
+    <li><a href="#details-if-supported">Details (if supported)</a></li>
+    <li><a href="#mixed-content-test">Mixed Content Test</a>
+      <ul>
+        <li><a href="#complex-list">Complex List</a></li>
+        <li><a href="#complex-table">Complex Table</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -2781,7 +2865,6 @@ $$</p>
   </div>
 
 
-
   
   
 
@@ -2861,10 +2944,8 @@ $$</p>
 
 
 
-
   
   
-
 
 
 

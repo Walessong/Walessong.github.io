@@ -230,8 +230,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1045,9 +1045,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1210,8 +1208,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="katexとmermaidテスト">KaTeXとMermaidテスト</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="katexとmermaidテスト">KaTeXとMermaidテスト</h1>
 <p>この記事はKaTeX数式レンダリングとMermaidチャート機能をテストするために使用されます。</p>
 <h2 id="mermaidチャートテスト">Mermaidチャートテスト</h2>
 <h3 id="フローチャート">フローチャート</h3>
@@ -1330,7 +1330,85 @@
 <hr>
 <p>このテストページはKaTeXとMermaidの様々な機能を示しており、複雑な数学式と複数種類のチャートが含まれています。</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mermaidチャートテスト">Mermaidチャートテスト</a>
+      <ul>
+        <li><a href="#フローチャート">フローチャート</a></li>
+        <li><a href="#シーケンス図">シーケンス図</a></li>
+        <li><a href="#ガントチャート">ガントチャート</a></li>
+      </ul>
+    </li>
+    <li><a href="#katexテスト">KaTeXテスト</a>
+      <ul>
+        <li><a href="#インライン数式">インライン数式</a></li>
+        <li><a href="#ブロック数式">ブロック数式</a>
+          <ul>
+            <li><a href="#二次公式">二次公式</a></li>
+            <li><a href="#オイラーの公式">オイラーの公式</a></li>
+            <li><a href="#積分公式">積分公式</a></li>
+            <li><a href="#行列表現">行列表現</a></li>
+            <li><a href="#総和公式">総和公式</a></li>
+            <li><a href="#微分方程式">微分方程式</a></li>
+            <li><a href="#フーリエ変換">フーリエ変換</a></li>
+            <li><a href="#テイラー級数">テイラー級数</a></li>
+          </ul>
+        </li>
+        <li><a href="#複雑な数学表現">複雑な数学表現</a>
+          <ul>
+            <li><a href="#確率密度関数">確率密度関数</a></li>
+            <li><a href="#マクスウェル方程式">マクスウェル方程式</a></li>
+            <li><a href="#シュレーディンガー方程式">シュレーディンガー方程式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#組み合わせテスト">組み合わせテスト</a>
+      <ul>
+        <li><a href="#数式付きフローチャート">数式付きフローチャート</a></li>
+        <li><a href="#数学概念の説明">数学概念の説明</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -1412,7 +1490,6 @@
       </div>
     </div>
   </div>
-
 
 
   
@@ -1509,7 +1586,6 @@
       </div>
     </div>
   </nav>
-
 
 
 
@@ -1840,7 +1916,6 @@
     
 
   </section>
-
 
 
 

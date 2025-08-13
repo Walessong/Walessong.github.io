@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1196,8 +1194,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="test-de-coloration-syntaxique">Test de Coloration Syntaxique</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="test-de-coloration-syntaxique">Test de Coloration Syntaxique</h1>
 <p>Cet article est utilisé pour tester la nouvelle fonctionnalité de coloration syntaxique, incluant la coloration syntaxique, le bouton de copie, l&rsquo;affichage du langage, etc.</p>
 <h2 id="javascript">JavaScript</h2>
 <div
@@ -2817,7 +2817,54 @@ function test() {
 <p>Ceci est un exemple de code en ligne : <code>const x = 42;</code> et <code>npm install</code> et <code>git commit -m &quot;mise à jour&quot;</code>.</p>
 <hr>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#javascript">JavaScript</a></li>
+    <li><a href="#bloc-de-code-avec-numéros-de-ligne">Bloc de Code avec Numéros de Ligne</a></li>
+    <li><a href="#surlignage-de-lignes-spécifiques">Surlignage de Lignes Spécifiques</a></li>
+    <li><a href="#bloc-de-code-avec-nom-de-fichier">Bloc de Code avec Nom de Fichier</a></li>
+    <li><a href="#bloc-de-code-texte-brut">Bloc de Code Texte Brut</a></li>
+    <li><a href="#code-en-ligne">Code en Ligne</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -2899,7 +2946,6 @@ function test() {
       </div>
     </div>
   </div>
-
 
 
   
@@ -2999,10 +3045,8 @@ function test() {
 
 
 
-
   
   
-
 
 
 

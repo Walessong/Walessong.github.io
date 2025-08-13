@@ -224,8 +224,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1039,9 +1039,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1124,8 +1122,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="katex-and-mermaid-test">KaTeX and Mermaid Test</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="katex-and-mermaid-test">KaTeX and Mermaid Test</h1>
 <p>This article is used to test the KaTeX and Mermaid features.</p>
 <h2 id="configuration">Configuration</h2>
 <h3 id="frontmatter-configuration">Frontmatter Configuration</h3>
@@ -1759,7 +1759,69 @@
 <h4 id="common-mathematical-symbols-test">Common Mathematical Symbols Test</h4>
 <p>Using predefined macros: $\RR$, $\NN$, $\ZZ$, $\QQ$, $\CC$</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#frontmatter-configuration">Frontmatter Configuration</a></li>
+        <li><a href="#global-configuration">Global Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#katex-test">KaTeX Test</a>
+      <ul>
+        <li><a href="#inline-formula">Inline Formula</a></li>
+        <li><a href="#block-formula">Block Formula</a>
+          <ul>
+            <li><a href="#quadratic-formula">Quadratic Formula</a></li>
+            <li><a href="#eulers-formula">Euler&rsquo;s Formula</a></li>
+            <li><a href="#integral-formula">Integral Formula</a></li>
+            <li><a href="#matrix-representation">Matrix Representation</a></li>
+            <li><a href="#summation-formula">Summation Formula</a></li>
+            <li><a href="#common-mathematical-symbols-test">Common Mathematical Symbols Test</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -1843,7 +1905,6 @@
   </div>
 
 
-
   
   
 
@@ -1900,7 +1961,7 @@
       <div class="nav-item">
         
           <a
-            href="/posts/test-alert/"
+            href="/posts/%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"
             class="group bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[140px] flex-col justify-between rounded-xl border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
             <div>
               <div class="mb-3 flex items-center justify-end gap-3">
@@ -1917,14 +1978,14 @@
 
               <h3
                 class="text-foreground group-hover:text-primary mb-3 line-clamp-2 text-right text-lg leading-tight font-semibold transition-colors duration-200">
-                GitHub Style Alert Test
+                目录功能测试文章
               </h3>
             </div>
 
             <div
               class="text-muted-foreground mt-auto flex items-center justify-end gap-2 text-xs">
-              <time datetime="2025-06-01">
-                06月01日
+              <time datetime="2025-01-27">
+                01月27日
               </time>
               
   <svg class="h-3 w-3"
@@ -1941,10 +2002,8 @@
 
 
 
-
   
   
-
 
 
 

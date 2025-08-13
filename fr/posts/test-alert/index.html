@@ -228,8 +228,8 @@
 
 
           <script
-            src="/js/toc.70654aebf0b738a78ae2df95297cc10ebc6e590f3c942dd1325fa852f50038b2.js"
-            integrity="sha256-cGVK6/C3OKeK4t&#43;VKXzBDrxuWQ88lC3RMl&#43;oUvUAOLI="
+            src="/js/toc.e71538a6ebccae09b8fcedfe37c2ff40d3528b3928be599c3f9ca48a491e8a8e.js"
+            integrity="sha256-5xU4puvMrgm4/O3&#43;N8L/QNNSizkovlmcP5ykikkeio4="
             crossorigin="anonymous"
             defer></script>
 
@@ -1043,9 +1043,7 @@
 </nav>
 
 
-
   
-
 
   
   <header class="mb-8">
@@ -1196,8 +1194,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <h1 id="test-dalertes-style-github">Test d&rsquo;Alertes Style GitHub</h1>
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <h1 id="test-dalertes-style-github">Test d&rsquo;Alertes Style GitHub</h1>
 <p>Cet article est utilisé pour tester la nouvelle fonctionnalité d&rsquo;alertes style GitHub et la fonctionnalité de pliage.</p>
 <h2 id="syntaxe-des-alertes">Syntaxe des Alertes</h2>
 <h3 id="alerte-note">Alerte Note</h3>
@@ -3233,7 +3233,82 @@
 
 <p>Ces alertes peuvent aider les utilisateurs à mieux comprendre l&rsquo;importance et le contexte du contenu, améliorant la lisibilité de la documentation et l&rsquo;expérience utilisateur.</p>
 
-  </article>
+    </article>
+    
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#syntaxe-des-alertes">Syntaxe des Alertes</a>
+      <ul>
+        <li><a href="#alerte-note">Alerte Note</a></li>
+        <li><a href="#alerte-conseil">Alerte Conseil</a></li>
+        <li><a href="#alerte-importante">Alerte Importante</a></li>
+        <li><a href="#alerte-avertissement">Alerte Avertissement</a></li>
+        <li><a href="#alerte-attention">Alerte Attention</a></li>
+      </ul>
+    </li>
+    <li><a href="#fonctionnalité-de-pliage">Fonctionnalité de Pliage</a>
+      <ul>
+        <li><a href="#alerte-note-pliable">Alerte Note Pliable</a></li>
+        <li><a href="#alerte-conseil-pliable">Alerte Conseil Pliable</a></li>
+        <li><a href="#alerte-importante-pliable">Alerte Importante Pliable</a></li>
+        <li><a href="#alerte-avertissement-pliable">Alerte Avertissement Pliable</a></li>
+        <li><a href="#alerte-attention-pliable">Alerte Attention Pliable</a>
+          <ul>
+            <li><a href="#sous-titre">Sous-titre</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#citation-normale">Citation Normale</a></li>
+    <li><a href="#support-multilingue">Support Multilingue</a></li>
+    <li><a href="#test-de-contenu-imbriqué">Test de Contenu Imbriqué</a></li>
+    <li><a href="#exemples-de-cas-dusage">Exemples de Cas d&rsquo;Usage</a>
+      <ul>
+        <li><a href="#explication-de-documentation">Explication de Documentation</a></li>
+        <li><a href="#meilleures-pratiques">Meilleures Pratiques</a></li>
+        <li><a href="#configuration-importante">Configuration Importante</a></li>
+        <li><a href="#rappel-de-sécurité">Rappel de Sécurité</a></li>
+        <li><a href="#opération-destructive">Opération Destructive</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
   
   
@@ -3317,7 +3392,6 @@
   </div>
 
 
-
   
   
 
@@ -3394,7 +3468,6 @@
       </div>
     </div>
   </nav>
-
 
 
 
@@ -3882,7 +3955,6 @@
     
 
   </section>
-
 
 
 

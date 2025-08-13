@@ -191,6 +191,28 @@
                 href="https://Walessong.github.io/tags/test/"
                 />
   </url><url>
+    <loc>https://Walessong.github.io/tags/%E5%8A%9F%E8%83%BD/</loc>
+    <lastmod>2025-01-27T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2025-01-27T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2025-01-27T12:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://Walessong.github.io/zh-cn/tags/%E6%B5%8B%E8%AF%95/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://Walessong.github.io/tags/%E6%B5%8B%E8%AF%95/"
+                />
+  </url><url>
+    <loc>https://Walessong.github.io/posts/%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2025-01-27T12:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://Walessong.github.io/posts/katex-and-mermaid-test/</loc>
     <lastmod>2024-01-16T23:30:00+08:00</lastmod>
     <xhtml:link
