@@ -212,6 +212,16 @@
 
 
 
+  
+    
+      <link
+        rel="stylesheet"
+        href="/css/custom/toc.min.f47495999c818b3eee49f6c77bcbf7475c1c2208d92543bf1b1042a409ad642a.css"
+        integrity="sha256-9HSVmZyBiz7uSfbHe8v3R1wcIgjZJUO/GxBCpAmtZCo="
+        crossorigin="anonymous" />
+    
+  
+
 
 
 
@@ -1021,7 +1031,6 @@
 </nav>
 
 
-
   
   <header class="mb-8">
     <h1 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
@@ -1031,8 +1040,10 @@
   </header>
 
   
-  <article class="prose prose-neutral dark:prose-invert max-w-none">
-    <div class="about-page">
+  <div class="post-layout">
+    
+    <article class="post-content prose prose-neutral dark:prose-invert mb-12 max-w-none">
+      <div class="about-page">
 <div class="info-glass-card">
   <div class="avatar-container">
     <img class="avatar-img" src="/images/avatar.svg" alt="王松头像" />
@@ -1569,7 +1580,63 @@
   }
 }
 
-  </article>
+    </article>
+
+    
+    <aside class="post-sidebar">
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header">
+    <h3 class="toc-title">
+      <svg class="toc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        <path d="M8 6v12M16 6v12" stroke-linecap="round"/>
+      </svg>
+      目录导航
+    </h3>
+    <button class="toc-toggle" id="toc-toggle" aria-label="切换目录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="toc-nav" id="toc-nav">
+    <div class="toc-content">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-技能树-skill-tree">📈 技能树 Skill Tree</a></li>
+    <li><a href="#-项目展示">🚀 项目展示</a></li>
+    <li><a href="#-成长时间线">📅 成长时间线</a></li>
+    <li><a href="#-个人哲学">💭 个人哲学</a>
+      <ul>
+        <li><a href="#-核心价值观">🎯 核心价值观</a></li>
+        <li><a href="#-影响我的作品">📚 影响我的作品</a></li>
+        <li><a href="#-最爱的电影类型">🎬 最爱的电影类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#-联系我">📞 联系我</a>
+      <ul>
+        <li><a href="#-联系方式">📬 联系方式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+  
+  <div class="toc-progress" id="toc-progress">
+    <div class="toc-progress-bar" id="toc-progress-bar"></div>
+  </div>
+  
+  
+  <div class="toc-decoration">
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+    <div class="toc-dot"></div>
+  </div>
+</div>
+    </aside>
+  </div>
 
     </main>
 
