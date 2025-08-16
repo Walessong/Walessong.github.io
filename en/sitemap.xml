@@ -388,6 +388,25 @@
                 href="https://Walessong.github.io/categories/test/"
                 />
   </url><url>
+    <loc>https://Walessong.github.io/tags/%E5%AF%BC%E8%88%AA%E6%A0%8F/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/nav-test/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://Walessong.github.io/zh-cn/categories/%E6%B5%8B%E8%AF%95/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://Walessong.github.io/categories/%E6%B5%8B%E8%AF%95/"
+                />
+  </url><url>
     <loc>https://Walessong.github.io/archives/</loc>
     <xhtml:link
                 rel="alternate"
