@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Woke Soul&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 13 Aug 2025 22:24:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Aug 2025 01:16:34 +0800</lastBuildDate>
     <atom:link href="https://Walessong.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>机器学习中的数据预处理细节</title>
+      <link>https://Walessong.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/</link>
+      <pubDate>Sun, 17 Aug 2025 01:16:34 +0800</pubDate>
+      <guid>https://Walessong.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/</guid>
+      <description>&lt;h1 id=&#34;机器学习预处理的潜规则数据划分与缺失值处理&#34;&gt;机器学习预处理的“潜规则”：数据划分与缺失值处理&lt;/h1&gt;&#xA;&lt;p&gt;在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Once_Upon_a_Time_in_America</title>
       <link>https://Walessong.github.io/posts/once_upon_a_time_in_america/</link>

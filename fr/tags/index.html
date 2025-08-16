@@ -440,7 +440,15 @@
     </script>
   </head>
 
-  <body class="bg-background text-foreground min-h-screen antialiased">
+  <body class="min-h-screen antialiased bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20">
+    
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-400/20 to-blue-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-pink-400/10 to-yellow-400/10 rounded-full blur-3xl"></div>
+    </div>
+
     
     
   <div
@@ -550,6 +558,7 @@
     })();
   </script>
 
+    
     
 <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg shadow-gray-900/5">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -843,7 +852,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script> 
 
-    <main class="mx-auto w-full max-w-screen-2xl px-4 md:px-6 lg:px-8 py-6">
+    
+    <main class="relative mx-auto w-full max-w-screen-2xl px-4 md:px-6 lg:px-8 py-8 md:py-12">
+      
+      
+
       
   
   <nav
@@ -1304,191 +1317,143 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <footer class="mx-auto max-w-4xl px-4 py-8">
-  <div class="px-6 py-6">
     
     
-      <nav class="mb-6">
-        <div class="flex flex-wrap items-center justify-center gap-1">
-          
-            
-            
-            
-              
-                
-              
-            
-            <a
-              href="/fr/about/"
-              
-              class="nav-link hover:text-primary hover:bg-primary/10 text-muted-foreground flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
-              
-                
-  <svg class="h-5 w-5"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="About">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+<footer class="relative mt-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50">
+  
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-t from-blue-400/5 to-purple-500/5 rounded-full blur-3xl"></div>
+  </div>
 
-</svg>
-              
-              <span
-                >
-                  About
-                </span
-              >
-            </a>
-          
-            
-            
-            
-            <a
-              href="https://google.com"
-              
-                target="_blank" rel="noopener noreferrer"
-              
-              class="nav-link hover:text-primary hover:bg-primary/10 text-muted-foreground flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
-              
-                
-  <svg class="h-5 w-5"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="Contact">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-
-</svg>
-              
-              <span
-                >
-                  Contact
-                </span
-              >
-            </a>
-          
-            
-            
-            
-            <a
-              href="/index.xml"
-              
-              class="nav-link hover:text-primary hover:bg-primary/10 text-muted-foreground flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105">
-              
-                
-  <svg class="h-5 w-5"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="RSS Feed">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
-
-</svg>
-              
-              <span
-                >
-                  RSS Feed
-                </span
-              >
-            </a>
-          
-        </div>
-      </nav>
-    
-
-
-    
-    
-      <div class="border-border mb-6 border-t"></div>
-    
-
-
-    
-    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
       
-      <div class="text-muted-foreground text-sm">
-        <p>
-          &copy; 2025 Woke Soul&#39;s Blog.
-          Tous droits réservés.
+      
+      <div class="lg:col-span-2">
+        <div class="flex items-center mb-6">
+          <div class="bg-gradient-to-br from-blue-500 to-purple-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold mr-4">
+            W
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Woke Soul&#39;s Blog</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">分享技术、生活和创意</p>
+          </div>
+        </div>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed max-w-md">
+          欢迎来到我的博客世界，这里记录着我的学习历程、技术分享和生活感悟。希望我的内容能够为你带来启发和帮助。
         </p>
+        
+        
+        
       </div>
 
       
-      
-        <div class="flex items-center gap-3">
+      <div>
+        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">快速链接</h4>
+        <ul class="space-y-3">
           
-            <a
-              href="https://github.com/Walessong"
-              
-                target="_blank" rel="noopener noreferrer"
-              
-              class="text-muted-foreground hover:text-primary focus:ring-primary/20 rounded-lg p-1 transition-all duration-300 ease-out hover:scale-110 focus:ring-2 focus:outline-none"
-              title="GitHub"
-              aria-label="GitHub">
-              
-                
-  <svg class="h-6 w-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="GitHub"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5c.08-1.25-.27-2.48-1-3.5c.28-1.15.28-2.35 0-3.5c0 0-1 0-3 1.5c-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5c-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></g></svg>
-              
+          <li>
+            <a 
+              href="/about/" 
+              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
+              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
+              <span>About</span>
             </a>
+          </li>
           
-            <a
-              href="https://twitter.com/w45867"
-              
-                target="_blank" rel="noopener noreferrer"
-              
-              class="text-muted-foreground hover:text-primary focus:ring-primary/20 rounded-lg p-1 transition-all duration-300 ease-out hover:scale-110 focus:ring-2 focus:outline-none"
-              title="Twitter"
-              aria-label="Twitter">
-              
-                
-  <svg class="h-6 w-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="Twitter"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6c2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4c-.9-4.2 4-6.6 7-3.8c1.1 0 3-1.2 3-1.2"/></svg>
-              
+          <li>
+            <a 
+              href="https://google.com" 
+              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
+              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
+              <span>Contact</span>
             </a>
+          </li>
           
-            <a
-              href="https://linkedin.com/in/username"
-              
-                target="_blank" rel="noopener noreferrer"
-              
-              class="text-muted-foreground hover:text-primary focus:ring-primary/20 rounded-lg p-1 transition-all duration-300 ease-out hover:scale-110 focus:ring-2 focus:outline-none"
-              title="LinkedIn"
-              aria-label="LinkedIn">
-              
-                
-  <svg class="h-6 w-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="LinkedIn"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></g></svg>
-              
+          <li>
+            <a 
+              href="/index.xml" 
+              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
+              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
+              <span>RSS Feed</span>
             </a>
+          </li>
           
-            <a
-              href="mailto:your.email@example.com"
-              
-              class="text-muted-foreground hover:text-primary focus:ring-primary/20 rounded-lg p-1 transition-all duration-300 ease-out hover:scale-110 focus:ring-2 focus:outline-none"
-              title="Email"
-              aria-label="Email">
-              
-                
-  <svg class="h-6 w-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="Email">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </ul>
+      </div>
 
-</svg>
-              
-            </a>
-          
+      
+      <div>
+        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">联系我</h4>
+        <ul class="space-y-3">
+          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <span class="text-blue-500">📧</span>
+            <span>hello@example.com</span>
+          </li>
+          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <span class="text-green-500">🌐</span>
+            <span>https://example.com</span>
+          </li>
+          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+            <span class="text-purple-500">📍</span>
+            <span>中国</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="border-t border-gray-200/50 dark:border-gray-700/50 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        
+        <div class="text-gray-600 dark:text-gray-400 text-sm mb-4 md:mb-0">
+          <p>&copy; 2025 Woke Soul&#39;s Blog. 保留所有权利。</p>
         </div>
-      
-
+        
+        
+        <div class="flex space-x-6 text-sm">
+          <a href="/privacy" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+            隐私政策
+          </a>
+          <a href="/terms" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+            使用条款
+          </a>
+          <a href="/sitemap.xml" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+            网站地图
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+
+  
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <button 
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="group w-12 h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-full shadow-lg shadow-gray-900/10 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:scale-110 hover:shadow-xl transition-all duration-300">
+      <span class="text-lg transform group-hover:-translate-y-1 transition-transform duration-300">↑</span>
+    </button>
+  </div>
 </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const footerElements = document.querySelectorAll('footer > *');
+  
+  footerElements.forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    
+    setTimeout(() => {
+      element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    }, 500 + index * 200);
+  });
+});
+</script>
 
 
     
@@ -1583,9 +1548,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     
+
+    
     
 
 
+    
+    
     
 
 
@@ -1775,5 +1744,44 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </div>
 
+
+    
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-full shadow-lg shadow-gray-900/10 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:scale-110 hover:shadow-xl transition-all duration-300 opacity-0 pointer-events-none z-40">
+      <span class="text-lg">↑</span>
+    </button>
+
+    <script>
+      
+      const backToTopBtn = document.getElementById('back-to-top');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.style.opacity = '1';
+          backToTopBtn.style.pointerEvents = 'auto';
+        } else {
+          backToTopBtn.style.opacity = '0';
+          backToTopBtn.style.pointerEvents = 'none';
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          document.body.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+          document.body.style.opacity = '1';
+          document.body.style.transform = 'translateY(0)';
+        }, 100);
+      });
+    </script>
   </body>
 </html>

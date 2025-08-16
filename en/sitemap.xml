@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Walessong.github.io/posts/once_upon_a_time_in_america/</loc>
-    <lastmod>2025-08-13T22:24:00+08:00</lastmod>
-  </url><url>
     <loc>https://Walessong.github.io/posts/</loc>
-    <lastmod>2025-08-13T22:24:00+08:00</lastmod>
+    <lastmod>2025-08-17T01:16:34+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -27,6 +24,12 @@
                 hreflang="en-US"
                 href="https://Walessong.github.io/posts/"
                 />
+  </url><url>
+    <loc>https://Walessong.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/</loc>
+    <lastmod>2025-08-17T01:16:34+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/posts/once_upon_a_time_in_america/</loc>
+    <lastmod>2025-08-13T22:24:00+08:00</lastmod>
   </url><url>
     <loc>https://Walessong.github.io/posts/clustering_algorithms/</loc>
     <lastmod>2025-08-13T22:12:00+08:00</lastmod>

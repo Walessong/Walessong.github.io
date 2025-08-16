@@ -1,6 +1,6 @@
 <!doctype html>
 <html
-  lang="fr-FR"
+  lang="en-US"
   data-theme="default">
   <head>
     <meta charset="utf-8" />
@@ -9,15 +9,16 @@
   content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Mermaid | Woke Soul&#39;s Blog</title>
+<title>机器学习中的数据预处理细节 | Woke Soul&#39;s Blog</title>
 
-<meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
+<meta name="description" content="机器学习预处理的“潜规则”：数据划分与缺失值处理 在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：
+训练集和测试集的预处理..." />
 <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
 <meta name="author" content="Woke Soul" />
 <meta name="language" content="en-US" />
 
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://Walessong.github.io/fr/tags/mermaid/" />
+<link rel="canonical" href="https://Walessong.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/" />
 
 
 
@@ -25,41 +26,39 @@
 
 
 <link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://Walessong.github.io/fr/tags/mermaid/">
+<meta property="og:url" content="https://Walessong.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/">
   <meta property="og:site_name" content="Woke Soul&#39;s Blog">
-  <meta property="og:title" content="Mermaid">
-  <meta property="og:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="机器学习中的数据预处理细节">
+  <meta property="og:description" content="机器学习预处理的“潜规则”：数据划分与缺失值处理 在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-17T01:16:34+08:00">
+    <meta property="article:modified_time" content="2025-08-17T01:16:34+08:00">
     <meta property="og:image" content="https://Walessong.github.io/images/og-default.avif">
 
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://Walessong.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="Mermaid">
-  <meta name="twitter:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
+  <meta name="twitter:title" content="机器学习中的数据预处理细节">
+  <meta name="twitter:description" content="机器学习预处理的“潜规则”：数据划分与缺失值处理 在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：">
 
 
-  <meta itemprop="name" content="Mermaid">
-  <meta itemprop="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-  <meta itemprop="datePublished" content="2024-01-17T10:00:00+08:00">
-  <meta itemprop="dateModified" content="2024-01-17T10:00:00+08:00">
+  <meta itemprop="name" content="机器学习中的数据预处理细节">
+  <meta itemprop="description" content="机器学习预处理的“潜规则”：数据划分与缺失值处理 在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：">
+  <meta itemprop="datePublished" content="2025-08-17T01:16:34+08:00">
+  <meta itemprop="dateModified" content="2025-08-17T01:16:34+08:00">
+  <meta itemprop="wordCount" content="2004">
   <meta itemprop="image" content="https://Walessong.github.io/images/og-default.avif">
 
 
 
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title="Woke Soul&#39;s Blog"
-    href="https://Walessong.github.io/fr/tags/mermaid/index.xml" />
 
 
 
 
 
-
-<script id="search-config" type="application/json">{"searchIndexURL": "\"/fr/index.json\""}</script>
+<script id="search-config" type="application/json">{"searchIndexURL": "\"/index.json\""}</script>
 
 
 
@@ -372,9 +371,15 @@
           defer></script>
 
 
+  <script src="/js/gumshoe.polyfills.min.js"></script>
 
 
 
+          <script
+            src="/js/toc.344256ca5501d8ca1ea93dbb56db8b33286ce44ccf9a93141c6fae95ba96aa7b.js"
+            integrity="sha256-NEJWylUB2MoeqT27VtuLMyhs5EzPmpMUHG&#43;ulbqWqns="
+            crossorigin="anonymous"
+            defer></script>
 
 
 
@@ -401,6 +406,8 @@
 
 
 
+
+  
 
 
 
@@ -566,7 +573,7 @@
       
       
       <div class="flex items-center">
-        <a href="/fr/" class="group flex items-center">
+        <a href="/" class="group flex items-center">
           <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white w-10 h-10 rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg shadow-blue-500/25 transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/40 group-hover:rotate-3">
             W
           </div>
@@ -587,7 +594,7 @@
           
           
           <a 
-            href="/fr/posts/" 
+            href="/posts/" 
             class="group relative px-4 py-2 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105">
             
             
@@ -608,7 +615,7 @@
           
           
           <a 
-            href="/fr/categories/" 
+            href="/categories/" 
             class="group relative px-4 py-2 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105">
             
             
@@ -629,7 +636,7 @@
           
           
           <a 
-            href="/fr/tags/" 
+            href="/tags/" 
             class="group relative px-4 py-2 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105">
             
             
@@ -650,7 +657,7 @@
           
           
           <a 
-            href="/fr/archives/" 
+            href="/archives/" 
             class="group relative px-4 py-2 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105">
             
             
@@ -695,7 +702,7 @@
           
           
           <a 
-            href="/fr/posts/" 
+            href="/posts/" 
             class="group block px-4 py-3 rounded-xl text-base font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 dark:hover:from-blue-900/20 dark:hover:to-blue-800/20 transition-all duration-300 transform hover:translate-x-2 hover:scale-105">
             
             
@@ -713,7 +720,7 @@
           
           
           <a 
-            href="/fr/categories/" 
+            href="/categories/" 
             class="group block px-4 py-3 rounded-xl text-base font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 dark:hover:from-blue-900/20 dark:hover:to-blue-800/20 transition-all duration-300 transform hover:translate-x-2 hover:scale-105">
             
             
@@ -731,7 +738,7 @@
           
           
           <a 
-            href="/fr/tags/" 
+            href="/tags/" 
             class="group block px-4 py-3 rounded-xl text-base font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 dark:hover:from-blue-900/20 dark:hover:to-blue-800/20 transition-all duration-300 transform hover:translate-x-2 hover:scale-105">
             
             
@@ -749,7 +756,7 @@
           
           
           <a 
-            href="/fr/archives/" 
+            href="/archives/" 
             class="group block px-4 py-3 rounded-xl text-base font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 dark:hover:from-blue-900/20 dark:hover:to-blue-800/20 transition-all duration-300 transform hover:translate-x-2 hover:scale-105">
             
             
@@ -858,25 +865,26 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
+<article class="max-w-4xl mx-auto">
   
   <nav
   class="breadcrumb mb-4 md:mb-6 py-1"
-  aria-label="Fil d&#39;Ariane">
+  aria-label="Breadcrumb navigation">
   <ol class="text-muted-foreground flex items-center space-x-1 md:space-x-2 text-sm overflow-x-auto whitespace-nowrap scrollbar-hide py-1">
     
     <li class="flex-shrink-0">
       <a
-        href="/fr/"
+        href="/"
         class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex items-center gap-0.5 md:gap-1 rounded-lg px-1 md:px-3 py-0.5 md:py-1.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02]">
         
   <svg class="h-4 w-4"
     fill="none"
     stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="Accueil">
+    viewBox="0 0 24 24" aria-label="Home">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
 
 </svg>
-        <span class="max-w-[4rem] md:max-w-none truncate">Accueil</span>
+        <span class="max-w-[4rem] md:max-w-none truncate">Home</span>
       </a>
     </li>
 
@@ -894,25 +902,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
           
-          
-            
+          <div class="flex items-center gap-1 md:gap-2 min-w-0">
             
               
-              <span class="text-foreground flex items-center gap-0.5 md:gap-1 font-medium flex-shrink-0">
+              <a
+                href="/posts"
+                class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex items-center gap-0.5 md:gap-1 rounded-lg px-1 md:px-3 py-0.5 md:py-1.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] flex-shrink-0">
                 
+                  
   <svg class="h-4 w-4"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24">
-	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
-		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
-	</g>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+
 </svg>
-                <span class="max-w-[3rem] md:max-w-none truncate">Étiquettes</span>
-              </span>
+                  <span class="max-w-[3rem] md:max-w-none truncate">Posts</span>
+                
+              </a>
+              <span class="text-muted-foreground/50 flex-shrink-0"
+                >
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg></span
+              >
             
-          
+            
+            <span class="text-foreground flex items-center gap-0.5 md:gap-1 font-medium min-w-0">
+              
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+</svg>
+              <span class="max-w-[8rem] md:max-w-[16rem] lg:max-w-none truncate">机器学习中的数据预处理细节</span>
+            </span>
+          </div>
         
       </li>
     
@@ -921,214 +948,260 @@ document.addEventListener('DOMContentLoaded', function() {
 </nav>
 
 
-
   
-  <header class="mb-8">
-    <div class="mb-4 flex items-center gap-3">
+  <header class="mb-12 text-center">
+    
+    
+
+    
+    <h1 class="text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6 leading-tight">
+      机器学习中的数据预处理细节
+    </h1>
+
+    
+    <div class="flex flex-wrap justify-center items-center gap-6 text-gray-600 dark:text-gray-400 mb-8">
       
-        
-  <svg class="h-6 w-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
-		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
-	</g>
-</svg>
+      <div class="flex items-center space-x-2">
+        <span class="text-blue-500">📅</span>
+        <time datetime="2025-08-17" class="font-medium">
+          2025年8月17日
+        </time>
+      </div>
       
-      <h1 class="text-foreground text-3xl font-bold">
-        Mermaid
-      </h1>
+
+      
+      <div class="flex items-center space-x-2">
+        <span class="text-green-500">⏱️</span>
+        <span class="font-medium">4 分钟阅读</span>
+      </div>
+      
+
+      
+      <div class="flex items-center space-x-2">
+        <span class="text-purple-500">📝</span>
+        <span class="font-medium">2004 字</span>
+      </div>
+      
     </div>
 
     
-      <p class="text-muted-foreground mb-6">
-        
-          Tous les articles sous l&#39;étiquette &#34;Mermaid&#34;
-        
+    
+
+    
+    
+    <div class="max-w-3xl mx-auto">
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed italic">
+        "<h1 id="机器学习预处理的潜规则数据划分与缺失值处理">机器学习预处理的“潜规则”：数据划分与缺失值处理</h1>
+<p>在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：</p>"
       </p>
-    
-
-
-    
-    <div class="text-muted-foreground flex items-center gap-4 text-sm">
-      <div class="flex items-center gap-1">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-</svg>
-        <span
-          >1 articles au total</span
-        >
-      </div>
-      <div class="flex items-center gap-1">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-        <span>Triés par date</span>
-      </div>
     </div>
+    
   </header>
 
   
-  
-  
+  <div class="prose prose-lg prose-gray dark:prose-invert max-w-none">
     
-
-
-
-
-
-
-
-  <section class="post-list">
-    
-
-    
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div class="relative">
       
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <article class="main-card group">
-    <a href="/fr/posts/katex-mermaid-test/" class="main-card-link block">
-      <div
-        class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
-        
-        <div class="block md:hidden">
-          <div class="aspect-[2/1] overflow-hidden"><div class="from-blue-500/20 to-purple-500/10 relative aspect-[2/1] overflow-hidden bg-gradient-to-br" style="background-blend-mode:overlay;background-color:color-mix(in srgb,var(--color-primary) 15%,transparent);"></div></div>
-
-        </div>
-
-        
-        <div
-          class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
-          <div class="h-full w-full"><div class="from-blue-500/20 to-purple-500/10 relative h-full w-full overflow-hidden bg-gradient-to-br" style="background-blend-mode:overlay;background-color:color-mix(in srgb,var(--color-primary) 15%,transparent);"></div></div>
-
-        </div>
-
-        
-        <div
-          class="main-card-overlay absolute top-0 right-0 hidden h-full w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block"></div>
-
-        
-        <div
-          class="relative z-10 flex flex-1 flex-col justify-between p-6 md:pr-72">
-          
-          <div class="space-y-3 flex-1">
-            
-            <h3
-              class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              Test KaTeX et Mermaid
-            </h3>
-
-            
-            
-              
-                <p
-                  class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  Test KaTeX et Mermaid Cet article est utilisé pour tester le rendu des formules mathématiques KaTeX et la fonctionnalité des graphiques Mermaid.
-Test des …
-                </p>
-              
-            
-          </div>
-
-          
-          
-            <div class="flex-shrink-0 mt-4">
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="text-muted-foreground flex items-center gap-3 text-sm min-h-[48px] overflow-hidden">
-    
-    
-      
-
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-20"></div>
       
       
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="Publié le"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-          <time datetime="2024-01-17" class="text-sm font-medium">
-            17 janvier 2024
-          </time>
-        </div>
-      
+      <div class="pl-8">
+        <h1 id="机器学习预处理的潜规则数据划分与缺失值处理">机器学习预处理的“潜规则”：数据划分与缺失值处理</h1>
+<p>在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：</p>
+<ol>
+<li>
+<p>训练集和测试集的预处理应该如何正确执行？</p>
+</li>
+<li>
+<p>面对数据中的缺失值，我们应该如何科学地应对？</p>
+</li>
+</ol>
+<p>处理不好这两个问题，不仅可能导致模型评估结果虚高，更会使模型在真实世界的应用中表现大打折扣。今天，我们就来深入探讨这两个关键细节。</p>
+<hr>
+<h2 id="黄金法则始终先划分再预处理">黄金法则：始终先划分，再预处理</h2>
+<p>一个常见的疑问是：我们应该将训练集和测试集合并在一起进行预处理，还是应该分开处理？</p>
+<p>这个问题的答案可以归结为一个核心原则：<strong>任何预处理的“学习”过程，都必须且只能在训练集上完成</strong>。测试集的作用是模拟模型在未来会遇到的、完全未知的数据。如果在预处理阶段让训练数据“看到”了测试数据的信息（这个过程也称为“数据泄露”），那么模型的评估结果将不再可靠。</p>
+<p>让我们将这个问题拆解为两个层面来理解：</p>
+<h4 id="1-预处理操作需要保持一致吗">1. 预处理操作需要保持一致吗？</h4>
+<p><strong>需要。</strong> 为了保证模型的一致性，训练集和测试集必须经过完全相同的预处理流程。机器学习算法通常假设训练数据和测试数据服从相似的分布。如果在两个数据集上应用了不同的预处理方法，就破坏了这个基本假设，模型将难以泛化。</p>
+<h4 id="2-预处理的参数可以混合计算吗">2. 预处理的“参数”可以混合计算吗？</h4>
+<p><strong>绝对不能。</strong> 这是最关键也最容易犯错的地方。当我们进行标准化（计算均值、方差）、归一化（计算最大值、最小值）或者主成分分析（PCA）时，这些转换操作所依赖的“参数”（如均值、方差、主成分向量等）必须<strong>仅从训练集中计算得出</strong>。</p>
+<p><strong>正确的流程应该是：</strong></p>
+<ol>
+<li>
+<p><strong>划分数据</strong>：首先，将你的数据集划分为训练集和测试集。</p>
+</li>
+<li>
+<p><strong>学习参数</strong>：在<strong>训练集</strong>上进行预处理操作的“拟合”（fit），计算出所需的转换参数（例如，<code>StandardScaler</code>的均值和标准差）。</p>
+</li>
+<li>
+<p><strong>应用转换</strong>：使用上一步学习到的参数，分别对<strong>训练集</strong>和<strong>测试集</strong>进行转换（transform）。</p>
+</li>
+</ol>
+<p><strong>为什么不能混合计算？</strong></p>
+<p>想象一下，在真实的工业应用中，新数据是逐个或分批次到来的。你不可能每次来一个新样本，就把所有历史数据和新数据放在一起重新计算均值和方差，再重新训练模型。正确的做法是，用已经部署好的、基于原始训练数据训练的模型和预处理流程来直接处理新数据。因此，在训练阶段就必须严格遵守这一原则。</p>
+<p>有人可能会说，“把训练集和测试集一起归一化可以提高模型效果”。这是一个典型的伪命题。这种操作带来的“效果提升”仅仅是在这个特定的、被信息污染的测试集上的虚假表现。模型真正的价值在于它对未来未知数据的预测能力，而这种作弊行为恰恰破坏了我们对这种能力的准确评估。</p>
 
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="Temps de lecture"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-          <span class="text-sm font-medium">3 minute</span>
-        </div>
-      
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1">
+    <div class="prose prose-sm max-w-none">
+      <p><strong>一个例外</strong>：当你已经完成了模型的训练和评估，并准备将其部署为最终产品时，可以把训练集和测试集重新组合成一个更大的数据集，使用之前验证过的最佳模型参数和预处理流程，对全部数据进行重新训练。这样做是为了最大化地利用所有可用数据，以期获得一个更鲁棒的最终模型。</p>
+    </div>
+  </blockquote>
 
+<hr>
+<h2 id="策略性填补如何优雅地处理缺失值">策略性填补：如何优雅地处理缺失值</h2>
+<p>数据缺失是现实世界中不可避免的问题。对于如何处理缺失值，业界没有一成不变的“标准答案”，但我们可以根据项目的目标来制定合理的策略。这里我们主要讨论数据是随机缺失的情况。</p>
+<p>一个常见的说法是，缺失率在20%以内的变量可以考虑填补，但具体情况还需具体分析，核心在于区分研究的目标是<strong>因果推断</strong>还是<strong>预测建模</strong>。</p>
+<h4 id="1-面向因果推断的研究">1. 面向因果推断的研究</h4>
+<p>因果推断旨在分析变量间的因果关系，对数据的真实性和完整性要求极高。因此，对缺失值的容忍度较低。</p>
+<ul>
+<li>
+<p><strong>使用简单填补法</strong>：如果你计划使用均值、中位数或末次观测值结转（LOCF）等机械填补方法，建议变量的缺失率控制在 <strong>10%</strong> 以内。因为这些方法会扭曲数据的原始分布，较高的缺失率会引入显著的偏倚。</p>
+</li>
+<li>
+<p><strong>使用高级填补法</strong>：如果采用多重填补（Multiple Imputation）等利用数据间关联性进行填补的策略，可以将缺失率的容忍度放宽到 <strong>20%</strong> 左右。</p>
+</li>
+</ul>
+<h4 id="2-面向预测模型的研究">2. 面向预测模型的研究</h4>
+<p>与因果推断不同，预测建模的核心目标是构建一个在内部和外部数据上都表现一致、预测能力强的模型。它更关注结果的准确性和稳健性，而非变量间的因果解释。</p>
+<p>在这种场景下，我们对缺失值的容忍度可以更高。只要你的填补策略能帮助建立一个在外部验证中表现良好的模型，那么这个策略就是合理的。<strong>预测模型的最终裁判是外部验证的结果</strong>。</p>
+<ul>
+<li>
+<p><strong>缺失率上限</strong>：对于预测模型，缺失率在 <strong>30%</strong> 以内的变量通常都可以尝试保留和填补。</p>
+</li>
+<li>
+<p><strong>验证是关键</strong>：关键在于，填补后建立的模型必须经过严格的验证。最理想的是使用一个独立的外部数据集进行验证。如果没有，也可以将原始数据中的完整病例作为验证集，来检验模型的稳健性。</p>
+</li>
+</ul>
+<p>说得极端一点，如果你的模型（哪怕数据是模拟生成的）能够在外部验证中持续获得优异且一致的结果，那么你的数据处理方式就是成功的。当然，缺失比例过高的数据在填补后容易失真，这样的模型通常很难通过严格的验证性分析。</p>
 
-      
-    
+      </div>
+    </div>
   </div>
 
-
-
-
-            </div>
-          
-        </div>
-      </div>
-    </a>
-  </article>
-
-
+  
+  <footer class="mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-700/50">
+    
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <button class="group inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-white font-medium rounded-xl hover:bg-blue-600 transform hover:scale-105 hover:shadow-lg transition-all duration-300">
+        <span>📤</span>
+        <span>分享文章</span>
+      </button>
       
+      <button class="group inline-flex items-center space-x-2 px-6 py-3 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transform hover:scale-105 hover:shadow-lg transition-all duration-300">
+        <span>💬</span>
+        <span>发表评论</span>
+      </button>
     </div>
 
     
-  </section>
+    
+    <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 text-center">
+      <div class="flex items-center justify-center space-x-4 mb-4">
+        
+        <img 
+          src="/images/avatar.svg" 
+          alt="Woke Soul"
+          class="w-16 h-16 rounded-full border-4 border-blue-200 dark:border-blue-700"
+        />
+        
+        
+        <div class="text-left">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Woke Soul
+          </h3>
+          
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            A Student of BUAA
+          </p>
+          
+        </div>
+      </div>
+      
+      
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+        free and inquisitive, I love to learn and explore new things.
+      </p>
+      
+    </div>
+    
+  </footer>
+</article>
 
+
+
+<nav class="max-w-4xl mx-auto mt-16">
+  <div class="grid gap-6 md:grid-cols-2">
+    
+    <a href="/posts/once_upon_a_time_in_america/" class="group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 hover:shadow-xl hover:shadow-gray-900/10 transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-lg font-bold group-hover:scale-110 transition-transform duration-300">
+          ←
+        </div>
+        <div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">上一篇</p>
+          <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+            Once_Upon_a_Time_in_America
+          </h3>
+        </div>
+      </div>
+    </a>
+    
+
+    
+  </div>
+</nav>
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const headerElements = document.querySelectorAll('header > *');
+  headerElements.forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    
+    setTimeout(() => {
+      element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    }, 200 + index * 200);
+  });
 
   
+  const contentElements = document.querySelectorAll('.prose > *');
+  contentElements.forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+      element.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    }, 1000 + index * 100);
+  });
 
+  
+  const footerElements = document.querySelectorAll('footer, nav, section');
+  footerElements.forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    
+    setTimeout(() => {
+      element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    }, 2000 + index * 200);
+  });
+});
+</script>
 
     </main>
 
@@ -1280,7 +1353,7 @@ document.addEventListener('DOMContentLoaded', function() {
   id="dock"
   class="pointer-events-none fixed bottom-4 left-1/2 z-[9999] w-fit -translate-x-1/2 translate-y-24 opacity-0 transition-all duration-300 ease-out sm:right-0 sm:left-0 sm:mx-auto sm:translate-x-0"
   role="toolbar"
-  aria-label="Barre d&#39;outils d&#39;actions rapides">
+  aria-label="Quick action toolbar">
   <nav
     class="border-border bg-card/80 scrollbar-hide xs:px-3 xs:py-2 mx-auto flex max-w-[calc(100vw-2rem)] min-w-fit items-center justify-center overflow-x-auto rounded-2xl border px-4 py-3 shadow-lg backdrop-blur-sm sm:px-4 sm:py-3">
     
@@ -1288,8 +1361,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <button
         id="dock-back"
         class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
-        title="Retour"
-        aria-label="Retour">
+        title="Back"
+        aria-label="Back">
         
   <svg class="h-4 w-4"
     fill="none"
@@ -1300,7 +1373,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </svg>
         <span class="hidden sm:inline"
-          >Retour</span
+          >Back</span
         >
       </button>
 
@@ -1311,14 +1384,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     
+      <button
+        id="dock-toc"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
+        title="Table of Contents"
+        aria-label="Table of Contents">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        <span class="hidden sm:inline"
+          >Table of Contents</span
+        >
+      </button>
+
+      
+      <div class="bg-border xs:mx-1 mx-2 h-6 w-px sm:mx-2"></div>
+    
 
 
     
     <button
       id="dock-search"
       class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-3 xs:py-1.5 flex flex-shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-4 sm:py-2"
-      title="Recherche"
-      aria-label="Recherche">
+      title="Search"
+      aria-label="Search">
       
   <svg class="h-4 w-4"
     fill="none"
@@ -1328,7 +1427,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </svg>
       <span class="hidden md:inline"
-        >Recherche</span
+        >Search</span
       >
     </button>
 
@@ -1344,8 +1443,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <button
       id="dock-top"
       class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex flex-shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
-      title="Retour en haut"
-      aria-label="Retour en haut">
+      title="Back to Top"
+      aria-label="Back to Top">
       
   <svg class="h-4 w-4"
     fill="none"
@@ -1355,7 +1454,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </svg>
       <span class="hidden sm:inline"
-        >Haut</span
+        >Top</span
       >
     </button>
   </nav>
@@ -1363,6 +1462,110 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     
+      
+
+
+
+<div
+  id="toc-overlay"
+  class="pointer-events-none fixed inset-0 z-40 bg-black/50 opacity-0 backdrop-blur-sm transition-all duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="toc-title"></div>
+
+
+<div
+  id="toc-card"
+  class="pointer-events-none fixed inset-4 z-50 flex w-auto scale-95 items-center justify-center opacity-0 transition-all duration-300 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:block sm:w-full sm:max-w-md sm:-translate-x-1/2 sm:-translate-y-1/2"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="toc-title">
+  <div
+    class="bg-card border-border w-full max-w-sm overflow-hidden rounded-xl border shadow-xl sm:max-w-md">
+    
+    <div
+      class="border-border bg-muted/30 flex items-center justify-between border-b p-4">
+      <div class="flex items-center gap-3">
+        
+  <svg class="h-5 w-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        <h2 id="toc-title" class="text-foreground text-lg font-semibold">
+          Table of Contents
+        </h2>
+      </div>
+
+      
+      <button
+        id="toc-close"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 rounded-lg p-2 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none"
+        title="Close"
+        aria-label="Close">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+</svg>
+      </button>
+    </div>
+
+    
+    <div class="max-h-96 overflow-y-auto p-4">
+      <nav
+        id="toc-nav"
+        class="toc-scrollbar"
+        aria-label="Table of Contents Navigation">
+          
+          <div id="toc-content">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#黄金法则始终先划分再预处理">黄金法则：始终先划分，再预处理</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-预处理操作需要保持一致吗">1. 预处理操作需要保持一致吗？</a></li>
+            <li><a href="#2-预处理的参数可以混合计算吗">2. 预处理的“参数”可以混合计算吗？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#策略性填补如何优雅地处理缺失值">策略性填补：如何优雅地处理缺失值</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-面向因果推断的研究">1. 面向因果推断的研究</a></li>
+            <li><a href="#2-面向预测模型的研究">2. 面向预测模型的研究</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </div>
+      </nav>
+    </div>
+
+    
+    <div class="border-border bg-muted/20 border-t px-4 py-3">
+      <div class="text-muted-foreground text-center text-xs">
+        <span>Click to jump to the section</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     
     
@@ -1404,8 +1607,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <button
         id="search-clear"
         class="text-muted-foreground hover:text-foreground hover:bg-muted/50 pointer-events-none absolute top-1/2 left-0 z-10 h-5 w-5 -translate-y-1/2 rounded opacity-0 transition-all duration-200"
-        title="Effacer"
-        aria-label="Effacer">
+        title="Clear"
+        aria-label="Clear">
         
   <svg class="h-4 w-4"
     fill="none"
@@ -1420,7 +1623,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <input
         id="search-input"
         type="text"
-        placeholder="Rechercher des articles..."
+        placeholder="Search posts..."
         class="text-foreground placeholder:text-muted-foreground w-full border-none bg-transparent pl-8 text-lg outline-none"
         autocomplete="off"
         spellcheck="false" />
@@ -1430,8 +1633,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <button
       id="search-close"
       class="text-muted-foreground hover:text-foreground hover:bg-muted/50 flex h-6 w-6 items-center justify-center rounded-md p-0.5 transition-all duration-200"
-      title="Fermer"
-      aria-label="Fermer">
+      title="Close"
+      aria-label="Close">
       
   <svg class="h-4 w-4"
     fill="none"
@@ -1461,10 +1664,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </svg>
       </div>
       <h3 class="text-foreground mb-2 text-lg font-semibold">
-        Commencer la recherche
+        Start searching
       </h3>
       <p class="text-muted-foreground text-sm">
-        Saisissez des mots-clés pour rechercher des articles
+        Enter keywords to search articles
       </p>
     </div>
 
@@ -1475,7 +1678,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div
         class="mr-3 h-6 w-6 animate-spin rounded-full border-2 border-current border-t-transparent"></div>
       <span class="text-muted-foreground"
-        >Recherche en cours...</span
+        >Searching...</span
       >
     </div>
 
@@ -1493,10 +1696,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </svg>
       </div>
       <h3 class="text-foreground mb-2 text-lg font-semibold">
-        Aucun résultat trouvé
+        No results found
       </h3>
       <p class="text-muted-foreground text-sm">
-        Essayez avec des mots-clés différents
+        Try using different keywords
       </p>
     </div>
 
@@ -1506,7 +1709,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div
         id="search-stats"
         class="text-muted-foreground border-border border-b px-4 py-3 text-sm"
-        data-template="%d résultats trouvés">
+        data-template="Found %d results">
       </div>
 
       
@@ -1527,7 +1730,7 @@ document.addEventListener('DOMContentLoaded', function() {
             >↑↓</kbd
           >
           <span class="hidden sm:inline"
-            >Naviguer</span
+            >Navigate</span
           >
         </div>
         <div class="flex items-center gap-1">
@@ -1536,7 +1739,7 @@ document.addEventListener('DOMContentLoaded', function() {
             >↵</kbd
           >
           <span class="hidden sm:inline"
-            >Sélectionner</span
+            >Select</span
           >
         </div>
         <div class="flex items-center gap-1">
@@ -1545,7 +1748,7 @@ document.addEventListener('DOMContentLoaded', function() {
             >ESC</kbd
           >
           <span class="hidden sm:inline"
-            >Fermer</span
+            >Close</span
           >
         </div>
       </div>
@@ -1553,7 +1756,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <kbd class="bg-muted border-border rounded border px-1.5 py-0.5 text-xs"
           >⌘K</kbd
         >
-        <span>Raccourci</span>
+        <span>Shortcut</span>
       </div>
     </div>
   </div>
