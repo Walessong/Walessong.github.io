@@ -1,1 +1,0 @@
-*{box-sizing:border-box}header{position:relative;z-index:50}#mobile-menu{position:absolute;top:100%;left:0;right:0;z-index:100}.nav-link,.nav-link *,.nav-link::before,.nav-link::after{content:none !important}*::before,*::after{content:none !important}@media(max-width:768px){header{padding:0}}
