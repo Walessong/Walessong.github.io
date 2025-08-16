@@ -234,8 +234,18 @@
     
       <link
         rel="stylesheet"
-        href="/css/custom/header.min.ccc317f29f3170ad81d48134ce989687687b97b2511ebb033311019171718bc6.css"
-        integrity="sha256-zMMX8p8xcK2B1IE0zpiWh2h7l7JRHrsDMxEBkXFxi8Y="
+        href="/css/custom/header.min.d3335713fe23849dfb3e09ce929346f75e8cd6fcefc54f840a9a5a904b33d81e.css"
+        integrity="sha256-0zNXE/4jhJ37PgnOkpNG916M1vzvxU&#43;ECppakEsz2B4="
+        crossorigin="anonymous" />
+    
+  
+
+  
+    
+      <link
+        rel="stylesheet"
+        href="/css/custom/navigation.min.41bf10b60a77373323aae66f541b671ee539f1dcd30fcf3e0f8f0dff0c602e1c.css"
+        integrity="sha256-Qb8Qtgp3NzMjquZvVBtnHuU58dzTD88&#43;D48N/wxgLhw="
         crossorigin="anonymous" />
     
   
@@ -262,6 +272,12 @@
           integrity="sha256-v1plveGJSdXSqG1sciWwjW9Y9N7qUOkABkrWusjOM78="
           crossorigin="anonymous"></script>
 
+
+        <script
+          src="/js/navigation-enhancements.eae98272657d2216adfbe5e1a29b5dc4f57b3f4953709377dc2aeda490fed2cf.js"
+          integrity="sha256-6umCcmV9Ihat&#43;&#43;XhoptdxPV7P0lTcJN33CrtpJD&#43;0s8="
+          crossorigin="anonymous"
+          defer></script>
 
 
   <script src="/js/gumshoe.polyfills.min.js"></script>
@@ -450,29 +466,45 @@
     })();
   </script>
 
-    <header class="sticky top-0 z-50 mx-auto w-full max-w-5xl px-4 md:px-6 lg:px-8 py-6 site-header">
+    <header class="sticky top-0 z-50 mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8 py-4 site-header">
   <div
-    class="border-border bg-card/80 flex items-center rounded-xl border px-6 py-4 shadow-sm backdrop-blur-sm site-header-card">
+    class="border-border bg-gradient-to-r from-card/95 via-card/90 to-card/95 flex items-center rounded-2xl border border-white/20 px-6 py-4 shadow-2xl backdrop-blur-xl site-header-card relative overflow-hidden">
     
-    <div class="hidden w-full items-center md:flex">
+    
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 opacity-60"></div>
+    <div class="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-24 h-24 bg-gradient-to-tl from-accent/20 to-transparent rounded-full blur-2xl"></div>
+    
+    
+    <div class="hidden w-full items-center md:flex relative z-10">
       
-      <div class="flex items-center">
+      <div class="flex items-center group">
         
           <a
             href="/"
-            class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full transition-transform duration-200 hover:scale-105"
+            class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl transition-all duration-500 hover:scale-110 hover:rotate-3 bg-gradient-to-br from-primary/20 to-accent/20 border border-white/20 shadow-lg group-hover:shadow-xl"
             aria-label="Woke Soul&#39;s Blog">
             <img
               src="/images/logo.svg"
               alt="Woke Soul&#39;s Blog"
-              class="h-full w-full object-cover" />
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </a>
         
+        
+        
+        <div class="ml-4 hidden lg:block">
+          <h1 class="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Woke Soul&#39;s Blog
+          </h1>
+          
+            <p class="text-xs text-muted-foreground/80">A Student of BUAA</p>
+          
+        </div>
       </div>
 
       
       <nav class="mx-8 flex flex-1 items-center justify-center">
-        <div class="flex items-center space-x-1">
+        <div class="flex items-center space-x-2">
           
           
             
@@ -485,12 +517,15 @@
             
             <a
               href="/posts/"
-              class="nav-link nav-animated 
-                text-muted-foreground hover:text-primary hover:bg-primary/10
-               focus:ring-primary/20 relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none"
+              class="nav-link nav-animated group relative flex items-center gap-3 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 focus:ring-2 focus:ring-primary/20 focus:outline-none 
+                text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 border border-transparent hover:border-primary/20
+              "
               >
               
-                
+              
+              
+                <div class="flex h-5 w-5 items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                  
   <svg class="h-5 w-5"
     fill="none"
     stroke="currentColor"
@@ -498,12 +533,18 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
 
 </svg>
+                </div>
               
-              <span>
+              
+              
+              <span class="relative z-10 font-medium">
                 
                   Posts
                 
               </span>
+              
+              
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/5 to-accent/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
           
             
@@ -516,12 +557,15 @@
             
             <a
               href="/categories/"
-              class="nav-link nav-animated 
-                text-muted-foreground hover:text-primary hover:bg-primary/10
-               focus:ring-primary/20 relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none"
+              class="nav-link nav-animated group relative flex items-center gap-3 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 focus:ring-2 focus:ring-primary/20 focus:outline-none 
+                text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 border border-transparent hover:border-primary/20
+              "
               >
               
-                
+              
+              
+                <div class="flex h-5 w-5 items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                  
   <svg class="h-5 w-5"
     fill="none"
     stroke="currentColor"
@@ -529,12 +573,18 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
 
 </svg>
+                </div>
               
-              <span>
+              
+              
+              <span class="relative z-10 font-medium">
                 
                   Categories
                 
               </span>
+              
+              
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/5 to-accent/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
           
             
@@ -547,12 +597,15 @@
             
             <a
               href="/tags/"
-              class="nav-link nav-animated 
-                text-muted-foreground hover:text-primary hover:bg-primary/10
-               focus:ring-primary/20 relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none"
+              class="nav-link nav-animated group relative flex items-center gap-3 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 focus:ring-2 focus:ring-primary/20 focus:outline-none 
+                text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 border border-transparent hover:border-primary/20
+              "
               >
               
-                
+              
+              
+                <div class="flex h-5 w-5 items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                  
   <svg class="h-5 w-5"
     fill="none"
     stroke="currentColor"
@@ -560,12 +613,18 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
 
 </svg>
+                </div>
               
-              <span>
+              
+              
+              <span class="relative z-10 font-medium">
                 
                   Tags
                 
               </span>
+              
+              
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/5 to-accent/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
           
             
@@ -578,12 +637,15 @@
             
             <a
               href="/archives/"
-              class="nav-link nav-animated 
-                text-muted-foreground hover:text-primary hover:bg-primary/10
-               focus:ring-primary/20 relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none"
+              class="nav-link nav-animated group relative flex items-center gap-3 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 focus:ring-2 focus:ring-primary/20 focus:outline-none 
+                text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 border border-transparent hover:border-primary/20
+              "
               >
               
-                
+              
+              
+                <div class="flex h-5 w-5 items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                  
   <svg class="h-5 w-5"
     fill="none"
     stroke="currentColor"
@@ -591,19 +653,25 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
 
 </svg>
+                </div>
               
-              <span>
+              
+              
+              <span class="relative z-10 font-medium">
                 
                   Archives
                 
               </span>
+              
+              
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/5 to-accent/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
           
         </div>
       </nav>
 
       
-      <div class="flex items-center space-x-2">
+      <div class="flex items-center space-x-3">
         
         
 <div class="relative">
@@ -720,9 +788,24 @@
     </div>
 
     
-    <div class="flex w-full items-center justify-between md:hidden">
+    <div class="flex w-full items-center justify-between md:hidden relative z-10">
       
-      
+      <div class="flex items-center space-x-3">
+        
+        
+          <a
+            href="/"
+            class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl transition-all duration-300 hover:scale-105 bg-gradient-to-br from-primary/20 to-accent/20 border border-white/20"
+            aria-label="Woke Soul&#39;s Blog">
+            <img
+              src="/images/logo.svg"
+              alt="Woke Soul&#39;s Blog"
+              class="h-full w-full object-cover" />
+          </a>
+        
+        
+        
+        
 <div class="relative">
   <button
     id="mobile-menu-toggle"
@@ -883,6 +966,7 @@
   </div>
 </div>
 
+      </div>
 
       
       <div class="flex items-center space-x-2">
