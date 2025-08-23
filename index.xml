@@ -100,6 +100,20 @@
       <description>This is a test document containing various Markdown syntax to verify the completeness of prose styles.</description>
     </item>
     <item>
+      <title>Prompt功能测试</title>
+      <link>https://Walessong.github.io/prompt-test/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://Walessong.github.io/prompt-test/</guid>
+      <description>&lt;h1 id=&#34;prompt功能测试页面&#34;&gt;Prompt功能测试页面&lt;/h1&gt;&#xA;&lt;p&gt;这是一个测试页面，用于验证prompt管理功能是否正常工作。&lt;/p&gt;&#xA;&lt;h2 id=&#34;测试步骤&#34;&gt;测试步骤&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;检查页面是否正确加载&lt;/li&gt;&#xA;&lt;li&gt;验证分类列表是否显示&lt;/li&gt;&#xA;&lt;li&gt;测试模板选择功能&lt;/li&gt;&#xA;&lt;li&gt;验证表单生成和提交&lt;/li&gt;&#xA;&lt;li&gt;测试prompt生成和复制功能&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;预期结果&#34;&gt;预期结果&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;左侧应该显示分类列表（写作助手、技术工具、学习助手）&lt;/li&gt;&#xA;&lt;li&gt;右侧应该显示模板列表&lt;/li&gt;&#xA;&lt;li&gt;点击模板应该显示表单&lt;/li&gt;&#xA;&lt;li&gt;填写表单后应该能生成prompt&lt;/li&gt;&#xA;&lt;li&gt;复制功能应该正常工作&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;如果所有功能都正常，说明prompt管理系统已经成功集成到您的博客中！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Prompt管理工具</title>
+      <link>https://Walessong.github.io/prompts/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://Walessong.github.io/prompts/</guid>
+      <description>&lt;h1 id=&#34;prompt管理工具&#34;&gt;Prompt管理工具&lt;/h1&gt;&#xA;&lt;p&gt;欢迎使用我们的智能Prompt管理工具！这里提供了各种预设的prompt模板，帮助您更高效地完成各种任务。&lt;/p&gt;&#xA;&lt;h2 id=&#34;功能特点&#34;&gt;功能特点&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;🎯 &lt;strong&gt;分类管理&lt;/strong&gt; - 按功能分类组织prompt模板&lt;/li&gt;&#xA;&lt;li&gt;🔧 &lt;strong&gt;动态表单&lt;/strong&gt; - 根据模板自动生成输入表单&lt;/li&gt;&#xA;&lt;li&gt;📝 &lt;strong&gt;模板预览&lt;/strong&gt; - 实时预览生成的prompt内容&lt;/li&gt;&#xA;&lt;li&gt;💾 &lt;strong&gt;本地存储&lt;/strong&gt; - 自动保存您的输入历史&lt;/li&gt;&#xA;&lt;li&gt;📱 &lt;strong&gt;响应式设计&lt;/strong&gt; - 支持各种设备访问&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;使用说明&#34;&gt;使用说明&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;选择您需要的prompt类别&lt;/li&gt;&#xA;&lt;li&gt;点击具体的prompt模板&lt;/li&gt;&#xA;&lt;li&gt;填写相关参数&lt;/li&gt;&#xA;&lt;li&gt;复制生成的prompt内容&lt;/li&gt;&#xA;&lt;li&gt;在您的AI工具中使用&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;模板分类&#34;&gt;模板分类&lt;/h2&gt;&#xA;&#xA;&lt;div class=&#34;grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8&#34;&gt;&#xA;  &#xA;  &lt;div class=&#34;bg-card border rounded-lg p-6 hover:shadow-md transition-shadow&#34;&gt;&#xA;    &lt;div class=&#34;flex items-center gap-3 mb-4&#34;&gt;&#xA;      &lt;span class=&#34;text-2xl&#34;&gt;&#xA;        📚&#xA;      &lt;/span&gt;&#xA;      &lt;h3 class=&#34;text-xl font-semibold&#34;&gt;学习助手&lt;/h3&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;p class=&#34;text-muted-foreground mb-4&#34;&gt;支持学习和知识获取&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>导航栏测试页面</title>
       <link>https://Walessong.github.io/nav-test/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
