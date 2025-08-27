@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Woke Soul&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 17 Aug 2025 01:16:34 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Aug 2025 10:18:22 +0800</lastBuildDate>
     <atom:link href="https://Walessong.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LSTM调参经验</title>
+      <link>https://Walessong.github.io/posts/lstm%E8%B0%83%E5%8F%82%E7%BB%8F%E9%AA%8C/</link>
+      <pubDate>Wed, 27 Aug 2025 10:18:22 +0800</pubDate>
+      <guid>https://Walessong.github.io/posts/lstm%E8%B0%83%E5%8F%82%E7%BB%8F%E9%AA%8C/</guid>
+      <description>&lt;p&gt;LSTM调参经验&lt;/p&gt;&#xA;&lt;p&gt;0、开始训练之前先要做些什么？&lt;/p&gt;&#xA;&lt;p&gt;在开始调参之前，需要确定方向，所谓方向就是确定了之后，在调参过程中不再更改&lt;/p&gt;&#xA;&lt;p&gt;1、根据任务需求，结合数据，确定网络结构。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>机器学习中的数据预处理细节</title>
       <link>https://Walessong.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/</link>
