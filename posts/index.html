@@ -979,9 +979,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   
-  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -989,7 +989,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">L</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1014,27 +1014,29 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/lstm%E8%B0%83%E5%8F%82%E7%BB%8F%E9%AA%8C/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           LSTM调参经验
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <p>LSTM调参经验</p>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <p>LSTM调参经验</p>
 <p>0、开始训练之前先要做些什么？</p>
 <p>在开始调参之前，需要确定方向，所谓方向就是确定了之后，在调参过程中不再更改</p>
 <p>1、根据任务需求，结合数据，确定网络结构。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/lstm%E8%B0%83%E5%8F%82%E7%BB%8F%E9%AA%8C/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1046,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1054,7 +1056,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">机</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1063,7 +1065,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1079,25 +1081,27 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           机器学习中的数据预处理细节
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="机器学习预处理的潜规则数据划分与缺失值处理">机器学习预处理的“潜规则”：数据划分与缺失值处理</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="机器学习预处理的潜规则数据划分与缺失值处理">机器学习预处理的“潜规则”：数据划分与缺失值处理</h1>
 <p>在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1109,7 +1113,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1117,7 +1121,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">O</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1126,7 +1130,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1142,25 +1146,27 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/once_upon_a_time_in_america/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Once_Upon_a_Time_in_America
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <p>美国起飞那一代人的两条路。</p>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <p>美国起飞那一代人的两条路。</p>
 <p>面条这条路就是传统美国男性的那条路，恪守准则，捍卫朋友，相信爱情，这条路艰难，痛苦，熬人（阿尔帕西诺在闻香识女人中说过，这条路唯一的问题就是太尼玛疼），唯一的好处是不会让你死于绝望和精神自杀。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/once_upon_a_time_in_america/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1172,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1180,7 +1186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">C</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1189,7 +1195,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1205,24 +1211,26 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/clustering_algorithms/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Clustering_Algorithms
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <p>在数据科学和机器学习领域，聚类算法是一项核心的无监督学习技术。与需要预先标记数据的监督学习不同，聚类算法旨在探索数据的内在结构，将相似的数据点自动分组，形成不同的“簇”或“群组”。其核心思想是“物以类聚，人以群分”，使得同一簇内的数据点尽可能相似，而不同簇之间的数据点尽可能相异。</p>
-      </p>
-      
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <p>在数据科学和机器学习领域，聚类算法是一项核心的无监督学习技术。与需要预先标记数据的监督学习不同，聚类算法旨在探索数据的内在结构，将相似的数据点自动分组，形成不同的“簇”或“群组”。其核心思想是“物以类聚，人以群分”，使得同一簇内的数据点尽可能相似，而不同簇之间的数据点尽可能相异。</p>
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/clustering_algorithms/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1234,7 +1242,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1242,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">I</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1251,7 +1259,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1267,16 +1275,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/introduction_to_pcb/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Introduction_to_PCB
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="1-电路设计">1. 电路设计</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="1-电路设计">1. 电路设计</h1>
 <hr>
 <h2 id="11-原理图四要素">1.1 原理图四要素</h2>
 <ol>
@@ -1295,14 +1304,15 @@ document.addEventListener('DOMContentLoaded', function() {
     class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1">
     <div class="prose prose-sm max-w-none">
       <p>1）3位读数：前2位为有效数字，第3位表示10的n次幂(也可以理解为0的个数)。精度为±5%</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/introduction_to_pcb/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1314,7 +1324,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1322,7 +1332,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">A</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1331,7 +1341,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1347,30 +1357,32 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/auto_deploy/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Auto_deploy
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h3 id="github-action自动部署">Github Action自动部署</h3>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h3 id="github-action自动部署">Github Action自动部署</h3>
 <ul>
 <li>
 <p>（1）Github创建一个新的仓库，用于存放Hugo的主文件</p>
 </li>
 <li>
 <p>（2）前往<code>Setttings -&gt; Developer Settings -&gt; Personal access tokens</code>，创建一个token(classic)</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/auto_deploy/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1382,7 +1394,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1390,7 +1402,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">M</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1399,7 +1411,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1415,26 +1427,28 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/myfirstblog/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           MyFirstBlog
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="加密市场笔记">加密市场笔记</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="加密市场笔记">加密市场笔记</h1>
 <h2 id="心理建设">心理建设</h2>
 <p>在心理上预测行情就行了，但一定不要轻举妄动，要等待，直到你从市场上得到证实你的判断是正确的信号，到了那个时候，而且只有到了那个时候，你才能用你的钱去进行交易。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/myfirstblog/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1446,7 +1460,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1454,7 +1468,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">G</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1463,7 +1477,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1479,16 +1493,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/test-alert/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           GitHub Style Alert Test
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="github-style-alert-testing">GitHub Style Alert Testing</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="github-style-alert-testing">GitHub Style Alert Testing</h1>
 <p>This article is used to test the new GitHub-style Alert feature and folding functionality.</p>
 <h2 id="alert-syntax">Alert Syntax</h2>
 <h3 id="note-alert">Note Alert</h3>
@@ -1537,12 +1552,13 @@ document.addEventListener('DOMContentLoaded', function() {
       class="alert-content  px-4 pb-4">
       <div class="prose prose-sm text-foreground/90 max-w-none">
         <p>This is a note alert box. Used to display useful information that users should be aware of, even when quickly browsing the content.</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #test
@@ -1560,7 +1576,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/test-alert/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1572,7 +1588,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1580,7 +1596,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">目</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1589,7 +1605,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1605,16 +1621,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           目录功能测试文章
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="目录功能测试">目录功能测试</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="目录功能测试">目录功能测试</h1>
 <p>这是一篇用于测试侧边目录功能的文章。</p>
 <h2 id="第一章基础功能">第一章：基础功能</h2>
 <p>这是第一章的内容，用于测试目录的生成和显示。</p>
@@ -1624,12 +1641,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>这是更深层次的章节。</p>
 <h3 id="12-另一个子章节">1.2 另一个子章节</h3>
 <p>这是另一个子章节的内容。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #测试
@@ -1643,7 +1661,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1655,7 +1673,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1663,7 +1681,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">K</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1672,7 +1690,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1688,16 +1706,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/katex-and-mermaid-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           KaTeX and Mermaid Test
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="katex-and-mermaid-test">KaTeX and Mermaid Test</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="katex-and-mermaid-test">KaTeX and Mermaid Test</h1>
 <p>This article is used to test the KaTeX and Mermaid features.</p>
 <h2 id="configuration">Configuration</h2>
 <h3 id="frontmatter-configuration">Frontmatter Configuration</h3>
@@ -2186,14 +2205,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="katex-test">KaTeX Test</h2>
 <h3 id="inline-formula">Inline Formula</h3>
 <p>This is an inline formula: $E = mc^2$, Einstein&rsquo;s mass-energy equivalence formula.</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/katex-and-mermaid-test/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -2205,7 +2225,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -2213,7 +2233,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">I</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -2222,7 +2242,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -2238,16 +2258,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/image-rendering-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Image Rendering Test
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="image-rendering-test">Image Rendering Test</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="image-rendering-test">Image Rendering Test</h1>
 <p>The Demo comes from <a href="https://www.lightgalleryjs.com/demos/thumbnails/">LightGallery</a>
 All images are from <a href="https://unsplash.com/">Unsplash</a></p>
 <h2 id="single-image">Single Image</h2>
@@ -2432,12 +2453,13 @@ All images are from <a href="https://unsplash.com/">Unsplash</a></p>
   <figcaption class="image-caption">
       Photo by - David Marcu
     </figcaption></figure></p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #test
@@ -2455,7 +2477,7 @@ All images are from <a href="https://unsplash.com/">Unsplash</a></p>
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/image-rendering-test/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -2467,7 +2489,7 @@ All images are from <a href="https://unsplash.com/">Unsplash</a></p>
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -2475,7 +2497,7 @@ All images are from <a href="https://unsplash.com/">Unsplash</a></p>
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">C</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -2484,7 +2506,7 @@ All images are from <a href="https://unsplash.com/">Unsplash</a></p>
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -2500,16 +2522,17 @@ All images are from <a href="https://unsplash.com/">Unsplash</a></p>
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/code-highlighting-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Code Highlighting Test
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="code-highlighting-test">Code Highlighting Test</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="code-highlighting-test">Code Highlighting Test</h1>
 <p>This article is used to test the new code highlighting feature, including syntax highlighting, copy button, language display, etc.</p>
 <h2 id="javascript">JavaScript</h2>
 <div
@@ -3802,12 +3825,13 @@ function test() {
 
 <h2 id="inline-code">Inline Code</h2>
 <p>This is an inline code example：<code>const x = 42;</code> and <code>npm install</code> and <code>git commit -m &quot;update&quot;</code>.</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #test
@@ -3825,7 +3849,7 @@ function test() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/code-highlighting-test/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -3837,7 +3861,7 @@ function test() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -3845,7 +3869,7 @@ function test() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">M</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -3854,7 +3878,7 @@ function test() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -3870,22 +3894,24 @@ function test() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/posts/markdown-syntax-test-document/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Markdown Syntax Test Document
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        This is a test document containing various Markdown syntax to verify the completeness of prose styles.
-      </p>
-      
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          This is a test document containing various Markdown syntax to verify the completeness of prose styles.
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #markdown
@@ -3903,7 +3929,7 @@ function test() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/posts/markdown-syntax-test-document/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">

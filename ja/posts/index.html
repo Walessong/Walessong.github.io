@@ -979,9 +979,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   
-  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -989,7 +989,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">G</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1014,16 +1014,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/ja/posts/test-alert/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           GitHubスタイルアラートテスト
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="githubスタイルアラートテスト">GitHubスタイルアラートテスト</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="githubスタイルアラートテスト">GitHubスタイルアラートテスト</h1>
 <p>この記事は新しいGitHubスタイルアラート機能と折りたたみ機能をテストするために使用されます。</p>
 <h2 id="アラート構文">アラート構文</h2>
 <h3 id="ノートアラート">ノートアラート</h3>
@@ -1072,12 +1073,13 @@ document.addEventListener('DOMContentLoaded', function() {
       class="alert-content  px-4 pb-4">
       <div class="prose prose-sm text-foreground/90 max-w-none">
         <p>これはノートアラートボックスです。コンテンツを素早く閲覧している場合でも、ユーザーが注意すべき有用な情報を表示するために使用されます。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #テスト
@@ -1095,7 +1097,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/ja/posts/test-alert/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1107,7 +1109,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1115,7 +1117,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">K</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1124,7 +1126,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1140,16 +1142,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/ja/posts/katex-mermaid-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           KaTeXとMermaidテスト
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="katexとmermaidテスト">KaTeXとMermaidテスト</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="katexとmermaidテスト">KaTeXとMermaidテスト</h1>
 <p>この記事はKaTeX数式レンダリングとMermaidチャート機能をテストするために使用されます。</p>
 <h2 id="mermaidチャートテスト">Mermaidチャートテスト</h2>
 <h3 id="フローチャート">フローチャート</h3>
@@ -1214,12 +1217,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="katexテスト">KaTeXテスト</h2>
 <h3 id="インライン数式">インライン数式</h3>
 <p>これはインライン数式です：$E = mc^2$、アインシュタインの質量エネルギー等価式。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #テスト
@@ -1245,7 +1249,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/ja/posts/katex-mermaid-test/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1257,7 +1261,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1265,7 +1269,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">画</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1274,7 +1278,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1290,16 +1294,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/ja/posts/%E7%94%BB%E5%83%8F%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%86%E3%82%B9%E3%83%88/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           画像レンダリングテスト
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="画像レンダリングテスト">画像レンダリングテスト</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="画像レンダリングテスト">画像レンダリングテスト</h1>
 <p>デモは <a href="https://www.lightgalleryjs.com/demos/thumbnails/">LightGallery</a> から引用。
 すべての画像は <a href="https://unsplash.com/">Unsplash</a> より。</p>
 <h2 id="単一画像">単一画像</h2>
@@ -1484,12 +1489,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <figcaption class="image-caption">
       撮影者 - David Marcu
     </figcaption></figure></p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #テスト
@@ -1507,7 +1513,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/ja/posts/%E7%94%BB%E5%83%8F%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%86%E3%82%B9%E3%83%88/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -1519,7 +1525,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1527,7 +1533,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">コ</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -1536,7 +1542,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -1552,16 +1558,17 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/ja/posts/code-highlighting-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           コードハイライトテスト
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        <h1 id="コードハイライトテスト">コードハイライトテスト</h1>
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          <h1 id="コードハイライトテスト">コードハイライトテスト</h1>
 <p>この記事は新しいコードハイライト機能をテストするために使用されます。シンタックスハイライト、コピーボタン、言語表示などが含まれます。</p>
 <h2 id="javascript">JavaScript</h2>
 <div
@@ -2854,12 +2861,13 @@ function test() {
 
 <h2 id="インラインコード">インラインコード</h2>
 <p>これはインラインコードの例です：<code>const x = 42;</code> と <code>npm install</code> と <code>git commit -m &quot;更新&quot;</code>。</p>
-      </p>
-      
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #テスト
@@ -2877,7 +2885,7 @@ function test() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/ja/posts/code-highlighting-test/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -2889,7 +2897,7 @@ function test() {
       </div>
     </article>
     
-    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden">
+    <article class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 animate-on-scroll overflow-hidden flex flex-col h-[500px]">
       
       
       <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -2897,7 +2905,7 @@ function test() {
       
       
       
-      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500">
+      <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-500 flex-shrink-0">
         <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-500">M</div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
@@ -2906,7 +2914,7 @@ function test() {
       
 
       
-      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <div class="relative flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400 flex-shrink-0">
         
         <div class="flex items-center space-x-2 px-3 py-1 bg-slate-100/80 dark:bg-slate-700/80 rounded-full">
           <span class="text-blue-500">📅</span>
@@ -2922,22 +2930,24 @@ function test() {
       </div>
 
       
-      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <h2 class="relative text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0">
         <a href="/ja/posts/markdown%E6%A7%8B%E6%96%87%E3%83%86%E3%82%B9%E3%83%88%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4">
           Markdown構文テストドキュメント
         </a>
       </h2>
 
       
-      
-      <p class="relative text-slate-600 dark:text-slate-300 mb-4 line-clamp-3 leading-relaxed">
-        これは様々なMarkdown構文を含むテストドキュメントで、プロススタイルの完全性を検証するためのものです。
-      </p>
-      
+      <div class="flex-grow mb-4">
+        
+        <p class="relative text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+          これは様々なMarkdown構文を含むテストドキュメントで、プロススタイルの完全性を検証するためのものです。
+        </p>
+        
+      </div>
 
       
       
-      <div class="relative flex flex-wrap gap-2 mb-4">
+      <div class="relative flex flex-wrap gap-2 mb-4 flex-shrink-0">
         
         <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300 hover:scale-105">
           #markdown
@@ -2955,7 +2965,7 @@ function test() {
       
 
       
-      <div class="relative mt-6">
+      <div class="relative mt-auto flex-shrink-0">
         <a 
           href="/ja/posts/markdown%E6%A7%8B%E6%96%87%E3%83%86%E3%82%B9%E3%83%88%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/" 
           class="group/btn inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-2xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
