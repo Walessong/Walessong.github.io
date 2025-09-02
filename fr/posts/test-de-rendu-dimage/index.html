@@ -624,7 +624,7 @@
 
     
     
-<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-700/50 shadow-xl shadow-slate-900/5 transition-all duration-500">
+<header id="site-header" class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-700/50 shadow-xl shadow-slate-900/5 transition-all duration-500">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       
@@ -779,8 +779,13 @@
         
         <button 
           id="mobile-menu-btn"
-          class="md:hidden relative group p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-md transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md">
-          <span class="relative z-10 text-lg transition-all duration-300 group-hover:rotate-90">☰</span>
+          class="md:hidden relative group p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-md transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md"
+          aria-expanded="false">
+          <span class="relative z-10 block w-5 h-4">
+            <span class="absolute left-0 top-0 h-0.5 w-full rounded bg-current transition-transform duration-300 origin-center"></span>
+            <span class="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 rounded bg-current transition-opacity duration-200"></span>
+            <span class="absolute left-0 bottom-0 h-0.5 w-full rounded bg-current transition-transform duration-300 origin-center"></span>
+          </span>
           <span class="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10"></span>
           <span class="absolute -inset-px rounded-xl pointer-events-none ring-1 ring-transparent group-hover:ring-2 group-hover:ring-blue-500/40 dark:group-hover:ring-blue-400/30 transition"></span>
         </button>
@@ -867,6 +872,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script> 
+
+<style>
+   
+  #site-header{position:sticky;top:0}
+  body.is-scrolled #site-header{backdrop-filter:saturate(130%) blur(14px); box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+  body.is-scrolled #site-header .h-16{height:3.25rem}
+  #site-header:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:0;}
+  #site-header>.max-w-7xl{position:relative}
+  #site-header .max-w-7xl:before{content:"";position:absolute;inset:0;border-radius:1rem;pointer-events:none;}
+
+   
+  #mobile-menu-btn[aria-expanded="true"] span>span:first-child{transform:translateY(7px) rotate(45deg)}
+  #mobile-menu-btn[aria-expanded="true"] span>span:nth-child(2){opacity:0}
+  #mobile-menu-btn[aria-expanded="true"] span>span:last-child{transform:translateY(-7px) rotate(-45deg)}
+</style> 
 
     
     <main class="relative mx-auto w-full max-w-screen-2xl px-4 md:px-6 lg:px-8 py-8 md:py-12">
