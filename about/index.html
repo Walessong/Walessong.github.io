@@ -661,14 +661,14 @@
         
         <div class="hidden md:flex items-center gap-2 rounded-2xl bg-white/60 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 px-2 py-1 backdrop-blur-md shadow-sm">
           
-          <button 
+        <button 
             id="search-btn"
             class="relative group h-10 w-10 grid place-items-center rounded-xl text-slate-600 dark:text-slate-300 transition-transform duration-200 hover:scale-105">
             <span class="relative z-10 text-lg transition-all duration-300 group-hover:rotate-12">🔍</span>
             <span class="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10"></span>
             
             <span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs bg-slate-900 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">按 / 键搜索</span>
-          </button>
+        </button>
 
           
           <span class="h-6 w-px bg-slate-200/80 dark:bg-slate-700/70"></span>
@@ -866,7 +866,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    function openSearch() {
      searchModal.classList.remove('hidden');
-     setTimeout(() => {
+      setTimeout(() => {
        searchContainer.classList.remove('scale-95', 'opacity-0');
        searchInput.focus();
      }, 10);
@@ -919,8 +919,8 @@ document.addEventListener('DOMContentLoaded', function() {
        progressBar.style.width = scrollPercent + '%';
      });
    }
- });
-</script>
+});
+</script> 
 
 <style>
    
@@ -1059,10 +1059,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="-技能树-skill-tree">📈 技能树 Skill Tree</h2>
 <!-- D3.js 图网络技能树可视化 -->
 <div id="skill-graph" style="width:100%;max-width:680px;height:420px;margin:0 auto 2.5rem auto;"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-<script src="/js/skill-graph.js"></script>
-<script>if(window.drawSkillGraph){drawSkillGraph('#skill-graph');}</script>
 <hr>
 <h2 id="-项目展示">🚀 项目展示</h2>
 <div class="projects-section">
@@ -1222,319 +1218,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </div>
 </div>
-<style>
-.about-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  line-height: 1.6;
-}
-
-/* 介绍部分 */
-.intro-section {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 15px;
-}
-
-.avatar-container {
-  flex-shrink: 0;
-}
-
-.avatar-placeholder {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.intro-text h2 {
-  margin: 0 0 0.5rem 0;
-  color: #333;
-  font-size: 2rem;
-}
-
-.subtitle {
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.description {
-  color: #555;
-  font-size: 1rem;
-  margin: 0;
-}
-
-/* 技能部分 */
-.skills-section {
-  margin: 2rem 0;
-}
-
-.skill-category {
-  margin-bottom: 2rem;
-}
-
-.skill-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.skill-name {
-  min-width: 180px;
-  font-weight: 500;
-  color: #333;
-}
-
-.skill-bar {
-  flex: 1;
-  height: 8px;
-  background: #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.skill-level {
-  min-width: 50px;
-  text-align: right;
-  font-weight: 600;
-  color: #667eea;
-}
-
-/* 项目部分 */
-.projects-section {
-  display: grid;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.project-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  background: white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.project-header h3 {
-  margin: 0;
-  color: #333;
-}
-
-.project-status {
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.project-status:contains("进行中") {
-  background: #e3f2fd;
-  color: #1976d2;
-}
-
-.project-status:contains("已完成") {
-  background: #e8f5e8;
-  color: #388e3c;
-}
-
-.project-status:contains("计划中") {
-  background: #fff3e0;
-  color: #f57c00;
-}
-
-.project-content p {
-  margin: 0.5rem 0;
-  color: #555;
-}
-
-.project-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.feature-tag {
-  padding: 0.25rem 0.75rem;
-  background: #f0f0f0;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  color: #666;
-}
-
-/* 时间线部分 */
-.timeline-section {
-  position: relative;
-  margin: 2rem 0;
-}
-
-.timeline-section::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-}
-
-.timeline-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.timeline-marker {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: white;
-  border: 3px solid #667eea;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  z-index: 1;
-}
-
-.timeline-content {
-  flex: 1;
-  padding: 1rem 1.5rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin-top: 0.5rem;
-}
-
-.timeline-content h4 {
-  margin: 0 0 0.5rem 0;
-  color: #333;
-  font-size: 1.1rem;
-}
-
-.timeline-content p {
-  margin: 0;
-  color: #555;
-}
-
-/* 哲学部分 */
-.philosophy-section {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 2rem;
-  border-radius: 15px;
-  margin: 2rem 0;
-}
-
-.philosophy-section h3 {
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.philosophy-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.philosophy-section li {
-  margin: 0.5rem 0;
-  padding-left: 1rem;
-}
-
-/* 联系部分 */
-.contact-section {
-  text-align: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 15px;
-  margin: 2rem 0;
-}
-
-.contact-section h3 {
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.contact-section a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-section a:hover {
-  text-decoration: underline;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .intro-section {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .skill-item {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-  }
-  
-  .skill-name {
-    min-width: auto;
-  }
-  
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .timeline-section::before {
-    left: 15px;
-  }
-  
-  .timeline-marker {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-}
 
     </article>
   </section>

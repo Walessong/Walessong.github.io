@@ -667,14 +667,14 @@
         
         <div class="hidden md:flex items-center gap-2 rounded-2xl bg-white/60 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 px-2 py-1 backdrop-blur-md shadow-sm">
           
-          <button 
+        <button 
             id="search-btn"
             class="relative group h-10 w-10 grid place-items-center rounded-xl text-slate-600 dark:text-slate-300 transition-transform duration-200 hover:scale-105">
             <span class="relative z-10 text-lg transition-all duration-300 group-hover:rotate-12">🔍</span>
             <span class="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10"></span>
             
             <span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs bg-slate-900 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">按 / 键搜索</span>
-          </button>
+        </button>
 
           
           <span class="h-6 w-px bg-slate-200/80 dark:bg-slate-700/70"></span>
@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    function openSearch() {
      searchModal.classList.remove('hidden');
-     setTimeout(() => {
+      setTimeout(() => {
        searchContainer.classList.remove('scale-95', 'opacity-0');
        searchInput.focus();
      }, 10);
@@ -925,8 +925,8 @@ document.addEventListener('DOMContentLoaded', function() {
        progressBar.style.width = scrollPercent + '%';
      });
    }
- });
-</script>
+});
+</script> 
 
 <style>
    
