@@ -692,10 +692,15 @@
       <div class="flex items-center space-x-3">
         
         <button 
+          id="search-btn"
           class="relative group p-2.5 rounded-xl bg-white/60 dark:bg-slate-800/60 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-md transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md">
           <span class="relative z-10 text-lg transition-all duration-300 group-hover:rotate-12">🔍</span>
           <span class="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10"></span>
           <span class="absolute -inset-px rounded-xl pointer-events-none ring-1 ring-transparent group-hover:ring-2 group-hover:ring-offset-0 group-hover:ring-blue-500/40 dark:group-hover:ring-blue-400/30 transition"></span>
+          
+          <span class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 text-xs bg-slate-900 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+            按 / 键搜索
+          </span>
         </button>
 
         
@@ -817,6 +822,38 @@
   </div>
 </header>
 
+
+<div id="search-modal" class="fixed inset-0 z-[60] hidden">
+  <div class="absolute inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm transition-opacity duration-300" id="search-backdrop"></div>
+  <div class="relative flex min-h-full items-center justify-center p-4">
+    <div class="w-full max-w-2xl transform rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/60 dark:border-slate-700/60 shadow-2xl shadow-slate-900/20 transition-all duration-300 scale-95 opacity-0" id="search-container">
+      <div class="p-6">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-2xl">��</span>
+          <input 
+            type="text" 
+            id="search-input"
+            placeholder="搜索文章、标签、分类..." 
+            class="flex-1 bg-transparent text-lg text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400 outline-none border-none"
+          />
+          <button id="search-close" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <span class="text-lg">✕</span>
+          </button>
+        </div>
+        <div id="search-results" class="space-y-3 max-h-96 overflow-y-auto">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="reading-progress" class="fixed top-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 z-40 transition-all duration-200"></div>
+
+
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   
@@ -838,17 +875,82 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    
-    const mobileMenuItems = mobileMenu.querySelectorAll('a');
-    mobileMenuItems.forEach(item => {
-      item.addEventListener('click', () => {
-        mobileMenu.style.maxHeight = '0px';
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      });
-  });
-  }
-});
-</script> 
+      
+     const mobileMenuItems = mobileMenu.querySelectorAll('a');
+     mobileMenuItems.forEach(item => {
+       item.addEventListener('click', () => {
+         mobileMenu.style.maxHeight = '0px';
+         mobileMenuBtn.setAttribute('aria-expanded', 'false');
+       });
+     });
+   }
+
+   
+   const searchBtn = document.getElementById('search-btn');
+   const searchModal = document.getElementById('search-modal');
+   const searchBackdrop = document.getElementById('search-backdrop');
+   const searchContainer = document.getElementById('search-container');
+   const searchInput = document.getElementById('search-input');
+   const searchClose = document.getElementById('search-close');
+   const searchResults = document.getElementById('search-results');
+
+   function openSearch() {
+     searchModal.classList.remove('hidden');
+     setTimeout(() => {
+       searchContainer.classList.remove('scale-95', 'opacity-0');
+       searchInput.focus();
+     }, 10);
+   }
+
+   function closeSearch() {
+     searchContainer.classList.add('scale-95', 'opacity-0');
+     setTimeout(() => {
+       searchModal.classList.add('hidden');
+       searchInput.value = '';
+       searchResults.innerHTML = '';
+     }, 300);
+   }
+
+   
+   if (searchBtn) {
+     searchBtn.addEventListener('click', openSearch);
+   }
+   
+   
+   if (searchClose) {
+     searchClose.addEventListener('click', closeSearch);
+   }
+   
+   
+   if (searchBackdrop) {
+     searchBackdrop.addEventListener('click', closeSearch);
+   }
+   
+   
+   document.addEventListener('keydown', function(e) {
+     if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+       e.preventDefault();
+       if (searchModal.classList.contains('hidden')) {
+         openSearch();
+       }
+     }
+     if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
+       closeSearch();
+     }
+   });
+
+   
+   const progressBar = document.getElementById('reading-progress');
+   if (progressBar) {
+     window.addEventListener('scroll', () => {
+       const scrollTop = window.pageYOffset;
+       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+       const scrollPercent = (scrollTop / docHeight) * 100;
+       progressBar.style.width = scrollPercent + '%';
+     });
+   }
+ });
+</script>
 
 <style>
    
@@ -863,6 +965,21 @@ document.addEventListener('DOMContentLoaded', function() {
   #mobile-menu-btn[aria-expanded="true"] span>span:first-child{transform:translateY(7px) rotate(45deg)}
   #mobile-menu-btn[aria-expanded="true"] span>span:nth-child(2){opacity:0}
   #mobile-menu-btn[aria-expanded="true"] span>span:last-child{transform:translateY(-7px) rotate(-45deg)}
+
+   
+  #search-modal{backdrop-filter:blur(8px)}
+  #search-container{box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}
+  #search-input::placeholder{font-size:1rem}
+  #search-results::-webkit-scrollbar{width:6px}
+  #search-results::-webkit-scrollbar-track{background:transparent}
+  #search-results::-webkit-scrollbar-thumb{background:rgba(148,163,184,0.3);border-radius:3px}
+  .dark #search-results::-webkit-scrollbar-thumb{background:rgba(71,85,105,0.5)}
+
+   
+  #reading-progress{box-shadow:0 0 10px rgba(59,130,246,0.5)}
+
+   
+  .home-glow-line{filter:blur(0.5px)}
 </style> 
 
     
