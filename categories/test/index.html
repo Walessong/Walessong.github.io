@@ -591,9 +591,9 @@
 
     
     
-<header id="site-header" class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-700/50 shadow-xl shadow-slate-900/5 transition-all duration-500">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
+<header id="site-header" class="sticky top-4 z-50 px-4 md:px-6 lg:px-8 transition-all duration-500">
+  <div class="nav-island max-w-7xl mx-auto rounded-2xl md:rounded-3xl bg-white/85 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/60 dark:border-slate-700/60 shadow-xl shadow-slate-900/10">
+    <div class="flex justify-between items-center h-16 px-3 sm:px-4 lg:px-5">
       
       
       <div class="flex items-center">
@@ -911,12 +911,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <style>
    
-  #site-header{position:sticky;top:0}
-  body.is-scrolled #site-header{backdrop-filter:saturate(130%) blur(14px); box-shadow:0 10px 30px rgba(15,23,42,0.06)}
-  body.is-scrolled #site-header .h-16{height:3.25rem}
-  #site-header:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:0;}
-  #site-header>.max-w-7xl{position:relative}
-  #site-header .max-w-7xl:before{content:"";position:absolute;inset:0;border-radius:1rem;pointer-events:none;}
+  #site-header{position:sticky}
+  body.is-scrolled #site-header .nav-island{backdrop-filter:saturate(130%) blur(14px); box-shadow:0 12px 28px rgba(15,23,42,0.08)}
+  body.is-scrolled #site-header .nav-island .h-16{height:3.25rem}
+  #site-header .nav-island{position:relative}
 
    
   #mobile-menu-btn[aria-expanded="true"] span>span:first-child{transform:translateY(7px) rotate(45deg)}
