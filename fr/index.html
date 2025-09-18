@@ -867,108 +867,82 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="minimal-cyber-home min-h-screen relative overflow-hidden">
   
   
-  <div class="cyber-bg fixed inset-0 -z-10">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
-    <div class="absolute inset-0 opacity-[0.08] pointer-events-none" style="
-      background-image:
-        linear-gradient(transparent 95%, rgba(255,255,255,.15) 96%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 1px, transparent 1px 40px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 40px);
-      background-size: 100% 14px, 40px 100%, 100% 40px;
-      background-position: 0 0, 0 0, 0 0;
-    "></div>
-    <div class="absolute inset-0 opacity-[0.04] mix-blend-screen pointer-events-none scanlines"></div>
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(1200px 600px at 50% -10%, rgba(56,189,248,.08), transparent 60%), radial-gradient(800px 400px at 80% 120%, rgba(167,139,250,.06), transparent 60%);"></div>
   </div>
 
   
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-    <header class="text-center max-w-4xl mx-auto">
-      <h1 class="title-cyber text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-slate-100 via-cyan-100 to-slate-100 bg-clip-text text-transparent">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32" style="max-width: 64rem;">
+    <header class="text-center">
+      <h1 class="title-cyber text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-slate-100 via-cyan-100 to-slate-100 bg-clip-text text-transparent">
         Woke Soul&#39;s Blog
       </h1>
-      <p class="mt-6 text-slate-300/80 text-lg md:text-xl leading-relaxed">
-        系统思维 × 工程美学。<span class="text-cyan-300/80">简洁</span>、<span class="text-cyan-300/80">精准</span>、<span class="text-cyan-300/80">高效</span>。
+      <p class="mt-5 text-slate-300/85 text-base md:text-lg leading-relaxed">
+        系统思维 × 工程美学。简洁、精准、高效。
       </p>
-      <div class="mt-10 flex items-center justify-center gap-4">
-        <a href="/posts" class="btn-neon">
-          <span>浏览文章</span><span class="arrow">→</span>
-        </a>
-        <a href="/about" class="btn-ghost">
-          <span>关于我</span><span class="arrow">→</span>
-        </a>
+      <div class="mt-10 flex items-center justify-center gap-3">
+        <a href="/posts" class="btn-neon"><span>开始阅读</span><span class="arrow">→</span></a>
       </div>
     </header>
 
     
     <section class="mt-16 md:mt-24">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
-        <div class="kpi">
-          <div class="kpi-num" data-counter-to='5'>0</div>
-          <div class="kpi-label">文章</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+        <div>
+          <div class="stat-num" data-counter-to='5'>0</div>
+          <div class="stat-label">文章</div>
         </div>
-        <div class="kpi">
-          <div class="kpi-num" data-counter-to='13'>0</div>
-          <div class="kpi-label">标签</div>
+        <div>
+          <div class="stat-num" data-counter-to='13'>0</div>
+          <div class="stat-label">标签</div>
         </div>
-        <div class="kpi">
-          <div class="kpi-num" data-counter-to='4'>0</div>
-          <div class="kpi-label">语言</div>
+        <div>
+          <div class="stat-num" data-counter-to='4'>0</div>
+          <div class="stat-label">语言</div>
         </div>
-        <div class="kpi">
-          <div class="kpi-num" data-counter-to='2'>0</div>
-          <div class="kpi-label">版块</div>
+        <div>
+          <div class="stat-num" data-counter-to='2'>0</div>
+          <div class="stat-label">版块</div>
         </div>
       </div>
     </section>
 
     
-    <section class="mt-16 md:mt-24 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-      <article class="card">
-        <h3 class="card-title">技术洞察</h3>
-        <p class="card-desc">关注工程落地的关键变量，用最短路径解决实际问题。</p>
-      </article>
-      <article class="card">
-        <h3 class="card-title">成长轨迹</h3>
-        <p class="card-desc">沉淀方法与复盘，形成可迁移的能力模块。</p>
-      </article>
-      <article class="card">
-        <h3 class="card-title">创意表达</h3>
-        <p class="card-desc">以极简视觉传达复杂概念，追求内在秩序与质感。</p>
-      </article>
+    <section class="mt-16 md:mt-28">
+      <ul class="divide-y divide-slate-700/40">
+        <li class="py-6 md:py-8">
+          <h3 class="feature-title">技术洞察</h3>
+          <p class="feature-desc">关注工程落地的关键变量，用最短路径解决实际问题。</p>
+        </li>
+        <li class="py-6 md:py-8">
+          <h3 class="feature-title">成长轨迹</h3>
+          <p class="feature-desc">沉淀方法与复盘，形成可迁移的能力模块。</p>
+        </li>
+        <li class="py-6 md:py-8">
+          <h3 class="feature-title">创意表达</h3>
+          <p class="feature-desc">以极简视觉传达复杂概念，追求内在秩序与质感。</p>
+        </li>
+      </ul>
     </section>
   </div>
 </div>
 
 <style>
  
-.scanlines{ background: repeating-linear-gradient(0deg, rgba(255,255,255,.6) 0 1px, transparent 1px 3px); }
+.title-cyber{ letter-spacing:-.01em; text-shadow:0 3px 18px rgba(0,0,0,.35); }
+.btn-neon{ display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.1rem; border-radius:.8rem; font-weight:600; color:#e6f6ff; border:1px solid rgba(34,211,238,.5); background:linear-gradient(180deg, rgba(8,145,178,.15), rgba(12,74,110,.06)); transition: all .25s ease; box-shadow: inset 0 0 22px rgba(8,145,178,.08); }
+.btn-neon:hover{ box-shadow:0 0 20px 2px rgba(34,211,238,.22), inset 0 0 34px rgba(8,145,178,.12); transform: translateY(-1px); }
+.btn-neon .arrow{ transition: transform .25s ease; }
+.btn-neon:hover .arrow{ transform: translateX(4px); }
 
  
-.title-cyber{ letter-spacing:-.01em; text-shadow:0 4px 24px rgba(0,0,0,.35); }
-.btn-neon,.btn-ghost{ display:inline-flex; align-items:center; gap:.5rem; padding:.875rem 1.25rem; border-radius:.875rem; font-weight:600; transition: all .25s ease; }
-.btn-neon{ color:#e6f6ff; border:1px solid rgba(34,211,238,.55); background:linear-gradient(180deg, rgba(8,145,178,.18), rgba(12,74,110,.08)); box-shadow:0 0 0 0 rgba(34,211,238,.35), inset 0 0 32px rgba(8,145,178,.08); }
-.btn-neon:hover{ box-shadow:0 0 24px 2px rgba(34,211,238,.28), inset 0 0 48px rgba(8,145,178,.12); transform: translateY(-1px); }
-.btn-ghost{ color:#e5e7eb; border:1px solid rgba(148,163,184,.5); background: rgba(2,6,23,.2); }
-.btn-ghost:hover{ border-color: rgba(203,213,225,.7); color:#f8fafc; transform: translateY(-1px); }
-.btn-neon .arrow,.btn-ghost .arrow{ transition: transform .25s ease; }
-.btn-neon:hover .arrow,.btn-ghost:hover .arrow{ transform: translateX(4px); }
+.stat-num{ font-size:1.6rem; line-height:2rem; font-weight:800; color:#e2e8f0; text-shadow:0 4px 18px rgba(0,0,0,.35); }
+.stat-label{ margin-top:.25rem; font-size:.85rem; color: rgba(203,213,225,.75); letter-spacing:.06em; text-transform:uppercase; }
 
  
-.kpi{ background: rgba(2,6,23,.35); border:1px solid rgba(148,163,184,.22); border-radius:1rem; padding:1rem .75rem; text-align:center; backdrop-filter: blur(6px); transition: border-color .25s ease, transform .25s ease; }
-.kpi:hover{ border-color: rgba(203,213,225,.45); transform: translateY(-2px); }
-.kpi-num{ font-size:1.75rem; line-height:2.25rem; font-weight:800; color:#e2e8f0; text-shadow:0 6px 24px rgba(0,0,0,.35); }
-.kpi-label{ margin-top:.125rem; font-size:.875rem; color: rgba(203,213,225,.7); letter-spacing:.08em; text-transform:uppercase; }
-
- 
-.card{ background: rgba(2,6,23,.35); border:1px solid rgba(148,163,184,.22); border-radius:1rem; padding:1.25rem; backdrop-filter: blur(6px); transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
-.card:hover{ border-color: rgba(203,213,225,.45); transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
-.card-title{ font-size:1.125rem; font-weight:700; color:#e5eef9; }
-.card-desc{ margin-top:.5rem; color: rgba(203,213,225,.78); line-height:1.7; }
-
- 
-@media (max-width:768px){
-  .btn-neon,.btn-ghost{ width:100%; justify-content:center; }
-}
+.feature-title{ font-size:1.125rem; font-weight:700; color:#e6edf9; }
+.feature-desc{ margin-top:.375rem; color: rgba(203,213,225,.82); line-height:1.8; }
 </style>
 
 <script>
