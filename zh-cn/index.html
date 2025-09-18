@@ -864,7 +864,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
 
-<div class="minimal-cyber-home min-h-screen relative overflow-hidden">
+<div class="home-root relative overflow-hidden">
   
   
   <div class="fixed inset-0 -z-10">
@@ -873,59 +873,463 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   
-  <div class="mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32" style="max-width: 64rem;">
-    <header class="text-center">
-      <h1 class="title-cyber text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-slate-100 via-cyan-100 to-slate-100 bg-clip-text text-transparent">
-        Woke Soul&#39;s Blog
-      </h1>
-      <p class="mt-5 text-slate-300/85 text-base md:text-lg leading-relaxed">
-        系统思维 × 工程美学。简洁、精准、高效。
-      </p>
-      <div class="mt-10 flex items-center justify-center gap-3">
-        <a href="/posts" class="btn-neon"><span>开始阅读</span><span class="arrow">→</span></a>
-      </div>
-    </header>
-
-    
-    <section class="mt-16 md:mt-24">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-        <div>
-          <div class="stat-num" data-counter-to='5'>0</div>
-          <div class="stat-label">文章</div>
-        </div>
-        <div>
-          <div class="stat-num" data-counter-to='13'>0</div>
-          <div class="stat-label">标签</div>
-        </div>
-        <div>
-          <div class="stat-num" data-counter-to='4'>0</div>
-          <div class="stat-label">语言</div>
-        </div>
-        <div>
-          <div class="stat-num" data-counter-to='2'>0</div>
-          <div class="stat-label">版块</div>
+  <section class="hero-fullscreen min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div class="w-full" style="max-width: 64rem;">
+      <div class="text-center">
+        <h1 class="title-cyber text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-slate-100 via-cyan-100 to-slate-100 bg-clip-text text-transparent">
+          Woke Soul&#39;s Blog
+        </h1>
+        <p class="mt-6 text-slate-300/85 text-lg md:text-xl leading-relaxed">
+          系统思维 × 工程美学。简洁、精准、高效。
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-3">
+          <a href="#content" class="btn-neon"><span>进入博客</span><span class="arrow">↓</span></a>
         </div>
       </div>
-    </section>
+
+      
+      <div class="mt-24 flex justify-center">
+        <a href="#content" class="scroll-hint" aria-label="Scroll to content">
+          <span class="dot"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="content" class="content-section mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24" style="max-width: 72rem;">
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+      <div>
+        <div class="stat-num" data-counter-to='5'>0</div>
+        <div class="stat-label">文章</div>
+      </div>
+      <div>
+        <div class="stat-num" data-counter-to='13'>0</div>
+        <div class="stat-label">标签</div>
+      </div>
+      <div>
+        <div class="stat-num" data-counter-to='4'>0</div>
+        <div class="stat-label">语言</div>
+      </div>
+      <div>
+        <div class="stat-num" data-counter-to='2'>0</div>
+        <div class="stat-label">版块</div>
+      </div>
+    </div>
 
     
-    <section class="mt-16 md:mt-28">
-      <ul class="divide-y divide-slate-700/40">
-        <li class="py-6 md:py-8">
-          <h3 class="feature-title">技术洞察</h3>
-          <p class="feature-desc">关注工程落地的关键变量，用最短路径解决实际问题。</p>
-        </li>
-        <li class="py-6 md:py-8">
-          <h3 class="feature-title">成长轨迹</h3>
-          <p class="feature-desc">沉淀方法与复盘，形成可迁移的能力模块。</p>
-        </li>
-        <li class="py-6 md:py-8">
-          <h3 class="feature-title">创意表达</h3>
-          <p class="feature-desc">以极简视觉传达复杂概念，追求内在秩序与质感。</p>
-        </li>
-      </ul>
-    </section>
+    <div class="mt-14 md:mt-20">
+      <div class="mb-6 flex items-center justify-between">
+        <h2 class="text-slate-100 text-2xl font-bold">最新发布</h2>
+        <a href="/posts" class="text-slate-300/80 hover:text-cyan-200 transition-colors">查看全部 →</a>
+      </div>
+      <div class="article-grid">
+        
+          <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+  
+  
+  
+  
+  <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden">
+    <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-300">G</div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    
+    <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"></div>
+    <div class="absolute bottom-4 left-4 w-6 h-6 bg-white/15 rounded-full"></div>
   </div>
+  
+
+  
+  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+      <time datetime="2025-06-01" class="font-medium">6月1日</time>
+    </div>
+    
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <span class="font-medium">3 分钟</span>
+    </div>
+    
+  </div>
+
+  
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+    <a href="/zh-cn/posts/test-alert/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4 line-clamp-2">
+      GitHub 风格提示框测试
+    </a>
+  </h3>
+
+  
+  
+  
+  
+  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
+    GitHub 风格提示框测试 本文用于测试新的 GitHub 风格提示框功能和折叠功能。
+提示框语法 注意提示框 注意 这是一个注意提示框。用于显示用户应该注意的有用信息，即使在快速浏览内容时也应该注意。
+
+  </p>
+  
+
+  
+  
+  <div class="flex flex-wrap gap-2 mb-6">
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #测试
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #提示框
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #markdown
+    </span>
+    
+  </div>
+  
+
+  
+  <div class="mt-auto">
+    <a 
+      href="/zh-cn/posts/test-alert/" 
+      class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+      <span class="relative z-10">阅读更多</span>
+      <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300"></span>
+    </a>
+  </div>
+</article>
+
+        
+          <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+  
+  
+  
+  
+  <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden">
+    <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-300">K</div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    
+    <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"></div>
+    <div class="absolute bottom-4 left-4 w-6 h-6 bg-white/15 rounded-full"></div>
+  </div>
+  
+
+  
+  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+      <time datetime="2024-01-17" class="font-medium">1月17日</time>
+    </div>
+    
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <span class="font-medium">2 分钟</span>
+    </div>
+    
+  </div>
+
+  
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+    <a href="/zh-cn/posts/katex-mermaid-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4 line-clamp-2">
+      KaTeX 和 Mermaid 测试
+    </a>
+  </h3>
+
+  
+  
+  
+  
+  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
+    KaTeX 和 Mermaid 测试 本文用于测试 KaTeX 数学公式渲染和 Mermaid 图表功能。
+Mermaid 图表测试 流程图 序列图 甘特图 KaTeX 测试 行内公式 这是一个行内公式：$E = mc^2$，爱因斯坦的质能等价公式。
+
+  </p>
+  
+
+  
+  
+  <div class="flex flex-wrap gap-2 mb-6">
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #测试
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #katex
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #mermaid
+    </span>
+    
+  </div>
+  
+
+  
+  <div class="mt-auto">
+    <a 
+      href="/zh-cn/posts/katex-mermaid-test/" 
+      class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+      <span class="relative z-10">阅读更多</span>
+      <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300"></span>
+    </a>
+  </div>
+</article>
+
+        
+          <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+  
+  
+  
+  
+  <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden">
+    <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-300">图</div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    
+    <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"></div>
+    <div class="absolute bottom-4 left-4 w-6 h-6 bg-white/15 rounded-full"></div>
+  </div>
+  
+
+  
+  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+      <time datetime="2024-01-16" class="font-medium">1月16日</time>
+    </div>
+    
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <span class="font-medium">1 分钟</span>
+    </div>
+    
+  </div>
+
+  
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+    <a href="/zh-cn/posts/%E5%9B%BE%E7%89%87%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4 line-clamp-2">
+      图片渲染测试
+    </a>
+  </h3>
+
+  
+  
+  
+  
+  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
+    图片渲染测试 示例来自 LightGallery 所有图片来自 Unsplash
+单张图片 摄影师 - Daniel Leone Justified 布局图库 摄影师 - Tobias Rademacher 摄影师 - Massimiliano Morosinotto 摄影师 - Sascha Bosshard …
+  </p>
+  
+
+  
+  
+  <div class="flex flex-wrap gap-2 mb-6">
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #测试
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #图片
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #渲染
+    </span>
+    
+  </div>
+  
+
+  
+  <div class="mt-auto">
+    <a 
+      href="/zh-cn/posts/%E5%9B%BE%E7%89%87%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/" 
+      class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+      <span class="relative z-10">阅读更多</span>
+      <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300"></span>
+    </a>
+  </div>
+</article>
+
+        
+          <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+  
+  
+  
+  
+  <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden">
+    <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-300">代</div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    
+    <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"></div>
+    <div class="absolute bottom-4 left-4 w-6 h-6 bg-white/15 rounded-full"></div>
+  </div>
+  
+
+  
+  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+      <time datetime="2024-01-16" class="font-medium">1月16日</time>
+    </div>
+    
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <span class="font-medium">2 分钟</span>
+    </div>
+    
+  </div>
+
+  
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+    <a href="/zh-cn/posts/code-highlighting-test/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4 line-clamp-2">
+      代码高亮测试
+    </a>
+  </h3>
+
+  
+  
+  
+  
+  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
+    代码高亮测试 本文用于测试新的代码高亮功能，包括语法高亮、复制按钮、语言显示等。
+JavaScript JAVASCRIPT 行号 折叠 复制 点击展开查看更多 带行号的代码块 PYTHON 行号 折叠 复制 点击展开查看更多 高亮特定行 GO 行号 折叠 复制 点击展开查看更多 带文件名的代码块 api.ts 行号  …
+  </p>
+  
+
+  
+  
+  <div class="flex flex-wrap gap-2 mb-6">
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #测试
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #代码
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #语法高亮
+    </span>
+    
+  </div>
+  
+
+  
+  <div class="mt-auto">
+    <a 
+      href="/zh-cn/posts/code-highlighting-test/" 
+      class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+      <span class="relative z-10">阅读更多</span>
+      <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300"></span>
+    </a>
+  </div>
+</article>
+
+        
+          <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+  
+  
+  
+  
+  <div class="relative mb-6 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center overflow-hidden">
+    <div class="text-white text-6xl font-bold opacity-20 group-hover:opacity-30 transition-opacity duration-300">M</div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    
+    <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"></div>
+    <div class="absolute bottom-4 left-4 w-6 h-6 bg-white/15 rounded-full"></div>
+  </div>
+  
+
+  
+  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+      <time datetime="2024-01-15" class="font-medium">1月15日</time>
+    </div>
+    
+    
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <span class="font-medium">3 分钟</span>
+    </div>
+    
+  </div>
+
+  
+  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight">
+    <a href="/zh-cn/posts/markdown-%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" class="hover:underline decoration-2 decoration-blue-500 underline-offset-4 line-clamp-2">
+      Markdown 语法测试文档
+    </a>
+  </h3>
+
+  
+  
+  
+  
+  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
+    这是一个包含各种 Markdown 语法的测试文档，用于验证文档样式的完整性。
+  </p>
+  
+
+  
+  
+  <div class="flex flex-wrap gap-2 mb-6">
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #markdown
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #文档
+    </span>
+    
+    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
+      #样式
+    </span>
+    
+  </div>
+  
+
+  
+  <div class="mt-auto">
+    <a 
+      href="/zh-cn/posts/markdown-%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
+      class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+      
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+      <span class="relative z-10">阅读更多</span>
+      <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300"></span>
+    </a>
+  </div>
+</article>
+
+        
+      </div>
+    </div>
+  </section>
 </div>
 
 <style>
@@ -934,25 +1338,29 @@ document.addEventListener('DOMContentLoaded', function() {
 .btn-neon{ display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.1rem; border-radius:.8rem; font-weight:600; color:#e6f6ff; border:1px solid rgba(34,211,238,.5); background:linear-gradient(180deg, rgba(8,145,178,.15), rgba(12,74,110,.06)); transition: all .25s ease; box-shadow: inset 0 0 22px rgba(8,145,178,.08); }
 .btn-neon:hover{ box-shadow:0 0 20px 2px rgba(34,211,238,.22), inset 0 0 34px rgba(8,145,178,.12); transform: translateY(-1px); }
 .btn-neon .arrow{ transition: transform .25s ease; }
-.btn-neon:hover .arrow{ transform: translateX(4px); }
+.btn-neon:hover .arrow{ transform: translateY(2px); }
+
+ 
+.scroll-hint{ display:inline-flex; width:30px; height:46px; border-radius:20px; border:1.5px solid rgba(226,232,240,.35); align-items:flex-start; justify-content:center; padding-top:6px; transition: border-color .25s ease; }
+.scroll-hint:hover{ border-color: rgba(226,232,240,.6); }
+.scroll-hint .dot{ width:4px; height:10px; border-radius:2px; background: linear-gradient(to bottom, rgba(226,232,240,.8), rgba(226,232,240,0)); animation: dotMove 1.4s ease-in-out infinite; }
+@keyframes dotMove{ 0%{ transform: translateY(0);} 60%{ transform: translateY(14px);} 100%{ transform: translateY(0);} }
 
  
 .stat-num{ font-size:1.6rem; line-height:2rem; font-weight:800; color:#e2e8f0; text-shadow:0 4px 18px rgba(0,0,0,.35); }
 .stat-label{ margin-top:.25rem; font-size:.85rem; color: rgba(203,213,225,.75); letter-spacing:.06em; text-transform:uppercase; }
-
- 
-.feature-title{ font-size:1.125rem; font-weight:700; color:#e6edf9; }
-.feature-desc{ margin-top:.375rem; color: rgba(203,213,225,.82); line-height:1.8; }
 </style>
 
 <script>
 (function(){
-  const root=document.querySelector('.minimal-cyber-home');
+  const root=document.querySelector('.home-root');
   if(!root) return;
   
   const ease=t=>1-Math.pow(1-t,3);
   const els=root.querySelectorAll('[data-counter-to]');
   els.forEach(el=>{ const total=parseInt(el.getAttribute('data-counter-to')||'0',10)||0; let s=null; const step=(ts)=>{ if(!s) s=ts; const p=Math.min(1,(ts-s)/900); el.textContent=Math.floor(ease(p)*total); if(p<1) requestAnimationFrame(step);}; requestAnimationFrame(step); });
+  
+  root.querySelectorAll('a[href^="#"]').forEach(a=>{ a.addEventListener('click',e=>{ const id=a.getAttribute('href'); const t=document.querySelector(id); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); } }); });
 })();
 </script>
 
