@@ -472,23 +472,15 @@
 
   <body class="min-h-screen antialiased transition-colors duration-500">
           
-      <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        
-        <div class="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-purple-500/15 to-pink-400/10 dark:from-blue-500/15 dark:via-purple-600/10 dark:to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-emerald-400/20 via-teal-500/15 to-cyan-400/10 dark:from-emerald-500/15 dark:via-teal-600/10 dark:to-cyan-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-violet-400/10 via-fuchsia-400/8 to-rose-400/10 dark:from-violet-500/10 dark:via-fuchsia-500/8 dark:to-rose-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
-      
-      
-      <div class="absolute inset-0">
-        <div class="particle-container">
-          <div class="particle"></div>
-          <div class="particle"></div>
-          <div class="particle"></div>
-          <div class="particle"></div>
-          <div class="particle"></div>
+      <div class="fixed inset-0 overflow-hidden pointer-events-none" data-parallax-depth="0.08">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-900 dark:from-slate-950 dark:via-indigo-950 dark:to-blue-950"></div>
+        <div class="aurora-container absolute inset-0 overflow-hidden mix-blend-screen">
+          <div class="aurora aurora-1" aria-hidden="true"></div>
+          <div class="aurora aurora-2" aria-hidden="true"></div>
+          <div class="aurora aurora-3" aria-hidden="true"></div>
+          <div class="aurora aurora-4" aria-hidden="true"></div>
         </div>
       </div>
-    </div>
 
     
     
@@ -1523,78 +1515,19 @@ document.addEventListener('DOMContentLoaded', function() {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
         color: #f8fafc;
       }
-      
+
        
-      .particle-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
+      @keyframes auroraDriftA { 0% { transform: translate3d(-20%, -10%, 0) rotate(0deg) scale(1); } 50% { transform: translate3d(10%, 5%, 0) rotate(10deg) scale(1.06); } 100% { transform: translate3d(-20%, -10%, 0) rotate(0deg) scale(1); } }
+      @keyframes auroraDriftB { 0% { transform: translate3d(10%, 20%, 0) rotate(0deg) scale(1.02); } 50% { transform: translate3d(-15%, -10%, 0) rotate(-8deg) scale(1.08); } 100% { transform: translate3d(10%, 20%, 0) rotate(0deg) scale(1.02); } }
+      @keyframes auroraDriftC { 0% { transform: translate3d(-5%, 15%, 0) rotate(0deg) scale(1); } 50% { transform: translate3d(15%, -5%, 0) rotate(6deg) scale(1.05); } 100% { transform: translate3d(-5%, 15%, 0) rotate(0deg) scale(1); } }
 
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-        border-radius: 50%;
-        animation: float 6s ease-in-out infinite;
-        opacity: 0.6;
-        transition: all 0.5s ease;
-      }
-      
-      .dark .particle {
-        background: linear-gradient(45deg, #60a5fa, #a78bfa);
-        opacity: 0.8;
-      }
-
-      .particle:nth-child(1) {
-        top: 20%;
-        left: 20%;
-        animation-delay: 0s;
-      }
-
-      .particle:nth-child(2) {
-        top: 60%;
-        left: 80%;
-        animation-delay: 2s;
-      }
-
-      .particle:nth-child(3) {
-        top: 80%;
-        left: 40%;
-        animation-delay: 4s;
-      }
-
-      .particle:nth-child(4) {
-        top: 40%;
-        left: 70%;
-        animation-delay: 1s;
-      }
-
-      .particle:nth-child(5) {
-        top: 10%;
-        left: 60%;
-        animation-delay: 3s;
-      }
-
-      @keyframes float {
-        0%, 100% {
-          transform: translateY(0px) translateX(0px);
-          opacity: 0.6;
-        }
-        25% {
-          transform: translateY(-20px) translateX(10px);
-          opacity: 0.8;
-        }
-        50% {
-          transform: translateY(-40px) translateX(-10px);
-          opacity: 1;
-        }
-        75% {
-          transform: translateY(-20px) translateX(15px);
-          opacity: 0.8;
-        }
-      }
+      .aurora-container{ filter: blur(46px); opacity:.65; }
+      .aurora{ position:absolute; width:120vmax; height:120vmax; border-radius:50%; will-change: transform, opacity; }
+      .aurora-1{ top:-25%; left:-10%; background: radial-gradient(circle at 30% 30%, rgba(59,130,246,.38), transparent 60%), radial-gradient(circle at 70% 70%, rgba(168,85,247,.3), transparent 60%); animation: auroraDriftA 45s ease-in-out infinite; }
+      .aurora-2{ bottom:-35%; right:-20%; background: radial-gradient(circle at 60% 40%, rgba(56,189,248,.3), transparent 60%), radial-gradient(circle at 30% 70%, rgba(34,197,94,.25), transparent 60%); animation: auroraDriftB 55s ease-in-out infinite; }
+      .aurora-3{ top:12%; right:-12%; background: radial-gradient(circle at 50% 50%, rgba(244,114,182,.22), transparent 60%), radial-gradient(circle at 80% 20%, rgba(99,102,241,.3), transparent 60%); animation: auroraDriftC 65s ease-in-out infinite; }
+      .aurora-4{ bottom:-12%; left:22%; background: radial-gradient(circle at 40% 60%, rgba(251,191,36,.15), transparent 60%), radial-gradient(circle at 20% 20%, rgba(14,165,233,.2), transparent 60%); animation: auroraDriftA 75s ease-in-out infinite reverse; }
+      @media (prefers-reduced-motion: reduce){ .aurora{ animation: none !important; } }
 
        
       ::-webkit-scrollbar {
