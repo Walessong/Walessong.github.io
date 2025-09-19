@@ -864,7 +864,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
 
-<div class="premium-welcome-page min-h-screen relative overflow-hidden">
+<div class="premium-welcome-page relative overflow-hidden w-screen -mx-4 md:-mx-6 lg:-mx-8" style="min-height: calc(100vh - 4rem);">
   
   
   <div class="premium-background fixed inset-0 pointer-events-none" data-parallax-depth="0.2">
@@ -939,40 +939,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     
-    <div class="premium-features grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto animate-premium-fade-in" style="animation-delay: 0.8s;">
-      
-      
-      <div class="premium-feature-card group bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-10 text-center hover:bg-white/10 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105">
-        <div class="feature-icon-container w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-2xl shadow-blue-500/30">
-          <span class="text-white text-4xl"></span>
-        </div>
-        <h3 class="text-3xl font-bold text-white mb-6">技术洞察</h3>
-        <p class="text-white/70 leading-relaxed text-lg">解读前沿趋势与工程落地策略，提供可复用的解决方案与方法论。</p>
-        <div class="feature-accent mt-6 w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mx-auto"></div>
-      </div>
-
-      
-      <div class="premium-feature-card group bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-10 text-center hover:bg-white/10 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105">
-        <div class="feature-icon-container w-24 h-24 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-2xl shadow-emerald-500/30">
-          <span class="text-white text-4xl"></span>
-        </div>
-        <h3 class="text-3xl font-bold text-white mb-6">成长轨迹</h3>
-        <p class="text-white/70 leading-relaxed text-lg">记录系统化学习与跨学科思考，把经验沉淀为知识资产。</p>
-        <div class="feature-accent mt-6 w-16 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mx-auto"></div>
-      </div>
-
-      
-      <div class="premium-feature-card group bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-10 text-center hover:bg-white/10 hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105">
-        <div class="feature-icon-container w-24 h-24 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-rose-600 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-2xl shadow-violet-500/30">
-          <span class="text-white text-4xl"></span>
-        </div>
-        <h3 class="text-3xl font-bold text-white mb-6">创意表达</h3>
-        <p class="text-white/70 leading-relaxed text-lg">分享视觉美学与交互灵感，让表达更有温度与质感。</p>
-        <div class="feature-accent mt-6 w-16 h-1 bg-gradient-to-r from-violet-400 to-rose-400 rounded-full mx-auto"></div>
-      </div>
-    </div>
-
-    
     <div class="premium-scroll-hint mt-20 animate-premium-fade-in" style="animation-delay: 1s;">
       <div class="flex flex-col items-center space-y-4 text-white/60">
         <span class="text-lg font-medium tracking-wider uppercase">向下探索更多精彩</span>
@@ -982,6 +948,11 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="w-screen -mx-4 md:-mx-6 lg:-mx-8">
+  <div class="h-16 md:h-24 bg-gradient-to-b from-transparent to-white/80 dark:to-gray-900/80"></div>
 </div>
 
 
@@ -1007,13 +978,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E6%258F%2590%25E7%25A4%25BA%25E6%25A1%2586%2Cmarkdown&amp;sig=1758263427350740437-28" 
+      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E6%258F%2590%25E7%25A4%25BA%25E6%25A1%2586%2Cmarkdown&amp;sig=1758265915633927850-28" 
       alt="GitHub 风格提示框测试"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758263427350740437-28\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758265915633927850-28\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1102,13 +1073,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2Ckatex%2Cmermaid&amp;sig=1758263427356893230-24" 
+      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2Ckatex%2Cmermaid&amp;sig=1758265915648403476-24" 
       alt="KaTeX 和 Mermaid 测试"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758263427356893230-24\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758265915648403476-24\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1197,13 +1168,13 @@ Mermaid 图表测试 流程图 序列图 甘特图 KaTeX 测试 行内公式 这
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E5%259B%25BE%25E7%2589%2587%2C%25E6%25B8%25B2%25E6%259F%2593&amp;sig=1758263427363944362-18" 
+      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E5%259B%25BE%25E7%2589%2587%2C%25E6%25B8%25B2%25E6%259F%2593&amp;sig=1758265915662327438-18" 
       alt="图片渲染测试"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758263427363944362-18\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758265915662327438-18\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1291,13 +1262,13 @@ Mermaid 图表测试 流程图 序列图 甘特图 KaTeX 测试 行内公式 这
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E4%25BB%25A3%25E7%25A0%2581%2C%25E8%25AF%25AD%25E6%25B3%2595%25E9%25AB%2598%25E4%25BA%25AE&amp;sig=1758263427369151308-18" 
+      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E4%25BB%25A3%25E7%25A0%2581%2C%25E8%25AF%25AD%25E6%25B3%2595%25E9%25AB%2598%25E4%25BA%25AE&amp;sig=1758265915671589356-18" 
       alt="代码高亮测试"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758263427369151308-18\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758265915671589356-18\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1385,13 +1356,13 @@ JavaScript JAVASCRIPT 行号 折叠 复制 点击展开查看更多 带行号的
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?markdown%2C%25E6%2596%2587%25E6%25A1%25A3%2C%25E6%25A0%25B7%25E5%25BC%258F&amp;sig=1758263427389521422-27" 
+      src="https://source.unsplash.com/featured/1200x800/?markdown%2C%25E6%2596%2587%25E6%25A1%25A3%2C%25E6%25A0%25B7%25E5%25BC%258F&amp;sig=1758265915696652276-27" 
       alt="Markdown 语法测试文档"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758263427389521422-27\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758265915696652276-27\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
