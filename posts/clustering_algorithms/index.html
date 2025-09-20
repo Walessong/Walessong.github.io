@@ -1186,6 +1186,354 @@ body {
   </header>
 
   
+  
+
+
+<div id="table-of-contents" class="toc-container fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+  <div class="bg-white/85 dark:bg-gray-800/85 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 shadow-lg max-w-xs">
+    
+    <div class="flex items-center space-x-2 mb-4 pb-3 border-b border-gray-200/50 dark:border-gray-700/50">
+      <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 16a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+        </svg>
+      </div>
+      <h3 class="text-sm font-semibold text-gray-900 dark:text-white">目录</h3>
+    </div>
+    
+    
+    <nav class="toc-nav">
+      <ul class="space-y-1 text-sm">
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e8%81%9a%e7%b1%bb" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              什么是聚类？
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#%e4%b8%bb%e6%b5%81%e8%81%9a%e7%b1%bb%e7%ae%97%e6%b3%95%e7%b1%bb%e5%9e%8b" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              主流聚类算法类型
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-4">
+            <a href="#1-%e5%88%92%e5%88%86%e5%bc%8f%e8%81%9a%e7%b1%bb-partitioning-clustering" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="4">
+              1. 划分式聚类 (Partitioning Clustering)
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-4">
+            <a href="#2-%e5%b1%82%e6%ac%a1%e8%81%9a%e7%b1%bb-hierarchical-clustering" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="4">
+              2. 层次聚类 (Hierarchical Clustering)
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-4">
+            <a href="#3-%e5%9f%ba%e4%ba%8e%e5%af%86%e5%ba%a6%e7%9a%84%e8%81%9a%e7%b1%bb-density-based-clustering" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="4">
+              3. 基于密度的聚类 (Density-Based Clustering)
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-4">
+            <a href="#4-%e5%9f%ba%e4%ba%8e%e6%a8%a1%e5%9e%8b%e7%9a%84%e8%81%9a%e7%b1%bb-model-based-clustering" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="4">
+              4. 基于模型的聚类 (Model-Based Clustering)
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#%e5%a6%82%e4%bd%95%e9%80%89%e6%8b%a9%e5%90%88%e9%80%82%e7%9a%84%e8%81%9a%e7%b1%bb%e7%ae%97%e6%b3%95" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              如何选择合适的聚类算法？
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-1">
+            <a href="#k-means" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="1">
+              K-Means&#43;&#43;
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#%e6%a0%87%e5%87%86-k-means-%e7%9a%84%e7%97%9b%e7%82%b9%e7%b3%9f%e7%b3%95%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              标准 K-Means 的痛点：糟糕的初始化
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#k-means-%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%e6%9b%b4%e6%99%ba%e8%83%bd%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              K-Means&#43;&#43; 的解决方案：更智能的初始化
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-4">
+            <a href="#k-means-%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96%e6%ad%a5%e9%aa%a4" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="4">
+              K-Means&#43;&#43; 的初始化步骤
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#k-means-%e7%9a%84%e4%bc%98%e5%8a%bf" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              K-Means&#43;&#43; 的优势
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          <li class="toc-item toc-level-3">
+            <a href="#%e6%80%bb%e7%bb%93" 
+               class="toc-link block py-1 px-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 text-xs leading-relaxed"
+               data-level="3">
+              总结
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+  
+  
+  <button id="toc-toggle" class="absolute -left-12 top-4 w-10 h-10 bg-white/85 dark:bg-gray-800/85 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-xl shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200">
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 16a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+    </svg>
+  </button>
+</div>
+
+
+<style>
+ 
+.toc-level-1 { margin-left: 0; }
+.toc-level-2 { margin-left: 0.75rem; }
+.toc-level-3 { margin-left: 1.5rem; }
+.toc-level-4 { margin-left: 2.25rem; }
+.toc-level-5 { margin-left: 3rem; }
+.toc-level-6 { margin-left: 3.75rem; }
+
+ 
+.toc-link.active {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  font-weight: 500;
+}
+
+.dark .toc-link.active {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.15);
+}
+
+ 
+.toc-container {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toc-container.hidden-toc {
+  transform: translateX(100%) translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+ 
+@media (max-width: 1024px) {
+  .toc-container {
+    display: none !important;
+  }
+}
+
+ 
+.toc-nav {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.toc-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.toc-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toc-nav::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 2px;
+}
+
+.toc-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toc = document.getElementById('table-of-contents');
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocLinks = document.querySelectorAll('.toc-link');
+  
+  if (!toc || !tocToggle) return;
+  
+  let isVisible = true;
+  
+  
+  tocToggle.addEventListener('click', function() {
+    isVisible = !isVisible;
+    if (isVisible) {
+      toc.classList.remove('hidden-toc');
+    } else {
+      toc.classList.add('hidden-toc');
+    }
+  });
+  
+  
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 100; 
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  
+  function updateActiveSection() {
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const scrollTop = window.pageYOffset;
+    
+    let currentSection = null;
+    
+    headings.forEach(heading => {
+      const offsetTop = heading.offsetTop - 150;
+      if (scrollTop >= offsetTop) {
+        currentSection = heading;
+      }
+    });
+    
+    
+    tocLinks.forEach(link => link.classList.remove('active'));
+    
+    
+    if (currentSection) {
+      const currentId = currentSection.id;
+      const activeLink = document.querySelector(`.toc-link[href="#${currentId}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+  }
+  
+  
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        updateActiveSection();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  
+  updateActiveSection();
+});
+</script>
+
+
+
+  
   <div class="prose prose-lg prose-gray dark:prose-invert max-w-none">
     
     <div class="relative">
