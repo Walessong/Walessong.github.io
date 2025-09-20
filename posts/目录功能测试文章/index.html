@@ -335,8 +335,8 @@
     
       <link
         rel="stylesheet"
-        href="/css/custom/navigation.min.21ed793e31c83f31197c7fe3af97c7960465a96ec62772c84a60c559460b0536.css"
-        integrity="sha256-Ie15PjHIPzEZfH/jr5fHlgRlqW7GJ3LISmDFWUYLBTY="
+        href="/css/custom/navigation.min.3d74f7adb51a773ebb396b458dd7298bb5bfaad0a0da0136f938ae18df31f043.css"
+        integrity="sha256-PXT3rbUadz67OWtFjdcpi7W/qtCg2gE2&#43;TiuGN8x8EM="
         crossorigin="anonymous" />
     
   
@@ -591,7 +591,7 @@
         <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </button>
-  </div>
+    </div>
 </nav>
 
 
@@ -812,6 +812,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
  
 #macos-dock {
+  position: fixed !important;
+  bottom: 1.5rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 50 !important;
   user-select: none;
   height: 70px;
   transition: all 0.3s ease-out;
@@ -933,7 +938,7 @@ body {
  
 @media (max-width: 768px) {
   #macos-dock {
-    bottom: 4px;
+    bottom: 0.5rem !important;
     height: 60px;
   }
   

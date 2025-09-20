@@ -322,8 +322,8 @@
     
       <link
         rel="stylesheet"
-        href="/css/custom/navigation.min.21ed793e31c83f31197c7fe3af97c7960465a96ec62772c84a60c559460b0536.css"
-        integrity="sha256-Ie15PjHIPzEZfH/jr5fHlgRlqW7GJ3LISmDFWUYLBTY="
+        href="/css/custom/navigation.min.3d74f7adb51a773ebb396b458dd7298bb5bfaad0a0da0136f938ae18df31f043.css"
+        integrity="sha256-PXT3rbUadz67OWtFjdcpi7W/qtCg2gE2&#43;TiuGN8x8EM="
         crossorigin="anonymous" />
     
   
@@ -570,7 +570,7 @@
         <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </button>
-  </div>
+    </div>
 </nav>
 
 
@@ -791,6 +791,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
  
 #macos-dock {
+  position: fixed !important;
+  bottom: 1.5rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 50 !important;
   user-select: none;
   height: 70px;
   transition: all 0.3s ease-out;
@@ -912,7 +917,7 @@ body {
  
 @media (max-width: 768px) {
   #macos-dock {
-    bottom: 4px;
+    bottom: 0.5rem !important;
     height: 60px;
   }
   
@@ -1046,13 +1051,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Calerte%2Cmarkdown&amp;sig=1758351952622734473-27" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Calerte%2Cmarkdown&amp;sig=1758375000922613975-27" 
       alt="Test d&#39;Alertes Style GitHub"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351952622734473-27\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758375000922613975-27\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1139,13 +1144,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Ckatex%2Cmermaid&amp;sig=1758351952639192381-21" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Ckatex%2Cmermaid&amp;sig=1758375000929098800-21" 
       alt="Test KaTeX et Mermaid"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351952639192381-21\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758375000929098800-21\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1233,13 +1238,13 @@ Test des …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Cimage%2Crendu&amp;sig=1758351952640643235-21" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Cimage%2Crendu&amp;sig=1758375000930027436-21" 
       alt="Test de rendu d&#39;image"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351952640643235-21\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758375000930027436-21\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1327,13 +1332,13 @@ Image unique Photo par - Daniel Leone Galerie justifiée …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Ccode%2Ccoloration-syntaxique&amp;sig=1758351952644181616-29" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Ccode%2Ccoloration-syntaxique&amp;sig=1758375000933354747-29" 
       alt="Test de Coloration Syntaxique"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351952644181616-29\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758375000933354747-29\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1420,13 +1425,13 @@ Image unique Photo par - Daniel Leone Galerie justifiée …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?markdown%2Cprose%2Cstyle&amp;sig=1758351952655945130-36" 
+      src="https://source.unsplash.com/featured/1200x800/?markdown%2Cprose%2Cstyle&amp;sig=1758375000945450818-36" 
       alt="Document de Test de Syntaxe Markdown"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351952655945130-36\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758375000945450818-36\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
