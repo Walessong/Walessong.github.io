@@ -498,14 +498,8 @@
 
   <body class="min-h-screen antialiased transition-colors duration-500">
     
-    <div class="fixed inset-0 overflow-hidden pointer-events-none" data-parallax-depth="0.08">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-900 dark:from-slate-950 dark:via-indigo-950 dark:to-blue-950"></div>
-      <div class="aurora-container absolute inset-0 overflow-hidden mix-blend-screen">
-        <div class="aurora aurora-1" aria-hidden="true"></div>
-        <div class="aurora aurora-2" aria-hidden="true"></div>
-        <div class="aurora aurora-3" aria-hidden="true"></div>
-        <div class="aurora aurora-4" aria-hidden="true"></div>
-      </div>
+    <div class="fixed inset-0 pointer-events-none">
+      <div class="absolute inset-0 paper-texture"></div>
     </div>
 
     
@@ -1602,59 +1596,90 @@ document.addEventListener('DOMContentLoaded', function() {
     <style>
        
       body {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-        color: #0f172a;
+        background: #faf9f7;
+        color: #2c2c2c;
         transition: all 0.5s ease;
       }
       
       .dark body {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
-        color: #f8fafc;
+        background: #1a1a1a;
+        color: #e8e8e8;
       }
 
        
-      @keyframes auroraDriftA { 0% { transform: translate3d(-20%, -10%, 0) rotate(0deg) scale(1); } 50% { transform: translate3d(10%, 5%, 0) rotate(10deg) scale(1.06); } 100% { transform: translate3d(-20%, -10%, 0) rotate(0deg) scale(1); } }
-      @keyframes auroraDriftB { 0% { transform: translate3d(10%, 20%, 0) rotate(0deg) scale(1.02); } 50% { transform: translate3d(-15%, -10%, 0) rotate(-8deg) scale(1.08); } 100% { transform: translate3d(10%, 20%, 0) rotate(0deg) scale(1.02); } }
-      @keyframes auroraDriftC { 0% { transform: translate3d(-5%, 15%, 0) rotate(0deg) scale(1); } 50% { transform: translate3d(15%, -5%, 0) rotate(6deg) scale(1.05); } 100% { transform: translate3d(-5%, 15%, 0) rotate(0deg) scale(1); } }
+      .paper-texture {
+        background: 
+          radial-gradient(circle at 20% 50%, transparent 20%, rgba(139, 69, 19, 0.03) 21%, rgba(139, 69, 19, 0.03) 30%, transparent 31%),
+          radial-gradient(circle at 40% 20%, transparent 10%, rgba(160, 82, 45, 0.02) 11%, rgba(160, 82, 45, 0.02) 20%, transparent 21%),
+          radial-gradient(circle at 90% 40%, transparent 15%, rgba(205, 133, 63, 0.025) 16%, rgba(205, 133, 63, 0.025) 25%, transparent 26%),
+          radial-gradient(circle at 70% 80%, transparent 8%, rgba(222, 184, 135, 0.02) 9%, rgba(222, 184, 135, 0.02) 18%, transparent 19%),
+          linear-gradient(90deg, transparent 79%, rgba(139, 69, 19, 0.04) 80%, rgba(139, 69, 19, 0.04) 81%, transparent 82%),
+          linear-gradient(0deg, transparent 79%, rgba(160, 82, 45, 0.03) 80%, rgba(160, 82, 45, 0.03) 81%, transparent 82%),
+          #faf9f7;
+        background-size: 
+          200px 200px,
+          150px 150px,
+          180px 180px,
+          120px 120px,
+          1px 100%,
+          100% 1px;
+        box-shadow: 
+          inset 0 0 120px rgba(139, 69, 19, 0.08),
+          inset 20px 0 80px rgba(160, 82, 45, 0.05),
+          inset -20px 0 80px rgba(160, 82, 45, 0.05),
+          inset 0 20px 80px rgba(205, 133, 63, 0.04),
+          inset 0 -20px 80px rgba(205, 133, 63, 0.04);
+      }
 
-      .aurora-container{ filter: blur(46px); opacity:.65; }
-      .aurora{ position:absolute; width:120vmax; height:120vmax; border-radius:50%; will-change: transform, opacity; }
-      .aurora-1{ top:-25%; left:-10%; background: radial-gradient(circle at 30% 30%, rgba(59,130,246,.38), transparent 60%), radial-gradient(circle at 70% 70%, rgba(168,85,247,.3), transparent 60%); animation: auroraDriftA 45s ease-in-out infinite; }
-      .aurora-2{ bottom:-35%; right:-20%; background: radial-gradient(circle at 60% 40%, rgba(56,189,248,.3), transparent 60%), radial-gradient(circle at 30% 70%, rgba(34,197,94,.25), transparent 60%); animation: auroraDriftB 55s ease-in-out infinite; }
-      .aurora-3{ top:12%; right:-12%; background: radial-gradient(circle at 50% 50%, rgba(244,114,182,.22), transparent 60%), radial-gradient(circle at 80% 20%, rgba(99,102,241,.3), transparent 60%); animation: auroraDriftC 65s ease-in-out infinite; }
-      .aurora-4{ bottom:-12%; left:22%; background: radial-gradient(circle at 40% 60%, rgba(251,191,36,.15), transparent 60%), radial-gradient(circle at 20% 20%, rgba(14,165,233,.2), transparent 60%); animation: auroraDriftA 75s ease-in-out infinite reverse; }
-      @media (prefers-reduced-motion: reduce){ .aurora{ animation: none !important; } }
+      .dark .paper-texture {
+        background: 
+          radial-gradient(circle at 20% 50%, transparent 20%, rgba(255, 255, 255, 0.02) 21%, rgba(255, 255, 255, 0.02) 30%, transparent 31%),
+          radial-gradient(circle at 40% 20%, transparent 10%, rgba(255, 255, 255, 0.015) 11%, rgba(255, 255, 255, 0.015) 20%, transparent 21%),
+          radial-gradient(circle at 90% 40%, transparent 15%, rgba(255, 255, 255, 0.01) 16%, rgba(255, 255, 255, 0.01) 25%, transparent 26%),
+          #1a1a1a;
+        background-size: 
+          200px 200px,
+          150px 150px,
+          180px 180px;
+        box-shadow: 
+          inset 0 0 120px rgba(0, 0, 0, 0.3),
+          inset 20px 0 80px rgba(0, 0, 0, 0.2),
+          inset -20px 0 80px rgba(0, 0, 0, 0.2);
+      }
 
        
       ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: 12px;
+        height: 12px;
       }
 
       ::-webkit-scrollbar-track {
-        background: transparent;
+        background: rgba(139, 69, 19, 0.1);
+        border-radius: 6px;
       }
 
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-        border-radius: 4px;
+        background: linear-gradient(135deg, #8b4513, #a0522d);
+        border-radius: 6px;
+        border: 2px solid #faf9f7;
         transition: all 0.3s ease;
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        background: linear-gradient(135deg, #654321, #8b4513);
       }
       
       .dark ::-webkit-scrollbar-track {
-        background: rgba(15, 23, 42, 0.3);
+        background: rgba(255, 255, 255, 0.1);
       }
       
       .dark ::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #475569, #64748b);
+        background: linear-gradient(135deg, #4a4a4a, #666666);
+        border: 2px solid #1a1a1a;
       }
       
       .dark ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #64748b, #94a3b8);
+        background: linear-gradient(135deg, #666666, #808080);
       }
 
        
@@ -1675,18 +1700,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
        
       ::selection {
-        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-        color: white;
+        background: rgba(139, 69, 19, 0.3);
+        color: #2c2c2c;
       }
       
       .dark ::selection {
-        background: rgba(59, 130, 246, 0.3);
-        color: #f8fafc;
+        background: rgba(255, 255, 255, 0.2);
+        color: #e8e8e8;
       }
       
       .dark ::-moz-selection {
-        background: rgba(59, 130, 246, 0.3);
-        color: #f8fafc;
+        background: rgba(255, 255, 255, 0.2);
+        color: #e8e8e8;
+      }
+
+       
+      main {
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 
+          0 0 50px rgba(139, 69, 19, 0.1),
+          0 10px 30px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        border: 1px solid rgba(139, 69, 19, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .dark main {
+        background: rgba(26, 26, 26, 0.9);
+        box-shadow: 
+          0 0 50px rgba(0, 0, 0, 0.3),
+          0 10px 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
     </style>
   </body>
