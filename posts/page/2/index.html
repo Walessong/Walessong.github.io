@@ -482,74 +482,92 @@
     </div>
 
     
-    <nav id="macos-dock" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-  <div class="dock-container flex items-end justify-center gap-2 px-4 py-3 rounded-2xl bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border border-white/20 dark:border-slate-700/30 shadow-2xl shadow-black/10">
+    <nav id="macos-dock" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-out">
+  <div class="dock-container flex items-center justify-center gap-3 px-6 py-4 rounded-[20px] bg-white/40 dark:bg-slate-900/40 backdrop-blur-[20px] border border-white/20 dark:border-slate-700/30 shadow-lg shadow-black/10">
+    
     
     <a href="/" class="dock-item group relative flex flex-col items-center" data-tooltip="Home">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 flex items-center justify-center text-white text-lg font-bold shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           <span class="relative z-10">W</span>
         </div>
+        
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </a>
 
+    
     <a href="/posts" class="dock-item group relative flex flex-col items-center" data-tooltip="Posts">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-emerald-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </a>
 
+    
     <a href="/categories" class="dock-item group relative flex flex-col items-center" data-tooltip="Categories">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </a>
 
+    
     <a href="/tags" class="dock-item group relative flex flex-col items-center" data-tooltip="Tags">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </a>
 
+    
     <a href="/archives" class="dock-item group relative flex flex-col items-center" data-tooltip="Archives">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </a>
 
+    
     <a href="/about" class="dock-item group relative flex flex-col items-center" data-tooltip="About">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </a>
 
+    
     <button id="dock-search-btn" class="dock-item group relative flex flex-col items-center" data-tooltip="Search">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-slate-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </button>
 
+    
     <button id="dock-theme-btn" class="dock-item group relative flex flex-col items-center" data-tooltip="Theme">
       <div class="dock-icon-container relative">
-        <div class="dock-icon w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white text-lg shadow-lg transition-all duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div class="dock-icon w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white text-sm shadow-md transition-all duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:shadow-xl">
           
         </div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </button>
   </div>
 </nav>
+
 
 <div id="search-modal" class="fixed inset-0 z-[60] hidden">
   <div class="absolute inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm transition-opacity duration-300" id="search-backdrop"></div>
@@ -569,12 +587,47 @@
   </div>
 </div>
 
+
 <div id="reading-progress" class="fixed top-0 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 z-40 transition-all duration-200"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const dock = document.getElementById('macos-dock');
   const dockItems = dock.querySelectorAll('.dock-item');
+  let isScrolling = false;
+  let scrollTimeout;
+
+  
+  function handleScroll() {
+    if (!isScrolling) {
+      dock.style.transform = 'translateX(-50%) translateY(100px)';
+      dock.style.opacity = '0.3';
+    }
+    
+    clearTimeout(scrollTimeout);
+    isScrolling = true;
+    
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+      dock.style.transform = 'translateX(-50%) translateY(0)';
+      dock.style.opacity = '1';
+    }, 150);
+  }
+
+  
+  let ticking = false;
+  function updateScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', updateScroll, { passive: true });
+
   
   dock.addEventListener('mousemove', function(e) {
     const rect = dock.getBoundingClientRect();
@@ -584,11 +637,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const itemRect = item.getBoundingClientRect();
       const itemCenter = itemRect.left + itemRect.width / 2 - rect.left;
       const distance = Math.abs(mouseX - itemCenter);
-      const maxDistance = 120;
+      const maxDistance = 100; 
       
       if (distance < maxDistance) {
-        const scale = 1 + (1 - distance / maxDistance) * 0.3;
-        const translateY = -(1 - distance / maxDistance) * 8;
+        const scale = 1 + (1 - distance / maxDistance) * 0.5; 
+        const translateY = -(1 - distance / maxDistance) * 5; 
         
         item.style.transform = scale() translateY(px);
         item.style.zIndex = Math.round(100 - distance);
@@ -599,6 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+  
   dock.addEventListener('mouseleave', function() {
     dockItems.forEach(item => {
       item.style.transform = 'scale(1) translateY(0px)';
@@ -606,9 +660,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+  
   dockItems.forEach(item => {
     item.addEventListener('mousedown', function() {
-      this.style.transform = 'scale(0.95)';
+      this.style.transform = 'scale(0.9)';
     });
     
     item.addEventListener('mouseup', function() {
@@ -620,6 +675,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  
   const searchBtn = document.getElementById('dock-search-btn');
   const searchModal = document.getElementById('search-modal');
   const searchBackdrop = document.getElementById('search-backdrop');
@@ -655,6 +711,7 @@ document.addEventListener('DOMContentLoaded', function() {
     searchBackdrop.addEventListener('click', closeSearch);
   }
   
+  
   document.addEventListener('keydown', function(e) {
     if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
       e.preventDefault();
@@ -667,6 +724,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  
   const themeBtn = document.getElementById('dock-theme-btn');
   if (themeBtn) {
     themeBtn.addEventListener('click', function() {
@@ -687,6 +745,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  
   const progressBar = document.getElementById('reading-progress');
   if (progressBar) {
     window.addEventListener('scroll', () => {
@@ -697,6 +756,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  
   dockItems.forEach(item => {
     const tooltip = item.getAttribute('data-tooltip');
     if (tooltip) {
@@ -724,24 +784,32 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
+ 
 #macos-dock {
   user-select: none;
+  height: 70px;
+  transition: all 0.3s ease-out;
 }
 
 .dock-container {
-  min-height: 70px;
+  height: 70px;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-out;
 }
 
 .dock-item {
   cursor: pointer;
   transition: all 0.3s ease-out;
   position: relative;
+  width: 32px;
+  height: 32px;
 }
 
 .dock-icon-container {
@@ -749,9 +817,13 @@ document.addEventListener('DOMContentLoaded', function() {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .dock-icon {
+  width: 32px;
+  height: 32px;
   transition: all 0.3s ease-out;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
@@ -760,33 +832,18 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .dock-item:hover .dock-icon {
+  width: 48px;
+  height: 48px;
   box-shadow: 
     0 8px 25px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 600px) {
-  #macos-dock {
-    bottom: 4px;
-  }
-  
-  .dock-container {
-    min-height: 60px;
-    padding: 8px 12px;
-    gap: 8px;
-  }
-  
-  .dock-icon {
-    width: 24px !important;
-    height: 24px !important;
-    font-size: 14px;
-  }
-  
-  .dock-item:hover .dock-icon {
-    transform: scale(1.5) translateY(-3px) !important;
-  }
+.dock-item:active .dock-icon {
+  transform: scale(0.9);
 }
 
+ 
 .dark .dock-container {
   background: rgba(15, 23, 42, 0.4);
   border-color: rgba(71, 85, 105, 0.3);
@@ -796,6 +853,7 @@ document.addEventListener('DOMContentLoaded', function() {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+ 
 #search-modal {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -826,25 +884,80 @@ document.addEventListener('DOMContentLoaded', function() {
   background: rgba(71, 85, 105, 0.5);
 }
 
+ 
 #reading-progress {
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
+ 
 #dock-tooltip {
   z-index: 1000;
 }
 
+ 
 html {
   scroll-behavior: smooth;
 }
 
+ 
 body {
   padding-bottom: 100px;
 }
 
-@media (max-width: 600px) {
+ 
+@media (max-width: 768px) {
+  #macos-dock {
+    bottom: 4px;
+    height: 60px;
+  }
+  
+  .dock-container {
+    height: 60px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  
+  .dock-item {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .dock-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .dock-item:hover .dock-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
   body {
     padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dock-container {
+    gap: 6px;
+    padding: 6px 10px;
+  }
+  
+  .dock-item {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .dock-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+  
+  .dock-item:hover .dock-icon {
+    width: 36px;
+    height: 36px;
   }
 }
 </style>
@@ -892,13 +1005,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451534207057-16" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066565692847-16" 
       alt="A股止盈攻略"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451534207057-16\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066565692847-16\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -970,13 +1083,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451534392805-16" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066565923528-16" 
       alt="LSTM调参经验"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451534392805-16\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066565923528-16\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1051,13 +1164,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451534531235-39" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066566066946-39" 
       alt="机器学习中的数据预处理细节"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451534531235-39\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566066946-39\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1129,13 +1242,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451534694542-27" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066566198312-27" 
       alt="Once_Upon_a_Time_in_America"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451534694542-27\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566198312-27\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1208,13 +1321,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451534812593-21" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066566321442-21" 
       alt="Clustering_Algorithms"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451534812593-21\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566321442-21\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1286,13 +1399,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451534983304-19" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066566455502-19" 
       alt="Introduction_to_PCB"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451534983304-19\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566455502-19\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1364,13 +1477,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451535140499-11" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066566636951-11" 
       alt="Auto_deploy"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451535140499-11\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566636951-11\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1443,13 +1556,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451535258861-11" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066566762226-11" 
       alt="MyFirstBlog"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451535258861-11\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566762226-11\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1521,13 +1634,13 @@ body {
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Calert%2Cmarkdown&amp;sig=1758350451535367485-23" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Calert%2Cmarkdown&amp;sig=1758351066566873494-23" 
       alt="GitHub Style Alert Test"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451535367485-23\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066566873494-23\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1615,13 +1728,13 @@ Alert Syntax Note Alert Note This is a …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E5%258A%259F%25E8%2583%25BD&amp;sig=1758350451535553725-24" 
+      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E5%258A%259F%25E8%2583%25BD&amp;sig=1758351066567060353-24" 
       alt="目录功能测试文章"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451535553725-24\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066567060353-24\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1709,13 +1822,13 @@ Alert Syntax Note Alert Note This is a …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758350451535710439-22" 
+      src="https://source.unsplash.com/featured/1200x800/?technology%2Cminimal%2Ccode&amp;sig=1758351066567194043-22" 
       alt="KaTeX and Mermaid Test"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451535710439-22\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066567194043-22\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1787,13 +1900,13 @@ Configuration Frontmatter Configuration YAML 行号 Collapse Copy Click to …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Cimage%2Crendering&amp;sig=1758350451536532783-20" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Cimage%2Crendering&amp;sig=1758351066568101900-20" 
       alt="Image Rendering Test"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451536532783-20\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066568101900-20\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1881,13 +1994,13 @@ Single Image Photo by - Daniel Leone Justified Gallery Photo by - Tobias …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?test%2Ccode%2Csyntax-highlighting&amp;sig=1758350451536918807-22" 
+      src="https://source.unsplash.com/featured/1200x800/?test%2Ccode%2Csyntax-highlighting&amp;sig=1758351066568492379-22" 
       alt="Code Highlighting Test"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451536918807-22\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066568492379-22\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -1974,13 +2087,13 @@ Single Image Photo by - Daniel Leone Justified Gallery Photo by - Tobias …
   
   <div class="relative mb-6 overflow-hidden rounded-2xl">
     <img 
-      src="https://source.unsplash.com/featured/1200x800/?markdown%2Cprose%2Cstyle&amp;sig=1758350451541635210-29" 
+      src="https://source.unsplash.com/featured/1200x800/?markdown%2Cprose%2Cstyle&amp;sig=1758351066572732515-29" 
       alt="Markdown Syntax Test Document"
       class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
       loading="lazy"
       referrerpolicy="no-referrer"
       crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758350451541635210-29\/1200\/800';"
+      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1758351066572732515-29\/1200\/800';"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
