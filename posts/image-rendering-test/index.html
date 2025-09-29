@@ -502,11 +502,7 @@
     </script>
   </head>
 
-  <body class="min-h-screen antialiased transition-colors duration-500" style="background: #faf9f7 !important;">
-    
-    <div class="fixed inset-0 pointer-events-none">
-      <div class="absolute inset-0 paper-texture"></div>
-    </div>
+  <body class="min-h-screen antialiased transition-colors duration-500">
 
     
     <nav id="macos-dock" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-out">
@@ -903,21 +899,7 @@ document.addEventListener('DOMContentLoaded', function() {
   height: auto !important;
 }
 
-.dock-container {
-  height: 60px;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-out;
-  border: none;
-  width: fit-content !important;
-  margin: 0 auto !important;
-}
+ 
 
 .dock-item {
   cursor: pointer;
@@ -938,37 +920,9 @@ document.addEventListener('DOMContentLoaded', function() {
   height: 100%;
 }
 
-.dock-icon {
-  width: 32px;
-  height: 32px;
-  transition: all 0.3s ease-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.dock-item:hover .dock-icon {
-  width: 48px;
-  height: 48px;
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.dock-item:active .dock-icon {
-  transform: scale(0.9);
-}
+ 
 
  
-.dark .dock-container {
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-  border: none;
-}
 
  
 #search-modal {
