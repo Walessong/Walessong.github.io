@@ -1198,7 +1198,7 @@ body {
   
   
 <div id="table-of-contents" class="toc-container fixed right-8 top-8 z-40 block">
-  <div class="bg-white/85 dark:bg-gray-800/85 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 shadow-lg max-w-xs">
+  <div class="bg-white/85 dark:bg-gray-800/85 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-4 shadow-lg w-64 max-w-64">
     
     <div class="flex items-center space-x-2 mb-4 pb-3 border-b border-gray-200/50 dark:border-gray-700/50">
       <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -1255,6 +1255,9 @@ body {
   font-size: 0.75rem;
   line-height: 1.5;
   transition: all 0.2s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .dark .toc-nav a {
@@ -1300,9 +1303,16 @@ body {
 }
 
  
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
   .toc-container {
     display: none !important;
+  }
+}
+
+ 
+@media (min-width: 1400px) {
+  main {
+    margin-right: 18rem;  
   }
 }
 
