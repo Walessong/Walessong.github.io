@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Walessong.github.io/posts/llm%E7%9A%84%E6%A0%B9%E6%9C%AC%E7%BC%BA%E9%99%B7/</loc>
-    <lastmod>2025-09-29T00:17:07+08:00</lastmod>
-  </url><url>
     <loc>https://Walessong.github.io/posts/</loc>
-    <lastmod>2025-09-29T00:17:07+08:00</lastmod>
+    <lastmod>2025-10-11T20:40:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
@@ -27,6 +24,18 @@
                 hreflang="en-US"
                 href="https://Walessong.github.io/posts/"
                 />
+  </url><url>
+    <loc>https://Walessong.github.io/posts/%E6%9A%B4%E8%B7%8C%E5%90%8E%E8%A1%8C%E6%83%85%E5%92%8C%E5%BA%94%E5%AF%B9%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2025-10-11T20:40:21+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%93%BE%E4%B8%8A%E4%B8%8E%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E6%98%AF%E6%9C%AA%E6%9D%A5%E6%89%80%E8%B6%8B/</loc>
+    <lastmod>2025-10-11T20:15:15+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/posts/1011%E9%BB%91%E5%A4%A9%E9%B9%85%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2025-10-11T19:11:51+08:00</lastmod>
+  </url><url>
+    <loc>https://Walessong.github.io/posts/llm%E7%9A%84%E6%A0%B9%E6%9C%AC%E7%BC%BA%E9%99%B7/</loc>
+    <lastmod>2025-09-29T00:17:07+08:00</lastmod>
   </url><url>
     <loc>https://Walessong.github.io/posts/a%E8%82%A1%E6%AD%A2%E7%9B%88%E6%94%BB%E7%95%A5/</loc>
     <lastmod>2025-09-02T17:31:39+08:00</lastmod>
@@ -418,6 +427,9 @@
                 hreflang="en-US"
                 href="https://Walessong.github.io/categories/%E6%B5%8B%E8%AF%95/"
                 />
+  </url><url>
+    <loc>https://Walessong.github.io/acknowledgments/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://Walessong.github.io/archives/</loc>
     <xhtml:link
