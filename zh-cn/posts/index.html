@@ -1,470 +1,141 @@
 <!doctype html>
-<html
-  lang="zh-CN"
-  data-theme="default">
+<html lang="zh-CN" class="dark">
   <head>
-    <meta charset="utf-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-<title>Posts | Woke Soul&#39;s Blog</title>
-
-<meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
-<meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
-<meta name="author" content="Woke Soul" />
-<meta name="language" content="en-US" />
-
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://Walessong.github.io/zh-cn/posts/" />
-
-
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-
-<link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://Walessong.github.io/zh-cn/posts/">
-  <meta property="og:site_name" content="Woke Soul&#39;s Blog">
-  <meta property="og:title" content="Posts">
-  <meta property="og:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="website">
-    <meta property="og:image" content="https://Walessong.github.io/images/og-default.avif">
-
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://Walessong.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="Posts">
-  <meta name="twitter:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-
-
-  <meta itemprop="name" content="Posts">
-  <meta itemprop="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-  <meta itemprop="datePublished" content="2025-06-01T10:00:00+08:00">
-  <meta itemprop="dateModified" content="2025-06-01T10:00:00+08:00">
-  <meta itemprop="image" content="https://Walessong.github.io/images/og-default.avif">
-
-
-
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title="Woke Soul&#39;s Blog"
-    href="https://Walessong.github.io/zh-cn/posts/index.xml" />
-
-
-
-
-
-
-<script id="search-config" type="application/json">{"searchIndexURL": "\"/zh-cn/index.json\""}</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts | Woke Soul&#39;s Blog</title>
+    <meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
+    <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
+    <meta name="author" content="Woke Soul" />
     
-  
-
-  
-
-  
     
-  
-
-  
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
-  
-
-  
     
-  
-
-  
+    <link rel="manifest" href="/site.webmanifest" />
     
-  
-
-  
     
-  
-
-  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: 'rgb(var(--bg-main) / <alpha-value>)',
+              surface: 'rgb(var(--bg-surface) / <alpha-value>)',
+              primary: {
+                DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
+                foreground: 'rgb(var(--primary-foreground) / <alpha-value>)',
+              },
+              secondary: 'rgb(var(--text-muted) / <alpha-value>)',
+            },
+            textColor: {
+                DEFAULT: 'rgb(var(--text-main) / <alpha-value>)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
-  
+    <style>
+      :root {
+         
+        --bg-main: 241 245 249;    
+        --bg-surface: 255 255 255;  
+        --text-main: 30 41 59;     
+        --text-muted: 100 116 139;   
+        
+         
+        --primary: 2 132 199;
+        --primary-foreground: 255 255 255;
+      }
 
-  
+      .dark {
+         
+        --bg-main: 15 23 42;       
+        --bg-surface: 30 41 59;    
+        --text-main: 241 245 249;  
+        --text-muted: 148 163 184; 
+        
+         
+        --primary: 56 189 248;
+        --primary-foreground: 15 23 42;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: rgb(var(--bg-main));
+        color: rgb(var(--text-main));
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+       
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--text-muted)); 
+        opacity: 0.5;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--primary)); 
+      }
+    </style>
     
-  
-
-
-
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-
-
-
-
-
-
-
-
-<script>
-
-  window.HUGO_GALLERY_CONFIG = {
-    justified_gallery:  false ,
-    lightbox:  false ,
-    justified: "{\"calculateitemsheight\":false,\"gutter\":30,\"lastrow\":\"center\",\"maxrowscount\":999999,\"resizedebounce\":100,\"rowheight\":300,\"rowheighttolerance\":0.25,\"transitionduration\":\"0.3s\"}",
-    lightbox_options: "{\"descposition\":\"bottom\",\"draggable\":true,\"height\":\"80vh\",\"loop\":true,\"preload\":true,\"touchnavigation\":true,\"width\":\"80vw\",\"zoomable\":true}"
-  };
-</script>
-
-
-
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/compiled.min.35ccd2a038849adabf4eab3211a2429fc13b4d48eb397769746ad7e4e112d340.css"
-        integrity="sha256-NczSoDiEmtq/TqsyEaJCn8E7TUjrOXdpdGrX5OES00A="
-        crossorigin="anonymous" />
-    
-  
-
-
-
-
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/chroma.min.491df36221f739b5948a747a0351f100ee7ccaaf466d9f46288bf06de1d59123.css"
-        integrity="sha256-SR3zYiH3ObWUinR6A1HxAO58yq9GbZ9GKIvwbeHVkSM="
-        crossorigin="anonymous" />
-    
-  
-
-
-
-
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/article-card-animations.min.688e5137e7a624116f3ccb89061dc4d2b63ab5546013fda59a2f732c4793db7a.css"
-        integrity="sha256-aI5RN&#43;emJBFvPMuJBh3E0rY6tVRgE/2lmi9zLEeT23o="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/article-cards.min.26ac840a3e11fbfbb9fa647be9ea485090137f7d689b7650f84409e1fa769948.css"
-        integrity="sha256-JqyECj4R&#43;/u5&#43;mR76epIUJATf31om3ZQ&#43;EQJ4fp2mUg="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/breadcrumb.min.60042a2fcb2947b3887b659e0a6647aa553a10e98e68e8c772d7101a367d2998.css"
-        integrity="sha256-YAQqL8spR7OIe2WeCmZHqlU6EOmOaOjHctcQGjZ9KZg="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/buttons.min.1a438374fb6fe9bf3bcf8cfcec4e0e9d94f5846c164642c5a43adf258029cc7e.css"
-        integrity="sha256-GkODdPtv6b87z4z87E4OnZT1hGwWRkLFpDrfJYApzH4="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/cards.min.27952cba28145f04eca3b90179c4a10455f461d03ee7051c6afad86588721864.css"
-        integrity="sha256-J5UsuigUXwTso7kBecShBFX0YdA&#43;5wUcavrYZYhyGGQ="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/code.min.2d5f82d0a43b568dce7d6b15a25adad0f721a0d2c9fbf197e5de92dfb1800bab.css"
-        integrity="sha256-LV&#43;C0KQ7Vo3OfWsVolra0PchoNLJ&#43;/GX5d6S37GAC6s="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/dark-mode.min.d4a8823c51f5248414b743dd934b50b778ed6a713f72ff7e14d88c63550bedfe.css"
-        integrity="sha256-1KiCPFH1JIQUt0Pdk0tQt3jtanE/cv9&#43;FNiMY1UL7f4="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/footer.min.30557b4de806f777a83d1d102dfe2cac331a9d270ea5f53b02b164543cc4153b.css"
-        integrity="sha256-MFV7TegG93eoPR0QLf4srDManScOpfU7ArFkVDzEFTs="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/grid.min.18b4dbb9c55d6f39455d2d9750a3939451ccc90a726db771c2333ec2d754e18b.css"
-        integrity="sha256-GLTbucVdbzlFXS2XUKOTlFHMyQpybbdxwjM&#43;wtdU4Ys="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/hero.min.4caf1596071d541523bd861e37cfcff5896f757de4f927753f82f43df258a889.css"
-        integrity="sha256-TK8VlgcdVBUjvYYeN8/P9YlvdX3k&#43;Sd1P4L0PfJYqIk="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/loading.min.5f3dcdde43efce21f36f9727a35599bb19fe12494d4c6dd9e1f860c1750069a1.css"
-        integrity="sha256-Xz3N3kPvziHzb5cno1WZuxn&#43;EklNTG3Z4fhgwXUAaaE="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/modern.min.c7118424dd6a28bf26ca7912f9501d93ad6d65ebdacb2f6086756a8b48859597.css"
-        integrity="sha256-xxGEJN1qKL8mynkS&#43;VAdk61tZevayy9ghnVqi0iFlZc="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/navigation.min.3d74f7adb51a773ebb396b458dd7298bb5bfaad0a0da0136f938ae18df31f043.css"
-        integrity="sha256-PXT3rbUadz67OWtFjdcpi7W/qtCg2gE2&#43;TiuGN8x8EM="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/scrollbar.min.e2c85a8ad645858cc0075ca49f7fca2ee562bc94e2818ae56c18756c97f83f34.css"
-        integrity="sha256-4shaitZFhYzAB1ykn3/KLuVivJTigYrlbBh1bJf4PzQ="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/search.min.4010e9d1c820eee4235afcca59d9b953da4bce67565842fee2c3cab41589a64f.css"
-        integrity="sha256-QBDp0cgg7uQjWvzKWdm5U9pLzmdWWEL&#43;4sPKtBWJpk8="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/sidebar.min.96e438d9498face2813dbb886f9d81e9860cfe2f0ed985fa7a138c11c706a6a9.css"
-        integrity="sha256-luQ42UmPrOKBPbuIb52B6YYM/i8O2YX6ehOMEccGpqk="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/tags.min.cbbe06e47d2e60b3be56d2af4b7e68308aaf6deca14d7a5a83b99d5db472320a.css"
-        integrity="sha256-y74G5H0uYLO&#43;VtKvS35oMIqvbeyhTXpag7mdXbRyMgo="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/toc.min.2eb4b3f4691bff4c54721f8e2f6a8c5807bf53c987d239e075b7e21a0e2c65ed.css"
-        integrity="sha256-LrSz9Gkb/0xUch&#43;OL2qMWAe/U8mH0jngdbfiGg4sZe0="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/welcome-page.min.5068dd8ad78c4c5949b5e1c2998b16daa343707192f848d9c5823df895870455.css"
-        integrity="sha256-UGjditeMTFlJteHCmYsW2qNDcHGS&#43;EjZxYI9&#43;JWHBFU="
-        crossorigin="anonymous" />
-    
-  
-
-
-
-
-
-
-
-
-        <script
-          src="/js/main.57547673e75b789ac36b51c816e4ee0e4338dc5b5d2a922d7dcf4f948839a1cf.js"
-          integrity="sha256-V1R2c&#43;dbeJrDa1HIFuTuDkM43FtdKpItfc9PlIg5oc8="
-          crossorigin="anonymous"></script>
-
-
-        <script
-          src="/js/navigation-enhancements.eae98272657d2216adfbe5e1a29b5dc4f57b3f4953709377dc2aeda490fed2cf.js"
-          integrity="sha256-6umCcmV9Ihat&#43;&#43;XhoptdxPV7P0lTcJN33CrtpJD&#43;0s8="
-          crossorigin="anonymous"
-          defer></script>
-
-
-
-
-
-
-
-
-        <script
-          src="/js/search.de3eba3540834efb8328121784bff4774e06362412ee41eee665f5b4f987f393.js"
-          integrity="sha256-3j66NUCDTvuDKBIXhL/0d04GNiQS7kHu5mX1tPmH85M="
-          crossorigin="anonymous"
-          defer></script>
-
-
-
-        <script
-          src="/js/dock.049193312ed73b6ffb0163645f5dca455988f73bb94f73fc28e7166ee49ddb7e.js"
-          integrity="sha256-BJGTMS7XO2/7AWNkX13KRVmI9zu5T3P8KOcWbuSd234="
-          crossorigin="anonymous"
-          defer></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script>
       (function() {
         try {
-          const storedTheme = localStorage.getItem('theme') || 'system';
-          const colorScheme = localStorage.getItem('colorScheme') || 'default';
-          document.documentElement.setAttribute('data-theme', colorScheme);
-          function applyTheme() {
-            const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const useDark = storedTheme === 'dark' || (storedTheme === 'system' && preferDark);
-            document.documentElement.classList.toggle('dark', useDark);
-          }
+          const storedMode = localStorage.getItem('themeMode') || 'system';
+          const storedColor = localStorage.getItem('themeColor') || 'blue';
+          
+          const COLORS = {
+            blue:   { light: '2 132 199', dark: '56 189 248' },
+            green:  { light: '5 150 105', dark: '52 211 153' },
+            purple: { light: '124 58 237', dark: '167 139 250' },
+            orange: { light: '234 88 12', dark: '251 146 60' },
+            pink:   { light: '219 39 119', dark: '244 114 182' },
+          };
+          
+          const root = document.documentElement;
+          const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+          
+          const getIsDark = () => {
+            return storedMode === 'dark' || (storedMode === 'system' && mediaQuery.matches);
+          };
+          
+          const applyTheme = () => {
+            const isDark = getIsDark();
+            
+            if (isDark) {
+              root.classList.add('dark');
+            } else {
+              root.classList.remove('dark');
+            }
+            
+            const rgbValue = isDark ? COLORS[storedColor].dark : COLORS[storedColor].light;
+            root.style.setProperty('--primary', rgbValue);
+            
+            if (isDark) {
+              root.style.setProperty('--primary-foreground', '15 23 42');
+            } else {
+              root.style.setProperty('--primary-foreground', '255 255 255');
+            }
+          };
+          
           applyTheme();
-          if (storedTheme === 'system' && window.matchMedia) {
+          
+          if (storedMode === 'system' && window.matchMedia) {
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
           }
         } catch (e) {}
@@ -472,499 +143,2266 @@
     </script>
   </head>
 
-  <body class="min-h-screen antialiased transition-colors duration-500">
+  <body class="min-h-screen bg-background text-secondary transition-colors duration-300 selection:bg-primary selection:text-white flex flex-col font-sans">
+    
+    <header 
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-transparent border-transparent py-5"
+>
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    
+    
+    <div 
+      onclick="window.location.href='\/zh-cn\/'"
+      class="flex items-center space-x-2 cursor-pointer group"
+    >
+      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
+        <span class="font-mono text-primary-foreground font-bold text-xl">W</span>
+      </div>
+      <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+        Woke Soul&#39;s Blog
+      </span>
+    </div>
 
     
-    <header class="topbar">
-  <div class="site-container topbar-inner">
-    <a class="brand" href="/zh-cn/" aria-label="Woke Soul&#39;s Blog">
-      <span class="brand-mark">W</span>
-      <span class="brand-title">Woke Soul&#39;s Blog</span>
-    </a>
-
-    <nav class="nav" aria-label="Primary">
-      <a href="/posts" aria-current="page">文章</a>
-      <a href="/categories" >分类</a>
-      <a href="/tags" >标签</a>
-      <a href="/archives">归档</a>
-      <a href="/about" >关于</a>
-      <a href="/acknowledgments" >鸣谢</a>
+    <nav class="hidden md:flex items-center bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full px-2 py-1.5 border border-slate-200 dark:border-slate-700 shadow-inner">
+      <a href="/posts" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-white bg-slate-800 dark:bg-slate-700 shadow-md">
+        <span class="relative z-10">文章</span>
+      </a>
+      <a href="/categories" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">分类</span>
+      </a>
+      <a href="/tags" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">标签</span>
+      </a>
+      <a href="/archives" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">归档</span>
+      </a>
+      <a href="/about" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">关于</span>
+      </a>
+      <a href="/acknowledgments" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">鸣谢</span>
+      </a>
     </nav>
 
-    <div class="actions">
-      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="切换主题">
-        ☾
-      </button>
-      <a class="icon-btn" href="/index.xml" aria-label="RSS" title="RSS">◎</a>
+    
+    <div class="hidden md:flex items-center space-x-3">
+      
+      <div class="relative" id="theme-menu-container">
+        <button 
+          id="theme-toggle-btn"
+          class="p-2 rounded-full transition-colors text-gray-600 dark:text-slate-400 hover:text-primary"
+          title="Theme Settings"
+        >
+          <svg id="palette-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+          </svg>
+        </button>
+
+        <div id="theme-menu" class="hidden absolute right-0 top-full mt-4 w-64 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-4 z-50 origin-top-right">
+          <div class="space-y-4">
+            
+            <div>
+              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Mode</span>
+              <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
+                <button id="theme-light" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                </button>
+                <button id="theme-dark" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </button>
+                <button id="theme-system" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            
+            <div>
+              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Color</span>
+              <div class="flex justify-between">
+                <button data-color="blue" class="w-8 h-8 rounded-full bg-sky-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="green" class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="purple" class="w-8 h-8 rounded-full bg-violet-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="orange" class="w-8 h-8 rounded-full bg-orange-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="pink" class="w-8 h-8 rounded-full bg-pink-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-px h-5 bg-slate-300 dark:bg-slate-700 mx-1"></div>
+
+      <a href="/index.xml" class="text-gray-600 dark:text-slate-400 hover:text-primary transition-colors p-2" title="RSS">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+      </a>
+    </div>
+
+    
+    <button 
+      id="mobile-menu-toggle"
+      class="md:hidden text-gray-600 dark:text-slate-400"
+    >
+      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
+    <div class="p-6 flex flex-col space-y-4">
+      <a href="/posts" class="text-left text-lg font-medium py-2 text-primary">文章</a>
+      <a href="/categories" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">分类</a>
+      <a href="/tags" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">标签</a>
+      <a href="/archives" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">归档</a>
+      <a href="/about" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">关于</a>
+      <a href="/acknowledgments" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">鸣谢</a>
+      <hr class="border-slate-200 dark:border-slate-700"/>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-gray-600 dark:text-slate-400">Theme</span>
+        <button id="mobile-theme-toggle" class="text-gray-600 dark:text-slate-400">
+          <svg id="mobile-sun-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="mobile-moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const header = document.getElementById('main-header');
+  let scrolled = false;
+  
+  const handleScroll = () => {
+    const isScrolled = window.scrollY > 20;
+    if (isScrolled !== scrolled) {
+      scrolled = isScrolled;
+      if (scrolled) {
+        header.classList.remove('bg-transparent', 'border-transparent', 'py-5');
+        header.classList.add('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
+      } else {
+        header.classList.remove('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
+        header.classList.add('bg-transparent', 'border-transparent', 'py-5');
+      }
+    }
+  };
+  
+  window.addEventListener('scroll', handleScroll);
+  
+  
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+  
+  
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themeMenu = document.getElementById('theme-menu');
+  const themeMenuContainer = document.getElementById('theme-menu-container');
+  
+  if (themeToggleBtn && themeMenu) {
+    themeToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themeMenu.classList.toggle('hidden');
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!themeMenuContainer.contains(e.target)) {
+        themeMenu.classList.add('hidden');
+      }
+    });
+  }
+  
+  
+  const themeLight = document.getElementById('theme-light');
+  const themeDark = document.getElementById('theme-dark');
+  const themeSystem = document.getElementById('theme-system');
+  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+  
+  const updateThemeModeButtons = () => {
+    const mode = localStorage.getItem('themeMode') || 'system';
+    [themeLight, themeDark, themeSystem].forEach(btn => {
+      if (btn) {
+        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+        btn.classList.add('text-gray-500', 'dark:text-slate-400');
+      }
+    });
+    
+    if (mode === 'light' && themeLight) {
+      themeLight.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+      themeLight.classList.remove('text-gray-500', 'dark:text-slate-400');
+    } else if (mode === 'dark' && themeDark) {
+      themeDark.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+      themeDark.classList.remove('text-gray-500', 'dark:text-slate-400');
+    } else if (mode === 'system' && themeSystem) {
+      themeSystem.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+      themeSystem.classList.remove('text-gray-500', 'dark:text-slate-400');
+    }
+  };
+  
+  if (themeLight) {
+    themeLight.addEventListener('click', () => {
+      localStorage.setItem('themeMode', 'light');
+      updateThemeModeButtons();
+      location.reload();
+    });
+  }
+  
+  if (themeDark) {
+    themeDark.addEventListener('click', () => {
+      localStorage.setItem('themeMode', 'dark');
+      updateThemeModeButtons();
+      location.reload();
+    });
+  }
+  
+  if (themeSystem) {
+    themeSystem.addEventListener('click', () => {
+      localStorage.setItem('themeMode', 'system');
+      updateThemeModeButtons();
+      location.reload();
+    });
+  }
+  
+  
+  const colorButtons = document.querySelectorAll('.theme-color-btn');
+  const updateColorButtons = () => {
+    const color = localStorage.getItem('themeColor') || 'blue';
+    colorButtons.forEach(btn => {
+      const btnColor = btn.getAttribute('data-color');
+      if (btnColor === color) {
+        btn.classList.add('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
+        btn.classList.remove('border-transparent', 'opacity-70');
+      } else {
+        btn.classList.remove('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
+        btn.classList.add('border-transparent', 'opacity-70');
+      }
+    });
+  };
+  
+  colorButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      const color = btn.getAttribute('data-color');
+      localStorage.setItem('themeColor', color);
+      updateColorButtons();
+      location.reload();
     });
   });
+  
+  updateThemeModeButtons();
+  updateColorButtons();
+  
+  
+  if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', () => {
+      const currentMode = localStorage.getItem('themeMode') || 'system';
+      const newMode = currentMode === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('themeMode', newMode);
+      location.reload();
+    });
+  }
+});
 </script>
 
 
     
-    <main class="site-container site-main">
+    <main class="flex-grow w-full pt-16">
       
-<div class="space-y-8">
-  
-  <div class="text-center mb-16 relative">
-    
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="w-48 h-48 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
-    </div>
-    
-    <h1 class="relative text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6 animate-fade-in-up">
-      所有文章
-    </h1>
-    <p class="relative text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
-      探索我的所有博客文章，发现有趣的技术分享和思考
-    </p>
-    
-    
-    <div class="relative mt-8 flex justify-center">
-      <div class="w-32 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full"></div>
-    </div>
+<div class="max-w-4xl mx-auto px-6 py-24">
+  <div class="flex items-center space-x-4 mb-12 pb-4 border-b border-slate-200 dark:border-slate-800">
+    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">All Articles</h1>
+    <span class="px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-xs text-gray-600 dark:text-slate-400">
+      5 posts
+    </span>
   </div>
 
-  
-  <div class="article-grid">
+  <div class="grid gap-10">
     
-      <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden cursor-pointer relative">
-  
-  <a href="/zh-cn/posts/test-alert/" class="absolute inset-0 z-10" aria-label="阅读文章：GitHub 风格提示框测试">
-    <span class="sr-only">阅读文章：GitHub 风格提示框测试</span>
-  </a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div class="relative mb-6 overflow-hidden rounded-2xl">
-    <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E6%258F%2590%25E7%25A4%25BA%25E6%25A1%2586%2Cmarkdown&amp;sig=1760187534107481832-28" 
-      alt="GitHub 风格提示框测试"
-      class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+      <article 
+        class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
+        onclick="window.location.href='\/zh-cn\/posts\/test-alert\/'"
+      >
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2025-06-01
+          </span>
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            3 min read
+          </span>
+          
+            
+              <span class="flex items-center text-primary font-semibold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Github
+              </span>
+            
+          
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+          GitHub 风格提示框测试
+        </h2>
+        
+        <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
+          <h1 id="github-风格提示框测试">GitHub 风格提示框测试</h1>
+<p>本文用于测试新的 GitHub 风格提示框功能和折叠功能。</p>
+<h2 id="提示框语法">提示框语法</h2>
+<h3 id="注意提示框">注意提示框</h3>
+<div
+    class="alert alert-note my-6 overflow-hidden rounded-lg border-l-4 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md"
+    style="background-color: color-mix(in srgb, var(--color-note) 10%, transparent);
+              border-left-color: var(--color-note);
+              --hover-bg: color-mix(in srgb, var(--color-note) 15%, transparent);"
+    onmouseover="this.style.backgroundColor = this.style.getPropertyValue('--hover-bg')"
+    onmouseout="this.style.backgroundColor = 'color-mix(in srgb, var(--color-note) 10%, transparent)'"
+    role="alert"
+    aria-labelledby="alert-0-title">
+    
+    <div
+      class=" flex items-center justify-between p-4"
+      >
+      <div class="flex items-center gap-3">
+        
+        <div
+          class="flex-shrink-0"
+          style="color: var(--color-note);">
+          
+  <svg class="h-5 w-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+        </div>
+
+        
+        <h4
+          id="alert-0-title"
+          class="m-0 font-semibold"
+          style="color: var(--color-note);">
+          注意
+        </h4>
+      </div>
+
+      
+      
+    </div>
+
+    
+    <div
+      id="alert-0-content"
+      class="alert-content  px-4 pb-4">
+      <div class="prose prose-sm text-foreground/90 max-w-none">
+        <p>这是一个注意提示框。用于显示用户应该注意的有用信息，即使在快速浏览内容时也应该注意。</p>
+        </p>
+
+        <div class="flex items-center justify-between mt-auto">
+          <div class="flex flex-wrap gap-2">
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #测试
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #提示框
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #markdown
+              </span>
+            
+          </div>
+          <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+            Read 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+      </article>
+    
+      <article 
+        class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
+        onclick="window.location.href='\/zh-cn\/posts\/katex-mermaid-test\/'"
+      >
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2024-01-17
+          </span>
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            2 min read
+          </span>
+          
+            
+              <span class="flex items-center text-primary font-semibold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                数学图表
+              </span>
+            
+          
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+          KaTeX 和 Mermaid 测试
+        </h2>
+        
+        <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
+          <h1 id="katex-和-mermaid-测试">KaTeX 和 Mermaid 测试</h1>
+<p>本文用于测试 KaTeX 数学公式渲染和 Mermaid 图表功能。</p>
+<h2 id="mermaid-图表测试">Mermaid 图表测试</h2>
+<h3 id="流程图">流程图</h3>
+
+
+
+<pre class="mermaid">
+  graph TD
+    A[开始] --&gt; B{是否为用户？}
+    B --&gt;|是| C[显示用户界面]
+    B --&gt;|否| D[显示登录页面]
+    C --&gt; E[用户操作]
+    D --&gt; F[用户登录]
+    F --&gt; G{登录成功？}
+    G --&gt;|是| C
+    G --&gt;|否| H[显示错误信息]
+    H --&gt; D
+    E --&gt; I[结束]
+</pre>
+
+<h3 id="序列图">序列图</h3>
+
+
+
+<pre class="mermaid">
+  sequenceDiagram
+    participant 用户
+    participant 浏览器
+    participant 服务器
+    participant 数据库
+
+    用户-&gt;&gt;浏览器: 输入网址
+    浏览器-&gt;&gt;服务器: 发送HTTP请求
+    服务器-&gt;&gt;数据库: 查询数据
+    数据库--&gt;&gt;服务器: 返回数据
+    服务器--&gt;&gt;浏览器: 返回HTML
+    浏览器--&gt;&gt;用户: 显示页面
+</pre>
+
+<h3 id="甘特图">甘特图</h3>
+
+
+
+<pre class="mermaid">
+  gantt
+    title 项目开发时间线
+    dateFormat  YYYY-MM-DD
+    section 设计阶段
+    需求分析           :done,    des1, 2024-01-01,2024-01-05
+    UI设计            :done,    des2, 2024-01-06, 2024-01-12
+    原型制作           :active,  des3, 2024-01-13, 2024-01-18
+    section 开发阶段
+    前端开发           :         dev1, 2024-01-19, 2024-02-15
+    后端开发           :         dev2, 2024-01-19, 2024-02-20
+    数据库设计         :         dev3, 2024-01-19, 2024-01-25
+    section 测试阶段
+    单元测试           :         test1, 2024-02-16, 2024-02-25
+    集成测试           :         test2, 2024-02-21, 2024-03-01
+    用户测试           :         test3, 2024-02-26, 2024-03-05
+</pre>
+
+<h2 id="katex-测试">KaTeX 测试</h2>
+<h3 id="行内公式">行内公式</h3>
+<p>这是一个行内公式：$E = mc^2$，爱因斯坦的质能等价公式。</p>
+        </p>
+
+        <div class="flex items-center justify-between mt-auto">
+          <div class="flex flex-wrap gap-2">
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #测试
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #katex
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #mermaid
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #数学
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #图表
+              </span>
+            
+          </div>
+          <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+            Read 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+      </article>
+    
+      <article 
+        class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
+        onclick="window.location.href='\/zh-cn\/posts\/%E5%9B%BE%E7%89%87%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95\/'"
+      >
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2024-01-16
+          </span>
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            1 min read
+          </span>
+          
+            
+              <span class="flex items-center text-primary font-semibold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                图片渲染
+              </span>
+            
+          
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+          图片渲染测试
+        </h2>
+        
+        <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
+          <h1 id="图片渲染测试">图片渲染测试</h1>
+<p>示例来自 <a href="https://www.lightgalleryjs.com/demos/thumbnails/">LightGallery</a>
+所有图片来自 <a href="https://unsplash.com/">Unsplash</a></p>
+<h2 id="单张图片">单张图片</h2>
+<p>
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="/posts/image-rendering-test/bundle.avif"
+      alt="https://unsplash.com/@danielleone"
+      title="摄影师 - Daniel Leone"
+      
       loading="lazy"
-      referrerpolicy="no-referrer"
-      crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1760187534107481832-28\/1200\/800';"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-  </div>
-  
+      decoding="async"
+      data-gallery-src="/posts/image-rendering-test/bundle.avif"
+      data-gallery-alt="https://unsplash.com/@danielleone"
+      data-gallery-title="摄影师 - Daniel Leone" /></div>
 
-  
-  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+  <figcaption class="image-caption">
+      摄影师 - Daniel Leone
+    </figcaption></figure></p>
+<h2 id="justified-布局图库">Justified 布局图库</h2>
+<p>
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
     
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <time datetime="2025-06-01" class="font-medium">6月1日</time>
-    </div>
-    
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-      <span class="font-medium">3 分钟</span>
-    </div>
-    
-  </div>
-
-  
-  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight line-clamp-2 relative z-0">
-    GitHub 风格提示框测试
-  </h3>
-
-  
-  
-  
-  
-  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
-    GitHub 风格提示框测试 本文用于测试新的 GitHub 风格提示框功能和折叠功能。
-提示框语法 注意提示框 注意 这是一个注意提示框。用于显示用户应该注意的有用信息，即使在快速浏览内容时也应该注意。
-
-  </p>
-  
-
-  
-  
-  <div class="flex flex-wrap gap-2 mb-6">
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #测试
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #提示框
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #markdown
-    </span>
-    
-  </div>
-  
-
-</article>
-
-    
-      <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden cursor-pointer relative">
-  
-  <a href="/zh-cn/posts/katex-mermaid-test/" class="absolute inset-0 z-10" aria-label="阅读文章：KaTeX 和 Mermaid 测试">
-    <span class="sr-only">阅读文章：KaTeX 和 Mermaid 测试</span>
-  </a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div class="relative mb-6 overflow-hidden rounded-2xl">
-    <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2Ckatex%2Cmermaid&amp;sig=1760187534107684181-24" 
-      alt="KaTeX 和 Mermaid 测试"
-      class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+    <img
+      src="/images/01.avif"
+      alt="https://unsplash.com/@@tobbes_rd"
+      title="摄影师 - Tobias Rademacher"
+      
       loading="lazy"
-      referrerpolicy="no-referrer"
-      crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1760187534107684181-24\/1200\/800';"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-  </div>
-  
+      decoding="async"
+      data-gallery-src="/images/01.avif"
+      data-gallery-alt="https://unsplash.com/@@tobbes_rd"
+      data-gallery-title="摄影师 - Tobias Rademacher" /></div>
 
-  
-  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <time datetime="2024-01-17" class="font-medium">1月17日</time>
-    </div>
-    
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-      <span class="font-medium">2 分钟</span>
-    </div>
-    
-  </div>
+  <figcaption class="image-caption">
+      摄影师 - Tobias Rademacher
+    </figcaption></figure>
 
-  
-  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight line-clamp-2 relative z-0">
-    KaTeX 和 Mermaid 测试
-  </h3>
-
-  
-  
-  
-  
-  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
-    KaTeX 和 Mermaid 测试 本文用于测试 KaTeX 数学公式渲染和 Mermaid 图表功能。
-Mermaid 图表测试 流程图 序列图 甘特图 KaTeX 测试 行内公式 这是一个行内公式：$E = mc^2$，爱因斯坦的质能等价公式。
-
-  </p>
-  
-
-  
-  
-  <div class="flex flex-wrap gap-2 mb-6">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
     
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #测试
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #katex
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #mermaid
-    </span>
-    
-  </div>
-  
-
-</article>
-
-    
-      <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden cursor-pointer relative">
-  
-  <a href="/zh-cn/posts/%E5%9B%BE%E7%89%87%E6%B8%B2%E6%9F%93%E6%B5%8B%E8%AF%95/" class="absolute inset-0 z-10" aria-label="阅读文章：图片渲染测试">
-    <span class="sr-only">阅读文章：图片渲染测试</span>
-  </a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div class="relative mb-6 overflow-hidden rounded-2xl">
-    <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E5%259B%25BE%25E7%2589%2587%2C%25E6%25B8%25B2%25E6%259F%2593&amp;sig=1760187534107934048-18" 
-      alt="图片渲染测试"
-      class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+    <img
+      src="/images/02.avif"
+      alt="https://unsplash.com/@therawhunter"
+      title="摄影师 - Massimiliano Morosinotto"
+      
       loading="lazy"
-      referrerpolicy="no-referrer"
-      crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1760187534107934048-18\/1200\/800';"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-  </div>
-  
+      decoding="async"
+      data-gallery-src="/images/02.avif"
+      data-gallery-alt="https://unsplash.com/@therawhunter"
+      data-gallery-title="摄影师 - Massimiliano Morosinotto" /></div>
 
-  
-  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <time datetime="2024-01-16" class="font-medium">1月16日</time>
-    </div>
-    
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-      <span class="font-medium">1 分钟</span>
-    </div>
-    
-  </div>
+  <figcaption class="image-caption">
+      摄影师 - Massimiliano Morosinotto
+    </figcaption></figure>
 
-  
-  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight line-clamp-2 relative z-0">
-    图片渲染测试
-  </h3>
-
-  
-  
-  
-  
-  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
-    图片渲染测试 示例来自 LightGallery 所有图片来自 Unsplash
-单张图片 摄影师 - Daniel Leone Justified 布局图库 摄影师 - Tobias Rademacher 摄影师 - Massimiliano Morosinotto 摄影师 - Sascha Bosshard …
-  </p>
-  
-
-  
-  
-  <div class="flex flex-wrap gap-2 mb-6">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
     
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #测试
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #图片
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #渲染
-    </span>
-    
-  </div>
-  
-
-</article>
-
-    
-      <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden cursor-pointer relative">
-  
-  <a href="/zh-cn/posts/code-highlighting-test/" class="absolute inset-0 z-10" aria-label="阅读文章：代码高亮测试">
-    <span class="sr-only">阅读文章：代码高亮测试</span>
-  </a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div class="relative mb-6 overflow-hidden rounded-2xl">
-    <img 
-      src="https://source.unsplash.com/featured/1200x800/?%25E6%25B5%258B%25E8%25AF%2595%2C%25E4%25BB%25A3%25E7%25A0%2581%2C%25E8%25AF%25AD%25E6%25B3%2595%25E9%25AB%2598%25E4%25BA%25AE&amp;sig=1760187534108343113-18" 
-      alt="代码高亮测试"
-      class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+    <img
+      src="/images/03.avif"
+      alt="https://unsplash.com/@thesaboo"
+      title="摄影师 - Sascha Bosshard"
+      
       loading="lazy"
-      referrerpolicy="no-referrer"
-      crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1760187534108343113-18\/1200\/800';"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-  </div>
-  
+      decoding="async"
+      data-gallery-src="/images/03.avif"
+      data-gallery-alt="https://unsplash.com/@thesaboo"
+      data-gallery-title="摄影师 - Sascha Bosshard" /></div>
 
-  
-  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <time datetime="2024-01-16" class="font-medium">1月16日</time>
-    </div>
-    
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-      <span class="font-medium">2 分钟</span>
-    </div>
-    
-  </div>
+  <figcaption class="image-caption">
+      摄影师 - Sascha Bosshard
+    </figcaption></figure>
 
-  
-  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight line-clamp-2 relative z-0">
-    代码高亮测试
-  </h3>
-
-  
-  
-  
-  
-  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
-    代码高亮测试 本文用于测试新的代码高亮功能，包括语法高亮、复制按钮、语言显示等。
-JavaScript JAVASCRIPT 行号 折叠 复制 点击展开查看更多 带行号的代码块 PYTHON 行号 折叠 复制 点击展开查看更多 高亮特定行 GO 行号 折叠 复制 点击展开查看更多 带文件名的代码块 api.ts 行号  …
-  </p>
-  
-
-  
-  
-  <div class="flex flex-wrap gap-2 mb-6">
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
     
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #测试
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #代码
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #语法高亮
-    </span>
-    
-  </div>
-  
-
-</article>
-
-    
-      <article class="article-card group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl p-6 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden cursor-pointer relative">
-  
-  <a href="/zh-cn/posts/markdown-%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" class="absolute inset-0 z-10" aria-label="阅读文章：Markdown 语法测试文档">
-    <span class="sr-only">阅读文章：Markdown 语法测试文档</span>
-  </a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div class="relative mb-6 overflow-hidden rounded-2xl">
-    <img 
-      src="https://source.unsplash.com/featured/1200x800/?markdown%2C%25E6%2596%2587%25E6%25A1%25A3%2C%25E6%25A0%25B7%25E5%25BC%258F&amp;sig=1760187534112401635-27" 
-      alt="Markdown 语法测试文档"
-      class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+    <img
+      src="/images/04.avif"
+      alt="https://unsplash.com/@yusufevli"
+      title="摄影师 - Yusuf Evli"
+      
       loading="lazy"
-      referrerpolicy="no-referrer"
-      crossorigin="anonymous"
-      onerror="this.onerror=null; this.src='https:\/\/picsum.photos\/seed\/1760187534112401635-27\/1200\/800';"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-  </div>
-  
+      decoding="async"
+      data-gallery-src="/images/04.avif"
+      data-gallery-alt="https://unsplash.com/@yusufevli"
+      data-gallery-title="摄影师 - Yusuf Evli" /></div>
 
-  
-  <div class="flex items-center space-x-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+  <figcaption class="image-caption">
+      摄影师 - Yusuf Evli
+    </figcaption></figure>
+
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
     
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-      <time datetime="2024-01-15" class="font-medium">1月15日</time>
+    <img
+      src="/images/05.avif"
+      alt="https://unsplash.com/@flovayn"
+      title="摄影师 - Jay Mantri"
+      
+      loading="lazy"
+      decoding="async"
+      data-gallery-src="/images/05.avif"
+      data-gallery-alt="https://unsplash.com/@flovayn"
+      data-gallery-title="摄影师 - Jay Mantri" /></div>
+
+  <figcaption class="image-caption">
+      摄影师 - Jay Mantri
+    </figcaption></figure>
+
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="/images/06.avif"
+      alt="https://unsplash.com/@flovayn"
+      title="摄影师 -  Florian van Duyn"
+      
+      loading="lazy"
+      decoding="async"
+      data-gallery-src="/images/06.avif"
+      data-gallery-alt="https://unsplash.com/@flovayn"
+      data-gallery-title="摄影师 -  Florian van Duyn" /></div>
+
+  <figcaption class="image-caption">
+      摄影师 -  Florian van Duyn
+    </figcaption></figure>
+
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="/images/07.avif"
+      alt="https://unsplash.com/@juanster"
+      title="摄影师 - Juan Davila"
+      
+      loading="lazy"
+      decoding="async"
+      data-gallery-src="/images/07.avif"
+      data-gallery-alt="https://unsplash.com/@juanster"
+      data-gallery-title="摄影师 - Juan Davila" /></div>
+
+  <figcaption class="image-caption">
+      摄影师 - Juan Davila
+    </figcaption></figure>
+
+<figure class="image-figure not-prose my-8" 
+        data-lightbox-enabled="true"
+        data-gallery-type="auto">
+  <div class="image-container">
+    
+    <img
+      src="/images/08.avif"
+      alt="https://unsplash.com/@davidmarcu"
+      title="摄影师 - David Marcu"
+      
+      loading="lazy"
+      decoding="async"
+      data-gallery-src="/images/08.avif"
+      data-gallery-alt="https://unsplash.com/@davidmarcu"
+      data-gallery-title="摄影师 - David Marcu" /></div>
+
+  <figcaption class="image-caption">
+      摄影师 - David Marcu
+    </figcaption></figure></p>
+        </p>
+
+        <div class="flex items-center justify-between mt-auto">
+          <div class="flex flex-wrap gap-2">
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #测试
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #图片
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #渲染
+              </span>
+            
+          </div>
+          <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+            Read 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+      </article>
+    
+      <article 
+        class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
+        onclick="window.location.href='\/zh-cn\/posts\/code-highlighting-test\/'"
+      >
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2024-01-16
+          </span>
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            2 min read
+          </span>
+          
+            
+              <span class="flex items-center text-primary font-semibold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                代码高亮
+              </span>
+            
+          
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+          代码高亮测试
+        </h2>
+        
+        <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
+          <h1 id="代码高亮测试">代码高亮测试</h1>
+<p>本文用于测试新的代码高亮功能，包括语法高亮、复制按钮、语言显示等。</p>
+<h2 id="javascript">JavaScript</h2>
+<div
+  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
+  
+  <div
+    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
+    
+    <div class="flex items-center gap-2">
+      <div class="text-muted-foreground flex-shrink-0">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+</svg>
+      </div>
+      <span class="text-muted-foreground text-sm font-medium">
+        JAVASCRIPT
+      </span>
     </div>
+
     
-    
-    <div class="flex items-center space-x-2">
-      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-      <span class="font-medium">3 分钟</span>
+    <div class="flex items-center gap-2">
+      
+      <button
+        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-0"
+        title="切换行号"
+        aria-label="切换行号">
+        <span class="linenumber-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        </span>
+        <span class="linenumber-text hidden md:inline">行号</span>
+      </button>
+
+      <button
+          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+          data-code-id="code-0"
+          data-default-state="expanded"
+          data-collapsed="false"
+          data-auto-collapse-lines="30"
+          data-auto-collapse-height="400"
+          data-collapsed-height="120"
+          title="折叠"
+          aria-label="折叠">
+          <span class="collapse-icon">
+            
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
+          </span>
+          <span class="collapse-text hidden sm:inline"
+            >折叠</span
+          >
+        </button>
+      <button
+        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-0"
+        title="复制"
+        aria-label="复制">
+        <span class="copy-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+        </span>
+        <span class="copy-text hidden sm:inline"
+          >复制</span
+        >
+      </button>
     </div>
-    
   </div>
 
   
-  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 leading-tight line-clamp-2 relative z-0">
-    Markdown 语法测试文档
-  </h3>
-
-  
-  
-  
-  
-  <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm line-clamp-3">
-    这是一个包含各种 Markdown 语法的测试文档，用于验证文档样式的完整性。
-  </p>
-  
-
-  
-  
-  <div class="flex flex-wrap gap-2 mb-6">
+  <div class="code-block-content relative" id="code-0">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kd">function</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">return</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`第10个斐波那契数是：</span><span class="si">${</span><span class="nx">result</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1">// 异步/等待
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">asyncFunction</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/api/data&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;获取数据时出错：&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="p">};</span></span></span></code></pre></div>
     
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #markdown
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #文档
-    </span>
-    
-    <span class="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200/50 dark:border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/50 dark:hover:to-purple-800/50 transition-all duration-300">
-      #样式
-    </span>
-    
+    <div
+      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
+      <div
+        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
+        点击展开查看更多
+      </div>
+    </div>
   </div>
+</div>
+
+
+<script>
+(function() {
+  const codeId = 'code-0';
+  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
+  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
+  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
+  const codeContainer = document.getElementById(codeId);
+
+  if (!codeContainer) return;
+
   
+  if (toggleLinenosBtn) {
+    toggleLinenosBtn.addEventListener('click', function() {
+      codeContainer.classList.toggle('no-linenos');
+    });
+  }
 
-</article>
+  
+  if (copyBtn) {
+    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const copyText = copyBtn.querySelector('.copy-text');
 
+    copyBtn.addEventListener('click', async function() {
+      try {
+        let codeText = '';
+        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
+        if (codeTableCell) {
+          codeText = codeTableCell.textContent || codeTableCell.innerText;
+        } else {
+          const codeElement = codeContainer.querySelector('code');
+          if (codeElement) {
+            const hasInlineLineNumbers = codeElement.querySelector('.ln');
+            if (hasInlineLineNumbers) {
+              const codeLines = codeElement.querySelectorAll('.cl');
+              if (codeLines.length > 0) {
+                codeText = Array.from(codeLines)
+                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
+                  .join('\n').replace(/\n+$/, '');
+              } else {
+                const allText = codeElement.textContent || codeElement.innerText;
+                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
+              }
+            } else {
+              codeText = codeElement.textContent || codeElement.innerText;
+            }
+          } else {
+            codeText = codeContainer.textContent || codeContainer.innerText;
+          }
+        }
+        codeText = codeText.trim();
+        await navigator.clipboard.writeText(codeText);
+        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (copyText) copyText.textContent = '已复制';
+        copyBtn.classList.add('text-green-600');
+        setTimeout(() => {
+          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
+          if (copyText) copyText.textContent = '复制';
+          copyBtn.classList.remove('text-green-600');
+        }, 2000);
+      } catch (err) {
+        console.error('复制失败:', err);
+      }
+    });
+  }
+
+  
+  if (collapseBtn) {
+    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
+    const collapseText = collapseBtn.querySelector('.collapse-text');
+    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
+
+    let codeElement = codeContainer.querySelector('pre.chroma');
+    if (!codeElement) codeElement = codeContainer.querySelector('pre');
+
+    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
+    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
+    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
+    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
+    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
+
+    let isCollapsed = false;
+
+    function initCollapse() {
+      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
+      if (shouldCollapse) setCollapsed(true, false);
+    }
+    function shouldAutoCollapse() {
+      if (codeElement) {
+        const lines = codeElement.querySelectorAll('.line, .cl');
+        const height = codeElement.offsetHeight;
+        return lines.length > autoCollapseLines || height > autoCollapseHeight;
+      }
+      const containerHeight = codeContainer.offsetHeight;
+      if (containerHeight > autoCollapseHeight) return true;
+      const textContent = codeContainer.textContent || codeContainer.innerText || '';
+      const estimatedLines = textContent.split('\n').length;
+      return estimatedLines > autoCollapseLines;
+    }
+    function setCollapsed(collapsed, animate = true) {
+      if (!collapseOverlay) return;
+      isCollapsed = collapsed;
+      if (collapsed) {
+        codeContainer.style.maxHeight = collapsedHeight + 'px';
+        codeContainer.style.overflow = 'hidden';
+        collapseOverlay.style.opacity = '1';
+        collapseOverlay.style.pointerEvents = 'auto';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '展开';
+        collapseBtn.title = '展开';
+      } else {
+        codeContainer.style.maxHeight = '';
+        codeContainer.style.overflow = '';
+        collapseOverlay.style.opacity = '0';
+        collapseOverlay.style.pointerEvents = 'none';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '折叠';
+        collapseBtn.title = '折叠';
+      }
+      if (animate) {
+        codeContainer.style.transition = 'max-height 0.3s ease-out';
+        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
+      }
+    }
+    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
+    collapseBtn.addEventListener('click', toggleCollapse);
+    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
+    initCollapse();
+  }
+})();
+</script>
+
+<h2 id="带行号的代码块">带行号的代码块</h2>
+<div
+  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
+  
+  <div
+    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
+    
+    <div class="flex items-center gap-2">
+      <div class="text-muted-foreground flex-shrink-0">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+</svg>
+      </div>
+      <span class="text-muted-foreground text-sm font-medium">
+        PYTHON
+      </span>
+    </div>
+
+    
+    <div class="flex items-center gap-2">
+      
+      <button
+        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-1"
+        title="切换行号"
+        aria-label="切换行号">
+        <span class="linenumber-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        </span>
+        <span class="linenumber-text hidden md:inline">行号</span>
+      </button>
+
+      <button
+          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+          data-code-id="code-1"
+          data-default-state="expanded"
+          data-collapsed="false"
+          data-auto-collapse-lines="30"
+          data-auto-collapse-height="400"
+          data-collapsed-height="120"
+          title="折叠"
+          aria-label="折叠">
+          <span class="collapse-icon">
+            
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
+          </span>
+          <span class="collapse-text hidden sm:inline"
+            >折叠</span
+          >
+        </button>
+      <button
+        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-1"
+        title="复制"
+        aria-label="复制">
+        <span class="copy-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+        </span>
+        <span class="copy-text hidden sm:inline"
+          >复制</span
+        >
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="code-block-content relative" id="code-1">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 带行号的 Python 代码</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">class</span> <span class="nc">DataProcessor</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]):</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="s2">&#34;&#34;&#34;处理数据并返回结果&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="s1">&#39;processed&#39;</span><span class="p">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;processed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="k">return</span> <span class="n">result</span></span></span></code></pre></div>
+    
+    <div
+      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
+      <div
+        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
+        点击展开查看更多
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function() {
+  const codeId = 'code-1';
+  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
+  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
+  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
+  const codeContainer = document.getElementById(codeId);
+
+  if (!codeContainer) return;
+
+  
+  if (toggleLinenosBtn) {
+    toggleLinenosBtn.addEventListener('click', function() {
+      codeContainer.classList.toggle('no-linenos');
+    });
+  }
+
+  
+  if (copyBtn) {
+    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const copyText = copyBtn.querySelector('.copy-text');
+
+    copyBtn.addEventListener('click', async function() {
+      try {
+        let codeText = '';
+        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
+        if (codeTableCell) {
+          codeText = codeTableCell.textContent || codeTableCell.innerText;
+        } else {
+          const codeElement = codeContainer.querySelector('code');
+          if (codeElement) {
+            const hasInlineLineNumbers = codeElement.querySelector('.ln');
+            if (hasInlineLineNumbers) {
+              const codeLines = codeElement.querySelectorAll('.cl');
+              if (codeLines.length > 0) {
+                codeText = Array.from(codeLines)
+                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
+                  .join('\n').replace(/\n+$/, '');
+              } else {
+                const allText = codeElement.textContent || codeElement.innerText;
+                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
+              }
+            } else {
+              codeText = codeElement.textContent || codeElement.innerText;
+            }
+          } else {
+            codeText = codeContainer.textContent || codeContainer.innerText;
+          }
+        }
+        codeText = codeText.trim();
+        await navigator.clipboard.writeText(codeText);
+        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (copyText) copyText.textContent = '已复制';
+        copyBtn.classList.add('text-green-600');
+        setTimeout(() => {
+          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
+          if (copyText) copyText.textContent = '复制';
+          copyBtn.classList.remove('text-green-600');
+        }, 2000);
+      } catch (err) {
+        console.error('复制失败:', err);
+      }
+    });
+  }
+
+  
+  if (collapseBtn) {
+    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
+    const collapseText = collapseBtn.querySelector('.collapse-text');
+    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
+
+    let codeElement = codeContainer.querySelector('pre.chroma');
+    if (!codeElement) codeElement = codeContainer.querySelector('pre');
+
+    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
+    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
+    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
+    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
+    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
+
+    let isCollapsed = false;
+
+    function initCollapse() {
+      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
+      if (shouldCollapse) setCollapsed(true, false);
+    }
+    function shouldAutoCollapse() {
+      if (codeElement) {
+        const lines = codeElement.querySelectorAll('.line, .cl');
+        const height = codeElement.offsetHeight;
+        return lines.length > autoCollapseLines || height > autoCollapseHeight;
+      }
+      const containerHeight = codeContainer.offsetHeight;
+      if (containerHeight > autoCollapseHeight) return true;
+      const textContent = codeContainer.textContent || codeContainer.innerText || '';
+      const estimatedLines = textContent.split('\n').length;
+      return estimatedLines > autoCollapseLines;
+    }
+    function setCollapsed(collapsed, animate = true) {
+      if (!collapseOverlay) return;
+      isCollapsed = collapsed;
+      if (collapsed) {
+        codeContainer.style.maxHeight = collapsedHeight + 'px';
+        codeContainer.style.overflow = 'hidden';
+        collapseOverlay.style.opacity = '1';
+        collapseOverlay.style.pointerEvents = 'auto';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '展开';
+        collapseBtn.title = '展开';
+      } else {
+        codeContainer.style.maxHeight = '';
+        codeContainer.style.overflow = '';
+        collapseOverlay.style.opacity = '0';
+        collapseOverlay.style.pointerEvents = 'none';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '折叠';
+        collapseBtn.title = '折叠';
+      }
+      if (animate) {
+        codeContainer.style.transition = 'max-height 0.3s ease-out';
+        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
+      }
+    }
+    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
+    collapseBtn.addEventListener('click', toggleCollapse);
+    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
+    initCollapse();
+  }
+})();
+</script>
+
+<h2 id="高亮特定行">高亮特定行</h2>
+<div
+  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
+  
+  <div
+    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
+    
+    <div class="flex items-center gap-2">
+      <div class="text-muted-foreground flex-shrink-0">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+</svg>
+      </div>
+      <span class="text-muted-foreground text-sm font-medium">
+        GO
+      </span>
+    </div>
+
+    
+    <div class="flex items-center gap-2">
+      
+      <button
+        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-2"
+        title="切换行号"
+        aria-label="切换行号">
+        <span class="linenumber-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        </span>
+        <span class="linenumber-text hidden md:inline">行号</span>
+      </button>
+
+      <button
+          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+          data-code-id="code-2"
+          data-default-state="expanded"
+          data-collapsed="false"
+          data-auto-collapse-lines="30"
+          data-auto-collapse-height="400"
+          data-collapsed-height="120"
+          title="折叠"
+          aria-label="折叠">
+          <span class="collapse-icon">
+            
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
+          </span>
+          <span class="collapse-text hidden sm:inline"
+            >折叠</span
+          >
+        </button>
+      <button
+        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-2"
+        title="复制"
+        aria-label="复制">
+        <span class="copy-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+        </span>
+        <span class="copy-text hidden sm:inline"
+          >复制</span
+        >
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="code-block-content relative" id="code-2">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
+</span></span></span><span class="line hl"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w">  </span><span class="c1">// 这一行将被高亮</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line hl"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="nx">message</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;你好，世界！&#34;</span><span class="w">  </span><span class="c1">// 这一行也将被高亮</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
+</span></span></span><span class="line hl"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w">  </span><span class="c1">// 这一行也将被高亮</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;计数：%d\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
+    
+    <div
+      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
+      <div
+        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
+        点击展开查看更多
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function() {
+  const codeId = 'code-2';
+  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
+  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
+  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
+  const codeContainer = document.getElementById(codeId);
+
+  if (!codeContainer) return;
+
+  
+  if (toggleLinenosBtn) {
+    toggleLinenosBtn.addEventListener('click', function() {
+      codeContainer.classList.toggle('no-linenos');
+    });
+  }
+
+  
+  if (copyBtn) {
+    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const copyText = copyBtn.querySelector('.copy-text');
+
+    copyBtn.addEventListener('click', async function() {
+      try {
+        let codeText = '';
+        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
+        if (codeTableCell) {
+          codeText = codeTableCell.textContent || codeTableCell.innerText;
+        } else {
+          const codeElement = codeContainer.querySelector('code');
+          if (codeElement) {
+            const hasInlineLineNumbers = codeElement.querySelector('.ln');
+            if (hasInlineLineNumbers) {
+              const codeLines = codeElement.querySelectorAll('.cl');
+              if (codeLines.length > 0) {
+                codeText = Array.from(codeLines)
+                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
+                  .join('\n').replace(/\n+$/, '');
+              } else {
+                const allText = codeElement.textContent || codeElement.innerText;
+                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
+              }
+            } else {
+              codeText = codeElement.textContent || codeElement.innerText;
+            }
+          } else {
+            codeText = codeContainer.textContent || codeContainer.innerText;
+          }
+        }
+        codeText = codeText.trim();
+        await navigator.clipboard.writeText(codeText);
+        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (copyText) copyText.textContent = '已复制';
+        copyBtn.classList.add('text-green-600');
+        setTimeout(() => {
+          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
+          if (copyText) copyText.textContent = '复制';
+          copyBtn.classList.remove('text-green-600');
+        }, 2000);
+      } catch (err) {
+        console.error('复制失败:', err);
+      }
+    });
+  }
+
+  
+  if (collapseBtn) {
+    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
+    const collapseText = collapseBtn.querySelector('.collapse-text');
+    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
+
+    let codeElement = codeContainer.querySelector('pre.chroma');
+    if (!codeElement) codeElement = codeContainer.querySelector('pre');
+
+    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
+    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
+    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
+    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
+    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
+
+    let isCollapsed = false;
+
+    function initCollapse() {
+      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
+      if (shouldCollapse) setCollapsed(true, false);
+    }
+    function shouldAutoCollapse() {
+      if (codeElement) {
+        const lines = codeElement.querySelectorAll('.line, .cl');
+        const height = codeElement.offsetHeight;
+        return lines.length > autoCollapseLines || height > autoCollapseHeight;
+      }
+      const containerHeight = codeContainer.offsetHeight;
+      if (containerHeight > autoCollapseHeight) return true;
+      const textContent = codeContainer.textContent || codeContainer.innerText || '';
+      const estimatedLines = textContent.split('\n').length;
+      return estimatedLines > autoCollapseLines;
+    }
+    function setCollapsed(collapsed, animate = true) {
+      if (!collapseOverlay) return;
+      isCollapsed = collapsed;
+      if (collapsed) {
+        codeContainer.style.maxHeight = collapsedHeight + 'px';
+        codeContainer.style.overflow = 'hidden';
+        collapseOverlay.style.opacity = '1';
+        collapseOverlay.style.pointerEvents = 'auto';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '展开';
+        collapseBtn.title = '展开';
+      } else {
+        codeContainer.style.maxHeight = '';
+        codeContainer.style.overflow = '';
+        collapseOverlay.style.opacity = '0';
+        collapseOverlay.style.pointerEvents = 'none';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '折叠';
+        collapseBtn.title = '折叠';
+      }
+      if (animate) {
+        codeContainer.style.transition = 'max-height 0.3s ease-out';
+        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
+      }
+    }
+    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
+    collapseBtn.addEventListener('click', toggleCollapse);
+    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
+    initCollapse();
+  }
+})();
+</script>
+
+<h2 id="带文件名的代码块">带文件名的代码块</h2>
+<div
+  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
+  
+  <div
+    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
+    
+    <div class="flex items-center gap-2">
+      <div class="text-muted-foreground flex-shrink-0">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+</svg>
+      </div>
+      <span class="text-muted-foreground text-sm font-medium">
+        api.ts
+      </span>
+    </div>
+
+    
+    <div class="flex items-center gap-2">
+      
+      <button
+        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-3"
+        title="切换行号"
+        aria-label="切换行号">
+        <span class="linenumber-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        </span>
+        <span class="linenumber-text hidden md:inline">行号</span>
+      </button>
+
+      <button
+          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+          data-code-id="code-3"
+          data-default-state="expanded"
+          data-collapsed="false"
+          data-auto-collapse-lines="30"
+          data-auto-collapse-height="400"
+          data-collapsed-height="120"
+          title="折叠"
+          aria-label="折叠">
+          <span class="collapse-icon">
+            
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
+          </span>
+          <span class="collapse-text hidden sm:inline"
+            >折叠</span
+          >
+        </button>
+      <button
+        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-3"
+        title="复制"
+        aria-label="复制">
+        <span class="copy-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+        </span>
+        <span class="copy-text hidden sm:inline"
+          >复制</span
+        >
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="code-block-content relative" id="code-3">
+    <div class="highlight" filename="api.ts"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// TypeScript API
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="kr">interface</span> <span class="nx">ApiResponse</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="nx">data</span>: <span class="kt">T</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="nx">status</span>: <span class="kt">number</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="nx">message</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="nx">email</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="nx">avatar?</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="kr">class</span> <span class="nx">ApiClient</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="kr">private</span> <span class="nx">baseURL</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="kr">private</span> <span class="nx">headers</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">string</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="nx">baseURL</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">apiKey?</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="nx">baseURL</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">      <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">      <span class="p">...(</span><span class="nx">apiKey</span> <span class="o">&amp;&amp;</span> <span class="p">{</span> <span class="s1">&#39;Authorization&#39;</span><span class="o">:</span> <span class="sb">`Bearer </span><span class="si">${</span><span class="nx">apiKey</span><span class="si">}</span><span class="sb">`</span> <span class="p">})</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  <span class="kr">async</span> <span class="kr">get</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">endpoint</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">ApiResponse</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}${</span><span class="nx">endpoint</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">      <span class="nx">headers</span>: <span class="kt">this.headers</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">
+</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="sb">`HTTP 错误！状态：</span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">
+</span></span><span class="line"><span class="ln">37</span><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">
+</span></span><span class="line"><span class="ln">40</span><span class="cl">  <span class="kr">async</span> <span class="nx">post</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">endpoint</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">data</span>: <span class="kt">any</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">ApiResponse</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}${</span><span class="nx">endpoint</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">      <span class="nx">headers</span>: <span class="kt">this.headers</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">      <span class="nx">body</span>: <span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">
+</span></span><span class="line"><span class="ln">47</span><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">
+</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ApiClient</span><span class="p">(</span><span class="s1">&#39;https://api.example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;your-api-key&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">
+</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">getUsers</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">54</span><span class="cl">  <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="kr">get</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">[]</span><span class="p">&gt;(</span><span class="s1">&#39;/users&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;获取用户时出错：&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">    <span class="k">return</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+    
+    <div
+      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
+      <div
+        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
+        点击展开查看更多
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function() {
+  const codeId = 'code-3';
+  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
+  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
+  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
+  const codeContainer = document.getElementById(codeId);
+
+  if (!codeContainer) return;
+
+  
+  if (toggleLinenosBtn) {
+    toggleLinenosBtn.addEventListener('click', function() {
+      codeContainer.classList.toggle('no-linenos');
+    });
+  }
+
+  
+  if (copyBtn) {
+    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const copyText = copyBtn.querySelector('.copy-text');
+
+    copyBtn.addEventListener('click', async function() {
+      try {
+        let codeText = '';
+        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
+        if (codeTableCell) {
+          codeText = codeTableCell.textContent || codeTableCell.innerText;
+        } else {
+          const codeElement = codeContainer.querySelector('code');
+          if (codeElement) {
+            const hasInlineLineNumbers = codeElement.querySelector('.ln');
+            if (hasInlineLineNumbers) {
+              const codeLines = codeElement.querySelectorAll('.cl');
+              if (codeLines.length > 0) {
+                codeText = Array.from(codeLines)
+                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
+                  .join('\n').replace(/\n+$/, '');
+              } else {
+                const allText = codeElement.textContent || codeElement.innerText;
+                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
+              }
+            } else {
+              codeText = codeElement.textContent || codeElement.innerText;
+            }
+          } else {
+            codeText = codeContainer.textContent || codeContainer.innerText;
+          }
+        }
+        codeText = codeText.trim();
+        await navigator.clipboard.writeText(codeText);
+        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (copyText) copyText.textContent = '已复制';
+        copyBtn.classList.add('text-green-600');
+        setTimeout(() => {
+          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
+          if (copyText) copyText.textContent = '复制';
+          copyBtn.classList.remove('text-green-600');
+        }, 2000);
+      } catch (err) {
+        console.error('复制失败:', err);
+      }
+    });
+  }
+
+  
+  if (collapseBtn) {
+    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
+    const collapseText = collapseBtn.querySelector('.collapse-text');
+    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
+
+    let codeElement = codeContainer.querySelector('pre.chroma');
+    if (!codeElement) codeElement = codeContainer.querySelector('pre');
+
+    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
+    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
+    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
+    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
+    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
+
+    let isCollapsed = false;
+
+    function initCollapse() {
+      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
+      if (shouldCollapse) setCollapsed(true, false);
+    }
+    function shouldAutoCollapse() {
+      if (codeElement) {
+        const lines = codeElement.querySelectorAll('.line, .cl');
+        const height = codeElement.offsetHeight;
+        return lines.length > autoCollapseLines || height > autoCollapseHeight;
+      }
+      const containerHeight = codeContainer.offsetHeight;
+      if (containerHeight > autoCollapseHeight) return true;
+      const textContent = codeContainer.textContent || codeContainer.innerText || '';
+      const estimatedLines = textContent.split('\n').length;
+      return estimatedLines > autoCollapseLines;
+    }
+    function setCollapsed(collapsed, animate = true) {
+      if (!collapseOverlay) return;
+      isCollapsed = collapsed;
+      if (collapsed) {
+        codeContainer.style.maxHeight = collapsedHeight + 'px';
+        codeContainer.style.overflow = 'hidden';
+        collapseOverlay.style.opacity = '1';
+        collapseOverlay.style.pointerEvents = 'auto';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '展开';
+        collapseBtn.title = '展开';
+      } else {
+        codeContainer.style.maxHeight = '';
+        codeContainer.style.overflow = '';
+        collapseOverlay.style.opacity = '0';
+        collapseOverlay.style.pointerEvents = 'none';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '折叠';
+        collapseBtn.title = '折叠';
+      }
+      if (animate) {
+        codeContainer.style.transition = 'max-height 0.3s ease-out';
+        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
+      }
+    }
+    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
+    collapseBtn.addEventListener('click', toggleCollapse);
+    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
+    initCollapse();
+  }
+})();
+</script>
+
+<h2 id="纯文本代码块">纯文本代码块</h2>
+<div
+  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
+  
+  <div
+    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
+    
+    <div class="flex items-center gap-2">
+      <div class="text-muted-foreground flex-shrink-0">
+        
+  <svg class="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+</svg>
+      </div>
+      <span class="text-muted-foreground text-sm font-medium">
+        PLAINTEXT
+      </span>
+    </div>
+
+    
+    <div class="flex items-center gap-2">
+      
+      <button
+        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-4"
+        title="切换行号"
+        aria-label="切换行号">
+        <span class="linenumber-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+
+</svg>
+        </span>
+        <span class="linenumber-text hidden md:inline">行号</span>
+      </button>
+
+      <button
+          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+          data-code-id="code-4"
+          data-default-state="expanded"
+          data-collapsed="false"
+          data-auto-collapse-lines="30"
+          data-auto-collapse-height="400"
+          data-collapsed-height="120"
+          title="折叠"
+          aria-label="折叠">
+          <span class="collapse-icon">
+            
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
+          </span>
+          <span class="collapse-text hidden sm:inline"
+            >折叠</span
+          >
+        </button>
+      <button
+        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
+        data-code-id="code-4"
+        title="复制"
+        aria-label="复制">
+        <span class="copy-icon">
+          
+  <svg class="h-3 w-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+        </span>
+        <span class="copy-text hidden sm:inline"
+          >复制</span
+        >
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="code-block-content relative" id="code-4">
+    <pre tabindex="0"><code>这是一个纯文本代码块。
+它不应该有语法高亮。
+你可以在这里测试复制功能。
+
+function test() {
+    console.log(&#34;这是一个测试。&#34;);
+}</code></pre>
+    
+    <div
+      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
+      <div
+        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
+        点击展开查看更多
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function() {
+  const codeId = 'code-4';
+  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
+  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
+  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
+  const codeContainer = document.getElementById(codeId);
+
+  if (!codeContainer) return;
+
+  
+  if (toggleLinenosBtn) {
+    toggleLinenosBtn.addEventListener('click', function() {
+      codeContainer.classList.toggle('no-linenos');
+    });
+  }
+
+  
+  if (copyBtn) {
+    const copyIcon = copyBtn.querySelector('.copy-icon');
+    const copyText = copyBtn.querySelector('.copy-text');
+
+    copyBtn.addEventListener('click', async function() {
+      try {
+        let codeText = '';
+        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
+        if (codeTableCell) {
+          codeText = codeTableCell.textContent || codeTableCell.innerText;
+        } else {
+          const codeElement = codeContainer.querySelector('code');
+          if (codeElement) {
+            const hasInlineLineNumbers = codeElement.querySelector('.ln');
+            if (hasInlineLineNumbers) {
+              const codeLines = codeElement.querySelectorAll('.cl');
+              if (codeLines.length > 0) {
+                codeText = Array.from(codeLines)
+                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
+                  .join('\n').replace(/\n+$/, '');
+              } else {
+                const allText = codeElement.textContent || codeElement.innerText;
+                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
+              }
+            } else {
+              codeText = codeElement.textContent || codeElement.innerText;
+            }
+          } else {
+            codeText = codeContainer.textContent || codeContainer.innerText;
+          }
+        }
+        codeText = codeText.trim();
+        await navigator.clipboard.writeText(codeText);
+        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (copyText) copyText.textContent = '已复制';
+        copyBtn.classList.add('text-green-600');
+        setTimeout(() => {
+          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
+          if (copyText) copyText.textContent = '复制';
+          copyBtn.classList.remove('text-green-600');
+        }, 2000);
+      } catch (err) {
+        console.error('复制失败:', err);
+      }
+    });
+  }
+
+  
+  if (collapseBtn) {
+    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
+    const collapseText = collapseBtn.querySelector('.collapse-text');
+    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
+
+    let codeElement = codeContainer.querySelector('pre.chroma');
+    if (!codeElement) codeElement = codeContainer.querySelector('pre');
+
+    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
+    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
+    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
+    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
+    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
+
+    let isCollapsed = false;
+
+    function initCollapse() {
+      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
+      if (shouldCollapse) setCollapsed(true, false);
+    }
+    function shouldAutoCollapse() {
+      if (codeElement) {
+        const lines = codeElement.querySelectorAll('.line, .cl');
+        const height = codeElement.offsetHeight;
+        return lines.length > autoCollapseLines || height > autoCollapseHeight;
+      }
+      const containerHeight = codeContainer.offsetHeight;
+      if (containerHeight > autoCollapseHeight) return true;
+      const textContent = codeContainer.textContent || codeContainer.innerText || '';
+      const estimatedLines = textContent.split('\n').length;
+      return estimatedLines > autoCollapseLines;
+    }
+    function setCollapsed(collapsed, animate = true) {
+      if (!collapseOverlay) return;
+      isCollapsed = collapsed;
+      if (collapsed) {
+        codeContainer.style.maxHeight = collapsedHeight + 'px';
+        codeContainer.style.overflow = 'hidden';
+        collapseOverlay.style.opacity = '1';
+        collapseOverlay.style.pointerEvents = 'auto';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '展开';
+        collapseBtn.title = '展开';
+      } else {
+        codeContainer.style.maxHeight = '';
+        codeContainer.style.overflow = '';
+        collapseOverlay.style.opacity = '0';
+        collapseOverlay.style.pointerEvents = 'none';
+        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
+        if (collapseText) collapseText.textContent = '折叠';
+        collapseBtn.title = '折叠';
+      }
+      if (animate) {
+        codeContainer.style.transition = 'max-height 0.3s ease-out';
+        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
+      }
+    }
+    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
+    collapseBtn.addEventListener('click', toggleCollapse);
+    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
+    initCollapse();
+  }
+})();
+</script>
+
+<h2 id="行内代码">行内代码</h2>
+<p>这是一个行内代码示例：<code>const x = 42;</code> 和 <code>npm install</code> 以及 <code>git commit -m &quot;更新&quot;</code>。</p>
+        </p>
+
+        <div class="flex items-center justify-between mt-auto">
+          <div class="flex flex-wrap gap-2">
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #测试
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #代码
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #语法高亮
+              </span>
+            
+          </div>
+          <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+            Read 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+      </article>
+    
+      <article 
+        class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
+        onclick="window.location.href='\/zh-cn\/posts\/markdown-%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3\/'"
+      >
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2024-01-15
+          </span>
+          <span class="flex items-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            3 min read
+          </span>
+          
+            
+              <span class="flex items-center text-primary font-semibold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                测试
+              </span>
+            
+          
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+          Markdown 语法测试文档
+        </h2>
+        
+        <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
+          这是一个包含各种 Markdown 语法的测试文档，用于验证文档样式的完整性。
+        </p>
+
+        <div class="flex items-center justify-between mt-auto">
+          <div class="flex flex-wrap gap-2">
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #markdown
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #文档
+              </span>
+            
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 group-hover:border-primary/30 transition-colors">
+                #样式
+              </span>
+            
+          </div>
+          <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+            Read 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+      </article>
     
   </div>
 
@@ -972,20 +2410,26 @@ JavaScript JAVASCRIPT 行号 折叠 复制 点击展开查看更多 带行号的
   
 </div>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const articles = document.querySelectorAll('.article-card');
+document.addEventListener('DOMContentLoaded', () => {
   
-  articles.forEach((article, index) => {
+  const articles = document.querySelectorAll('article');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, index * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  articles.forEach(article => {
     article.style.opacity = '0';
-    article.style.transform = 'translateY(40px)';
-    
-    setTimeout(() => {
-      article.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      article.style.opacity = '1';
-      article.style.transform = 'translateY(0)';
-    }, 300 + index * 150);
+    article.style.transform = 'translateY(20px)';
+    article.style.transition = 'all 0.5s ease-out';
+    observer.observe(article);
   });
 });
 </script>
@@ -993,179 +2437,28 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     
-    
-<footer class="relative mt-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50">
-
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-12 mt-12">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="flex justify-center space-x-6 mb-8 text-gray-500 dark:text-slate-500">
       
+        <a href="/about/" class="hover:text-primary transition-colors">About</a>
       
-      <div class="lg:col-span-2">
-        <div class="flex items-center mb-6">
-          <div class="bg-gradient-to-br from-blue-500 to-purple-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold mr-4">
-            W
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Woke Soul&#39;s Blog</h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">分享技术、生活和创意</p>
-          </div>
-        </div>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed max-w-md">
-          欢迎来到我的博客世界，这里记录着我的学习历程、技术分享和生活感悟。希望我的内容能够为你带来启发和帮助。
-        </p>
-        
-        
-        
-      </div>
-
+        <a href="/acknowledgments/" class="hover:text-primary transition-colors">Acknowledgments</a>
       
-      <div>
-        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">快速链接</h4>
-        <ul class="space-y-3">
-          
-          <li>
-            <a
-              href="/about/"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>About</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="/acknowledgments/"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>Acknowledgments</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="https://google.com"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>Contact</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="/index.xml"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>RSS Feed</span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-
+        <a href="https://google.com" class="hover:text-primary transition-colors">Contact</a>
       
-      <div>
-        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">联系我</h4>
-        <ul class="space-y-3">
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-blue-500">📧</span>
-            <span>shouldnotwe@gmail.com</span>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-green-500">🌐</span>
-            <span>https://github.com/Walessong</span>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-purple-500">📍</span>
-            <span>中国香港</span>
-          </li>
-        </ul>
-      </div>
-
+        <a href="/index.xml" class="hover:text-primary transition-colors">RSS Feed</a>
       
-      <div>
-        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">鸣谢</h4>
-        <ul class="space-y-3">
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-orange-500">⚡</span>
-            <a href="https://gohugo.io" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Hugo</a>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-pink-500">🎨</span>
-            <a href="https://tailwindcss.com" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tailwind CSS</a>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-green-500">🚀</span>
-            <a href="https://netlify.com" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Netlify</a>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-blue-500">💙</span>
-            <a href="/acknowledgments" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">查看全部</a>
-          </li>
-        </ul>
-      </div>
     </div>
-
-    
-    <div class="border-t border-gray-200/50 dark:border-gray-700/50 mt-12 pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        
-        <div class="text-gray-600 dark:text-gray-400 text-sm mb-4 md:mb-0">
-          <p>&copy; 2025 Woke Soul&#39;s Blog. 保留所有权利。</p>
-        </div>
-        
-        
-        <div class="flex space-x-6 text-sm">
-          <a href="/privacy" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-            隐私政策
-          </a>
-          <a href="/terms" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-            使用条款
-          </a>
-          <a href="/sitemap.xml" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-            网站地图
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <button 
-      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-      class="group w-12 h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-full shadow-lg shadow-gray-900/10 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:scale-110 hover:shadow-xl transition-all duration-300">
-      <span class="text-lg transform group-hover:-translate-y-1 transition-transform duration-300">↑</span>
-    </button>
+    <p class="text-gray-400 dark:text-slate-600 text-sm">
+      © 2025 Woke Soul&#39;s Blog. Designed with Minimalism in mind.
+    </p>
   </div>
 </footer>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const footerElements = document.querySelectorAll('footer > *');
-  
-  footerElements.forEach((element, index) => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
     
-    setTimeout(() => {
-      element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }, 500 + index * 200);
-  });
-});
-</script>
-
-
-    
-    <script src="/js/main.js"></script>
-    <script src="/js/animation-manager.js"></script>
-    <script src="/js/article-cards.js"></script>
-    <script src="/js/article-card-performance.js"></script>
     <script src="/js/theme-manager.js"></script>
-    
   </body>
 </html>
 

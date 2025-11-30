@@ -1,503 +1,141 @@
 <!doctype html>
-<html
-  lang="ja-JP"
-  data-theme="default">
+<html lang="ja-JP" class="dark">
   <head>
-    <meta charset="utf-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-<title>画像レンダリングテスト | Woke Soul&#39;s Blog</title>
-
-<meta name="description" content="画像レンダリング機能のテスト" />
-<meta name="keywords" content="テスト, 画像, レンダリング" />
-<meta name="author" content="Woke Soul" />
-<meta name="language" content="en-US" />
-
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://Walessong.github.io/ja/posts/%E7%94%BB%E5%83%8F%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%86%E3%82%B9%E3%83%88/" />
-
-
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-
-<link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://Walessong.github.io/ja/posts/%E7%94%BB%E5%83%8F%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%86%E3%82%B9%E3%83%88/">
-  <meta property="og:site_name" content="Woke Soul&#39;s Blog">
-  <meta property="og:title" content="画像レンダリングテスト">
-  <meta property="og:description" content="画像レンダリング機能のテスト">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-01-16T22:30:00+08:00">
-    <meta property="article:modified_time" content="2024-01-16T22:30:00+08:00">
-    <meta property="article:tag" content="テスト">
-    <meta property="article:tag" content="画像">
-    <meta property="article:tag" content="レンダリング">
-    <meta property="og:image" content="https://Walessong.github.io/images/og-default.avif">
-
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://Walessong.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="画像レンダリングテスト">
-  <meta name="twitter:description" content="画像レンダリング機能のテスト">
-
-
-  <meta itemprop="name" content="画像レンダリングテスト">
-  <meta itemprop="description" content="画像レンダリング機能のテスト">
-  <meta itemprop="datePublished" content="2024-01-16T22:30:00+08:00">
-  <meta itemprop="dateModified" content="2024-01-16T22:30:00+08:00">
-  <meta itemprop="wordCount" content="113">
-  <meta itemprop="image" content="https://Walessong.github.io/images/og-default.avif">
-  <meta itemprop="keywords" content="テスト,画像,レンダリング">
-
-
-
-
-
-
-
-
-<script id="search-config" type="application/json">{"searchIndexURL": "\"/ja/index.json\""}</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>画像レンダリングテスト | Woke Soul&#39;s Blog</title>
+    <meta name="description" content="画像レンダリング機能のテスト" />
+    <meta name="keywords" content="テスト, 画像, レンダリング" />
+    <meta name="author" content="Woke Soul" />
     
-  
-
-  
-
-  
     
-  
-
-  
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
-  
-
-  
     
-  
-
-  
+    <link rel="manifest" href="/site.webmanifest" />
     
-  
-
-  
     
-  
-
-  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: 'rgb(var(--bg-main) / <alpha-value>)',
+              surface: 'rgb(var(--bg-surface) / <alpha-value>)',
+              primary: {
+                DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
+                foreground: 'rgb(var(--primary-foreground) / <alpha-value>)',
+              },
+              secondary: 'rgb(var(--text-muted) / <alpha-value>)',
+            },
+            textColor: {
+                DEFAULT: 'rgb(var(--text-main) / <alpha-value>)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
-  
+    <style>
+      :root {
+         
+        --bg-main: 241 245 249;    
+        --bg-surface: 255 255 255;  
+        --text-main: 30 41 59;     
+        --text-muted: 100 116 139;   
+        
+         
+        --primary: 2 132 199;
+        --primary-foreground: 255 255 255;
+      }
 
-  
+      .dark {
+         
+        --bg-main: 15 23 42;       
+        --bg-surface: 30 41 59;    
+        --text-main: 241 245 249;  
+        --text-muted: 148 163 184; 
+        
+         
+        --primary: 56 189 248;
+        --primary-foreground: 15 23 42;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: rgb(var(--bg-main));
+        color: rgb(var(--text-main));
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+       
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--text-muted)); 
+        opacity: 0.5;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--primary)); 
+      }
+    </style>
     
-  
-
-
-
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
-
-
-
-
-
-
-
-
-
-<script>
-
-  window.HUGO_GALLERY_CONFIG = {
-    justified_gallery:  true ,
-    lightbox:  true ,
-    justified: "{\"calculateitemsheight\":false,\"gutter\":30,\"lastrow\":\"center\",\"maxrowscount\":999999,\"resizedebounce\":100,\"rowheight\":300,\"rowheighttolerance\":0.25,\"transitionduration\":\"0.3s\"}",
-    lightbox_options: "{\"descposition\":\"bottom\",\"draggable\":true,\"height\":\"80vh\",\"loop\":true,\"preload\":true,\"touchnavigation\":true,\"width\":\"80vw\",\"zoomable\":true}"
-  };
-</script>
-
-
-
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/compiled.min.35ccd2a038849adabf4eab3211a2429fc13b4d48eb397769746ad7e4e112d340.css"
-        integrity="sha256-NczSoDiEmtq/TqsyEaJCn8E7TUjrOXdpdGrX5OES00A="
-        crossorigin="anonymous" />
-    
-  
-
-
-
-
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/chroma.min.491df36221f739b5948a747a0351f100ee7ccaaf466d9f46288bf06de1d59123.css"
-        integrity="sha256-SR3zYiH3ObWUinR6A1HxAO58yq9GbZ9GKIvwbeHVkSM="
-        crossorigin="anonymous" />
-    
-  
-
-
-
-
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/article-card-animations.min.688e5137e7a624116f3ccb89061dc4d2b63ab5546013fda59a2f732c4793db7a.css"
-        integrity="sha256-aI5RN&#43;emJBFvPMuJBh3E0rY6tVRgE/2lmi9zLEeT23o="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/article-cards.min.26ac840a3e11fbfbb9fa647be9ea485090137f7d689b7650f84409e1fa769948.css"
-        integrity="sha256-JqyECj4R&#43;/u5&#43;mR76epIUJATf31om3ZQ&#43;EQJ4fp2mUg="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/breadcrumb.min.60042a2fcb2947b3887b659e0a6647aa553a10e98e68e8c772d7101a367d2998.css"
-        integrity="sha256-YAQqL8spR7OIe2WeCmZHqlU6EOmOaOjHctcQGjZ9KZg="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/buttons.min.1a438374fb6fe9bf3bcf8cfcec4e0e9d94f5846c164642c5a43adf258029cc7e.css"
-        integrity="sha256-GkODdPtv6b87z4z87E4OnZT1hGwWRkLFpDrfJYApzH4="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/cards.min.27952cba28145f04eca3b90179c4a10455f461d03ee7051c6afad86588721864.css"
-        integrity="sha256-J5UsuigUXwTso7kBecShBFX0YdA&#43;5wUcavrYZYhyGGQ="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/code.min.2d5f82d0a43b568dce7d6b15a25adad0f721a0d2c9fbf197e5de92dfb1800bab.css"
-        integrity="sha256-LV&#43;C0KQ7Vo3OfWsVolra0PchoNLJ&#43;/GX5d6S37GAC6s="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/dark-mode.min.d4a8823c51f5248414b743dd934b50b778ed6a713f72ff7e14d88c63550bedfe.css"
-        integrity="sha256-1KiCPFH1JIQUt0Pdk0tQt3jtanE/cv9&#43;FNiMY1UL7f4="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/footer.min.30557b4de806f777a83d1d102dfe2cac331a9d270ea5f53b02b164543cc4153b.css"
-        integrity="sha256-MFV7TegG93eoPR0QLf4srDManScOpfU7ArFkVDzEFTs="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/grid.min.18b4dbb9c55d6f39455d2d9750a3939451ccc90a726db771c2333ec2d754e18b.css"
-        integrity="sha256-GLTbucVdbzlFXS2XUKOTlFHMyQpybbdxwjM&#43;wtdU4Ys="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/hero.min.4caf1596071d541523bd861e37cfcff5896f757de4f927753f82f43df258a889.css"
-        integrity="sha256-TK8VlgcdVBUjvYYeN8/P9YlvdX3k&#43;Sd1P4L0PfJYqIk="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/loading.min.5f3dcdde43efce21f36f9727a35599bb19fe12494d4c6dd9e1f860c1750069a1.css"
-        integrity="sha256-Xz3N3kPvziHzb5cno1WZuxn&#43;EklNTG3Z4fhgwXUAaaE="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/modern.min.c7118424dd6a28bf26ca7912f9501d93ad6d65ebdacb2f6086756a8b48859597.css"
-        integrity="sha256-xxGEJN1qKL8mynkS&#43;VAdk61tZevayy9ghnVqi0iFlZc="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/navigation.min.3d74f7adb51a773ebb396b458dd7298bb5bfaad0a0da0136f938ae18df31f043.css"
-        integrity="sha256-PXT3rbUadz67OWtFjdcpi7W/qtCg2gE2&#43;TiuGN8x8EM="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/scrollbar.min.e2c85a8ad645858cc0075ca49f7fca2ee562bc94e2818ae56c18756c97f83f34.css"
-        integrity="sha256-4shaitZFhYzAB1ykn3/KLuVivJTigYrlbBh1bJf4PzQ="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/search.min.4010e9d1c820eee4235afcca59d9b953da4bce67565842fee2c3cab41589a64f.css"
-        integrity="sha256-QBDp0cgg7uQjWvzKWdm5U9pLzmdWWEL&#43;4sPKtBWJpk8="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/sidebar.min.96e438d9498face2813dbb886f9d81e9860cfe2f0ed985fa7a138c11c706a6a9.css"
-        integrity="sha256-luQ42UmPrOKBPbuIb52B6YYM/i8O2YX6ehOMEccGpqk="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/tags.min.cbbe06e47d2e60b3be56d2af4b7e68308aaf6deca14d7a5a83b99d5db472320a.css"
-        integrity="sha256-y74G5H0uYLO&#43;VtKvS35oMIqvbeyhTXpag7mdXbRyMgo="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/toc.min.2eb4b3f4691bff4c54721f8e2f6a8c5807bf53c987d239e075b7e21a0e2c65ed.css"
-        integrity="sha256-LrSz9Gkb/0xUch&#43;OL2qMWAe/U8mH0jngdbfiGg4sZe0="
-        crossorigin="anonymous" />
-    
-  
-
-  
-    
-      <link
-        rel="stylesheet"
-        href="/css/custom/welcome-page.min.5068dd8ad78c4c5949b5e1c2998b16daa343707192f848d9c5823df895870455.css"
-        integrity="sha256-UGjditeMTFlJteHCmYsW2qNDcHGS&#43;EjZxYI9&#43;JWHBFU="
-        crossorigin="anonymous" />
-    
-  
-
-
-
-
-  <link rel="stylesheet" href="/css/fjGallery.css">
-
-
-
-  <link rel="stylesheet" href="/css/glightbox.min.css">
-
-
-
-        <script
-          src="/js/main.57547673e75b789ac36b51c816e4ee0e4338dc5b5d2a922d7dcf4f948839a1cf.js"
-          integrity="sha256-V1R2c&#43;dbeJrDa1HIFuTuDkM43FtdKpItfc9PlIg5oc8="
-          crossorigin="anonymous"></script>
-
-
-        <script
-          src="/js/navigation-enhancements.eae98272657d2216adfbe5e1a29b5dc4f57b3f4953709377dc2aeda490fed2cf.js"
-          integrity="sha256-6umCcmV9Ihat&#43;&#43;XhoptdxPV7P0lTcJN33CrtpJD&#43;0s8="
-          crossorigin="anonymous"
-          defer></script>
-
-
-  <script src="/js/gumshoe.polyfills.min.js"></script>
-
-
-
-          <script
-            src="/js/toc.344256ca5501d8ca1ea93dbb56db8b33286ce44ccf9a93141c6fae95ba96aa7b.js"
-            integrity="sha256-NEJWylUB2MoeqT27VtuLMyhs5EzPmpMUHG&#43;ulbqWqns="
-            crossorigin="anonymous"
-            defer></script>
-
-
-
-        <script
-          src="/js/search.de3eba3540834efb8328121784bff4774e06362412ee41eee665f5b4f987f393.js"
-          integrity="sha256-3j66NUCDTvuDKBIXhL/0d04GNiQS7kHu5mX1tPmH85M="
-          crossorigin="anonymous"
-          defer></script>
-
-
-
-        <script
-          src="/js/dock.049193312ed73b6ffb0163645f5dca455988f73bb94f73fc28e7166ee49ddb7e.js"
-          integrity="sha256-BJGTMS7XO2/7AWNkX13KRVmI9zu5T3P8KOcWbuSd234="
-          crossorigin="anonymous"
-          defer></script>
-
-
-
-
-
-  <script src="/js/fjGallery.min.js"></script>
-
-
-
-  <script src="/js/glightbox.min.js"></script>
-
-
-
-
-
-  
-    
-  
-
-
-
-  <script src="/js/macy.js"></script>
-  
-
-
-
-
-          <script
-            src="/js/gallery.7e9426b9b7516ef4939b5fc1776413169ce49f783d8707189d65f87127c1b93d.js"
-            integrity="sha256-fpQmubdRbvSTm1/Bd2QTFpzkn3g9hwcYnWX4cSfBuT0="
-            crossorigin="anonymous"
-            defer></script>
-
-
-
-
-
-
     <script>
       (function() {
         try {
-          const storedTheme = localStorage.getItem('theme') || 'system';
-          const colorScheme = localStorage.getItem('colorScheme') || 'default';
-          document.documentElement.setAttribute('data-theme', colorScheme);
-          function applyTheme() {
-            const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const useDark = storedTheme === 'dark' || (storedTheme === 'system' && preferDark);
-            document.documentElement.classList.toggle('dark', useDark);
-          }
+          const storedMode = localStorage.getItem('themeMode') || 'system';
+          const storedColor = localStorage.getItem('themeColor') || 'blue';
+          
+          const COLORS = {
+            blue:   { light: '2 132 199', dark: '56 189 248' },
+            green:  { light: '5 150 105', dark: '52 211 153' },
+            purple: { light: '124 58 237', dark: '167 139 250' },
+            orange: { light: '234 88 12', dark: '251 146 60' },
+            pink:   { light: '219 39 119', dark: '244 114 182' },
+          };
+          
+          const root = document.documentElement;
+          const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+          
+          const getIsDark = () => {
+            return storedMode === 'dark' || (storedMode === 'system' && mediaQuery.matches);
+          };
+          
+          const applyTheme = () => {
+            const isDark = getIsDark();
+            
+            if (isDark) {
+              root.classList.add('dark');
+            } else {
+              root.classList.remove('dark');
+            }
+            
+            const rgbValue = isDark ? COLORS[storedColor].dark : COLORS[storedColor].light;
+            root.style.setProperty('--primary', rgbValue);
+            
+            if (isDark) {
+              root.style.setProperty('--primary-foreground', '15 23 42');
+            } else {
+              root.style.setProperty('--primary-foreground', '255 255 255');
+            }
+          };
+          
           applyTheme();
-          if (storedTheme === 'system' && window.matchMedia) {
+          
+          if (storedMode === 'system' && window.matchMedia) {
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
           }
         } catch (e) {}
@@ -505,273 +143,404 @@
     </script>
   </head>
 
-  <body class="min-h-screen antialiased transition-colors duration-500">
+  <body class="min-h-screen bg-background text-secondary transition-colors duration-300 selection:bg-primary selection:text-white flex flex-col font-sans">
+    
+    <header 
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-transparent border-transparent py-5"
+>
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    
+    
+    <div 
+      onclick="window.location.href='\/ja\/'"
+      class="flex items-center space-x-2 cursor-pointer group"
+    >
+      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
+        <span class="font-mono text-primary-foreground font-bold text-xl">W</span>
+      </div>
+      <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+        Woke Soul&#39;s Blog
+      </span>
+    </div>
 
     
-    <header class="topbar">
-  <div class="site-container topbar-inner">
-    <a class="brand" href="/ja/" aria-label="Woke Soul&#39;s Blog">
-      <span class="brand-mark">W</span>
-      <span class="brand-title">Woke Soul&#39;s Blog</span>
-    </a>
-
-    <nav class="nav" aria-label="Primary">
-      <a href="/posts" aria-current="page">文章</a>
-      <a href="/categories" >分类</a>
-      <a href="/tags" >标签</a>
-      <a href="/archives">归档</a>
-      <a href="/about" >关于</a>
-      <a href="/acknowledgments" >鸣谢</a>
+    <nav class="hidden md:flex items-center bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full px-2 py-1.5 border border-slate-200 dark:border-slate-700 shadow-inner">
+      <a href="/posts" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-white bg-slate-800 dark:bg-slate-700 shadow-md">
+        <span class="relative z-10">文章</span>
+      </a>
+      <a href="/categories" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">分类</span>
+      </a>
+      <a href="/tags" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">标签</span>
+      </a>
+      <a href="/archives" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">归档</span>
+      </a>
+      <a href="/about" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">关于</span>
+      </a>
+      <a href="/acknowledgments" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
+        <span class="relative z-10">鸣谢</span>
+      </a>
     </nav>
 
-    <div class="actions">
-      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="切换主题">
-        ☾
-      </button>
-      <a class="icon-btn" href="/index.xml" aria-label="RSS" title="RSS">◎</a>
+    
+    <div class="hidden md:flex items-center space-x-3">
+      
+      <div class="relative" id="theme-menu-container">
+        <button 
+          id="theme-toggle-btn"
+          class="p-2 rounded-full transition-colors text-gray-600 dark:text-slate-400 hover:text-primary"
+          title="Theme Settings"
+        >
+          <svg id="palette-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+          </svg>
+        </button>
+
+        <div id="theme-menu" class="hidden absolute right-0 top-full mt-4 w-64 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-4 z-50 origin-top-right">
+          <div class="space-y-4">
+            
+            <div>
+              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Mode</span>
+              <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
+                <button id="theme-light" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                </button>
+                <button id="theme-dark" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </button>
+                <button id="theme-system" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            
+            <div>
+              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Color</span>
+              <div class="flex justify-between">
+                <button data-color="blue" class="w-8 h-8 rounded-full bg-sky-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="green" class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="purple" class="w-8 h-8 rounded-full bg-violet-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="orange" class="w-8 h-8 rounded-full bg-orange-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+                <button data-color="pink" class="w-8 h-8 rounded-full bg-pink-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-px h-5 bg-slate-300 dark:bg-slate-700 mx-1"></div>
+
+      <a href="/index.xml" class="text-gray-600 dark:text-slate-400 hover:text-primary transition-colors p-2" title="RSS">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+      </a>
+    </div>
+
+    
+    <button 
+      id="mobile-menu-toggle"
+      class="md:hidden text-gray-600 dark:text-slate-400"
+    >
+      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
+    <div class="p-6 flex flex-col space-y-4">
+      <a href="/posts" class="text-left text-lg font-medium py-2 text-primary">文章</a>
+      <a href="/categories" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">分类</a>
+      <a href="/tags" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">标签</a>
+      <a href="/archives" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">归档</a>
+      <a href="/about" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">关于</a>
+      <a href="/acknowledgments" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">鸣谢</a>
+      <hr class="border-slate-200 dark:border-slate-700"/>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-gray-600 dark:text-slate-400">Theme</span>
+        <button id="mobile-theme-toggle" class="text-gray-600 dark:text-slate-400">
+          <svg id="mobile-sun-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="mobile-moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const header = document.getElementById('main-header');
+  let scrolled = false;
+  
+  const handleScroll = () => {
+    const isScrolled = window.scrollY > 20;
+    if (isScrolled !== scrolled) {
+      scrolled = isScrolled;
+      if (scrolled) {
+        header.classList.remove('bg-transparent', 'border-transparent', 'py-5');
+        header.classList.add('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
+      } else {
+        header.classList.remove('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
+        header.classList.add('bg-transparent', 'border-transparent', 'py-5');
+      }
+    }
+  };
+  
+  window.addEventListener('scroll', handleScroll);
+  
+  
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+  
+  
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themeMenu = document.getElementById('theme-menu');
+  const themeMenuContainer = document.getElementById('theme-menu-container');
+  
+  if (themeToggleBtn && themeMenu) {
+    themeToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themeMenu.classList.toggle('hidden');
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!themeMenuContainer.contains(e.target)) {
+        themeMenu.classList.add('hidden');
+      }
+    });
+  }
+  
+  
+  const themeLight = document.getElementById('theme-light');
+  const themeDark = document.getElementById('theme-dark');
+  const themeSystem = document.getElementById('theme-system');
+  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+  
+  const updateThemeModeButtons = () => {
+    const mode = localStorage.getItem('themeMode') || 'system';
+    [themeLight, themeDark, themeSystem].forEach(btn => {
+      if (btn) {
+        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+        btn.classList.add('text-gray-500', 'dark:text-slate-400');
+      }
+    });
+    
+    if (mode === 'light' && themeLight) {
+      themeLight.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+      themeLight.classList.remove('text-gray-500', 'dark:text-slate-400');
+    } else if (mode === 'dark' && themeDark) {
+      themeDark.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+      themeDark.classList.remove('text-gray-500', 'dark:text-slate-400');
+    } else if (mode === 'system' && themeSystem) {
+      themeSystem.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
+      themeSystem.classList.remove('text-gray-500', 'dark:text-slate-400');
+    }
+  };
+  
+  if (themeLight) {
+    themeLight.addEventListener('click', () => {
+      localStorage.setItem('themeMode', 'light');
+      updateThemeModeButtons();
+      location.reload();
+    });
+  }
+  
+  if (themeDark) {
+    themeDark.addEventListener('click', () => {
+      localStorage.setItem('themeMode', 'dark');
+      updateThemeModeButtons();
+      location.reload();
+    });
+  }
+  
+  if (themeSystem) {
+    themeSystem.addEventListener('click', () => {
+      localStorage.setItem('themeMode', 'system');
+      updateThemeModeButtons();
+      location.reload();
+    });
+  }
+  
+  
+  const colorButtons = document.querySelectorAll('.theme-color-btn');
+  const updateColorButtons = () => {
+    const color = localStorage.getItem('themeColor') || 'blue';
+    colorButtons.forEach(btn => {
+      const btnColor = btn.getAttribute('data-color');
+      if (btnColor === color) {
+        btn.classList.add('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
+        btn.classList.remove('border-transparent', 'opacity-70');
+      } else {
+        btn.classList.remove('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
+        btn.classList.add('border-transparent', 'opacity-70');
+      }
+    });
+  };
+  
+  colorButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      const color = btn.getAttribute('data-color');
+      localStorage.setItem('themeColor', color);
+      updateColorButtons();
+      location.reload();
     });
   });
+  
+  updateThemeModeButtons();
+  updateColorButtons();
+  
+  
+  if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', () => {
+      const currentMode = localStorage.getItem('themeMode') || 'system';
+      const newMode = currentMode === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('themeMode', newMode);
+      location.reload();
+    });
+  }
+});
 </script>
 
 
     
-    <main class="site-container site-main">
+    <main class="flex-grow w-full pt-16">
       
-<article class="container-narrow">
-  <header class="article-header" style="margin-bottom:2rem;">
-    
-
-    <h1 style="font-size:clamp(2rem,4vw,3rem); font-weight:800; letter-spacing:.2px; margin:0 0 .75rem 0;">
-      画像レンダリングテスト
-    </h1>
-
-    <div style="display:flex; flex-wrap:wrap; gap:.75rem 1.25rem; color:var(--muted); font-size:.95rem;">
-      
-        <time datetime="2024-01-16">2024-01-16</time>
-      
-      
-        <span>1 min</span>
-      
-      
-        <span>113 words</span>
-      
+<div class="max-w-7xl mx-auto px-6 py-12">
+  <a 
+    href="/posts"
+    class="group flex items-center text-gray-500 dark:text-slate-400 hover:text-primary mb-8 text-sm font-medium transition-colors"
+  >
+    <div class="p-2 rounded-full bg-surface border border-slate-200 dark:border-slate-800 group-hover:border-primary/50 mr-2 transition-colors">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
     </div>
+    Back to Posts
+  </a>
 
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
     
-      <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem;">
+    <article class="lg:col-span-3">
+      <header class="mb-12 border-b border-slate-200 dark:border-slate-800 pb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          
+            
+              
+                <span class="flex items-center text-xs font-mono text-primary font-bold bg-primary/10 px-2 py-1 rounded border border-primary/20">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  画像レンダリング
+                </span>
+              
+            
+          
+
+          
+            <span class="flex items-center text-xs font-mono text-gray-600 dark:text-slate-400 px-2 py-1 bg-surface border border-slate-200 dark:border-slate-700 rounded">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              テスト
+            </span>
+          
+            <span class="flex items-center text-xs font-mono text-gray-600 dark:text-slate-400 px-2 py-1 bg-surface border border-slate-200 dark:border-slate-700 rounded">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              画像
+            </span>
+          
+            <span class="flex items-center text-xs font-mono text-gray-600 dark:text-slate-400 px-2 py-1 bg-surface border border-slate-200 dark:border-slate-700 rounded">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              レンダリング
+            </span>
+          
+        </div>
         
-          <span class="mono" style="padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:.85rem;">#テスト</span>
-        
-          <span class="mono" style="padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:.85rem;">#画像</span>
-        
-          <span class="mono" style="padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:.85rem;">#レンダリング</span>
-        
-      </div>
-    
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          画像レンダリングテスト
+        </h1>
 
-    
-      <p style="margin-top:1rem; color:var(--muted); font-style:italic;"><h1 id="画像レンダリングテスト">画像レンダリングテスト</h1>
-<p>デモは <a href="https://www.lightgalleryjs.com/demos/thumbnails/">LightGallery</a> から引用。
-すべての画像は <a href="https://unsplash.com/">Unsplash</a> より。</p>
-<h2 id="単一画像">単一画像</h2>
-<p>
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/posts/image-rendering-test/bundle.avif"
-      alt="https://unsplash.com/@danielleone"
-      title="撮影者 - Daniel Leone"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/posts/image-rendering-test/bundle.avif"
-      data-gallery-alt="https://unsplash.com/@danielleone"
-      data-gallery-title="撮影者 - Daniel Leone" /></div>
+        <div class="flex items-center text-gray-500 dark:text-slate-500 font-mono text-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          2024-01-16
+          <span class="mx-3">•</span>
+          <span>1 min read</span>
+        </div>
+      </header>
 
-  <figcaption class="image-caption">
-      撮影者 - Daniel Leone
-    </figcaption></figure></p>
-<h2 id="整列ギャラリー">整列ギャラリー</h2>
-<p>
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/01.avif"
-      alt="https://unsplash.com/@@tobbes_rd"
-      title="撮影者 - Tobias Rademacher"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/01.avif"
-      data-gallery-alt="https://unsplash.com/@@tobbes_rd"
-      data-gallery-title="撮影者 - Tobias Rademacher" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - Tobias Rademacher
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/02.avif"
-      alt="https://unsplash.com/@therawhunter"
-      title="撮影者 - Massimiliano Morosinotto"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/02.avif"
-      data-gallery-alt="https://unsplash.com/@therawhunter"
-      data-gallery-title="撮影者 - Massimiliano Morosinotto" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - Massimiliano Morosinotto
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/03.avif"
-      alt="https://unsplash.com/@thesaboo"
-      title="撮影者 - Sascha Bosshard"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/03.avif"
-      data-gallery-alt="https://unsplash.com/@thesaboo"
-      data-gallery-title="撮影者 - Sascha Bosshard" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - Sascha Bosshard
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/04.avif"
-      alt="https://unsplash.com/@yusufevli"
-      title="撮影者 - Yusuf Evli"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/04.avif"
-      data-gallery-alt="https://unsplash.com/@yusufevli"
-      data-gallery-title="撮影者 - Yusuf Evli" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - Yusuf Evli
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/05.avif"
-      alt="https://unsplash.com/@flovayn"
-      title="撮影者 - Jay Mantri"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/05.avif"
-      data-gallery-alt="https://unsplash.com/@flovayn"
-      data-gallery-title="撮影者 - Jay Mantri" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - Jay Mantri
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/06.avif"
-      alt="https://unsplash.com/@flovayn"
-      title="撮影者 -  Florian van Duyn"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/06.avif"
-      data-gallery-alt="https://unsplash.com/@flovayn"
-      data-gallery-title="撮影者 -  Florian van Duyn" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 -  Florian van Duyn
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/07.avif"
-      alt="https://unsplash.com/@juanster"
-      title="撮影者 - Juan Davila"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/07.avif"
-      data-gallery-alt="https://unsplash.com/@juanster"
-      data-gallery-title="撮影者 - Juan Davila" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - Juan Davila
-    </figcaption></figure>
-
-<figure class="image-figure not-prose my-8" 
-        data-lightbox-enabled="true"
-        data-gallery-type="auto">
-  <div class="image-container">
-    
-    <img
-      src="/images/08.avif"
-      alt="https://unsplash.com/@davidmarcu"
-      title="撮影者 - David Marcu"
-      
-      loading="lazy"
-      decoding="async"
-      data-gallery-src="/images/08.avif"
-      data-gallery-alt="https://unsplash.com/@davidmarcu"
-      data-gallery-title="撮影者 - David Marcu" /></div>
-
-  <figcaption class="image-caption">
-      撮影者 - David Marcu
-    </figcaption></figure></p></p>
-    
-  </header>
-
-  <div class="prose">
-    <h1 id="画像レンダリングテスト">画像レンダリングテスト</h1>
+      <div class="prose prose-lg max-w-none text-gray-700 dark:text-slate-300 prose-headings:text-gray-900 dark:prose-headings:text-white prose-a:text-primary prose-strong:text-gray-900 dark:prose-strong:text-white prose-code:text-primary prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800">
+        <h1 id="画像レンダリングテスト">画像レンダリングテスト</h1>
 <p>デモは <a href="https://www.lightgalleryjs.com/demos/thumbnails/">LightGallery</a> から引用。
 すべての画像は <a href="https://unsplash.com/">Unsplash</a> より。</p>
 <h2 id="単一画像">単一画像</h2>
@@ -1303,33 +1072,52 @@
 })();
 </script>
 
-  </div>
-
-  <footer class="article-footer" style="margin-top:2.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
-    
-      <div class="surface" style="padding:1rem; border-radius:1rem;">
-        <strong>Woke Soul</strong>
-        
-          <p style="margin:.5rem 0 0; color:var(--muted);">free and inquisitive, I love to learn and explore new things.</p>
-        
       </div>
+
+      <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+        <p class="text-gray-500 dark:text-slate-500 italic">
+          Thanks for reading.
+        </p>
+      </div>
+    </article>
+
     
-  </footer>
-</article>
+    <aside class="hidden lg:block lg:col-span-1">
+      <div class="sticky top-24">
+        <div class="bg-surface border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+          <h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4 flex items-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-primary">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+            Directory
+          </h3>
+          <nav id="toc" class="space-y-1">
+            
+          </nav>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
 
 
-<nav class="container-narrow" style="margin-top:2rem;">
-  <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));">
+<nav class="max-w-7xl mx-auto px-6 mt-12">
+  <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
     
-      <a class="surface" href="/ja/posts/code-highlighting-test/" style="padding:1rem; border-radius:1rem; display:block; text-decoration:none; color:inherit;">
-        <div style="font-size:.85rem; color:var(--muted);">上一篇</div>
-        <div style="font-weight:600; margin-top:.25rem;">コードハイライトテスト</div>
+      <a href="/ja/posts/code-highlighting-test/" class="group bg-surface border border-slate-200 dark:border-slate-800 rounded-xl p-6 block text-decoration-none text-inherit hover:border-primary/50 transition-colors">
+        <div class="text-sm text-gray-500 dark:text-slate-500 mb-2">Previous</div>
+        <div class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">コードハイライトテスト</div>
       </a>
     
     
-      <a class="surface" href="/ja/posts/katex-mermaid-test/" style="padding:1rem; border-radius:1rem; display:block; text-decoration:none; color:inherit;">
-        <div style="font-size:.85rem; color:var(--muted);">下一篇</div>
-        <div style="font-weight:600; margin-top:.25rem;">KaTeXとMermaidテスト</div>
+      <a href="/ja/posts/katex-mermaid-test/" class="group bg-surface border border-slate-200 dark:border-slate-800 rounded-xl p-6 block text-decoration-none text-inherit hover:border-primary/50 transition-colors">
+        <div class="text-sm text-gray-500 dark:text-slate-500 mb-2">Next</div>
+        <div class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">KaTeXとMermaidテスト</div>
       </a>
     
   </div>
@@ -1338,1306 +1126,16 @@
 
 
 
-<section class="container-narrow" style="margin-top:2rem;">
-  <h2 style="font-size:1.25rem; font-weight:700; margin-bottom:1rem;">相关文章</h2>
-  <div style="display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));">
+<section class="max-w-7xl mx-auto px-6 mt-12">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Articles</h2>
+  <div class="grid gap-6 grid-cols-1 md:grid-cols-3">
     
-      <a class="surface" href="/ja/posts/code-highlighting-test/" style="padding:1rem; border-radius:1rem; text-decoration:none; color:inherit; display:block;">
-        <div style="font-weight:600;">コードハイライトテスト</div>
+      <a href="/ja/posts/code-highlighting-test/" class="group bg-surface border border-slate-200 dark:border-slate-800 rounded-xl p-6 block text-decoration-none text-inherit hover:border-primary/50 transition-colors">
+        <div class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">コードハイライトテスト</div>
         
-          <div style="color:var(--muted); font-size:.9rem; margin-top:.25rem;"><h1 id="コードハイライトテスト">コードハイライトテスト</h1>
+          <div class="text-sm text-gray-600 dark:text-slate-400"><h1 id="コードハイライトテスト">コードハイライトテスト</h1>
 <p>この記事は新しいコードハイライト機能をテストするために使用されます。シンタックスハイライト、コピーボタン、言語表示などが含まれます。</p>
-<h2 id="javascript">JavaScript</h2>
-<div
-  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-  
-  <div
-    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
-    
-    <div class="flex items-center gap-2">
-      <div class="text-muted-foreground flex-shrink-0">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-</svg>
-      </div>
-      <span class="text-muted-foreground text-sm font-medium">
-        JAVASCRIPT
-      </span>
-    </div>
-
-    
-    <div class="flex items-center gap-2">
-      
-      <button
-        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-0"
-        title="切换行号"
-        aria-label="切换行号">
-        <span class="linenumber-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-  <line x1="8" x2="21" y1="6" y2="6"/>
-  <line x1="8" x2="21" y1="12" y2="12"/>
-  <line x1="8" x2="21" y1="18" y2="18"/>
-  <line x1="3" x2="3.01" y1="6" y2="6"/>
-  <line x1="3" x2="3.01" y1="12" y2="12"/>
-  <line x1="3" x2="3.01" y1="18" y2="18"/>
-
-</svg>
-        </span>
-        <span class="linenumber-text hidden md:inline">行号</span>
-      </button>
-
-      <button
-          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-          data-code-id="code-0"
-          data-default-state="expanded"
-          data-collapsed="false"
-          data-auto-collapse-lines="30"
-          data-auto-collapse-height="400"
-          data-collapsed-height="120"
-          title="折りたたむ"
-          aria-label="折りたたむ">
-          <span class="collapse-icon">
-            
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
-          </span>
-          <span class="collapse-text hidden sm:inline"
-            >折りたたむ</span
-          >
-        </button>
-      <button
-        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-0"
-        title="コピー"
-        aria-label="コピー">
-        <span class="copy-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-</svg>
-        </span>
-        <span class="copy-text hidden sm:inline"
-          >コピー</span
-        >
-      </button>
-    </div>
-  </div>
-
-  
-  <div class="code-block-content relative" id="code-0">
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kd">function</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">return</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`10番目のフィボナッチ数は：</span><span class="si">${</span><span class="nx">result</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">
-</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1">// 非同期/待機
-</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">asyncFunction</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">  <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/api/data&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;データ取得エラー：&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="p">};</span></span></span></code></pre></div>
-    
-    <div
-      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
-      <div
-        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
-        クリックして展開し、詳細を表示
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function() {
-  const codeId = 'code-0';
-  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
-  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
-  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
-  const codeContainer = document.getElementById(codeId);
-
-  if (!codeContainer) return;
-
-  
-  if (toggleLinenosBtn) {
-    toggleLinenosBtn.addEventListener('click', function() {
-      codeContainer.classList.toggle('no-linenos');
-    });
-  }
-
-  
-  if (copyBtn) {
-    const copyIcon = copyBtn.querySelector('.copy-icon');
-    const copyText = copyBtn.querySelector('.copy-text');
-
-    copyBtn.addEventListener('click', async function() {
-      try {
-        let codeText = '';
-        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
-        if (codeTableCell) {
-          codeText = codeTableCell.textContent || codeTableCell.innerText;
-        } else {
-          const codeElement = codeContainer.querySelector('code');
-          if (codeElement) {
-            const hasInlineLineNumbers = codeElement.querySelector('.ln');
-            if (hasInlineLineNumbers) {
-              const codeLines = codeElement.querySelectorAll('.cl');
-              if (codeLines.length > 0) {
-                codeText = Array.from(codeLines)
-                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
-                  .join('\n').replace(/\n+$/, '');
-              } else {
-                const allText = codeElement.textContent || codeElement.innerText;
-                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
-              }
-            } else {
-              codeText = codeElement.textContent || codeElement.innerText;
-            }
-          } else {
-            codeText = codeContainer.textContent || codeContainer.innerText;
-          }
-        }
-        codeText = codeText.trim();
-        await navigator.clipboard.writeText(codeText);
-        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (copyText) copyText.textContent = 'コピーしました';
-        copyBtn.classList.add('text-green-600');
-        setTimeout(() => {
-          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
-          if (copyText) copyText.textContent = 'コピー';
-          copyBtn.classList.remove('text-green-600');
-        }, 2000);
-      } catch (err) {
-        console.error('复制失败:', err);
-      }
-    });
-  }
-
-  
-  if (collapseBtn) {
-    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
-    const collapseText = collapseBtn.querySelector('.collapse-text');
-    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
-
-    let codeElement = codeContainer.querySelector('pre.chroma');
-    if (!codeElement) codeElement = codeContainer.querySelector('pre');
-
-    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
-    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
-    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
-    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
-    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
-
-    let isCollapsed = false;
-
-    function initCollapse() {
-      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
-      if (shouldCollapse) setCollapsed(true, false);
-    }
-    function shouldAutoCollapse() {
-      if (codeElement) {
-        const lines = codeElement.querySelectorAll('.line, .cl');
-        const height = codeElement.offsetHeight;
-        return lines.length > autoCollapseLines || height > autoCollapseHeight;
-      }
-      const containerHeight = codeContainer.offsetHeight;
-      if (containerHeight > autoCollapseHeight) return true;
-      const textContent = codeContainer.textContent || codeContainer.innerText || '';
-      const estimatedLines = textContent.split('\n').length;
-      return estimatedLines > autoCollapseLines;
-    }
-    function setCollapsed(collapsed, animate = true) {
-      if (!collapseOverlay) return;
-      isCollapsed = collapsed;
-      if (collapsed) {
-        codeContainer.style.maxHeight = collapsedHeight + 'px';
-        codeContainer.style.overflow = 'hidden';
-        collapseOverlay.style.opacity = '1';
-        collapseOverlay.style.pointerEvents = 'auto';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '展開';
-        collapseBtn.title = '展開';
-      } else {
-        codeContainer.style.maxHeight = '';
-        codeContainer.style.overflow = '';
-        collapseOverlay.style.opacity = '0';
-        collapseOverlay.style.pointerEvents = 'none';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '折りたたむ';
-        collapseBtn.title = '折りたたむ';
-      }
-      if (animate) {
-        codeContainer.style.transition = 'max-height 0.3s ease-out';
-        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
-      }
-    }
-    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
-    collapseBtn.addEventListener('click', toggleCollapse);
-    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
-    initCollapse();
-  }
-})();
-</script>
-
-<h2 id="行番号付きコードブロック">行番号付きコードブロック</h2>
-<div
-  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-  
-  <div
-    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
-    
-    <div class="flex items-center gap-2">
-      <div class="text-muted-foreground flex-shrink-0">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-</svg>
-      </div>
-      <span class="text-muted-foreground text-sm font-medium">
-        PYTHON
-      </span>
-    </div>
-
-    
-    <div class="flex items-center gap-2">
-      
-      <button
-        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-1"
-        title="切换行号"
-        aria-label="切换行号">
-        <span class="linenumber-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-  <line x1="8" x2="21" y1="6" y2="6"/>
-  <line x1="8" x2="21" y1="12" y2="12"/>
-  <line x1="8" x2="21" y1="18" y2="18"/>
-  <line x1="3" x2="3.01" y1="6" y2="6"/>
-  <line x1="3" x2="3.01" y1="12" y2="12"/>
-  <line x1="3" x2="3.01" y1="18" y2="18"/>
-
-</svg>
-        </span>
-        <span class="linenumber-text hidden md:inline">行号</span>
-      </button>
-
-      <button
-          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-          data-code-id="code-1"
-          data-default-state="expanded"
-          data-collapsed="false"
-          data-auto-collapse-lines="30"
-          data-auto-collapse-height="400"
-          data-collapsed-height="120"
-          title="折りたたむ"
-          aria-label="折りたたむ">
-          <span class="collapse-icon">
-            
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
-          </span>
-          <span class="collapse-text hidden sm:inline"
-            >折りたたむ</span
-          >
-        </button>
-      <button
-        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-1"
-        title="コピー"
-        aria-label="コピー">
-        <span class="copy-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-</svg>
-        </span>
-        <span class="copy-text hidden sm:inline"
-          >コピー</span
-        >
-      </button>
-    </div>
-  </div>
-
-  
-  <div class="code-block-content relative" id="code-1">
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 行番号付きPythonコード</span>
-</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">class</span> <span class="nc">DataProcessor</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]):</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="s2">&#34;&#34;&#34;データを処理して結果を返す&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl">
-</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="s1">&#39;processed&#39;</span><span class="p">:</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">
-</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl">                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;processed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">
-</span></span><span class="line"><span class="ln">23</span><span class="cl">        <span class="k">return</span> <span class="n">result</span></span></span></code></pre></div>
-    
-    <div
-      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
-      <div
-        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
-        クリックして展開し、詳細を表示
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function() {
-  const codeId = 'code-1';
-  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
-  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
-  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
-  const codeContainer = document.getElementById(codeId);
-
-  if (!codeContainer) return;
-
-  
-  if (toggleLinenosBtn) {
-    toggleLinenosBtn.addEventListener('click', function() {
-      codeContainer.classList.toggle('no-linenos');
-    });
-  }
-
-  
-  if (copyBtn) {
-    const copyIcon = copyBtn.querySelector('.copy-icon');
-    const copyText = copyBtn.querySelector('.copy-text');
-
-    copyBtn.addEventListener('click', async function() {
-      try {
-        let codeText = '';
-        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
-        if (codeTableCell) {
-          codeText = codeTableCell.textContent || codeTableCell.innerText;
-        } else {
-          const codeElement = codeContainer.querySelector('code');
-          if (codeElement) {
-            const hasInlineLineNumbers = codeElement.querySelector('.ln');
-            if (hasInlineLineNumbers) {
-              const codeLines = codeElement.querySelectorAll('.cl');
-              if (codeLines.length > 0) {
-                codeText = Array.from(codeLines)
-                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
-                  .join('\n').replace(/\n+$/, '');
-              } else {
-                const allText = codeElement.textContent || codeElement.innerText;
-                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
-              }
-            } else {
-              codeText = codeElement.textContent || codeElement.innerText;
-            }
-          } else {
-            codeText = codeContainer.textContent || codeContainer.innerText;
-          }
-        }
-        codeText = codeText.trim();
-        await navigator.clipboard.writeText(codeText);
-        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (copyText) copyText.textContent = 'コピーしました';
-        copyBtn.classList.add('text-green-600');
-        setTimeout(() => {
-          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
-          if (copyText) copyText.textContent = 'コピー';
-          copyBtn.classList.remove('text-green-600');
-        }, 2000);
-      } catch (err) {
-        console.error('复制失败:', err);
-      }
-    });
-  }
-
-  
-  if (collapseBtn) {
-    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
-    const collapseText = collapseBtn.querySelector('.collapse-text');
-    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
-
-    let codeElement = codeContainer.querySelector('pre.chroma');
-    if (!codeElement) codeElement = codeContainer.querySelector('pre');
-
-    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
-    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
-    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
-    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
-    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
-
-    let isCollapsed = false;
-
-    function initCollapse() {
-      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
-      if (shouldCollapse) setCollapsed(true, false);
-    }
-    function shouldAutoCollapse() {
-      if (codeElement) {
-        const lines = codeElement.querySelectorAll('.line, .cl');
-        const height = codeElement.offsetHeight;
-        return lines.length > autoCollapseLines || height > autoCollapseHeight;
-      }
-      const containerHeight = codeContainer.offsetHeight;
-      if (containerHeight > autoCollapseHeight) return true;
-      const textContent = codeContainer.textContent || codeContainer.innerText || '';
-      const estimatedLines = textContent.split('\n').length;
-      return estimatedLines > autoCollapseLines;
-    }
-    function setCollapsed(collapsed, animate = true) {
-      if (!collapseOverlay) return;
-      isCollapsed = collapsed;
-      if (collapsed) {
-        codeContainer.style.maxHeight = collapsedHeight + 'px';
-        codeContainer.style.overflow = 'hidden';
-        collapseOverlay.style.opacity = '1';
-        collapseOverlay.style.pointerEvents = 'auto';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '展開';
-        collapseBtn.title = '展開';
-      } else {
-        codeContainer.style.maxHeight = '';
-        codeContainer.style.overflow = '';
-        collapseOverlay.style.opacity = '0';
-        collapseOverlay.style.pointerEvents = 'none';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '折りたたむ';
-        collapseBtn.title = '折りたたむ';
-      }
-      if (animate) {
-        codeContainer.style.transition = 'max-height 0.3s ease-out';
-        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
-      }
-    }
-    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
-    collapseBtn.addEventListener('click', toggleCollapse);
-    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
-    initCollapse();
-  }
-})();
-</script>
-
-<h2 id="特定行のハイライト">特定行のハイライト</h2>
-<div
-  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-  
-  <div
-    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
-    
-    <div class="flex items-center gap-2">
-      <div class="text-muted-foreground flex-shrink-0">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-</svg>
-      </div>
-      <span class="text-muted-foreground text-sm font-medium">
-        GO
-      </span>
-    </div>
-
-    
-    <div class="flex items-center gap-2">
-      
-      <button
-        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-2"
-        title="切换行号"
-        aria-label="切换行号">
-        <span class="linenumber-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-  <line x1="8" x2="21" y1="6" y2="6"/>
-  <line x1="8" x2="21" y1="12" y2="12"/>
-  <line x1="8" x2="21" y1="18" y2="18"/>
-  <line x1="3" x2="3.01" y1="6" y2="6"/>
-  <line x1="3" x2="3.01" y1="12" y2="12"/>
-  <line x1="3" x2="3.01" y1="18" y2="18"/>
-
-</svg>
-        </span>
-        <span class="linenumber-text hidden md:inline">行号</span>
-      </button>
-
-      <button
-          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-          data-code-id="code-2"
-          data-default-state="expanded"
-          data-collapsed="false"
-          data-auto-collapse-lines="30"
-          data-auto-collapse-height="400"
-          data-collapsed-height="120"
-          title="折りたたむ"
-          aria-label="折りたたむ">
-          <span class="collapse-icon">
-            
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
-          </span>
-          <span class="collapse-text hidden sm:inline"
-            >折りたたむ</span
-          >
-        </button>
-      <button
-        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-2"
-        title="コピー"
-        aria-label="コピー">
-        <span class="copy-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-</svg>
-        </span>
-        <span class="copy-text hidden sm:inline"
-          >コピー</span
-        >
-      </button>
-    </div>
-  </div>
-
-  
-  <div class="code-block-content relative" id="code-2">
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
-</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w">
-</span></span></span><span class="line hl"><span class="ln"> 3</span><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w">  </span><span class="c1">// この行がハイライトされます</span><span class="w">
-</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w"></span><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line hl"><span class="ln"> 6</span><span class="cl"><span class="w">    </span><span class="nx">message</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;こんにちは、世界！&#34;</span><span class="w">  </span><span class="c1">// この行もハイライトされます</span><span class="w">
-</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w">
-</span></span></span><span class="line hl"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w">  </span><span class="c1">// この行もハイライトされます</span><span class="w">
-</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;カウント：%d\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div>
-    
-    <div
-      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
-      <div
-        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
-        クリックして展開し、詳細を表示
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function() {
-  const codeId = 'code-2';
-  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
-  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
-  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
-  const codeContainer = document.getElementById(codeId);
-
-  if (!codeContainer) return;
-
-  
-  if (toggleLinenosBtn) {
-    toggleLinenosBtn.addEventListener('click', function() {
-      codeContainer.classList.toggle('no-linenos');
-    });
-  }
-
-  
-  if (copyBtn) {
-    const copyIcon = copyBtn.querySelector('.copy-icon');
-    const copyText = copyBtn.querySelector('.copy-text');
-
-    copyBtn.addEventListener('click', async function() {
-      try {
-        let codeText = '';
-        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
-        if (codeTableCell) {
-          codeText = codeTableCell.textContent || codeTableCell.innerText;
-        } else {
-          const codeElement = codeContainer.querySelector('code');
-          if (codeElement) {
-            const hasInlineLineNumbers = codeElement.querySelector('.ln');
-            if (hasInlineLineNumbers) {
-              const codeLines = codeElement.querySelectorAll('.cl');
-              if (codeLines.length > 0) {
-                codeText = Array.from(codeLines)
-                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
-                  .join('\n').replace(/\n+$/, '');
-              } else {
-                const allText = codeElement.textContent || codeElement.innerText;
-                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
-              }
-            } else {
-              codeText = codeElement.textContent || codeElement.innerText;
-            }
-          } else {
-            codeText = codeContainer.textContent || codeContainer.innerText;
-          }
-        }
-        codeText = codeText.trim();
-        await navigator.clipboard.writeText(codeText);
-        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (copyText) copyText.textContent = 'コピーしました';
-        copyBtn.classList.add('text-green-600');
-        setTimeout(() => {
-          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
-          if (copyText) copyText.textContent = 'コピー';
-          copyBtn.classList.remove('text-green-600');
-        }, 2000);
-      } catch (err) {
-        console.error('复制失败:', err);
-      }
-    });
-  }
-
-  
-  if (collapseBtn) {
-    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
-    const collapseText = collapseBtn.querySelector('.collapse-text');
-    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
-
-    let codeElement = codeContainer.querySelector('pre.chroma');
-    if (!codeElement) codeElement = codeContainer.querySelector('pre');
-
-    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
-    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
-    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
-    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
-    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
-
-    let isCollapsed = false;
-
-    function initCollapse() {
-      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
-      if (shouldCollapse) setCollapsed(true, false);
-    }
-    function shouldAutoCollapse() {
-      if (codeElement) {
-        const lines = codeElement.querySelectorAll('.line, .cl');
-        const height = codeElement.offsetHeight;
-        return lines.length > autoCollapseLines || height > autoCollapseHeight;
-      }
-      const containerHeight = codeContainer.offsetHeight;
-      if (containerHeight > autoCollapseHeight) return true;
-      const textContent = codeContainer.textContent || codeContainer.innerText || '';
-      const estimatedLines = textContent.split('\n').length;
-      return estimatedLines > autoCollapseLines;
-    }
-    function setCollapsed(collapsed, animate = true) {
-      if (!collapseOverlay) return;
-      isCollapsed = collapsed;
-      if (collapsed) {
-        codeContainer.style.maxHeight = collapsedHeight + 'px';
-        codeContainer.style.overflow = 'hidden';
-        collapseOverlay.style.opacity = '1';
-        collapseOverlay.style.pointerEvents = 'auto';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '展開';
-        collapseBtn.title = '展開';
-      } else {
-        codeContainer.style.maxHeight = '';
-        codeContainer.style.overflow = '';
-        collapseOverlay.style.opacity = '0';
-        collapseOverlay.style.pointerEvents = 'none';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '折りたたむ';
-        collapseBtn.title = '折りたたむ';
-      }
-      if (animate) {
-        codeContainer.style.transition = 'max-height 0.3s ease-out';
-        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
-      }
-    }
-    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
-    collapseBtn.addEventListener('click', toggleCollapse);
-    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
-    initCollapse();
-  }
-})();
-</script>
-
-<h2 id="ファイル名付きコードブロック">ファイル名付きコードブロック</h2>
-<div
-  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-  
-  <div
-    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
-    
-    <div class="flex items-center gap-2">
-      <div class="text-muted-foreground flex-shrink-0">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-</svg>
-      </div>
-      <span class="text-muted-foreground text-sm font-medium">
-        api.ts
-      </span>
-    </div>
-
-    
-    <div class="flex items-center gap-2">
-      
-      <button
-        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-3"
-        title="切换行号"
-        aria-label="切换行号">
-        <span class="linenumber-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-  <line x1="8" x2="21" y1="6" y2="6"/>
-  <line x1="8" x2="21" y1="12" y2="12"/>
-  <line x1="8" x2="21" y1="18" y2="18"/>
-  <line x1="3" x2="3.01" y1="6" y2="6"/>
-  <line x1="3" x2="3.01" y1="12" y2="12"/>
-  <line x1="3" x2="3.01" y1="18" y2="18"/>
-
-</svg>
-        </span>
-        <span class="linenumber-text hidden md:inline">行号</span>
-      </button>
-
-      <button
-          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-          data-code-id="code-3"
-          data-default-state="expanded"
-          data-collapsed="false"
-          data-auto-collapse-lines="30"
-          data-auto-collapse-height="400"
-          data-collapsed-height="120"
-          title="折りたたむ"
-          aria-label="折りたたむ">
-          <span class="collapse-icon">
-            
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
-          </span>
-          <span class="collapse-text hidden sm:inline"
-            >折りたたむ</span
-          >
-        </button>
-      <button
-        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-3"
-        title="コピー"
-        aria-label="コピー">
-        <span class="copy-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-</svg>
-        </span>
-        <span class="copy-text hidden sm:inline"
-          >コピー</span
-        >
-      </button>
-    </div>
-  </div>
-
-  
-  <div class="code-block-content relative" id="code-3">
-    <div class="highlight" filename="api.ts"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1">// TypeScript API
-</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"></span><span class="kr">interface</span> <span class="nx">ApiResponse</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 3</span><span class="cl">  <span class="nx">data</span>: <span class="kt">T</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="nx">status</span>: <span class="kt">number</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="nx">message</span>: <span class="kt">string</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
-</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">11</span><span class="cl">  <span class="nx">email</span>: <span class="kt">string</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">12</span><span class="cl">  <span class="nx">avatar?</span>: <span class="kt">string</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">14</span><span class="cl">
-</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="kr">class</span> <span class="nx">ApiClient</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="kr">private</span> <span class="nx">baseURL</span>: <span class="kt">string</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">17</span><span class="cl">  <span class="kr">private</span> <span class="nx">headers</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">string</span><span class="p">&gt;;</span>
-</span></span><span class="line"><span class="ln">18</span><span class="cl">
-</span></span><span class="line"><span class="ln">19</span><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="nx">baseURL</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">apiKey?</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="nx">baseURL</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">22</span><span class="cl">      <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">23</span><span class="cl">      <span class="p">...(</span><span class="nx">apiKey</span> <span class="o">&amp;&amp;</span> <span class="p">{</span> <span class="s1">&#39;Authorization&#39;</span><span class="o">:</span> <span class="sb">`Bearer </span><span class="si">${</span><span class="nx">apiKey</span><span class="si">}</span><span class="sb">`</span> <span class="p">})</span>
-</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="ln">25</span><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="ln">26</span><span class="cl">
-</span></span><span class="line"><span class="ln">27</span><span class="cl">  <span class="kr">async</span> <span class="kr">get</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">endpoint</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">ApiResponse</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}${</span><span class="nx">endpoint</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">29</span><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">30</span><span class="cl">      <span class="nx">headers</span>: <span class="kt">this.headers</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">31</span><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="ln">32</span><span class="cl">
-</span></span><span class="line"><span class="ln">33</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">34</span><span class="cl">      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="sb">`HTTPエラー！ステータス：</span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">35</span><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="ln">36</span><span class="cl">
-</span></span><span class="line"><span class="ln">37</span><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln">38</span><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="ln">39</span><span class="cl">
-</span></span><span class="line"><span class="ln">40</span><span class="cl">  <span class="kr">async</span> <span class="nx">post</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">endpoint</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">data</span>: <span class="kt">any</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">ApiResponse</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">41</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">baseURL</span><span class="si">}${</span><span class="nx">endpoint</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">42</span><span class="cl">      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">43</span><span class="cl">      <span class="nx">headers</span>: <span class="kt">this.headers</span><span class="p">,</span>
-</span></span><span class="line"><span class="ln">44</span><span class="cl">      <span class="nx">body</span>: <span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
-</span></span><span class="line"><span class="ln">45</span><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="ln">46</span><span class="cl">
-</span></span><span class="line"><span class="ln">47</span><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-</span></span><span class="line"><span class="ln">48</span><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="ln">50</span><span class="cl">
-</span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ApiClient</span><span class="p">(</span><span class="s1">&#39;https://api.example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;your-api-key&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">52</span><span class="cl">
-</span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">getUsers</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">[]</span><span class="p">&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">54</span><span class="cl">  <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">55</span><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="kr">get</span><span class="p">&lt;</span><span class="nt">User</span><span class="err">[]</span><span class="p">&gt;(</span><span class="s1">&#39;/users&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">56</span><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">57</span><span class="cl">  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="ln">58</span><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;ユーザー取得エラー：&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-</span></span><span class="line"><span class="ln">59</span><span class="cl">    <span class="k">return</span> <span class="p">[];</span>
-</span></span><span class="line"><span class="ln">60</span><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-    
-    <div
-      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
-      <div
-        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
-        クリックして展開し、詳細を表示
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function() {
-  const codeId = 'code-3';
-  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
-  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
-  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
-  const codeContainer = document.getElementById(codeId);
-
-  if (!codeContainer) return;
-
-  
-  if (toggleLinenosBtn) {
-    toggleLinenosBtn.addEventListener('click', function() {
-      codeContainer.classList.toggle('no-linenos');
-    });
-  }
-
-  
-  if (copyBtn) {
-    const copyIcon = copyBtn.querySelector('.copy-icon');
-    const copyText = copyBtn.querySelector('.copy-text');
-
-    copyBtn.addEventListener('click', async function() {
-      try {
-        let codeText = '';
-        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
-        if (codeTableCell) {
-          codeText = codeTableCell.textContent || codeTableCell.innerText;
-        } else {
-          const codeElement = codeContainer.querySelector('code');
-          if (codeElement) {
-            const hasInlineLineNumbers = codeElement.querySelector('.ln');
-            if (hasInlineLineNumbers) {
-              const codeLines = codeElement.querySelectorAll('.cl');
-              if (codeLines.length > 0) {
-                codeText = Array.from(codeLines)
-                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
-                  .join('\n').replace(/\n+$/, '');
-              } else {
-                const allText = codeElement.textContent || codeElement.innerText;
-                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
-              }
-            } else {
-              codeText = codeElement.textContent || codeElement.innerText;
-            }
-          } else {
-            codeText = codeContainer.textContent || codeContainer.innerText;
-          }
-        }
-        codeText = codeText.trim();
-        await navigator.clipboard.writeText(codeText);
-        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (copyText) copyText.textContent = 'コピーしました';
-        copyBtn.classList.add('text-green-600');
-        setTimeout(() => {
-          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
-          if (copyText) copyText.textContent = 'コピー';
-          copyBtn.classList.remove('text-green-600');
-        }, 2000);
-      } catch (err) {
-        console.error('复制失败:', err);
-      }
-    });
-  }
-
-  
-  if (collapseBtn) {
-    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
-    const collapseText = collapseBtn.querySelector('.collapse-text');
-    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
-
-    let codeElement = codeContainer.querySelector('pre.chroma');
-    if (!codeElement) codeElement = codeContainer.querySelector('pre');
-
-    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
-    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
-    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
-    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
-    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
-
-    let isCollapsed = false;
-
-    function initCollapse() {
-      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
-      if (shouldCollapse) setCollapsed(true, false);
-    }
-    function shouldAutoCollapse() {
-      if (codeElement) {
-        const lines = codeElement.querySelectorAll('.line, .cl');
-        const height = codeElement.offsetHeight;
-        return lines.length > autoCollapseLines || height > autoCollapseHeight;
-      }
-      const containerHeight = codeContainer.offsetHeight;
-      if (containerHeight > autoCollapseHeight) return true;
-      const textContent = codeContainer.textContent || codeContainer.innerText || '';
-      const estimatedLines = textContent.split('\n').length;
-      return estimatedLines > autoCollapseLines;
-    }
-    function setCollapsed(collapsed, animate = true) {
-      if (!collapseOverlay) return;
-      isCollapsed = collapsed;
-      if (collapsed) {
-        codeContainer.style.maxHeight = collapsedHeight + 'px';
-        codeContainer.style.overflow = 'hidden';
-        collapseOverlay.style.opacity = '1';
-        collapseOverlay.style.pointerEvents = 'auto';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '展開';
-        collapseBtn.title = '展開';
-      } else {
-        codeContainer.style.maxHeight = '';
-        codeContainer.style.overflow = '';
-        collapseOverlay.style.opacity = '0';
-        collapseOverlay.style.pointerEvents = 'none';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '折りたたむ';
-        collapseBtn.title = '折りたたむ';
-      }
-      if (animate) {
-        codeContainer.style.transition = 'max-height 0.3s ease-out';
-        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
-      }
-    }
-    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
-    collapseBtn.addEventListener('click', toggleCollapse);
-    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
-    initCollapse();
-  }
-})();
-</script>
-
-<h2 id="プレーンテキストコードブロック">プレーンテキストコードブロック</h2>
-<div
-  class="code-block-container border-border bg-card my-6 overflow-hidden rounded-xl border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-  
-  <div
-    class="code-block-header bg-muted/30 border-border flex items-center justify-between border-b px-4 py-3">
-    
-    <div class="flex items-center gap-2">
-      <div class="text-muted-foreground flex-shrink-0">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-</svg>
-      </div>
-      <span class="text-muted-foreground text-sm font-medium">
-        PLAINTEXT
-      </span>
-    </div>
-
-    
-    <div class="flex items-center gap-2">
-      
-      <button
-        class="toggle-linenos-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 hidden sm:inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-4"
-        title="切换行号"
-        aria-label="切换行号">
-        <span class="linenumber-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-  <line x1="8" x2="21" y1="6" y2="6"/>
-  <line x1="8" x2="21" y1="12" y2="12"/>
-  <line x1="8" x2="21" y1="18" y2="18"/>
-  <line x1="3" x2="3.01" y1="6" y2="6"/>
-  <line x1="3" x2="3.01" y1="12" y2="12"/>
-  <line x1="3" x2="3.01" y1="18" y2="18"/>
-
-</svg>
-        </span>
-        <span class="linenumber-text hidden md:inline">行号</span>
-      </button>
-
-      <button
-          class="collapse-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-          data-code-id="code-4"
-          data-default-state="expanded"
-          data-collapsed="false"
-          data-auto-collapse-lines="30"
-          data-auto-collapse-height="400"
-          data-collapsed-height="120"
-          title="折りたたむ"
-          aria-label="折りたたむ">
-          <span class="collapse-icon">
-            
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
-          </span>
-          <span class="collapse-text hidden sm:inline"
-            >折りたたむ</span
-          >
-        </button>
-      <button
-        class="copy-code-btn text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-200 ease-out focus:ring-2 focus:outline-none"
-        data-code-id="code-4"
-        title="コピー"
-        aria-label="コピー">
-        <span class="copy-icon">
-          
-  <svg class="h-3 w-3"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-</svg>
-        </span>
-        <span class="copy-text hidden sm:inline"
-          >コピー</span
-        >
-      </button>
-    </div>
-  </div>
-
-  
-  <div class="code-block-content relative" id="code-4">
-    <pre tabindex="0"><code>これはプレーンテキストコードブロックです。
-シンタックスハイライトはありません。
-ここでコピー機能をテストできます。
-
-function test() {
-    console.log(&#34;これはテストです。&#34;);
-}</code></pre>
-    
-    <div
-      class="collapse-overlay to-card/90 pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent opacity-0 transition-opacity duration-300">
-      <div
-        class="text-muted-foreground bg-card/80 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30 absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer rounded-full border px-3 py-1.5 text-xs backdrop-blur-sm transition-all duration-200">
-        クリックして展開し、詳細を表示
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-(function() {
-  const codeId = 'code-4';
-  const copyBtn = document.querySelector('.copy-code-btn[data-code-id="' + codeId + '"]');
-  const collapseBtn = document.querySelector('.collapse-code-btn[data-code-id="' + codeId + '"]');
-  const toggleLinenosBtn = document.querySelector('.toggle-linenos-btn[data-code-id="' + codeId + '"]');
-  const codeContainer = document.getElementById(codeId);
-
-  if (!codeContainer) return;
-
-  
-  if (toggleLinenosBtn) {
-    toggleLinenosBtn.addEventListener('click', function() {
-      codeContainer.classList.toggle('no-linenos');
-    });
-  }
-
-  
-  if (copyBtn) {
-    const copyIcon = copyBtn.querySelector('.copy-icon');
-    const copyText = copyBtn.querySelector('.copy-text');
-
-    copyBtn.addEventListener('click', async function() {
-      try {
-        let codeText = '';
-        const codeTableCell = codeContainer.querySelector('.lntd:last-child code');
-        if (codeTableCell) {
-          codeText = codeTableCell.textContent || codeTableCell.innerText;
-        } else {
-          const codeElement = codeContainer.querySelector('code');
-          if (codeElement) {
-            const hasInlineLineNumbers = codeElement.querySelector('.ln');
-            if (hasInlineLineNumbers) {
-              const codeLines = codeElement.querySelectorAll('.cl');
-              if (codeLines.length > 0) {
-                codeText = Array.from(codeLines)
-                  .map(line => (line.textContent || line.innerText).replace(/\n+$/, ''))
-                  .join('\n').replace(/\n+$/, '');
-              } else {
-                const allText = codeElement.textContent || codeElement.innerText;
-                codeText = allText.replace(/^\d+/gm, '').replace(/^\s+/gm, '');
-              }
-            } else {
-              codeText = codeElement.textContent || codeElement.innerText;
-            }
-          } else {
-            codeText = codeContainer.textContent || codeContainer.innerText;
-          }
-        }
-        codeText = codeText.trim();
-        await navigator.clipboard.writeText(codeText);
-        copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M5 13l4 4L19 7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (copyText) copyText.textContent = 'コピーしました';
-        copyBtn.classList.add('text-green-600');
-        setTimeout(() => {
-          copyIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\u0022 \/\u003e\n\u003c\/svg\u003e`;
-          if (copyText) copyText.textContent = 'コピー';
-          copyBtn.classList.remove('text-green-600');
-        }, 2000);
-      } catch (err) {
-        console.error('复制失败:', err);
-      }
-    });
-  }
-
-  
-  if (collapseBtn) {
-    const collapseIcon = collapseBtn.querySelector('.collapse-icon');
-    const collapseText = collapseBtn.querySelector('.collapse-text');
-    const collapseOverlay = codeContainer.querySelector('.collapse-overlay');
-
-    let codeElement = codeContainer.querySelector('pre.chroma');
-    if (!codeElement) codeElement = codeContainer.querySelector('pre');
-
-    const defaultState = collapseBtn.dataset.defaultState || 'expanded';
-    const isCollapsedAttr = collapseBtn.dataset.collapsed === 'true';
-    const autoCollapseLines = parseInt(collapseBtn.dataset.autoCollapseLines) || 30;
-    const autoCollapseHeight = parseInt(collapseBtn.dataset.autoCollapseHeight) || 400;
-    const collapsedHeight = parseInt(collapseBtn.dataset.collapsedHeight) || 120;
-
-    let isCollapsed = false;
-
-    function initCollapse() {
-      const shouldCollapse = isCollapsedAttr || defaultState === 'collapsed' || shouldAutoCollapse();
-      if (shouldCollapse) setCollapsed(true, false);
-    }
-    function shouldAutoCollapse() {
-      if (codeElement) {
-        const lines = codeElement.querySelectorAll('.line, .cl');
-        const height = codeElement.offsetHeight;
-        return lines.length > autoCollapseLines || height > autoCollapseHeight;
-      }
-      const containerHeight = codeContainer.offsetHeight;
-      if (containerHeight > autoCollapseHeight) return true;
-      const textContent = codeContainer.textContent || codeContainer.innerText || '';
-      const estimatedLines = textContent.split('\n').length;
-      return estimatedLines > autoCollapseLines;
-    }
-    function setCollapsed(collapsed, animate = true) {
-      if (!collapseOverlay) return;
-      isCollapsed = collapsed;
-      if (collapsed) {
-        codeContainer.style.maxHeight = collapsedHeight + 'px';
-        codeContainer.style.overflow = 'hidden';
-        collapseOverlay.style.opacity = '1';
-        collapseOverlay.style.pointerEvents = 'auto';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 stroke-width=\u00222\u0022 d=\u0022M19 9l-7 7-7-7\u0022 \/\u003e\n\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '展開';
-        collapseBtn.title = '展開';
-      } else {
-        codeContainer.style.maxHeight = '';
-        codeContainer.style.overflow = '';
-        collapseOverlay.style.opacity = '0';
-        collapseOverlay.style.pointerEvents = 'none';
-        collapseIcon.innerHTML = `\n  \u003csvg class=\u0022h-3 w-3\u0022\n    fill=\u0022none\u0022\n    stroke=\u0022currentColor\u0022\n    viewBox=\u00220 0 24 24\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z\u0022\/\u003e\u003c\/svg\u003e`;
-        if (collapseText) collapseText.textContent = '折りたたむ';
-        collapseBtn.title = '折りたたむ';
-      }
-      if (animate) {
-        codeContainer.style.transition = 'max-height 0.3s ease-out';
-        setTimeout(() => { codeContainer.style.transition = ''; }, 300);
-      }
-    }
-    function toggleCollapse() { setCollapsed(!isCollapsed, true); }
-    collapseBtn.addEventListener('click', toggleCollapse);
-    if (collapseOverlay) collapseOverlay.addEventListener('click', () => { if (isCollapsed) setCollapsed(false, true); });
-    initCollapse();
-  }
-})();
-</script>
-
-<h2 id="インラインコード">インラインコード</h2>
-<p>これはインラインコードの例です：<code>const x = 42;</code> と <code>npm install</code> と <code>git commit -m &quot;更新&quot;</code>。</p></div>
+<h2 id="javascript">JavaScript …</h2></div>
         
       </a>
     
@@ -2645,182 +1143,73 @@ function test() {
 </section>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const tocContainer = document.getElementById('toc');
+  if (tocContainer) {
+    const headings = document.querySelectorAll('article h1, article h2, article h3');
+    if (headings.length === 0) {
+      tocContainer.innerHTML = '<p class="text-xs text-gray-400 italic">No headings found.</p>';
+    } else {
+      headings.forEach((heading, index) => {
+        const id = heading.id || `heading-${index}`;
+        if (!heading.id) {
+          heading.id = id;
+        }
+        
+        const level = parseInt(heading.tagName.charAt(1));
+        const text = heading.textContent;
+        
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.textContent = text;
+        link.className = `block w-full text-left text-sm py-1.5 transition-colors hover:text-primary dark:hover:text-primary ${
+          level === 1 ? 'font-semibold text-gray-800 dark:text-slate-200' : 
+          level === 2 ? 'pl-3 text-gray-600 dark:text-slate-400' : 
+          'pl-6 text-gray-500 dark:text-slate-500 text-xs'
+        }`;
+        
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+        
+        tocContainer.appendChild(link);
+      });
+    }
+  }
+});
+</script>
+
     </main>
 
     
-    
-<footer class="relative mt-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50">
-
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-12 mt-12">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="flex justify-center space-x-6 mb-8 text-gray-500 dark:text-slate-500">
       
+        <a href="/about/" class="hover:text-primary transition-colors">About</a>
       
-      <div class="lg:col-span-2">
-        <div class="flex items-center mb-6">
-          <div class="bg-gradient-to-br from-blue-500 to-purple-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold mr-4">
-            W
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Woke Soul&#39;s Blog</h3>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">分享技术、生活和创意</p>
-          </div>
-        </div>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed max-w-md">
-          欢迎来到我的博客世界，这里记录着我的学习历程、技术分享和生活感悟。希望我的内容能够为你带来启发和帮助。
-        </p>
-        
-        
-        
-      </div>
-
+        <a href="/acknowledgments/" class="hover:text-primary transition-colors">Acknowledgments</a>
       
-      <div>
-        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">快速链接</h4>
-        <ul class="space-y-3">
-          
-          <li>
-            <a
-              href="/about/"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>About</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="/acknowledgments/"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>Acknowledgments</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="https://google.com"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>Contact</span>
-            </a>
-          </li>
-          
-          <li>
-            <a
-              href="/index.xml"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2 group">
-              <span class="text-blue-500 group-hover:scale-110 transition-transform duration-300">→</span>
-              <span>RSS Feed</span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-
+        <a href="https://google.com" class="hover:text-primary transition-colors">Contact</a>
       
-      <div>
-        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">联系我</h4>
-        <ul class="space-y-3">
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-blue-500">📧</span>
-            <span>shouldnotwe@gmail.com</span>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-green-500">🌐</span>
-            <span>https://github.com/Walessong</span>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-purple-500">📍</span>
-            <span>中国香港</span>
-          </li>
-        </ul>
-      </div>
-
+        <a href="/index.xml" class="hover:text-primary transition-colors">RSS Feed</a>
       
-      <div>
-        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">鸣谢</h4>
-        <ul class="space-y-3">
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-orange-500">⚡</span>
-            <a href="https://gohugo.io" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Hugo</a>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-pink-500">🎨</span>
-            <a href="https://tailwindcss.com" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tailwind CSS</a>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-green-500">🚀</span>
-            <a href="https://netlify.com" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Netlify</a>
-          </li>
-          <li class="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-            <span class="text-blue-500">💙</span>
-            <a href="/acknowledgments" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">查看全部</a>
-          </li>
-        </ul>
-      </div>
     </div>
-
-    
-    <div class="border-t border-gray-200/50 dark:border-gray-700/50 mt-12 pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        
-        <div class="text-gray-600 dark:text-gray-400 text-sm mb-4 md:mb-0">
-          <p>&copy; 2025 Woke Soul&#39;s Blog. 保留所有权利。</p>
-        </div>
-        
-        
-        <div class="flex space-x-6 text-sm">
-          <a href="/privacy" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-            隐私政策
-          </a>
-          <a href="/terms" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-            使用条款
-          </a>
-          <a href="/sitemap.xml" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-            网站地图
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <button 
-      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-      class="group w-12 h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-full shadow-lg shadow-gray-900/10 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:scale-110 hover:shadow-xl transition-all duration-300">
-      <span class="text-lg transform group-hover:-translate-y-1 transition-transform duration-300">↑</span>
-    </button>
+    <p class="text-gray-400 dark:text-slate-600 text-sm">
+      © 2025 Woke Soul&#39;s Blog. Designed with Minimalism in mind.
+    </p>
   </div>
 </footer>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const footerElements = document.querySelectorAll('footer > *');
-  
-  footerElements.forEach((element, index) => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
     
-    setTimeout(() => {
-      element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }, 500 + index * 200);
-  });
-});
-</script>
-
-
-    
-    <script src="/js/main.js"></script>
-    <script src="/js/animation-manager.js"></script>
-    <script src="/js/article-cards.js"></script>
-    <script src="/js/article-card-performance.js"></script>
     <script src="/js/theme-manager.js"></script>
-    
   </body>
 </html>
 
