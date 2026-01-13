@@ -1,764 +1,463 @@
 <!doctype html>
-<html lang="ja-JP" class="dark">
+<html lang="ja-JP">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>プロス | Woke Soul&#39;s Blog</title>
     <meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
-    <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
-    <meta name="author" content="Woke Soul" />
     
     
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     
-    <link rel="manifest" href="/site.webmanifest" />
-    
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              background: 'rgb(var(--bg-main) / <alpha-value>)',
-              surface: 'rgb(var(--bg-surface) / <alpha-value>)',
-              primary: {
-                DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
-                foreground: 'rgb(var(--primary-foreground) / <alpha-value>)',
-              },
-              secondary: 'rgb(var(--text-muted) / <alpha-value>)',
-            },
-            textColor: {
-                DEFAULT: 'rgb(var(--text-main) / <alpha-value>)',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['Fira Code', 'monospace'],
-            }
-          }
-        }
-      }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
     <style>
-      :root {
-         
-        --bg-main: 241 245 249;    
-        --bg-surface: 255 255 255;  
-        --text-main: 30 41 59;     
-        --text-muted: 100 116 139;   
-        
-         
-        --primary: 2 132 199;
-        --primary-foreground: 255 255 255;
+       
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .dark {
-         
-        --bg-main: 15 23 42;       
-        --bg-surface: 30 41 59;    
-        --text-main: 241 245 249;  
-        --text-muted: 148 163 184; 
-        
-         
-        --primary: 56 189 248;
-        --primary-foreground: 15 23 42;
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --text-secondary: #666666;
+        --border-color: #e5e7eb;
+        --link-color: #2563eb;
+        --link-hover: #1d4ed8;
+        --code-bg: #f3f4f6;
+        --code-color: #e11d48;
+      }
+
+       
+      html[data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #e5e5e5;
+        --text-secondary: #a3a3a3;
+        --border-color: #404040;
+        --link-color: #60a5fa;
+        --link-hover: #93c5fd;
+        --code-bg: #2a2a2a;
+        --code-color: #fb7185;
+      }
+
+       
+      @media (prefers-color-scheme: dark) {
+        html:not([data-theme]) {
+          --bg-color: #1a1a1a;
+          --text-color: #e5e5e5;
+          --text-secondary: #a3a3a3;
+          --border-color: #404040;
+          --link-color: #60a5fa;
+          --link-hover: #93c5fd;
+          --code-bg: #2a2a2a;
+          --code-color: #fb7185;
+        }
+      }
+
+      html {
+        font-size: 16px;
+        line-height: 1.6;
       }
 
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: rgb(var(--bg-main));
-        color: rgb(var(--text-main));
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 20px;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-      
+
        
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+      header {
+        padding: 40px 0 60px 0;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 40px;
       }
-      ::-webkit-scrollbar-track {
-        background: transparent; 
+
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 8px;
       }
-      ::-webkit-scrollbar-thumb {
-        background: rgb(var(--text-muted)); 
-        opacity: 0.5;
+
+      header h1 a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      nav {
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--link-color);
+      }
+
+       
+      main {
+        min-height: 60vh;
+      }
+
+       
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--link-hover);
+      }
+
+       
+      h1, h2, h3, h4, h5, h6 {
+        margin: 2rem 0 1rem 0;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+
+       
+      p {
+        margin: 1rem 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+       
+      ul, ol {
+        margin: 1rem 0;
+        padding-left: 2rem;
+      }
+
+      li {
+        margin: 0.5rem 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+       
+      code {
+        background-color: var(--code-bg);
+        color: var(--code-color);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+        font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+      }
+
+      pre {
+        background-color: var(--code-bg);
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+        color: var(--text-color);
+      }
+
+       
+      blockquote {
+        border-left: 3px solid var(--border-color);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+
+       
+      hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 3rem 0;
+      }
+
+       
+      img {
+        max-width: 100%;
+        height: auto;
         border-radius: 4px;
+        margin: 1.5rem 0;
       }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgb(var(--primary)); 
+
+       
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+      }
+
+      th, td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        font-weight: 600;
+      }
+
+       
+      footer {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+       
+      .post-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .post-item {
+        margin: 2rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .post-item:last-child {
+        border-bottom: none;
+      }
+
+      .post-date {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .post-title a:hover {
+        color: var(--link-color);
+      }
+
+      .post-summary {
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+       
+      .tags {
+        margin-top: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background-color: var(--code-bg);
+        color: var(--text-secondary);
+        padding: 0.2rem 0.6rem;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+       
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        header {
+          padding: 30px 0 40px 0;
+        }
+
+        h1 { font-size: 1.75rem; }
+        h2 { font-size: 1.35rem; }
+        h3 { font-size: 1.15rem; }
+
+        nav a {
+          margin-right: 15px;
+        }
+      }
+
+       
+      ::selection {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        ::selection {
+          background-color: #1e3a8a;
+          color: #dbeafe;
+        }
+      }
+
+       
+      html {
+        scroll-behavior: smooth;
       }
     </style>
-    
-    <script>
-      (function() {
-        try {
-          const storedMode = localStorage.getItem('themeMode') || 'system';
-          const storedColor = localStorage.getItem('themeColor') || 'blue';
-          
-          const COLORS = {
-            blue:   { light: '2 132 199', dark: '56 189 248' },
-            green:  { light: '5 150 105', dark: '52 211 153' },
-            purple: { light: '124 58 237', dark: '167 139 250' },
-            orange: { light: '234 88 12', dark: '251 146 60' },
-            pink:   { light: '219 39 119', dark: '244 114 182' },
-          };
-          
-          const root = document.documentElement;
-          const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-          
-          const getIsDark = () => {
-            return storedMode === 'dark' || (storedMode === 'system' && mediaQuery.matches);
-          };
-          
-          const applyTheme = () => {
-            const isDark = getIsDark();
-            
-            if (isDark) {
-              root.classList.add('dark');
-            } else {
-              root.classList.remove('dark');
-            }
-            
-            const rgbValue = isDark ? COLORS[storedColor].dark : COLORS[storedColor].light;
-            root.style.setProperty('--primary', rgbValue);
-            
-            if (isDark) {
-              root.style.setProperty('--primary-foreground', '15 23 42');
-            } else {
-              root.style.setProperty('--primary-foreground', '255 255 255');
-            }
-          };
-          
-          applyTheme();
-          
-          if (storedMode === 'system' && window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
-          }
-        } catch (e) {}
-      })();
-    </script>
   </head>
 
-  <body class="min-h-screen bg-background text-secondary transition-colors duration-300 selection:bg-primary selection:text-white flex flex-col font-sans">
+  <body>
     
-    <header 
-  id="main-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-transparent border-transparent py-5"
->
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    
-    
-    <div 
-      onclick="window.location.href='\/ja\/'"
-      class="flex items-center space-x-2 cursor-pointer group"
-    >
-      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
-        <span class="font-mono text-primary-foreground font-bold text-xl">W</span>
-      </div>
-      <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-        Woke Soul&#39;s Blog
-      </span>
-    </div>
-
-    
-    <nav class="hidden md:flex items-center bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full px-2 py-1.5 border border-slate-200 dark:border-slate-700 shadow-inner">
-      <a href="/posts" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">文章</span>
-      </a>
-      <a href="/categories" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">分类</span>
-      </a>
-      <a href="/tags" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">标签</span>
-      </a>
-      <a href="/archives" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">归档</span>
-      </a>
-      <a href="/about" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">关于</span>
-      </a>
-      <a href="/acknowledgments" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">鸣谢</span>
-      </a>
-    </nav>
-
-    
-    <div class="hidden md:flex items-center space-x-3">
-      
-      <div class="relative" id="theme-menu-container">
-        <button 
-          id="theme-toggle-btn"
-          class="p-2 rounded-full transition-colors text-gray-600 dark:text-slate-400 hover:text-primary"
-          title="Theme Settings"
-        >
-          <svg id="palette-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-          </svg>
-        </button>
-
-        <div id="theme-menu" class="hidden absolute right-0 top-full mt-4 w-64 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-4 z-50 origin-top-right">
-          <div class="space-y-4">
-            
-            <div>
-              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Mode</span>
-              <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
-                <button id="theme-light" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                  </svg>
-                </button>
-                <button id="theme-dark" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                  </svg>
-                </button>
-                <button id="theme-system" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            
-            <div>
-              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Color</span>
-              <div class="flex justify-between">
-                <button data-color="blue" class="w-8 h-8 rounded-full bg-sky-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="green" class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="purple" class="w-8 h-8 rounded-full bg-violet-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="orange" class="w-8 h-8 rounded-full bg-orange-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="pink" class="w-8 h-8 rounded-full bg-pink-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-              </div>
-            </div>
-          </div>
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <h1><a href="/">Woke Soul&#39;s Blog</a></h1>
+          <p>A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.</p>
         </div>
-      </div>
-
-      <div class="w-px h-5 bg-slate-300 dark:bg-slate-700 mx-1"></div>
-
-      <a href="/index.xml" class="text-gray-600 dark:text-slate-400 hover:text-primary transition-colors p-2" title="RSS">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 11a9 9 0 0 1 9 9"></path>
-          <path d="M4 4a16 16 0 0 1 16 16"></path>
-          <circle cx="5" cy="19" r="1"></circle>
-        </svg>
-      </a>
-    </div>
-
-    
-    <button 
-      id="mobile-menu-toggle"
-      class="md:hidden text-gray-600 dark:text-slate-400"
-    >
-      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-      <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-
-  
-  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
-    <div class="p-6 flex flex-col space-y-4">
-      <a href="/posts" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">文章</a>
-      <a href="/categories" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">分类</a>
-      <a href="/tags" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">标签</a>
-      <a href="/archives" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">归档</a>
-      <a href="/about" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">关于</a>
-      <a href="/acknowledgments" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">鸣谢</a>
-      <hr class="border-slate-200 dark:border-slate-700"/>
-      <div class="flex items-center justify-between py-2">
-        <span class="text-gray-600 dark:text-slate-400">Theme</span>
-        <button id="mobile-theme-toggle" class="text-gray-600 dark:text-slate-400">
-          <svg id="mobile-sun-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg id="mobile-moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+        <button id="theme-toggle" aria-label="切换主题" style="
+          background: none;
+          border: 1px solid var(--border-color);
+          color: var(--text-secondary);
+          cursor: pointer;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          transition: all 0.2s ease;
+          font-family: inherit;
+        ">
+          <span id="theme-icon">🌙</span>
         </button>
       </div>
-    </div>
-  </div>
-</header>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const header = document.getElementById('main-header');
-  let scrolled = false;
-  
-  const handleScroll = () => {
-    const isScrolled = window.scrollY > 20;
-    if (isScrolled !== scrolled) {
-      scrolled = isScrolled;
-      if (scrolled) {
-        header.classList.remove('bg-transparent', 'border-transparent', 'py-5');
-        header.classList.add('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
-      } else {
-        header.classList.remove('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
-        header.classList.add('bg-transparent', 'border-transparent', 'py-5');
-      }
-    }
-  };
-  
-  window.addEventListener('scroll', handleScroll);
-  
-  
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  
-  if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-  }
-  
-  
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const themeMenu = document.getElementById('theme-menu');
-  const themeMenuContainer = document.getElementById('theme-menu-container');
-  
-  if (themeToggleBtn && themeMenu) {
-    themeToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      themeMenu.classList.toggle('hidden');
-    });
-    
-    document.addEventListener('click', (e) => {
-      if (!themeMenuContainer.contains(e.target)) {
-        themeMenu.classList.add('hidden');
-      }
-    });
-  }
-  
-  
-  const themeLight = document.getElementById('theme-light');
-  const themeDark = document.getElementById('theme-dark');
-  const themeSystem = document.getElementById('theme-system');
-  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-  
-  const updateThemeModeButtons = () => {
-    const mode = localStorage.getItem('themeMode') || 'system';
-    [themeLight, themeDark, themeSystem].forEach(btn => {
-      if (btn) {
-        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-        btn.classList.add('text-gray-500', 'dark:text-slate-400');
-      }
-    });
-    
-    if (mode === 'light' && themeLight) {
-      themeLight.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeLight.classList.remove('text-gray-500', 'dark:text-slate-400');
-    } else if (mode === 'dark' && themeDark) {
-      themeDark.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeDark.classList.remove('text-gray-500', 'dark:text-slate-400');
-    } else if (mode === 'system' && themeSystem) {
-      themeSystem.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeSystem.classList.remove('text-gray-500', 'dark:text-slate-400');
-    }
-  };
-  
-  if (themeLight) {
-    themeLight.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'light');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  if (themeDark) {
-    themeDark.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'dark');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  if (themeSystem) {
-    themeSystem.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'system');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  
-  const colorButtons = document.querySelectorAll('.theme-color-btn');
-  const updateColorButtons = () => {
-    const color = localStorage.getItem('themeColor') || 'blue';
-    colorButtons.forEach(btn => {
-      const btnColor = btn.getAttribute('data-color');
-      if (btnColor === color) {
-        btn.classList.add('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
-        btn.classList.remove('border-transparent', 'opacity-70');
-      } else {
-        btn.classList.remove('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
-        btn.classList.add('border-transparent', 'opacity-70');
-      }
-    });
-  };
-  
-  colorButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const color = btn.getAttribute('data-color');
-      localStorage.setItem('themeColor', color);
-      updateColorButtons();
-      location.reload();
-    });
-  });
-  
-  updateThemeModeButtons();
-  updateColorButtons();
-  
-  
-  if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener('click', () => {
-      const currentMode = localStorage.getItem('themeMode') || 'system';
-      const newMode = currentMode === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('themeMode', newMode);
-      location.reload();
-    });
-  }
-});
-</script>
-
+      <nav>
+        <a href="/">首页</a>
+        <a href="/posts">文章</a>
+        <a href="/archives">归档</a>
+        <a href="/about">关于</a>
+      </nav>
+    </header>
 
     
-    <main class="flex-grow w-full pt-16">
+    <main>
       
-  
-  <nav
-  class="breadcrumb mb-4 md:mb-6 py-1"
-  aria-label="パンくずナビゲーション">
-  <ol class="text-muted-foreground flex items-center space-x-1 md:space-x-2 text-sm overflow-x-auto whitespace-nowrap scrollbar-hide py-3 px-6 bg-white/20 dark:bg-black/30 rounded-2xl border border-white/30 dark:border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 ease-out hover:bg-white/30 dark:hover:bg-black/40">
-    
-    <li class="flex-shrink-0">
-      <a
-        href="/ja/"
-        class="text-muted-foreground hover:text-primary hover:bg-primary/20 flex items-center gap-0.5 md:gap-1 rounded-xl px-2 md:px-4 py-1 md:py-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="ホーム">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-
-</svg>
-        <span class="max-w-[4rem] md:max-w-none truncate">ホーム</span>
-      </a>
-    </li>
-
-    
-    
-      <li class="flex items-center gap-1 md:gap-2 min-w-0">
-        <span class="text-muted-foreground/40 flex-shrink-0 transition-colors duration-300"
-          >
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-</svg>
-        </span>
-
-        
-          
-          
-            
-            
-              
-              <span class="text-foreground flex items-center gap-0.5 md:gap-1 font-medium flex-shrink-0">
-                
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
-		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
-	</g>
-</svg>
-                <span class="max-w-[3rem] md:max-w-none truncate">タグ</span>
-              </span>
-            
-          
-        
-      </li>
-    
-
-  </ol>
-</nav>
-
-
-
-  
-  <header class="mb-8">
-    <div class="mb-4 flex items-center gap-3">
-      
-        
-  <svg class="h-6 w-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24">
-	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
-		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
-	</g>
-</svg>
-      
-      <h1 class="text-foreground text-3xl font-bold">
-        プロス
-      </h1>
-    </div>
-
-    
-      <p class="text-muted-foreground mb-6">
-        
-          タグ &#34;プロス&#34; の記事一覧
-        
-      </p>
-    
-
-
-    
-    <div class="text-muted-foreground flex items-center gap-4 text-sm">
-      <div class="flex items-center gap-1">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-</svg>
-        <span
-          >全 1 件の記事</span
-        >
-      </div>
-      <div class="flex items-center gap-1">
-        
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-        <span>日付順</span>
-      </div>
-    </div>
+<div class="term-page">
+  <header class="list-header">
+    <h1>プロス</h1>
+    <p>共 1 篇文章</p>
   </header>
 
   
+    <ul class="post-list">
+      
+        <li class="post-item">
+          <div class="post-date">【2024-01-15】</div>
+          <h2 class="post-title">
+            <a href="/ja/posts/markdown%E6%A7%8B%E6%96%87%E3%83%86%E3%82%B9%E3%83%88%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/">Markdown構文テストドキュメント</a>
+          </h2>
+          
+            <div class="post-summary">これは様々なMarkdown構文を含むテストドキュメントで、プロススタイルの完全性を検証するためのものです。</div>
+          
+        </li>
+      
+    </ul>
   
-  
-    
+</div>
 
+<style>
+  .list-header {
+    margin-bottom: 3rem;
+  }
 
+  .list-header h1 {
+    margin-bottom: 0.5rem;
+  }
 
-
-
-
-
-  <section class="post-list">
-    
-
-    
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <article class="main-card group">
-    <a href="/ja/posts/markdown%E6%A7%8B%E6%96%87%E3%83%86%E3%82%B9%E3%83%88%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/" class="main-card-link block">
-      <div
-        class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex min-h-[200px] flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none">
-        
-        <div class="block md:hidden">
-          <div class="aspect-[2/1] overflow-hidden"><div class="from-blue-500/20 to-purple-500/10 relative aspect-[2/1] overflow-hidden bg-gradient-to-br" style="background-blend-mode:overlay;background-color:color-mix(in srgb,var(--color-primary) 15%,transparent);"></div></div>
-
-        </div>
-
-        
-        <div
-          class="absolute top-0 right-0 hidden h-full w-64 transition-opacity duration-300 group-hover:opacity-90 md:block">
-          <div class="h-full w-full"><div class="from-blue-500/20 to-purple-500/10 relative h-full w-full overflow-hidden bg-gradient-to-br" style="background-blend-mode:overlay;background-color:color-mix(in srgb,var(--color-primary) 15%,transparent);"></div></div>
-
-        </div>
-
-        
-        <div
-          class="main-card-overlay absolute top-0 right-0 hidden h-full w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block"></div>
-
-        
-        <div
-          class="relative z-10 flex flex-1 flex-col justify-between p-6 md:pr-72">
-          
-          <div class="space-y-3 flex-1">
-            
-            <h3
-              class="text-foreground group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200">
-              Markdown構文テストドキュメント
-            </h3>
-
-            
-            
-              
-                <p
-                  class="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-                  これは様々なMarkdown構文を含むテストドキュメントで、プロススタイルの完全性を検証するためのものです。
-                </p>
-              
-            
-          </div>
-
-          
-          
-            <div class="flex-shrink-0 mt-4">
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="text-muted-foreground flex items-center gap-3 text-sm min-h-[48px] overflow-hidden">
-    
-    
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="公開日"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
-          <time datetime="2024-01-15" class="text-sm font-medium">
-            2024年01月15日
-          </time>
-        </div>
-      
-
-      
-      
-        <div class="bg-muted/50 border-muted/30 flex items-center gap-1.5 rounded-md border px-2 py-1">
-          
-  <svg class="h-4 w-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24" aria-label="読了時間"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-          <span class="text-sm font-medium">4 分</span>
-        </div>
-      
-
-
-      
-    
-  </div>
-
-
-
-
-            </div>
-          
-        </div>
-      </div>
-    </a>
-  </article>
-
-
-      
-    </div>
-
-    
-  </section>
-
-
-  
-
+  .list-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+</style>
 
     </main>
 
     
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-12 mt-12">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <div class="flex justify-center space-x-6 mb-8 text-gray-500 dark:text-slate-500">
-      
-        <a href="/about/" class="hover:text-primary transition-colors">About</a>
-      
-        <a href="/acknowledgments/" class="hover:text-primary transition-colors">Acknowledgments</a>
-      
-        <a href="https://google.com" class="hover:text-primary transition-colors">Contact</a>
-      
-        <a href="/index.xml" class="hover:text-primary transition-colors">RSS Feed</a>
-      
-    </div>
-    <p class="text-gray-400 dark:text-slate-600 text-sm">
-      © 2026 Woke Soul&#39;s Blog. Designed with Minimalism in mind.
-    </p>
-  </div>
-</footer>
-
+    <footer>
+      <p>&copy; 2026 Woke Soul&#39;s Blog. Be yourself and don't go with the flow.</p>
+    </footer>
 
     
-    <script src="/js/theme-manager.js"></script>
+    <script>
+      (function() {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        
+        function getCurrentTheme() {
+          const stored = localStorage.getItem('theme');
+          if (stored) return stored;
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        
+        function applyTheme(theme) {
+          if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+          } else {
+            html.setAttribute('data-theme', 'light');
+            themeIcon.textContent = '🌙';
+          }
+          localStorage.setItem('theme', theme);
+        }
+        
+        
+        function toggleTheme() {
+          const current = getCurrentTheme();
+          const next = current === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+        }
+        
+        
+        applyTheme(getCurrentTheme());
+        
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', toggleTheme);
+          
+          
+          themeToggle.addEventListener('mouseenter', function() {
+            this.style.borderColor = 'var(--link-color)';
+            this.style.color = 'var(--link-color)';
+          });
+          
+          themeToggle.addEventListener('mouseleave', function() {
+            this.style.borderColor = 'var(--border-color)';
+            this.style.color = 'var(--text-secondary)';
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
-

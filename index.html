@@ -1,1042 +1,712 @@
 <!doctype html>
-<html lang="en-US" class="dark">
+<html lang="en-US">
   <head>
-	<meta name="generator" content="Hugo 0.154.2">
+	<meta name="generator" content="Hugo 0.154.5">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Woke Soul&#39;s Blog</title>
     <meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
-    <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
-    <meta name="author" content="Woke Soul" />
     
     
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     
-    <link rel="manifest" href="/site.webmanifest" />
-    
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              background: 'rgb(var(--bg-main) / <alpha-value>)',
-              surface: 'rgb(var(--bg-surface) / <alpha-value>)',
-              primary: {
-                DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
-                foreground: 'rgb(var(--primary-foreground) / <alpha-value>)',
-              },
-              secondary: 'rgb(var(--text-muted) / <alpha-value>)',
-            },
-            textColor: {
-                DEFAULT: 'rgb(var(--text-main) / <alpha-value>)',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['Fira Code', 'monospace'],
-            }
-          }
-        }
-      }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
     <style>
-      :root {
-         
-        --bg-main: 241 245 249;    
-        --bg-surface: 255 255 255;  
-        --text-main: 30 41 59;     
-        --text-muted: 100 116 139;   
-        
-         
-        --primary: 2 132 199;
-        --primary-foreground: 255 255 255;
+       
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .dark {
-         
-        --bg-main: 15 23 42;       
-        --bg-surface: 30 41 59;    
-        --text-main: 241 245 249;  
-        --text-muted: 148 163 184; 
-        
-         
-        --primary: 56 189 248;
-        --primary-foreground: 15 23 42;
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --text-secondary: #666666;
+        --border-color: #e5e7eb;
+        --link-color: #2563eb;
+        --link-hover: #1d4ed8;
+        --code-bg: #f3f4f6;
+        --code-color: #e11d48;
+      }
+
+       
+      html[data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #e5e5e5;
+        --text-secondary: #a3a3a3;
+        --border-color: #404040;
+        --link-color: #60a5fa;
+        --link-hover: #93c5fd;
+        --code-bg: #2a2a2a;
+        --code-color: #fb7185;
+      }
+
+       
+      @media (prefers-color-scheme: dark) {
+        html:not([data-theme]) {
+          --bg-color: #1a1a1a;
+          --text-color: #e5e5e5;
+          --text-secondary: #a3a3a3;
+          --border-color: #404040;
+          --link-color: #60a5fa;
+          --link-hover: #93c5fd;
+          --code-bg: #2a2a2a;
+          --code-color: #fb7185;
+        }
+      }
+
+      html {
+        font-size: 16px;
+        line-height: 1.6;
       }
 
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: rgb(var(--bg-main));
-        color: rgb(var(--text-main));
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 20px;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-      
+
        
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+      header {
+        padding: 40px 0 60px 0;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 40px;
       }
-      ::-webkit-scrollbar-track {
-        background: transparent; 
+
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 8px;
       }
-      ::-webkit-scrollbar-thumb {
-        background: rgb(var(--text-muted)); 
-        opacity: 0.5;
+
+      header h1 a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      nav {
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--link-color);
+      }
+
+       
+      main {
+        min-height: 60vh;
+      }
+
+       
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--link-hover);
+      }
+
+       
+      h1, h2, h3, h4, h5, h6 {
+        margin: 2rem 0 1rem 0;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+
+       
+      p {
+        margin: 1rem 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+       
+      ul, ol {
+        margin: 1rem 0;
+        padding-left: 2rem;
+      }
+
+      li {
+        margin: 0.5rem 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+       
+      code {
+        background-color: var(--code-bg);
+        color: var(--code-color);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+        font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+      }
+
+      pre {
+        background-color: var(--code-bg);
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+        color: var(--text-color);
+      }
+
+       
+      blockquote {
+        border-left: 3px solid var(--border-color);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+
+       
+      hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 3rem 0;
+      }
+
+       
+      img {
+        max-width: 100%;
+        height: auto;
         border-radius: 4px;
+        margin: 1.5rem 0;
       }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgb(var(--primary)); 
+
+       
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+      }
+
+      th, td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        font-weight: 600;
+      }
+
+       
+      footer {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+       
+      .post-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .post-item {
+        margin: 2rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .post-item:last-child {
+        border-bottom: none;
+      }
+
+      .post-date {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .post-title a:hover {
+        color: var(--link-color);
+      }
+
+      .post-summary {
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+       
+      .tags {
+        margin-top: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background-color: var(--code-bg);
+        color: var(--text-secondary);
+        padding: 0.2rem 0.6rem;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+       
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        header {
+          padding: 30px 0 40px 0;
+        }
+
+        h1 { font-size: 1.75rem; }
+        h2 { font-size: 1.35rem; }
+        h3 { font-size: 1.15rem; }
+
+        nav a {
+          margin-right: 15px;
+        }
+      }
+
+       
+      ::selection {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        ::selection {
+          background-color: #1e3a8a;
+          color: #dbeafe;
+        }
+      }
+
+       
+      html {
+        scroll-behavior: smooth;
       }
     </style>
-    
-    <script>
-      (function() {
-        try {
-          const storedMode = localStorage.getItem('themeMode') || 'system';
-          const storedColor = localStorage.getItem('themeColor') || 'blue';
-          
-          const COLORS = {
-            blue:   { light: '2 132 199', dark: '56 189 248' },
-            green:  { light: '5 150 105', dark: '52 211 153' },
-            purple: { light: '124 58 237', dark: '167 139 250' },
-            orange: { light: '234 88 12', dark: '251 146 60' },
-            pink:   { light: '219 39 119', dark: '244 114 182' },
-          };
-          
-          const root = document.documentElement;
-          const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-          
-          const getIsDark = () => {
-            return storedMode === 'dark' || (storedMode === 'system' && mediaQuery.matches);
-          };
-          
-          const applyTheme = () => {
-            const isDark = getIsDark();
-            
-            if (isDark) {
-              root.classList.add('dark');
-            } else {
-              root.classList.remove('dark');
-            }
-            
-            const rgbValue = isDark ? COLORS[storedColor].dark : COLORS[storedColor].light;
-            root.style.setProperty('--primary', rgbValue);
-            
-            if (isDark) {
-              root.style.setProperty('--primary-foreground', '15 23 42');
-            } else {
-              root.style.setProperty('--primary-foreground', '255 255 255');
-            }
-          };
-          
-          applyTheme();
-          
-          if (storedMode === 'system' && window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
-          }
-        } catch (e) {}
-      })();
-    </script>
   </head>
 
-  <body class="min-h-screen bg-background text-secondary transition-colors duration-300 selection:bg-primary selection:text-white flex flex-col font-sans">
+  <body>
     
-    <header 
-  id="main-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-transparent border-transparent py-5"
->
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    
-    
-    <div 
-      onclick="window.location.href='\/'"
-      class="flex items-center space-x-2 cursor-pointer group"
-    >
-      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
-        <span class="font-mono text-primary-foreground font-bold text-xl">W</span>
-      </div>
-      <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-        Woke Soul&#39;s Blog
-      </span>
-    </div>
-
-    
-    <nav class="hidden md:flex items-center bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full px-2 py-1.5 border border-slate-200 dark:border-slate-700 shadow-inner">
-      <a href="/posts" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">文章</span>
-      </a>
-      <a href="/categories" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">分类</span>
-      </a>
-      <a href="/tags" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">标签</span>
-      </a>
-      <a href="/archives" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">归档</span>
-      </a>
-      <a href="/about" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">关于</span>
-      </a>
-      <a href="/acknowledgments" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">鸣谢</span>
-      </a>
-    </nav>
-
-    
-    <div class="hidden md:flex items-center space-x-3">
-      
-      <div class="relative" id="theme-menu-container">
-        <button 
-          id="theme-toggle-btn"
-          class="p-2 rounded-full transition-colors text-gray-600 dark:text-slate-400 hover:text-primary"
-          title="Theme Settings"
-        >
-          <svg id="palette-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-          </svg>
-        </button>
-
-        <div id="theme-menu" class="hidden absolute right-0 top-full mt-4 w-64 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-4 z-50 origin-top-right">
-          <div class="space-y-4">
-            
-            <div>
-              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Mode</span>
-              <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
-                <button id="theme-light" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                  </svg>
-                </button>
-                <button id="theme-dark" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                  </svg>
-                </button>
-                <button id="theme-system" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            
-            <div>
-              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Color</span>
-              <div class="flex justify-between">
-                <button data-color="blue" class="w-8 h-8 rounded-full bg-sky-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="green" class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="purple" class="w-8 h-8 rounded-full bg-violet-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="orange" class="w-8 h-8 rounded-full bg-orange-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="pink" class="w-8 h-8 rounded-full bg-pink-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-              </div>
-            </div>
-          </div>
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <h1><a href="/">Woke Soul&#39;s Blog</a></h1>
+          <p>A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.</p>
         </div>
-      </div>
-
-      <div class="w-px h-5 bg-slate-300 dark:bg-slate-700 mx-1"></div>
-
-      <a href="/index.xml" class="text-gray-600 dark:text-slate-400 hover:text-primary transition-colors p-2" title="RSS">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 11a9 9 0 0 1 9 9"></path>
-          <path d="M4 4a16 16 0 0 1 16 16"></path>
-          <circle cx="5" cy="19" r="1"></circle>
-        </svg>
-      </a>
-    </div>
-
-    
-    <button 
-      id="mobile-menu-toggle"
-      class="md:hidden text-gray-600 dark:text-slate-400"
-    >
-      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-      <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-
-  
-  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
-    <div class="p-6 flex flex-col space-y-4">
-      <a href="/posts" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">文章</a>
-      <a href="/categories" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">分类</a>
-      <a href="/tags" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">标签</a>
-      <a href="/archives" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">归档</a>
-      <a href="/about" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">关于</a>
-      <a href="/acknowledgments" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">鸣谢</a>
-      <hr class="border-slate-200 dark:border-slate-700"/>
-      <div class="flex items-center justify-between py-2">
-        <span class="text-gray-600 dark:text-slate-400">Theme</span>
-        <button id="mobile-theme-toggle" class="text-gray-600 dark:text-slate-400">
-          <svg id="mobile-sun-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg id="mobile-moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+        <button id="theme-toggle" aria-label="切换主题" style="
+          background: none;
+          border: 1px solid var(--border-color);
+          color: var(--text-secondary);
+          cursor: pointer;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          transition: all 0.2s ease;
+          font-family: inherit;
+        ">
+          <span id="theme-icon">🌙</span>
         </button>
       </div>
-    </div>
-  </div>
-</header>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const header = document.getElementById('main-header');
-  let scrolled = false;
-  
-  const handleScroll = () => {
-    const isScrolled = window.scrollY > 20;
-    if (isScrolled !== scrolled) {
-      scrolled = isScrolled;
-      if (scrolled) {
-        header.classList.remove('bg-transparent', 'border-transparent', 'py-5');
-        header.classList.add('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
-      } else {
-        header.classList.remove('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
-        header.classList.add('bg-transparent', 'border-transparent', 'py-5');
-      }
-    }
-  };
-  
-  window.addEventListener('scroll', handleScroll);
-  
-  
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  
-  if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-  }
-  
-  
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const themeMenu = document.getElementById('theme-menu');
-  const themeMenuContainer = document.getElementById('theme-menu-container');
-  
-  if (themeToggleBtn && themeMenu) {
-    themeToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      themeMenu.classList.toggle('hidden');
-    });
-    
-    document.addEventListener('click', (e) => {
-      if (!themeMenuContainer.contains(e.target)) {
-        themeMenu.classList.add('hidden');
-      }
-    });
-  }
-  
-  
-  const themeLight = document.getElementById('theme-light');
-  const themeDark = document.getElementById('theme-dark');
-  const themeSystem = document.getElementById('theme-system');
-  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-  
-  const updateThemeModeButtons = () => {
-    const mode = localStorage.getItem('themeMode') || 'system';
-    [themeLight, themeDark, themeSystem].forEach(btn => {
-      if (btn) {
-        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-        btn.classList.add('text-gray-500', 'dark:text-slate-400');
-      }
-    });
-    
-    if (mode === 'light' && themeLight) {
-      themeLight.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeLight.classList.remove('text-gray-500', 'dark:text-slate-400');
-    } else if (mode === 'dark' && themeDark) {
-      themeDark.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeDark.classList.remove('text-gray-500', 'dark:text-slate-400');
-    } else if (mode === 'system' && themeSystem) {
-      themeSystem.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeSystem.classList.remove('text-gray-500', 'dark:text-slate-400');
-    }
-  };
-  
-  if (themeLight) {
-    themeLight.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'light');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  if (themeDark) {
-    themeDark.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'dark');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  if (themeSystem) {
-    themeSystem.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'system');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  
-  const colorButtons = document.querySelectorAll('.theme-color-btn');
-  const updateColorButtons = () => {
-    const color = localStorage.getItem('themeColor') || 'blue';
-    colorButtons.forEach(btn => {
-      const btnColor = btn.getAttribute('data-color');
-      if (btnColor === color) {
-        btn.classList.add('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
-        btn.classList.remove('border-transparent', 'opacity-70');
-      } else {
-        btn.classList.remove('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
-        btn.classList.add('border-transparent', 'opacity-70');
-      }
-    });
-  };
-  
-  colorButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const color = btn.getAttribute('data-color');
-      localStorage.setItem('themeColor', color);
-      updateColorButtons();
-      location.reload();
-    });
-  });
-  
-  updateThemeModeButtons();
-  updateColorButtons();
-  
-  
-  if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener('click', () => {
-      const currentMode = localStorage.getItem('themeMode') || 'system';
-      const newMode = currentMode === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('themeMode', newMode);
-      location.reload();
-    });
-  }
-});
-</script>
-
+      <nav>
+        <a href="/">首页</a>
+        <a href="/posts">文章</a>
+        <a href="/archives">归档</a>
+        <a href="/about">关于</a>
+      </nav>
+    </header>
 
     
-    <main class="flex-grow w-full pt-16">
+    <main>
       
-<div class="flex flex-col w-full">
+<div class="home">
   
-  <section class="relative w-full min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-background transition-colors duration-500">
-    
-    
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 dark:bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-cyan-400/20 dark:bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-      
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-    </div>
-
-    <div class="relative z-10 max-w-3xl space-y-8">
-      <div class="inline-flex items-center px-3 py-1 rounded-full bg-surface border border-slate-200 dark:border-slate-700 text-primary text-xs font-mono mb-4 backdrop-blur-sm shadow-sm">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-        </svg>
-        <span>AI-Powered Content Generation</span>
-      </div>
-      
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
-        Minimalist Blog <br/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">
-          Maximum Impact
-        </span>
-      </h1>
-      
-      <p class="text-lg md:text-xl text-gray-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.
-      </p>
-
-      <div class="pt-8">
-        <a 
-          href="#content-section"
-          class="group relative inline-flex items-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-full overflow-hidden hover:shadow-xl transition-all hover:scale-105"
-        >
-          <span class="relative z-10 flex items-center">
-            Start Reading
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-y-1 transition-transform">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </span>
-        </a>
-      </div>
-    </div>
-
-    <div class="absolute bottom-8 text-gray-400 dark:text-slate-600 animate-bounce">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </div>
-  </section>
-
   
-  <div id="content-section" class="w-full bg-background border-t border-slate-200 dark:border-slate-800">
-    <div class="max-w-4xl mx-auto px-6 py-24">
-      <div class="flex items-center space-x-4 mb-12 pb-4 border-b border-slate-200 dark:border-slate-800">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Articles</h2>
-        <span class="px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-xs text-gray-600 dark:text-slate-400">
-          18 posts
-        </span>
-      </div>
-
-      <div class="grid gap-10">
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/%E6%9A%B4%E8%B7%8C%E5%90%8E%E8%A1%8C%E6%83%85%E5%92%8C%E5%BA%94%E5%AF%B9%E6%96%B9%E5%BC%8F\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-10-11
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                3 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              暴跌后行情和应对方式
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <p>《暴跌后行情和应对方式》</p>
-<p>很多人到现在还不知道市场会怎么走，还是懵逼的。这时傻哥不得不再次掏出投资笔记。让你们看下历史吧，再谈现在吧。</p>
-<p>20年312大跌：1、疫情、全球股市、经济危机、流动性恐慌等宏观情绪传染到币圈，引发2月中旬到3月上旬的下跌调整。2、减半一致性预期被击溃，且比特币避险属性共识开始瓦解，市场负预期严重。3、巨鲸出货卖盘增加。4、引发下跌进一步下跌。4、投机客、资管量化、苦命的矿工多头杠杆（包括借贷平台、场内杠杆现货、Defi去中心化借贷）自我叠加式爆仓，价格快速进入自我加强的下跌</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%93%BE%E4%B8%8A%E4%B8%8E%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E6%98%AF%E6%9C%AA%E6%9D%A5%E6%89%80%E8%B6%8B\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-10-11
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                4 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              为什么链上与去中心化是未来所趋
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <p>转自X@Laaaaacieee</p>
-<p>韭菜新人的爆仓记录</p>
-<p>10/10 23:47 Trump 在 Truth Social 上指控中国稀土出口管制“敌意浓厚”后约1h，市场短暂企稳，我盯着</p>
-<p><a href="https://x.com/search?q=%24WLFI&amp;src=cashtag_click">$WLFI</a></p>
-<p>的插针，觉得有超跌反弹机会，于是在 0.14 的位置开了 3x 全仓多单，还把部分资金转进合约做保证金； 10/11 03:57 吃了褪黑素睡觉的我莫名其妙醒了，打开看了眼账户，嗯&hellip;45%的盈利好像走的很稳，犹豫过后我只设了 0.165 的止盈，然后沉沉睡去； 10/11 05:20 在特朗普威胁对中国加征 100% 关税后，市场恐慌性下跌，许多山寨 -80%+，可惜警报并没有叫醒我； 10/11 07:34 今天醒的很早，由于打开手机还在原先的合约账户界面，看到仓位没了的时候我还在侥幸可能是触发了止盈，等切到总资产界面看到了剩无几的余额后才反应过来，大脑空白了几秒钟后我苦笑了一声，这是缺乏仓位管理与风险管控经验的我第一次真正意义上的爆仓； 10/11 09:13 群友们陆陆续续醒了，各种群里哀嚎遍野，媒体也开始推送这次黑天鹅事件的报道，刚毕业 3 个月入行工作的我见证了加密货币历史上最大的清算事件，规模几乎是 2020 年 3 月新冠疫情暴跌的 10x，全网 166w+ 人与我有着同样的不幸遭遇，我好像有些明白了大家常说的“活下去”； 10/11 11:50 爆仓后我闷闷地刷着推特，推上许多老师在讨论 CEX 离谱的天地针与 USDe 脱锚，出于好奇我对比了下 CEX 与链上：CEX 插针极深，很多人想抄底却因为宕机买不进去；而链上的价格波动没那么夸张，交易也能相对顺利完成。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/1011%E9%BB%91%E5%A4%A9%E9%B9%85%E6%80%9D%E8%80%83\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-10-11
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                2 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              1011黑天鹅思考
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <ol>
-<li>
-<p>遇到大的国家层面的<code>政治新闻</code>，要特别重视，马上意识到特别重要。复盘一下，当年的第一次黑天鹅，94就是中国红头文件，禁止炒币，然后暴跌。后来的519也是国家再次出手，彻底清退国内币圈，也是暴跌，往近了说昨天美国特朗普发的也是大的政治新闻要加关税，昨天也是暴跌。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/llm%E7%9A%84%E6%A0%B9%E6%9C%AC%E7%BC%BA%E9%99%B7\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-09-29
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                25 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              LLM的根本缺陷
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <h1 id="强化学习之父萨顿大语言模型是死路一条人和动物的智能没分别我们处于整个宇宙演化的第4阶段创造agi是人类文明的关键使命">强化学习之父萨顿：大语言模型是死路一条，人和动物的智能没分别，我们处于整个宇宙演化的第4阶段，创造AGI是人类文明的关键使命</h1>
-<p><strong>知名技术播客Dwarkesh Podcast刚发了一期视频，标题很醒目</strong>LLMs are a dead end，大模型是死路一条。当然嘉宾也足够权威来讲这句话，他就是2024年图灵奖得主、强化学习之父理查德·萨顿（Richard Sutton）。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/a%E8%82%A1%E6%AD%A2%E7%9B%88%E6%94%BB%E7%95%A5\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-09-02
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                4 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              A股止盈攻略
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <h3 id="关于a股周期性止盈的思考与策略框架"><strong>关于A股周期性止盈的思考与策略框架</strong></h3>
-<p><strong>文档目的：</strong> 本文旨在记录个人对于当前A股市场的观察，并基于历史周期性特征，构建一套关于投资止盈的系统性思考与应对框架。</p>
-<p><strong>当前市场背景：</strong> 自2024年9月低点至今，市场主要指数出现显著回升（沪深300指数上涨约40%，主动偏股基金指数上涨约50%）。市场情绪由悲观转向乐观，牛市共识逐步形成。在此背景下，有必要对未来的退出策略进行前瞻性规划。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/lstm%E8%B0%83%E5%8F%82%E7%BB%8F%E9%AA%8C\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-08-27
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                6 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              LSTM调参经验
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <p>LSTM调参经验</p>
-<p>0、开始训练之前先要做些什么？</p>
-<p>在开始调参之前，需要确定方向，所谓方向就是确定了之后，在调参过程中不再更改</p>
-<p>1、根据任务需求，结合数据，确定网络结构。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-08-17
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                4 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              机器学习中的数据预处理细节
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <h1 id="机器学习预处理的潜规则数据划分与缺失值处理">机器学习预处理的“潜规则”：数据划分与缺失值处理</h1>
-<p>在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/once_upon_a_time_in_america\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-08-13
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                4 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              Once_Upon_a_Time_in_America
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <p>美国起飞那一代人的两条路。</p>
-<p>面条这条路就是传统美国男性的那条路，恪守准则，捍卫朋友，相信爱情，这条路艰难，痛苦，熬人（阿尔帕西诺在闻香识女人中说过，这条路唯一的问题就是太尼玛疼），唯一的好处是不会让你死于绝望和精神自杀。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-          <article 
-            class="group relative bg-surface border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg hover:-translate-y-1"
-            onclick="window.location.href='\/posts\/clustering_algorithms\/'"
-          >
-            <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 dark:text-slate-500 mb-4">
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                2025-08-13
-              </span>
-              <span class="flex items-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1.5">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                8 min read
-              </span>
-              
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
-              Clustering_Algorithms
-            </h2>
-            
-            <p class="text-gray-600 dark:text-slate-400 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
-              <p>在数据科学和机器学习领域，聚类算法是一项核心的无监督学习技术。与需要预先标记数据的监督学习不同，聚类算法旨在探索数据的内在结构，将相似的数据点自动分组，形成不同的“簇”或“群组”。其核心思想是“物以类聚，人以群分”，使得同一簇内的数据点尽可能相似，而不同簇之间的数据点尽可能相异。</p>
-            </p>
-
-            <div class="flex items-center justify-between mt-auto">
-              <div class="flex flex-wrap gap-2">
-                
-              </div>
-              <span class="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
-                Read 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-            </div>
-          </article>
-        
-      </div>
+    <ul class="post-list">
       
+        <li class="post-item">
+          <div class="post-date">【2025-10-11】</div>
+          <h2 class="post-title">
+            <a href="/posts/%E6%9A%B4%E8%B7%8C%E5%90%8E%E8%A1%8C%E6%83%85%E5%92%8C%E5%BA%94%E5%AF%B9%E6%96%B9%E5%BC%8F/">暴跌后行情和应对方式</a>
+          </h2>
+          
+            <div class="post-summary">《暴跌后行情和应对方式》
+很多人到现在还不知道市场会怎么走，还是懵逼的。这时傻哥不得不再次掏出投资笔记。让你们看下历史吧，再谈现在吧。
+20年312大跌：1、疫情、全球股市、经济危机、流动性恐慌等宏观情绪传染到币圈，引发2月中旬到3月上旬的下跌调整。2、减半一致性预期被击溃，且比特币避险属性共识开始瓦解，市场负预期严重。3、巨鲸出货卖盘增加。4、引发下跌进一步下跌。4、投机客、资管量化、苦命的矿工 …</div>
+          
+          
+        </li>
       
-        <div class="mt-12 text-center">
-          <a href="/posts" class="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:shadow-lg transition-all hover:scale-105">
-            View All Posts
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </div>
+        <li class="post-item">
+          <div class="post-date">【2025-10-11】</div>
+          <h2 class="post-title">
+            <a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%93%BE%E4%B8%8A%E4%B8%8E%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E6%98%AF%E6%9C%AA%E6%9D%A5%E6%89%80%E8%B6%8B/">为什么链上与去中心化是未来所趋</a>
+          </h2>
+          
+            <div class="post-summary">转自X@Laaaaacieee
+韭菜新人的爆仓记录
+10/10 23:47 Trump 在 Truth Social 上指控中国稀土出口管制“敌意浓厚”后约1h，市场短暂企稳，我盯着
+$WLFI
+的插针，觉得有超跌反弹机会，于是在 0.14 的位置开了 3x 全仓多单，还把部分资金转进合约做保证金； 10/11 03:57 吃了褪黑素睡觉的我莫名其妙醒了，打开看了眼账户，嗯&hellip;45%的 …</div>
+          
+          
+        </li>
       
-    </div>
-  </div>
+        <li class="post-item">
+          <div class="post-date">【2025-10-11】</div>
+          <h2 class="post-title">
+            <a href="/posts/1011%E9%BB%91%E5%A4%A9%E9%B9%85%E6%80%9D%E8%80%83/">1011黑天鹅思考</a>
+          </h2>
+          
+            <div class="post-summary"> 遇到大的国家层面的政治新闻，要特别重视，马上意识到特别重要。复盘一下，当年的第一次黑天鹅，94就是中国红头文件，禁止炒币，然后暴跌。后来的519也是国家再次出手，彻底清退国内币圈，也是暴跌，往近了说昨天美国特朗普发的也是大的政治新闻要加关税，昨天也是暴跌。
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-09-29】</div>
+          <h2 class="post-title">
+            <a href="/posts/llm%E7%9A%84%E6%A0%B9%E6%9C%AC%E7%BC%BA%E9%99%B7/">LLM的根本缺陷</a>
+          </h2>
+          
+            <div class="post-summary">强化学习之父萨顿：大语言模型是死路一条，人和动物的智能没分别，我们处于整个宇宙演化的第4阶段，创造AGI是人类文明的关键使命 知名技术播客Dwarkesh Podcast刚发了一期视频，标题很醒目LLMs are a dead end，大模型是死路一条。当然嘉宾也足够权威来讲这句话，他就是2024年图灵奖得主、强化学习之父理查德·萨顿（Richard Sutton）。
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-09-02】</div>
+          <h2 class="post-title">
+            <a href="/posts/a%E8%82%A1%E6%AD%A2%E7%9B%88%E6%94%BB%E7%95%A5/">A股止盈攻略</a>
+          </h2>
+          
+            <div class="post-summary">关于A股周期性止盈的思考与策略框架 文档目的： 本文旨在记录个人对于当前A股市场的观察，并基于历史周期性特征，构建一套关于投资止盈的系统性思考与应对框架。
+当前市场背景： 自2024年9月低点至今，市场主要指数出现显著回升（沪深300指数上涨约40%，主动偏股基金指数上涨约50%）。市场情绪由悲观转向乐观，牛市共识逐步形成。在此背景下，有必要对未来的退出策略进行前瞻性规划。
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-27】</div>
+          <h2 class="post-title">
+            <a href="/posts/lstm%E8%B0%83%E5%8F%82%E7%BB%8F%E9%AA%8C/">LSTM调参经验</a>
+          </h2>
+          
+            <div class="post-summary">LSTM调参经验
+0、开始训练之前先要做些什么？
+在开始调参之前，需要确定方向，所谓方向就是确定了之后，在调参过程中不再更改
+1、根据任务需求，结合数据，确定网络结构。
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-17】</div>
+          <h2 class="post-title">
+            <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E7%BB%86%E8%8A%82/">机器学习中的数据预处理细节</a>
+          </h2>
+          
+            <div class="post-summary">机器学习预处理的“潜规则”：数据划分与缺失值处理 在机器学习的实践中，我们常说“数据和特征决定了机器学习的上限，而模型和算法只是在逼近这个上限而已”。这凸显了数据预处理在整个工作流中的核心地位。然而，在预处理的众多环节中，有两个问题常常困扰着初学者，甚至是一些有经验的工程师：
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-13】</div>
+          <h2 class="post-title">
+            <a href="/posts/once_upon_a_time_in_america/">Once_Upon_a_Time_in_America</a>
+          </h2>
+          
+            <div class="post-summary">美国起飞那一代人的两条路。
+面条这条路就是传统美国男性的那条路，恪守准则，捍卫朋友，相信爱情，这条路艰难，痛苦，熬人（阿尔帕西诺在闻香识女人中说过，这条路唯一的问题就是太尼玛疼），唯一的好处是不会让你死于绝望和精神自杀。
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-13】</div>
+          <h2 class="post-title">
+            <a href="/posts/clustering_algorithms/">Clustering_Algorithms</a>
+          </h2>
+          
+            <div class="post-summary">在数据科学和机器学习领域，聚类算法是一项核心的无监督学习技术。与需要预先标记数据的监督学习不同，聚类算法旨在探索数据的内在结构，将相似的数据点自动分组，形成不同的“簇”或“群组”。其核心思想是“物以类聚，人以群分”，使得同一簇内的数据点尽可能相似，而不同簇之间的数据点尽可能相异。
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-12】</div>
+          <h2 class="post-title">
+            <a href="/posts/introduction_to_pcb/">Introduction_to_PCB</a>
+          </h2>
+          
+            <div class="post-summary">1. 电路设计 1.1 原理图四要素 元件符号 连接线 结点 注释 1.2 基本原件介绍 1.2.1 电阻 对于贴片电阻的读数 1）3位读数：前2位为有效数字，第3位表示10的n次幂(也可以理解为0的个数)。精度为±5%
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-06】</div>
+          <h2 class="post-title">
+            <a href="/posts/auto_deploy/">Auto_deploy</a>
+          </h2>
+          
+            <div class="post-summary">Github Action自动部署 （1）Github创建一个新的仓库，用于存放Hugo的主文件
+（2）前往Setttings -&gt; Developer Settings -&gt; Personal access tokens，创建一个token(classic)
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-08-06】</div>
+          <h2 class="post-title">
+            <a href="/posts/myfirstblog/">MyFirstBlog</a>
+          </h2>
+          
+            <div class="post-summary">加密市场笔记 心理建设 在心理上预测行情就行了，但一定不要轻举妄动，要等待，直到你从市场上得到证实你的判断是正确的信号，到了那个时候，而且只有到了那个时候，你才能用你的钱去进行交易。
+</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-06-01】</div>
+          <h2 class="post-title">
+            <a href="/posts/test-alert/">GitHub Style Alert Test</a>
+          </h2>
+          
+            <div class="post-summary">GitHub Style Alert Testing This article is used to test the new GitHub-style Alert feature and folding functionality.
+Alert Syntax Note Alert Note This is a note alert box. Used to display useful …</div>
+          
+          
+            <div class="tags">
+              
+                <span class="tag">#test</span>
+              
+                <span class="tag">#alert</span>
+              
+                <span class="tag">#markdown</span>
+              
+            </div>
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2025-01-27】</div>
+          <h2 class="post-title">
+            <a href="/posts/%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">目录功能测试文章</a>
+          </h2>
+          
+            <div class="post-summary">目录功能测试 这是一篇用于测试侧边目录功能的文章。
+第一章：基础功能 这是第一章的内容，用于测试目录的生成和显示。
+1.1 子章节 这是子章节的内容。
+1.1.1 更深层次 这是更深层次的章节。
+1.2 另一个子章节 这是另一个子章节的内容。
+</div>
+          
+          
+            <div class="tags">
+              
+                <span class="tag">#测试</span>
+              
+                <span class="tag">#功能</span>
+              
+            </div>
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2024-01-16】</div>
+          <h2 class="post-title">
+            <a href="/posts/katex-and-mermaid-test/">KaTeX and Mermaid Test</a>
+          </h2>
+          
+            <div class="post-summary">KaTeX and Mermaid Test This article is used to test the KaTeX and Mermaid features.
+Configuration Frontmatter Configuration YAML 行号 Collapse Copy 1--- 2katex: true 3mermaid: true 4--- Click to expand …</div>
+          
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2024-01-16】</div>
+          <h2 class="post-title">
+            <a href="/posts/image-rendering-test/">Image Rendering Test</a>
+          </h2>
+          
+            <div class="post-summary">Image Rendering Test The Demo comes from LightGallery All images are from Unsplash
+Single Image Photo by - Daniel Leone Justified Gallery Photo by - Tobias Rademacher Photo by - Massimiliano …</div>
+          
+          
+            <div class="tags">
+              
+                <span class="tag">#test</span>
+              
+                <span class="tag">#image</span>
+              
+                <span class="tag">#rendering</span>
+              
+            </div>
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2024-01-16】</div>
+          <h2 class="post-title">
+            <a href="/posts/code-highlighting-test/">Code Highlighting Test</a>
+          </h2>
+          
+            <div class="post-summary">Code Highlighting Test This article is used to test the new code highlighting feature, including syntax highlighting, copy button, language display, etc.
+JavaScript JAVASCRIPT 行号 Collapse Copy 1 …</div>
+          
+          
+            <div class="tags">
+              
+                <span class="tag">#test</span>
+              
+                <span class="tag">#code</span>
+              
+                <span class="tag">#syntax-highlighting</span>
+              
+            </div>
+          
+        </li>
+      
+        <li class="post-item">
+          <div class="post-date">【2024-01-15】</div>
+          <h2 class="post-title">
+            <a href="/posts/markdown-syntax-test-document/">Markdown Syntax Test Document</a>
+          </h2>
+          
+            <div class="post-summary">This is a test document containing various Markdown syntax to verify the completeness of prose styles.</div>
+          
+          
+            <div class="tags">
+              
+                <span class="tag">#markdown</span>
+              
+                <span class="tag">#prose</span>
+              
+                <span class="tag">#style</span>
+              
+            </div>
+          
+        </li>
+      
+    </ul>
   
-  const startReadingBtn = document.querySelector('a[href="#content-section"]');
-  if (startReadingBtn) {
-    startReadingBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.getElementById('content-section');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  }
-  
-  
-  const articles = document.querySelectorAll('article');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, index * 100);
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  articles.forEach(article => {
-    article.style.opacity = '0';
-    article.style.transform = 'translateY(20px)';
-    article.style.transition = 'all 0.5s ease-out';
-    observer.observe(article);
-  });
-});
-</script>
+</div>
 
     </main>
 
     
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-12 mt-12">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <div class="flex justify-center space-x-6 mb-8 text-gray-500 dark:text-slate-500">
-      
-        <a href="/about/" class="hover:text-primary transition-colors">About</a>
-      
-        <a href="/acknowledgments/" class="hover:text-primary transition-colors">Acknowledgments</a>
-      
-        <a href="https://google.com" class="hover:text-primary transition-colors">Contact</a>
-      
-        <a href="/index.xml" class="hover:text-primary transition-colors">RSS Feed</a>
-      
-    </div>
-    <p class="text-gray-400 dark:text-slate-600 text-sm">
-      © 2026 Woke Soul&#39;s Blog. Designed with Minimalism in mind.
-    </p>
-  </div>
-</footer>
-
+    <footer>
+      <p>&copy; 2026 Woke Soul&#39;s Blog. Be yourself and don't go with the flow.</p>
+    </footer>
 
     
-    <script src="/js/theme-manager.js"></script>
+    <script>
+      (function() {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        
+        function getCurrentTheme() {
+          const stored = localStorage.getItem('theme');
+          if (stored) return stored;
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        
+        function applyTheme(theme) {
+          if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+          } else {
+            html.setAttribute('data-theme', 'light');
+            themeIcon.textContent = '🌙';
+          }
+          localStorage.setItem('theme', theme);
+        }
+        
+        
+        function toggleTheme() {
+          const current = getCurrentTheme();
+          const next = current === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+        }
+        
+        
+        applyTheme(getCurrentTheme());
+        
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', toggleTheme);
+          
+          
+          themeToggle.addEventListener('mouseenter', function() {
+            this.style.borderColor = 'var(--link-color)';
+            this.style.color = 'var(--link-color)';
+          });
+          
+          themeToggle.addEventListener('mouseleave', function() {
+            this.style.borderColor = 'var(--border-color)';
+            this.style.color = 'var(--text-secondary)';
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
-

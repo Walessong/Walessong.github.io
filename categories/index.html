@@ -1,1152 +1,516 @@
 <!doctype html>
-<html lang="en-US" class="dark">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Categories | Woke Soul&#39;s Blog</title>
     <meta name="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design." />
-    <meta name="keywords" content="Hugo, Blog, Theme, Technology, Programming" />
-    <meta name="author" content="Woke Soul" />
     
     
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     
-    <link rel="manifest" href="/site.webmanifest" />
-    
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              background: 'rgb(var(--bg-main) / <alpha-value>)',
-              surface: 'rgb(var(--bg-surface) / <alpha-value>)',
-              primary: {
-                DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
-                foreground: 'rgb(var(--primary-foreground) / <alpha-value>)',
-              },
-              secondary: 'rgb(var(--text-muted) / <alpha-value>)',
-            },
-            textColor: {
-                DEFAULT: 'rgb(var(--text-main) / <alpha-value>)',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['Fira Code', 'monospace'],
-            }
-          }
-        }
-      }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
     <style>
-      :root {
-         
-        --bg-main: 241 245 249;    
-        --bg-surface: 255 255 255;  
-        --text-main: 30 41 59;     
-        --text-muted: 100 116 139;   
-        
-         
-        --primary: 2 132 199;
-        --primary-foreground: 255 255 255;
+       
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .dark {
-         
-        --bg-main: 15 23 42;       
-        --bg-surface: 30 41 59;    
-        --text-main: 241 245 249;  
-        --text-muted: 148 163 184; 
-        
-         
-        --primary: 56 189 248;
-        --primary-foreground: 15 23 42;
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --text-secondary: #666666;
+        --border-color: #e5e7eb;
+        --link-color: #2563eb;
+        --link-hover: #1d4ed8;
+        --code-bg: #f3f4f6;
+        --code-color: #e11d48;
+      }
+
+       
+      html[data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #e5e5e5;
+        --text-secondary: #a3a3a3;
+        --border-color: #404040;
+        --link-color: #60a5fa;
+        --link-hover: #93c5fd;
+        --code-bg: #2a2a2a;
+        --code-color: #fb7185;
+      }
+
+       
+      @media (prefers-color-scheme: dark) {
+        html:not([data-theme]) {
+          --bg-color: #1a1a1a;
+          --text-color: #e5e5e5;
+          --text-secondary: #a3a3a3;
+          --border-color: #404040;
+          --link-color: #60a5fa;
+          --link-hover: #93c5fd;
+          --code-bg: #2a2a2a;
+          --code-color: #fb7185;
+        }
+      }
+
+      html {
+        font-size: 16px;
+        line-height: 1.6;
       }
 
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: rgb(var(--bg-main));
-        color: rgb(var(--text-main));
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 20px;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-      
+
        
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+      header {
+        padding: 40px 0 60px 0;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 40px;
       }
-      ::-webkit-scrollbar-track {
-        background: transparent; 
+
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 8px;
       }
-      ::-webkit-scrollbar-thumb {
-        background: rgb(var(--text-muted)); 
-        opacity: 0.5;
+
+      header h1 a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      nav {
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--link-color);
+      }
+
+       
+      main {
+        min-height: 60vh;
+      }
+
+       
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: var(--link-hover);
+      }
+
+       
+      h1, h2, h3, h4, h5, h6 {
+        margin: 2rem 0 1rem 0;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+
+       
+      p {
+        margin: 1rem 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+       
+      ul, ol {
+        margin: 1rem 0;
+        padding-left: 2rem;
+      }
+
+      li {
+        margin: 0.5rem 0;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+       
+      code {
+        background-color: var(--code-bg);
+        color: var(--code-color);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+        font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+      }
+
+      pre {
+        background-color: var(--code-bg);
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+        color: var(--text-color);
+      }
+
+       
+      blockquote {
+        border-left: 3px solid var(--border-color);
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+
+       
+      hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 3rem 0;
+      }
+
+       
+      img {
+        max-width: 100%;
+        height: auto;
         border-radius: 4px;
+        margin: 1.5rem 0;
       }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgb(var(--primary)); 
+
+       
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+      }
+
+      th, td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        font-weight: 600;
+      }
+
+       
+      footer {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+       
+      .post-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .post-item {
+        margin: 2rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .post-item:last-child {
+        border-bottom: none;
+      }
+
+      .post-date {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .post-title a:hover {
+        color: var(--link-color);
+      }
+
+      .post-summary {
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+       
+      .tags {
+        margin-top: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background-color: var(--code-bg);
+        color: var(--text-secondary);
+        padding: 0.2rem 0.6rem;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+       
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        header {
+          padding: 30px 0 40px 0;
+        }
+
+        h1 { font-size: 1.75rem; }
+        h2 { font-size: 1.35rem; }
+        h3 { font-size: 1.15rem; }
+
+        nav a {
+          margin-right: 15px;
+        }
+      }
+
+       
+      ::selection {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        ::selection {
+          background-color: #1e3a8a;
+          color: #dbeafe;
+        }
+      }
+
+       
+      html {
+        scroll-behavior: smooth;
       }
     </style>
-    
-    <script>
-      (function() {
-        try {
-          const storedMode = localStorage.getItem('themeMode') || 'system';
-          const storedColor = localStorage.getItem('themeColor') || 'blue';
-          
-          const COLORS = {
-            blue:   { light: '2 132 199', dark: '56 189 248' },
-            green:  { light: '5 150 105', dark: '52 211 153' },
-            purple: { light: '124 58 237', dark: '167 139 250' },
-            orange: { light: '234 88 12', dark: '251 146 60' },
-            pink:   { light: '219 39 119', dark: '244 114 182' },
-          };
-          
-          const root = document.documentElement;
-          const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-          
-          const getIsDark = () => {
-            return storedMode === 'dark' || (storedMode === 'system' && mediaQuery.matches);
-          };
-          
-          const applyTheme = () => {
-            const isDark = getIsDark();
-            
-            if (isDark) {
-              root.classList.add('dark');
-            } else {
-              root.classList.remove('dark');
-            }
-            
-            const rgbValue = isDark ? COLORS[storedColor].dark : COLORS[storedColor].light;
-            root.style.setProperty('--primary', rgbValue);
-            
-            if (isDark) {
-              root.style.setProperty('--primary-foreground', '15 23 42');
-            } else {
-              root.style.setProperty('--primary-foreground', '255 255 255');
-            }
-          };
-          
-          applyTheme();
-          
-          if (storedMode === 'system' && window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
-          }
-        } catch (e) {}
-      })();
-    </script>
   </head>
 
-  <body class="min-h-screen bg-background text-secondary transition-colors duration-300 selection:bg-primary selection:text-white flex flex-col font-sans">
+  <body>
     
-    <header 
-  id="main-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-transparent border-transparent py-5"
->
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    
-    
-    <div 
-      onclick="window.location.href='\/'"
-      class="flex items-center space-x-2 cursor-pointer group"
-    >
-      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
-        <span class="font-mono text-primary-foreground font-bold text-xl">W</span>
-      </div>
-      <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-        Woke Soul&#39;s Blog
-      </span>
-    </div>
-
-    
-    <nav class="hidden md:flex items-center bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-full px-2 py-1.5 border border-slate-200 dark:border-slate-700 shadow-inner">
-      <a href="/posts" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">文章</span>
-      </a>
-      <a href="/categories" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-white bg-slate-800 dark:bg-slate-700 shadow-md">
-        <span class="relative z-10">分类</span>
-      </a>
-      <a href="/tags" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">标签</span>
-      </a>
-      <a href="/archives" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">归档</span>
-      </a>
-      <a href="/about" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">关于</span>
-      </a>
-      <a href="/acknowledgments" class="relative px-5 py-1.5 text-sm font-medium rounded-full transition-all duration-300 text-gray-600 dark:text-slate-300 hover:text-primary hover:bg-white dark:hover:bg-slate-800">
-        <span class="relative z-10">鸣谢</span>
-      </a>
-    </nav>
-
-    
-    <div class="hidden md:flex items-center space-x-3">
-      
-      <div class="relative" id="theme-menu-container">
-        <button 
-          id="theme-toggle-btn"
-          class="p-2 rounded-full transition-colors text-gray-600 dark:text-slate-400 hover:text-primary"
-          title="Theme Settings"
-        >
-          <svg id="palette-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-          </svg>
-        </button>
-
-        <div id="theme-menu" class="hidden absolute right-0 top-full mt-4 w-64 bg-surface border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-4 z-50 origin-top-right">
-          <div class="space-y-4">
-            
-            <div>
-              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Mode</span>
-              <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
-                <button id="theme-light" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                  </svg>
-                </button>
-                <button id="theme-dark" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                  </svg>
-                </button>
-                <button id="theme-system" class="flex-1 flex justify-center py-1.5 rounded text-gray-500 dark:text-slate-400 hover:text-primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            
-            <div>
-              <span class="text-xs font-mono text-gray-500 dark:text-slate-500 uppercase tracking-wider block mb-2">Color</span>
-              <div class="flex justify-between">
-                <button data-color="blue" class="w-8 h-8 rounded-full bg-sky-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="green" class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="purple" class="w-8 h-8 rounded-full bg-violet-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="orange" class="w-8 h-8 rounded-full bg-orange-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-                <button data-color="pink" class="w-8 h-8 rounded-full bg-pink-500 border-2 border-transparent transition-transform hover:scale-110 theme-color-btn"></button>
-              </div>
-            </div>
-          </div>
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <h1><a href="/">Woke Soul&#39;s Blog</a></h1>
+          <p>A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.</p>
         </div>
-      </div>
-
-      <div class="w-px h-5 bg-slate-300 dark:bg-slate-700 mx-1"></div>
-
-      <a href="/index.xml" class="text-gray-600 dark:text-slate-400 hover:text-primary transition-colors p-2" title="RSS">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 11a9 9 0 0 1 9 9"></path>
-          <path d="M4 4a16 16 0 0 1 16 16"></path>
-          <circle cx="5" cy="19" r="1"></circle>
-        </svg>
-      </a>
-    </div>
-
-    
-    <button 
-      id="mobile-menu-toggle"
-      class="md:hidden text-gray-600 dark:text-slate-400"
-    >
-      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-      <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-
-  
-  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
-    <div class="p-6 flex flex-col space-y-4">
-      <a href="/posts" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">文章</a>
-      <a href="/categories" class="text-left text-lg font-medium py-2 text-primary">分类</a>
-      <a href="/tags" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">标签</a>
-      <a href="/archives" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">归档</a>
-      <a href="/about" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">关于</a>
-      <a href="/acknowledgments" class="text-left text-lg font-medium py-2 text-gray-600 dark:text-slate-400">鸣谢</a>
-      <hr class="border-slate-200 dark:border-slate-700"/>
-      <div class="flex items-center justify-between py-2">
-        <span class="text-gray-600 dark:text-slate-400">Theme</span>
-        <button id="mobile-theme-toggle" class="text-gray-600 dark:text-slate-400">
-          <svg id="mobile-sun-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg id="mobile-moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+        <button id="theme-toggle" aria-label="切换主题" style="
+          background: none;
+          border: 1px solid var(--border-color);
+          color: var(--text-secondary);
+          cursor: pointer;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          transition: all 0.2s ease;
+          font-family: inherit;
+        ">
+          <span id="theme-icon">🌙</span>
         </button>
       </div>
-    </div>
-  </div>
-</header>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const header = document.getElementById('main-header');
-  let scrolled = false;
-  
-  const handleScroll = () => {
-    const isScrolled = window.scrollY > 20;
-    if (isScrolled !== scrolled) {
-      scrolled = isScrolled;
-      if (scrolled) {
-        header.classList.remove('bg-transparent', 'border-transparent', 'py-5');
-        header.classList.add('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
-      } else {
-        header.classList.remove('bg-background/80', 'backdrop-blur-md', 'border-slate-200', 'dark:border-slate-800', 'py-3', 'shadow-sm');
-        header.classList.add('bg-transparent', 'border-transparent', 'py-5');
-      }
-    }
-  };
-  
-  window.addEventListener('scroll', handleScroll);
-  
-  
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  
-  if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-  }
-  
-  
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const themeMenu = document.getElementById('theme-menu');
-  const themeMenuContainer = document.getElementById('theme-menu-container');
-  
-  if (themeToggleBtn && themeMenu) {
-    themeToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      themeMenu.classList.toggle('hidden');
-    });
-    
-    document.addEventListener('click', (e) => {
-      if (!themeMenuContainer.contains(e.target)) {
-        themeMenu.classList.add('hidden');
-      }
-    });
-  }
-  
-  
-  const themeLight = document.getElementById('theme-light');
-  const themeDark = document.getElementById('theme-dark');
-  const themeSystem = document.getElementById('theme-system');
-  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-  
-  const updateThemeModeButtons = () => {
-    const mode = localStorage.getItem('themeMode') || 'system';
-    [themeLight, themeDark, themeSystem].forEach(btn => {
-      if (btn) {
-        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-        btn.classList.add('text-gray-500', 'dark:text-slate-400');
-      }
-    });
-    
-    if (mode === 'light' && themeLight) {
-      themeLight.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeLight.classList.remove('text-gray-500', 'dark:text-slate-400');
-    } else if (mode === 'dark' && themeDark) {
-      themeDark.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeDark.classList.remove('text-gray-500', 'dark:text-slate-400');
-    } else if (mode === 'system' && themeSystem) {
-      themeSystem.classList.add('bg-white', 'dark:bg-slate-700', 'shadow', 'text-primary');
-      themeSystem.classList.remove('text-gray-500', 'dark:text-slate-400');
-    }
-  };
-  
-  if (themeLight) {
-    themeLight.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'light');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  if (themeDark) {
-    themeDark.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'dark');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  if (themeSystem) {
-    themeSystem.addEventListener('click', () => {
-      localStorage.setItem('themeMode', 'system');
-      updateThemeModeButtons();
-      location.reload();
-    });
-  }
-  
-  
-  const colorButtons = document.querySelectorAll('.theme-color-btn');
-  const updateColorButtons = () => {
-    const color = localStorage.getItem('themeColor') || 'blue';
-    colorButtons.forEach(btn => {
-      const btnColor = btn.getAttribute('data-color');
-      if (btnColor === color) {
-        btn.classList.add('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
-        btn.classList.remove('border-transparent', 'opacity-70');
-      } else {
-        btn.classList.remove('border-slate-500', 'dark:border-white', 'shadow-lg', 'scale-110');
-        btn.classList.add('border-transparent', 'opacity-70');
-      }
-    });
-  };
-  
-  colorButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const color = btn.getAttribute('data-color');
-      localStorage.setItem('themeColor', color);
-      updateColorButtons();
-      location.reload();
-    });
-  });
-  
-  updateThemeModeButtons();
-  updateColorButtons();
-  
-  
-  if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener('click', () => {
-      const currentMode = localStorage.getItem('themeMode') || 'system';
-      const newMode = currentMode === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('themeMode', newMode);
-      location.reload();
-    });
-  }
-});
-</script>
-
+      <nav>
+        <a href="/">首页</a>
+        <a href="/posts">文章</a>
+        <a href="/archives">归档</a>
+        <a href="/about">关于</a>
+      </nav>
+    </header>
 
     
-    <main class="flex-grow w-full pt-16">
+    <main>
       
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-  
-  <div class="text-center mb-16 relative">
-    
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="w-64 h-64 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
-    </div>
-    
-    <h1 class="relative text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6 animate-fade-in-up">
-      
-        分类浏览
-      
-    </h1>
-
-    <p class="relative text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
-        
-        按主题浏览文章，找到你感兴趣的内容
-        
-      </p>
-
-    
-    
-    
-    <div class="relative mt-8 flex justify-center items-center space-x-8 text-slate-600 dark:text-slate-400">
-      <div class="flex items-center space-x-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-200/50 dark:border-slate-700/50">
-        <span class="text-blue-500">
-          📁
-        </span>
-        <span class="font-medium">6 个分类</span>
-      </div>
-      <div class="flex items-center space-x-2 px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-full border border-slate-200/50 dark:border-slate-700/50">
-        <span class="text-purple-500">📊</span>
-        <span class="font-medium">标签云视图</span>
-      </div>
-    </div>
-    
-    
-    
-    <div class="relative mt-8 flex justify-center">
-      <div class="w-32 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full"></div>
-    </div>
-  </div>
+<div class="taxonomy-page">
+  <header class="list-header">
+    <h1>Categories</h1>
+    <p>共 6 项</p>
+  </header>
 
   
-  
-    
-    
+    <ul class="taxonomy-list">
       
+        <li class="taxonomy-item">
+          <a href="/categories/github/">Github</a>
+          <span class="count">(1)</span>
+        </li>
       
-        
-          
-        
+        <li class="taxonomy-item">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+          <span class="count">(1)</span>
+        </li>
       
-        
+        <li class="taxonomy-item">
+          <a href="/categories/image-rendering/">Image-Rendering</a>
+          <span class="count">(1)</span>
+        </li>
       
-        
+        <li class="taxonomy-item">
+          <a href="/categories/code-highlighting/">Code-Highlighting</a>
+          <span class="count">(1)</span>
+        </li>
       
-        
+        <li class="taxonomy-item">
+          <a href="/categories/test/">Test</a>
+          <span class="count">(1)</span>
+        </li>
       
-        
+        <li class="taxonomy-item">
+          <a href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+          <span class="count">(1)</span>
+        </li>
       
-        
-      
-
-    <div class="flex flex-wrap justify-center gap-4 mb-12">
-      
-        
-        
-        
-        
-
-        
-          
-          
-        
-
-        <a
-          href="/categories/code-highlighting/"
-          class="group bg-gradient-to-r from-violet-100 to-violet-200 dark:from-violet-900 dark:to-violet-800 border border-slate-200/50 dark:border-slate-700/50 text-2xl px-8 py-6 font-medium text-slate-700 dark:text-slate-300 rounded-2xl hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 hover:-translate-y-3 hover:scale-110 animate-on-scroll relative overflow-hidden">
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          
-          <div class="relative z-10 flex items-center space-x-3">
-            <span class="group-hover:scale-110 transition-transform duration-300">
-              📁
-            </span>
-            <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-            Code-Highlighting
-          </span>
-            <span class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl text-slate-700 dark:text-slate-300 rounded-full px-3 py-1 text-xs font-bold border border-slate-200/50 dark:border-slate-700/50 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-            1
-          </span>
-          </div>
-        </a>
-      
-        
-        
-        
-        
-
-        
-          
-          
-        
-
-        <a
-          href="/categories/github/"
-          class="group bg-gradient-to-r from-violet-100 to-violet-200 dark:from-violet-900 dark:to-violet-800 border border-slate-200/50 dark:border-slate-700/50 text-2xl px-8 py-6 font-medium text-slate-700 dark:text-slate-300 rounded-2xl hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 hover:-translate-y-3 hover:scale-110 animate-on-scroll relative overflow-hidden">
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          
-          <div class="relative z-10 flex items-center space-x-3">
-            <span class="group-hover:scale-110 transition-transform duration-300">
-              📁
-            </span>
-            <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-            Github
-          </span>
-            <span class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl text-slate-700 dark:text-slate-300 rounded-full px-3 py-1 text-xs font-bold border border-slate-200/50 dark:border-slate-700/50 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-            1
-          </span>
-          </div>
-        </a>
-      
-        
-        
-        
-        
-
-        
-          
-          
-        
-
-        <a
-          href="/categories/image-rendering/"
-          class="group bg-gradient-to-r from-violet-100 to-violet-200 dark:from-violet-900 dark:to-violet-800 border border-slate-200/50 dark:border-slate-700/50 text-2xl px-8 py-6 font-medium text-slate-700 dark:text-slate-300 rounded-2xl hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 hover:-translate-y-3 hover:scale-110 animate-on-scroll relative overflow-hidden">
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          
-          <div class="relative z-10 flex items-center space-x-3">
-            <span class="group-hover:scale-110 transition-transform duration-300">
-              📁
-            </span>
-            <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-            Image-Rendering
-          </span>
-            <span class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl text-slate-700 dark:text-slate-300 rounded-full px-3 py-1 text-xs font-bold border border-slate-200/50 dark:border-slate-700/50 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-            1
-          </span>
-          </div>
-        </a>
-      
-        
-        
-        
-        
-
-        
-          
-          
-        
-
-        <a
-          href="/categories/test/"
-          class="group bg-gradient-to-r from-violet-100 to-violet-200 dark:from-violet-900 dark:to-violet-800 border border-slate-200/50 dark:border-slate-700/50 text-2xl px-8 py-6 font-medium text-slate-700 dark:text-slate-300 rounded-2xl hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 hover:-translate-y-3 hover:scale-110 animate-on-scroll relative overflow-hidden">
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          
-          <div class="relative z-10 flex items-center space-x-3">
-            <span class="group-hover:scale-110 transition-transform duration-300">
-              📁
-            </span>
-            <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-            Test
-          </span>
-            <span class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl text-slate-700 dark:text-slate-300 rounded-full px-3 py-1 text-xs font-bold border border-slate-200/50 dark:border-slate-700/50 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-            1
-          </span>
-          </div>
-        </a>
-      
-        
-        
-        
-        
-
-        
-          
-          
-        
-
-        <a
-          href="/categories/%E6%8A%80%E6%9C%AF/"
-          class="group bg-gradient-to-r from-violet-100 to-violet-200 dark:from-violet-900 dark:to-violet-800 border border-slate-200/50 dark:border-slate-700/50 text-2xl px-8 py-6 font-medium text-slate-700 dark:text-slate-300 rounded-2xl hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 hover:-translate-y-3 hover:scale-110 animate-on-scroll relative overflow-hidden">
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          
-          <div class="relative z-10 flex items-center space-x-3">
-            <span class="group-hover:scale-110 transition-transform duration-300">
-              📁
-            </span>
-            <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-            技术
-          </span>
-            <span class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl text-slate-700 dark:text-slate-300 rounded-full px-3 py-1 text-xs font-bold border border-slate-200/50 dark:border-slate-700/50 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-            1
-          </span>
-          </div>
-        </a>
-      
-        
-        
-        
-        
-
-        
-          
-          
-        
-
-        <a
-          href="/categories/%E6%B5%8B%E8%AF%95/"
-          class="group bg-gradient-to-r from-violet-100 to-violet-200 dark:from-violet-900 dark:to-violet-800 border border-slate-200/50 dark:border-slate-700/50 text-2xl px-8 py-6 font-medium text-slate-700 dark:text-slate-300 rounded-2xl hover:shadow-2xl hover:shadow-slate-900/20 transition-all duration-500 hover:-translate-y-3 hover:scale-110 animate-on-scroll relative overflow-hidden">
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          
-          <div class="relative z-10 flex items-center space-x-3">
-            <span class="group-hover:scale-110 transition-transform duration-300">
-              📁
-            </span>
-            <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-            测试
-          </span>
-            <span class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl text-slate-700 dark:text-slate-300 rounded-full px-3 py-1 text-xs font-bold border border-slate-200/50 dark:border-slate-700/50 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-            1
-          </span>
-          </div>
-        </a>
-      
-    </div>
-
-    
-    <div class="mt-16">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-        详细列表
-      </h2>
-      
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        
-        <div class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 animate-on-scroll overflow-hidden">
-          
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <div class="relative">
-            
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-500/25">
-                📁
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  Code-Highlighting
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">
-                  1 篇文章
-                </p>
-              </div>
-            </div>
-
-            
-            
-            
-            <div class="space-y-3">
-              <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">最新文章：</p>
-              
-              <div class="group/item bg-slate-50/80 dark:bg-slate-700/80 rounded-lg p-3 hover:bg-slate-100/80 dark:hover:bg-slate-600/80 transition-colors duration-300">
-                <a href="/posts/code-highlighting-test/" class="block">
-                  <h4 class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300 line-clamp-1">
-                    Code Highlighting Test
-                  </h4>
-                  
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    1月16日
-                  </p>
-                  
-                </a>
-              </div>
-              
-            </div>
-            
-
-            
-            <div class="mt-6">
-              <a 
-                href="/categories/code-highlighting/" 
-                class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                <span class="relative z-10">查看全部</span>
-                <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 animate-on-scroll overflow-hidden">
-          
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <div class="relative">
-            
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-500/25">
-                📁
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  Github
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">
-                  1 篇文章
-                </p>
-              </div>
-            </div>
-
-            
-            
-            
-            <div class="space-y-3">
-              <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">最新文章：</p>
-              
-              <div class="group/item bg-slate-50/80 dark:bg-slate-700/80 rounded-lg p-3 hover:bg-slate-100/80 dark:hover:bg-slate-600/80 transition-colors duration-300">
-                <a href="/posts/test-alert/" class="block">
-                  <h4 class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300 line-clamp-1">
-                    GitHub Style Alert Test
-                  </h4>
-                  
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    6月1日
-                  </p>
-                  
-                </a>
-              </div>
-              
-            </div>
-            
-
-            
-            <div class="mt-6">
-              <a 
-                href="/categories/github/" 
-                class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                <span class="relative z-10">查看全部</span>
-                <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 animate-on-scroll overflow-hidden">
-          
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <div class="relative">
-            
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-500/25">
-                📁
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  Image-Rendering
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">
-                  1 篇文章
-                </p>
-              </div>
-            </div>
-
-            
-            
-            
-            <div class="space-y-3">
-              <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">最新文章：</p>
-              
-              <div class="group/item bg-slate-50/80 dark:bg-slate-700/80 rounded-lg p-3 hover:bg-slate-100/80 dark:hover:bg-slate-600/80 transition-colors duration-300">
-                <a href="/posts/image-rendering-test/" class="block">
-                  <h4 class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300 line-clamp-1">
-                    Image Rendering Test
-                  </h4>
-                  
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    1月16日
-                  </p>
-                  
-                </a>
-              </div>
-              
-            </div>
-            
-
-            
-            <div class="mt-6">
-              <a 
-                href="/categories/image-rendering/" 
-                class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                <span class="relative z-10">查看全部</span>
-                <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 animate-on-scroll overflow-hidden">
-          
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <div class="relative">
-            
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-500/25">
-                📁
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  Test
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">
-                  1 篇文章
-                </p>
-              </div>
-            </div>
-
-            
-            
-            
-            <div class="space-y-3">
-              <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">最新文章：</p>
-              
-              <div class="group/item bg-slate-50/80 dark:bg-slate-700/80 rounded-lg p-3 hover:bg-slate-100/80 dark:hover:bg-slate-600/80 transition-colors duration-300">
-                <a href="/posts/markdown-syntax-test-document/" class="block">
-                  <h4 class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300 line-clamp-1">
-                    Markdown Syntax Test Document
-                  </h4>
-                  
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    1月15日
-                  </p>
-                  
-                </a>
-              </div>
-              
-            </div>
-            
-
-            
-            <div class="mt-6">
-              <a 
-                href="/categories/test/" 
-                class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                <span class="relative z-10">查看全部</span>
-                <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 animate-on-scroll overflow-hidden">
-          
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <div class="relative">
-            
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-500/25">
-                📁
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  技术
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">
-                  1 篇文章
-                </p>
-              </div>
-            </div>
-
-            
-            
-            
-            <div class="space-y-3">
-              <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">最新文章：</p>
-              
-              <div class="group/item bg-slate-50/80 dark:bg-slate-700/80 rounded-lg p-3 hover:bg-slate-100/80 dark:hover:bg-slate-600/80 transition-colors duration-300">
-                <a href="/posts/%E7%9B%AE%E5%BD%95%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="block">
-                  <h4 class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300 line-clamp-1">
-                    目录功能测试文章
-                  </h4>
-                  
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    1月27日
-                  </p>
-                  
-                </a>
-              </div>
-              
-            </div>
-            
-
-            
-            <div class="mt-6">
-              <a 
-                href="/categories/%E6%8A%80%E6%9C%AF/" 
-                class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                <span class="relative z-10">查看全部</span>
-                <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 animate-on-scroll overflow-hidden">
-          
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <div class="relative">
-            
-            <div class="flex items-center space-x-3 mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-500/25">
-                📁
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  测试
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">
-                  1 篇文章
-                </p>
-              </div>
-            </div>
-
-            
-            
-            
-            <div class="space-y-3">
-              <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">最新文章：</p>
-              
-              <div class="group/item bg-slate-50/80 dark:bg-slate-700/80 rounded-lg p-3 hover:bg-slate-100/80 dark:hover:bg-slate-600/80 transition-colors duration-300">
-                <a href="/nav-test/" class="block">
-                  <h4 class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300 line-clamp-1">
-                    导航栏测试页面
-                  </h4>
-                  
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    1月1日
-                  </p>
-                  
-                </a>
-              </div>
-              
-            </div>
-            
-
-            
-            <div class="mt-6">
-              <a 
-                href="/categories/%E6%B5%8B%E8%AF%95/" 
-                class="group/btn inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 text-white text-sm font-medium rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-indigo-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                <span class="relative z-10">查看全部</span>
-                <span class="relative z-10 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+    </ul>
   
 </div>
 
+<style>
+  .list-header {
+    margin-bottom: 3rem;
+  }
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const titleElements = document.querySelectorAll('header > *');
-  titleElements.forEach((element, index) => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(40px)';
-    
-    setTimeout(() => {
-      element.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }, 300 + index * 200);
-  });
+  .list-header h1 {
+    margin-bottom: 0.5rem;
+  }
 
-  
-  const tagElements = document.querySelectorAll('.flex.flex-wrap.justify-center > a');
-  tagElements.forEach((tag, index) => {
-    tag.style.opacity = '0';
-    tag.style.transform = 'translateY(30px) scale(0.8)';
-    
-    setTimeout(() => {
-      tag.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      tag.style.opacity = '1';
-      tag.style.transform = 'translateY(0) scale(1)';
-    }, 800 + index * 100);
-  });
+  .list-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
 
-  
-  const listElements = document.querySelectorAll('.grid > div');
-  listElements.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    
-    setTimeout(() => {
-      item.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      item.style.opacity = '1';
-      item.style.transform = 'translateY(0)';
-    }, 1500 + index * 150);
-  });
-});
-</script>
+  .taxonomy-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .taxonomy-item {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--code-bg);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+
+  .taxonomy-item:hover {
+    background-color: var(--border-color);
+  }
+
+  .taxonomy-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .taxonomy-item a:hover {
+    color: var(--link-color);
+  }
+
+  .taxonomy-item .count {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+</style>
 
     </main>
 
     
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-12 mt-12">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <div class="flex justify-center space-x-6 mb-8 text-gray-500 dark:text-slate-500">
-      
-        <a href="/about/" class="hover:text-primary transition-colors">About</a>
-      
-        <a href="/acknowledgments/" class="hover:text-primary transition-colors">Acknowledgments</a>
-      
-        <a href="https://google.com" class="hover:text-primary transition-colors">Contact</a>
-      
-        <a href="/index.xml" class="hover:text-primary transition-colors">RSS Feed</a>
-      
-    </div>
-    <p class="text-gray-400 dark:text-slate-600 text-sm">
-      © 2026 Woke Soul&#39;s Blog. Designed with Minimalism in mind.
-    </p>
-  </div>
-</footer>
-
+    <footer>
+      <p>&copy; 2026 Woke Soul&#39;s Blog. Be yourself and don't go with the flow.</p>
+    </footer>
 
     
-    <script src="/js/theme-manager.js"></script>
+    <script>
+      (function() {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        
+        function getCurrentTheme() {
+          const stored = localStorage.getItem('theme');
+          if (stored) return stored;
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        
+        function applyTheme(theme) {
+          if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+          } else {
+            html.setAttribute('data-theme', 'light');
+            themeIcon.textContent = '🌙';
+          }
+          localStorage.setItem('theme', theme);
+        }
+        
+        
+        function toggleTheme() {
+          const current = getCurrentTheme();
+          const next = current === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+        }
+        
+        
+        applyTheme(getCurrentTheme());
+        
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', toggleTheme);
+          
+          
+          themeToggle.addEventListener('mouseenter', function() {
+            this.style.borderColor = 'var(--link-color)';
+            this.style.color = 'var(--link-color)';
+          });
+          
+          themeToggle.addEventListener('mouseleave', function() {
+            this.style.borderColor = 'var(--border-color)';
+            this.style.color = 'var(--text-secondary)';
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
-
