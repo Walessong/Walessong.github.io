@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Summary }}{{ . | plainify }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.7; background: #FAFAFA; color: #2C3E50; }
+        nav { background: rgba(250, 250, 250, 0.95); border-bottom: 1px solid #E8E8E8; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 900px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Noto Serif SC', serif; font-size: 1.25rem; font-weight: 600; color: #1A1A1A; text-decoration: none; }
+        .nav-menu { display: flex; gap: 2.5rem; }
+        .nav-menu a { font-size: 0.9375rem; color: #6B7280; text-decoration: none; }
+        .nav-menu a:hover, .nav-menu a.active { color: #2C5F8D; font-weight: 600; }
+        .container { max-width: 750px; margin: 0 auto; padding: 4rem 2rem; }
+        article h1 { font-family: 'Noto Serif SC', serif; font-size: 2.25rem; font-weight: 700; color: #1A1A1A; margin-bottom: 1.5rem; }
+        .meta { font-size: 0.875rem; color: #9CA3AF; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #E8E8E8; }
+        .content { line-height: 1.8; }
+        .content p { margin-bottom: 1.5rem; }
+        .content a { color: #2C5F8D; text-decoration: none; }
+        footer { border-top: 1px solid #E8E8E8; margin-top: 6rem; padding: 3rem 0; background: #F8F8F8; text-align: center; }
+        .footer-text { font-size: 0.875rem; color: #9CA3AF; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">{{ .Site.Title }}</a>
+            <div class="nav-menu">
+                <a href="/" {{ if .IsHome }}class="active"{{ end }}>首页</a>
+                <a href="/posts/">文章</a>
+                <a href="/archives/">归档</a>
+                <a href="/about/">关于</a>
+            </div>
+        </div>
+    </nav>
+    <article class="container">
+        <h1>{{ .Title }}</h1>
+        <div class="meta">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+        <div class="content">{{ .Content }}</div>
+    </article>
+    <footer><div class="footer-container"><p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p></div></footer>
+</body>
+</html>

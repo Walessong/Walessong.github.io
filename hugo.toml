@@ -1,0 +1,15 @@
+baseURL = "https://walessong.github.io/"
+languageCode = "en-us"
+title = "Woke Soul"
+
+[params]
+  description = "Crypto Trader & Analyst exploring the intersection of quantitative patterns and literary aesthetics."
+
+  [params.author]
+    name = "Woke Soul"
+    title = "Crypto Trader & Analyst | Patterns / Fractals | Machine Learning | Literature"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
