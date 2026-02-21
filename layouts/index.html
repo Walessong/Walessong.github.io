@@ -33,6 +33,7 @@
         .hero-content .subtitle { font-size: 1.125rem; color: #6B7280; line-height: 1.8; margin-bottom: 1rem; }
         .hero-content .tagline { font-size: 0.9375rem; color: #9CA3AF; font-style: italic; margin-top: 1.5rem; }
         .hero-visual { display: flex; align-items: center; justify-content: center; }
+        .hero-avatar { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
         .fractal-pattern { width: 200px; height: 200px; background: linear-gradient(135deg, #2C5F8D 0%, #8B7355 100%); opacity: 0.1; border-radius: 50%; animation: pulse 4s ease-in-out infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.1; } 50% { transform: scale(1.05); opacity: 0.15; } }
         .posts-header { font-family: "仓耳今楷", "Times New Roman", serif; font-size: 1.75rem; font-weight: 600; color: #1A1A1A; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #E8E8E8; }
@@ -68,7 +69,13 @@
                 <p class="subtitle">Where fractals meet philosophy, and algorithms dance with words.</p>
                 <p class="tagline">"In the chaos of markets, I seek patterns. In the silence of pages, I find meaning."</p>
             </div>
-            <div class="hero-visual"><div class="fractal-pattern"></div></div>
+            <div class="hero-visual">
+                {{ with .Site.Params.avatar }}
+                <img src="/{{ . }}" alt="Avatar" class="hero-avatar">
+                {{ else }}
+                <div class="fractal-pattern"></div>
+                {{ end }}
+            </div>
         </section>
         <h2 class="posts-header">Recent Writings</h2>
         {{ range first 20 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}

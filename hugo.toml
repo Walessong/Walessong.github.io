@@ -5,6 +5,8 @@ buildFuture = true
 
 [params]
   description = "Crypto Trader & Analyst exploring the intersection of quantitative patterns and literary aesthetics."
+  # 首页头像：将图片放到 static/images/ 下，此处填路径，如 "images/avatar.jpg"
+  avatar = ""
 
   [params.author]
     name = "Woke Soul"
