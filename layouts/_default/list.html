@@ -29,19 +29,10 @@
         footer { border-top: 1px solid #E8E8E8; margin-top: 6rem; padding: 3rem 0; background: #F8F8F8; text-align: center; }
         .footer-text { font-size: 0.875rem; color: #9CA3AF; }
     </style>
+    {{ partial "nav-search-styles.html" . }}
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="/" class="nav-logo">{{ .Site.Title }}</a>
-            <div class="nav-menu">
-                <a href="/">首页</a>
-                <a href="/posts/" {{ if eq .Section "posts" }}class="active"{{ end }}>文章</a>
-                <a href="/archives/">归档</a>
-                <a href="/about/">关于</a>
-            </div>
-        </div>
-    </nav>
+    {{ partial "nav.html" . }}
     <div class="container">
         <h1>{{ .Title }}</h1>
         {{ range .Pages.ByDate.Reverse }}
@@ -53,5 +44,8 @@
         {{ end }}
     </div>
     <footer><div class="footer-container"><p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p></div></footer>
+    {{ partial "search-modal.html" . }}
+    {{ partial "search-data.html" . }}
+    {{ partial "search-script.html" . }}
 </body>
 </html>

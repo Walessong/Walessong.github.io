@@ -1,0 +1,76 @@
+<script>
+(function() {
+    var LANG_KEY = 'site-lang';
+    var defaultLang = 'zh';
+    function getLang() { try { return localStorage.getItem(LANG_KEY) || defaultLang; } catch(e) { return defaultLang; } }
+    function setLang(lang) { try { localStorage.setItem(LANG_KEY, lang); } catch(e) {} }
+
+    function applyLang(lang) {
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        document.querySelectorAll('[data-i18n-zh][data-i18n-en]').forEach(function(el) {
+            el.textContent = el.getAttribute('data-i18n-' + lang) || el.textContent;
+        });
+        var label = document.getElementById('lang-label');
+        if (label) label.textContent = lang === 'zh' ? 'EN' : '中文';
+        var ph = document.getElementById('search-input');
+        if (ph) ph.placeholder = lang === 'zh' ? '输入标题或摘要搜索…' : 'Search by title or summary…';
+    }
+
+    var langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', function() {
+            var next = getLang() === 'zh' ? 'en' : 'zh';
+            setLang(next);
+            applyLang(next);
+        });
+    }
+    applyLang(getLang());
+
+    var overlay = document.getElementById('search-overlay');
+    var searchOpen = document.getElementById('search-open');
+    var searchClose = document.getElementById('search-close');
+    var searchInput = document.getElementById('search-input');
+    var searchResults = document.getElementById('search-results');
+    var searchDataEl = document.getElementById('search-data');
+    var searchData = searchDataEl ? JSON.parse(searchDataEl.textContent || '[]') : [];
+
+    function openSearch() {
+        if (overlay) { overlay.classList.add('search-overlay-open'); overlay.setAttribute('aria-hidden', 'false'); }
+        if (searchInput) { searchInput.value = ''; searchInput.focus(); runSearch(''); }
+    }
+    function closeSearch() {
+        if (overlay) { overlay.classList.remove('search-overlay-open'); overlay.setAttribute('aria-hidden', 'true'); }
+    }
+    if (searchOpen) searchOpen.addEventListener('click', openSearch);
+    if (searchClose) searchClose.addEventListener('click', closeSearch);
+    if (overlay) overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSearch();
+    });
+
+    function runSearch(q) {
+        q = (q || '').trim().toLowerCase();
+        var html = '';
+        if (!q) {
+            searchData.slice(0, 10).forEach(function(item) {
+                html += '<a class="search-result-item" href="' + item.url + '"><span class="search-result-title">' + escapeHtml(item.title) + '</span><span class="search-result-meta">' + escapeHtml(item.date) + '</span></a>';
+            });
+        } else {
+            searchData.forEach(function(item) {
+                var title = (item.title || '').toLowerCase();
+                var summary = (item.summary || '').toLowerCase();
+                if (title.indexOf(q) !== -1 || summary.indexOf(q) !== -1) {
+                    html += '<a class="search-result-item" href="' + item.url + '"><span class="search-result-title">' + escapeHtml(item.title) + '</span><span class="search-result-meta">' + escapeHtml(item.date) + '</span></a>';
+                }
+            });
+        }
+        if (searchResults) searchResults.innerHTML = html || '<p class="search-result-empty">' + (getLang() === 'zh' ? '无结果' : 'No results') + '</p>';
+    }
+    function escapeHtml(s) {
+        var div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+    }
+    if (searchInput) searchInput.addEventListener('input', function() { runSearch(this.value); });
+})();
+</script>
