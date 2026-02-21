@@ -71,7 +71,7 @@
             <div class="hero-visual"><div class="fractal-pattern"></div></div>
         </section>
         <h2 class="posts-header">Recent Writings</h2>
-        {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
+        {{ range first 20 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
         <article class="post-item" onclick="window.location.href='{{ .RelPermalink }}'">
             <div class="post-date">{{ .Date.Format "January 2, 2006" }}</div>
             <h3 class="post-title">{{ .Title }}</h3>
