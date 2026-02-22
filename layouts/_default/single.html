@@ -18,7 +18,7 @@
         .nav-menu { display: flex; gap: 2.5rem; }
         .nav-menu a { font-size: 0.9375rem; color: #6B7280; text-decoration: none; }
         .nav-menu a:hover, .nav-menu a.active { color: #2C5F8D; font-weight: 600; }
-        .container { max-width: 750px; margin: 0 auto; padding: 4rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: minmax(0, 3.2fr) minmax(220px, 1fr); gap: 3rem; align-items: flex-start; }
         article h1 { font-family: "仓耳今楷02W4", serif, serif; font-size: 2.25rem; font-weight: 700; color: #1A1A1A; margin-bottom: 1.5rem; }
         .meta { font-size: 0.875rem; color: #9CA3AF; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #E8E8E8; }
         .content { line-height: 1.8; display: block; }
@@ -31,18 +31,40 @@
         .content hr { margin: 2rem 0; border: none; border-top: 1px solid #E8E8E8; display: block; }
         .content strong { font-weight: 600; }
         .content a { color: #2C5F8D; text-decoration: none; }
+        .toc-container { position: sticky; top: 100px; max-height: calc(100vh - 140px); overflow-y: auto; font-size: 0.875rem; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 1rem 1.25rem; }
+        .toc-title { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9CA3AF; margin-bottom: 0.75rem; }
+        .toc-body { font-size: 0.9rem; line-height: 1.6; }
+        .toc-body ul { list-style: none; padding-left: 0; margin: 0; }
+        .toc-body li { margin: 0.25rem 0; }
+        .toc-body ul ul { padding-left: 1rem; border-left: 1px solid #E5E7EB; margin-top: 0.25rem; }
+        .toc-body a { color: #6B7280; text-decoration: none; }
+        .toc-body a:hover { color: #2C5F8D; }
         footer { border-top: 1px solid #E8E8E8; margin-top: 6rem; padding: 3rem 0; background: #F8F8F8; text-align: center; }
         .footer-text { font-size: 0.875rem; color: #9CA3AF; }
+        @media (max-width: 960px) {
+            .container { display: block; padding: 2.5rem 1.5rem 3rem 1.5rem; }
+            .toc-container { position: static; max-height: none; margin-top: 2.5rem; margin-bottom: 0.5rem; }
+        }
     </style>
     {{ partial "nav-search-styles.html" . }}
 </head>
 <body>
     {{ partial "nav.html" . }}
-    <article class="container">
-        <h1>{{ .Title }}</h1>
-        <div class="meta">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
-        <div class="content">{{ .Content }}</div>
-    </article>
+    <div class="container">
+        <article>
+            <h1>{{ .Title }}</h1>
+            <div class="meta">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+            <div class="content">{{ .Content }}</div>
+        </article>
+        {{ with .TableOfContents }}
+        <aside class="toc-container">
+            <div class="toc-title">目录</div>
+            <nav class="toc-body">
+                {{ . | safeHTML }}
+            </nav>
+        </aside>
+        {{ end }}
+    </div>
     <footer><div class="footer-container"><p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p></div></footer>
     {{ partial "search-modal.html" . }}
     {{ partial "search-data.html" . }}

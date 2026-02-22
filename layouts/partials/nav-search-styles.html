@@ -18,5 +18,29 @@ html, body { font-family: "仓耳今楷02W4", serif; }
 .search-result-title { font-weight: 600; display: block; }
 .search-result-meta { font-size: 0.8125rem; color: #9CA3AF; }
 .search-result-empty { padding: 1.5rem; color: #9CA3AF; text-align: center; }
+
+/* KaTeX 数学公式：在小屏幕下避免横向撑爆 */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+.katex-display > .katex {
+  max-width: 100%;
+}
+
+/* Mermaid 流程图：保证 SVG 自适应宽度 */
+pre.mermaid,
+.mermaid {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 768px) { .nav-actions { gap: 0.5rem; } .nav-btn span { display: none; } }
 </style>
