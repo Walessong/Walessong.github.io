@@ -1,7 +1,7 @@
 ---
 title: "图片渲染测试"
 date: 2024-01-16
-draft: false
+draft: true
 description: "测试图片渲染功能"
 tags: ["测试", "图片", "渲染"]
 categories: ["图片渲染"]

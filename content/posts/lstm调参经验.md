@@ -2,6 +2,7 @@
 title: "LSTM调参经验"
 date: 2025-08-27
 draft: false
+series: ["Tech & Engineering"]
 ---
 
 LSTM调参经验

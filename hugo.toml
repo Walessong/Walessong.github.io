@@ -3,7 +3,13 @@ languageCode = "en-us"
 title = "Woke Soul"
 buildFuture = true
 
+# 专栏（系列）导航：与 front matter 中 series 对应
+[taxonomies]
+  series = "series"
+
 [params]
+  # 置顶导读页 slug（与某篇 post 的 slug 一致时，该文在首页置顶显示）
+  startHereSlug = "start-here"
   description = "Crypto Trader & Analyst exploring the intersection of quantitative patterns and literary aesthetics."
   # 首页头像：将图片放到 static/images/ 下，此处填路径，如 "images/avatar.jpg"
   avatar = "images/avatar.jpg"

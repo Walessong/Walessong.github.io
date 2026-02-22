@@ -2,6 +2,7 @@
 title: "LLM的根本缺陷"
 date: 2025-09-29
 draft: false
+series: ["Tech & Engineering"]
 ---
 
 强化学习之父萨顿：大语言模型是死路一条，人和动物的智能没分别，我们处于整个宇宙演化的第4阶段，创造AGI是人类文明的关键使命

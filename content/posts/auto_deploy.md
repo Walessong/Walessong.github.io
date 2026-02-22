@@ -2,6 +2,7 @@
 title: "Auto Deploy"
 date: 2025-08-06
 draft: false
+series: ["Tech & Engineering"]
 ---
 
 ### Github Action自动部署

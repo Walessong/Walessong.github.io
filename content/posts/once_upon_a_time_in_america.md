@@ -2,6 +2,7 @@
 title: "Once Upon a Time in America"
 date: 2025-08-13
 draft: false
+series: ["Aesthetics & Words"]
 ---
 
 美国起飞那一代人的两条路。

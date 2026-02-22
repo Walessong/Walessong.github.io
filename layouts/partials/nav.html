@@ -2,15 +2,16 @@
     <div class="nav-container">
         <a href="/" class="nav-logo">{{ .Site.Title }}</a>
         <div class="nav-actions">
-            <button type="button" class="nav-btn nav-btn-search" id="search-open" aria-label="Search">
-                <span data-i18n-zh="搜索" data-i18n-en="Search">搜索</span> 🔍
-            </button>
+            <button type="button" class="nav-btn nav-btn-search" id="search-open" aria-label="Search">🔍</button>
             <button type="button" class="nav-btn nav-btn-lang" id="lang-toggle" aria-label="Toggle language">
                 <span id="lang-label">EN</span>
             </button>
             <div class="nav-menu">
                 <a href="/" {{ if .IsHome }}class="active"{{ end }} data-i18n-zh="首页" data-i18n-en="Home">首页</a>
-                <a href="/posts/" {{ if eq .Section "posts" }}class="active"{{ end }} data-i18n-zh="文章" data-i18n-en="Posts">文章</a>
+                <a href="/series/markets--quant/" {{ if and (eq .Section "series") (eq .Data.Term "Markets & Quant") }}class="active"{{ end }} data-i18n-zh="市场" data-i18n-en="Market">市场</a>
+                <a href="/series/tech--engineering/" {{ if and (eq .Section "series") (eq .Data.Term "Tech & Engineering") }}class="active"{{ end }} data-i18n-zh="工程" data-i18n-en="Engineering">工程</a>
+                <a href="/series/aesthetics--words/" {{ if and (eq .Section "series") (eq .Data.Term "Aesthetics & Words") }}class="active"{{ end }} data-i18n-zh="摸鱼" data-i18n-en="Leisure">摸鱼</a>
+                <a href="/posts/" {{ if and (eq .Section "posts") (not .IsHome) }}class="active"{{ end }} data-i18n-zh="文章" data-i18n-en="Posts">文章</a>
                 <a href="/archives/" data-i18n-zh="归档" data-i18n-en="Archives">归档</a>
                 <a href="/about/" data-i18n-zh="关于" data-i18n-en="About">关于</a>
             </div>

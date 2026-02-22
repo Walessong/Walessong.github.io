@@ -2,6 +2,7 @@
 title: "A股止盈攻略"
 date: 2025-09-02
 draft: false
+series: ["Markets & Quant"]
 ---
 
 ### **关于A股周期性止盈的思考与策略框架**

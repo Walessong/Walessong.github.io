@@ -2,6 +2,7 @@
 title: "MyFirstBlog"
 date: 2025-08-06
 draft: false
+series: ["Markets & Quant"]
 ---
 
 # 加密市场笔记

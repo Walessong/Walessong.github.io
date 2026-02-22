@@ -2,6 +2,7 @@
 title: "Introduction to PCB"
 date: 2025-08-12
 draft: false
+series: ["Tech & Engineering"]
 ---
 
 # 1. 电路设计
