@@ -62,7 +62,7 @@
             </div>
             <div class="hero-visual">
                 {{ with .Site.Params.avatar }}
-                <img src="/{{ . }}" alt="Avatar" class="hero-avatar">
+                <img src="/{{ . }}?v={{ now.Unix }}" alt="Avatar" class="hero-avatar">
                 {{ else }}
                 <div class="fractal-pattern"></div>
                 {{ end }}
