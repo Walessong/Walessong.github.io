@@ -5,10 +5,8 @@ date: 2026-02-24T19:57:20+08:00
 categories: ["文艺与思考"]
 series: ["Aesthetics & Words"]
 tags:
-
-- "杂谈"
-  draft: false
-
+  - "杂谈"
+draft: false
 ---
 
 我最近刷X，感受最深的是，很多阅读量高的，教你如何进步，如何成功的内容，基本核心的思想内容都是“别做人，去做个无情的机器”
