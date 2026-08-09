@@ -8,6 +8,45 @@ html, body {
 .nav-btn { background: none; border: 1px solid #E8E8E8; color: #6B7280; font-size: 0.875rem; font-family: inherit; padding: 0.35rem 0.65rem; border-radius: 6px; cursor: pointer; transition: color 0.2s, border-color 0.2s, box-shadow 0.2s ease, transform 0.2s ease; }
 .nav-btn:hover { color: #2C5F8D; border-color: #2C5F8D; box-shadow: 0 4px 10px rgba(0,0,0,0.06); transform: translateY(-1px); }
 .nav-btn-lang { min-width: 2.5rem; }
+
+/* 移动端汉堡菜单 */
+.nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: #6B7280; cursor: pointer; padding: 0.5rem; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+.nav-toggle:hover { color: #2C5F8D; background: rgba(0, 0, 0, 0.05); }
+
+@media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-menu { 
+        position: fixed; 
+        top: 0; 
+        right: -100%; 
+        width: 80%; 
+        max-width: 300px; 
+        height: 100vh; 
+        background: #FAFAFA; 
+        flex-direction: column; 
+        gap: 0; 
+        padding: 4rem 2rem 2rem; 
+        box-shadow: -4px 0 20px rgba(0,0,0,0.1); 
+        transition: right 0.3s ease; 
+        z-index: 200; 
+    }
+    .nav-menu.open { right: 0; }
+    .nav-menu a { 
+        padding: 1rem 0; 
+        border-bottom: 1px solid #E8E8E8; 
+        font-size: 1rem; 
+        width: 100%; 
+    }
+    .nav-menu a:last-child { border-bottom: none; }
+    .nav-menu-overlay { 
+        display: none; 
+        position: fixed; 
+        inset: 0; 
+        background: rgba(0,0,0,0.5); 
+        z-index: 150; 
+    }
+    .nav-menu-overlay.open { display: block; }
+}
 .search-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: flex-start; justify-content: center; padding: 4rem 1rem; opacity: 0; visibility: hidden; transition: opacity 0.25s, visibility 0.25s; }
 .search-overlay-open { opacity: 1; visibility: visible; }
 .search-modal { background: #FFF; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); width: 100%; max-width: 560px; padding: 1.5rem; position: relative; }
@@ -18,9 +57,23 @@ html, body {
 .search-results { max-height: 60vh; overflow-y: auto; }
 .search-result-item { display: block; padding: 0.75rem 0; border-bottom: 1px solid #F3F4F6; color: #1A1A1A; text-decoration: none; transition: background 0.2s, transform 0.2s ease; }
 .search-result-item:hover { background: #F8F8F8; color: #2C5F8D; transform: translateX(4px); }
-.search-result-title { font-weight: 600; display: block; }
-.search-result-meta { font-size: 0.8125rem; color: #9CA3AF; }
+.search-result-title { font-weight: 600; display: block; margin-bottom: 0.25rem; }
+.search-result-meta { font-size: 0.8125rem; color: #9CA3AF; display: block; margin-bottom: 0.25rem; }
+.search-result-summary { font-size: 0.875rem; color: #6B7280; display: block; line-height: 1.5; }
 .search-result-empty { padding: 1.5rem; color: #9CA3AF; text-align: center; }
+
+/* 搜索历史样式 */
+.search-history { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #F3F4F6; }
+.search-history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.search-history-header span { font-size: 0.875rem; color: #9CA3AF; font-weight: 500; }
+.search-history-clear { background: none; border: none; color: #6B7280; font-size: 0.8125rem; cursor: pointer; padding: 0.25rem 0.5rem; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+.search-history-clear:hover { color: #2C5F8D; background: #F3F4F6; }
+.search-history-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.search-history-item { background: #F8F8F8; border: 1px solid #E8E8E8; color: #6B7280; font-size: 0.8125rem; padding: 0.25rem 0.75rem; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+.search-history-item:hover { background: #F3F4F6; color: #2C5F8D; border-color: #2C5F8D; }
+
+/* 搜索高亮样式 */
+mark { background: #FEF3C7; color: #111827; padding: 0.1em 0.2em; border-radius: 2px; font-weight: 500; }
 
 /* 全局链接下划线平滑动画：正文链接与文章标题 */
 .content a {
@@ -100,5 +153,36 @@ pre.mermaid,
   height: auto;
 }
 
-@media (max-width: 768px) { .nav-actions { gap: 0.5rem; } .nav-btn span { display: none; } }
+@media (max-width: 768px) { .nav-actions { gap: 0.5rem; } .nav-btn span { display: none; }
+
+/* 触摸优化 */
+.nav-btn, .nav-toggle, .search-history-item, .search-history-clear {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.search-result-item, .post-item {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 提升触摸目标大小 */
+.nav-btn {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* 移动端优化间距 */
+.search-result-item {
+    padding: 1rem 0;
+}
+
+.nav-menu a {
+    padding: 1.25rem 0;
+    font-size: 1.1rem;
+} }
 </style>

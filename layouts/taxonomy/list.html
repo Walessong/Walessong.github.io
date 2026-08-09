@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+    <style>
+        @font-face { font-family: '仓耳今楷02W4'; src: url('/fonts/CangErJinKai02W4.woff2') format('woff2'), url('/fonts/CangErJinKai02W4.woff') format('woff'), url('/fonts/CangErJinKai02W4.ttf') format('truetype'); font-display: swap; }
+    </style>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "仓耳今楷02W4", serif; font-size: 17px; line-height: 1.7; background: #FAFAFA; color: #2C3E50; }
+        nav { background: rgba(250, 250, 250, 0.95); border-bottom: 1px solid #E8E8E8; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 900px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: "仓耳今楷02W4", serif; font-size: 1.25rem; font-weight: 600; color: #1A1A1A; text-decoration: none; }
+        .nav-menu { display: flex; gap: 2.5rem; }
+        .nav-menu a { font-size: 0.9375rem; color: #6B7280; text-decoration: none; }
+        .nav-menu a:hover, .nav-menu a.active { color: #2C5F8D; font-weight: 600; }
+        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        .page-header { margin-bottom: 3rem; }
+        h1 { font-family: "仓耳今楷02W4", serif; font-size: 2rem; font-weight: 600; color: #1A1A1A; margin-bottom: 1rem; }
+        .page-description { font-size: 1rem; color: #6B7280; line-height: 1.7; }
+        .taxonomy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .taxonomy-card { background: #FFF; border: 1px solid #E8E8E8; border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; cursor: pointer; }
+        .taxonomy-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-color: #2C5F8D; }
+        .taxonomy-name { font-size: 1.25rem; font-weight: 600; color: #1A1A1A; margin-bottom: 0.5rem; }
+        .taxonomy-count { font-size: 0.875rem; color: #9CA3AF; }
+        .section-divider { border-bottom: 2px solid #E8E8E8; margin: 3rem 0; }
+        footer { border-top: 1px solid #E8E8E8; margin-top: 6rem; padding: 3rem 0; background: #F8F8F8; text-align: center; }
+        .footer-text { font-size: 0.875rem; color: #9CA3AF; }
+    </style>
+    {{ partial "nav-search-styles.html" . }}
+</head>
+<body>
+    {{ partial "nav.html" . }}
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ .Title }}</h1>
+            <p class="page-description">
+                {{ if eq .Data.Plural "categories" }}
+                    浏览所有文章分类，探索不同主题的内容
+                {{ else if eq .Data.Plural "tags" }}
+                    通过标签快速找到相关主题的文章
+                {{ else if eq .Data.Plural "series" }}
+                    系列文章集合，深入了解特定主题
+                {{ else }}
+                    浏览所有 {{ .Title }}
+                {{ end }}
+            </p>
+        </div>
+
+        <div class="taxonomy-grid">
+            {{ range .Data.Terms.Alphabetical }}
+            <div class="taxonomy-card" onclick="window.location.href='{{ .Page.RelPermalink }}'">
+                <div class="taxonomy-name">{{ .Page.Title }}</div>
+                <div class="taxonomy-count">{{ .Count }} 篇文章</div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p>
+        </div>
+    </footer>
+    {{ partial "search-modal.html" . }}
+    {{ partial "search-data.html" . }}
+    {{ partial "search-script.html" . }}
+</body>
+</html>

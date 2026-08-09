@@ -2,12 +2,11 @@
     <div class="nav-container">
         <a href="/" class="nav-logo">{{ .Site.Title }}</a>
         <div class="nav-actions">
-            <div class="nav-menu">
-                <a href="/" {{ if .IsHome }}class="active"{{ end }} data-i18n-zh="首页" data-i18n-en="Home">首页</a>
-                <a href="/series/markets--quant/" {{ if and (eq .Section "series") (eq .Data.Term "Markets & Quant") }}class="active"{{ end }} data-i18n-zh="市场" data-i18n-en="Market">市场</a>
-                <a href="/series/tech--engineering/" {{ if and (eq .Section "series") (eq .Data.Term "Tech & Engineering") }}class="active"{{ end }} data-i18n-zh="技术" data-i18n-en="Tech">技术</a>
-                <a href="/series/aesthetics--words/" {{ if and (eq .Section "series") (eq .Data.Term "Aesthetics & Words") }}class="active"{{ end }} data-i18n-zh="摸鱼" data-i18n-en="Leisure">摸鱼</a>
-                <a href="/about/" {{ if eq .RelPermalink "/about/" }}class="active"{{ end }} data-i18n-zh="关于" data-i18n-en="About">关于</a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+            <div class="nav-menu" id="nav-menu">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }} data-i18n-zh="{{ .Params.i18n_zh }}" data-i18n-en="{{ .Params.i18n_en }}">{{ .Name }}</a>
+                {{ end }}
             </div>
             <button type="button" class="nav-btn nav-btn-search" id="search-open" aria-label="Search">🔍</button>
             <button type="button" class="nav-btn nav-btn-lang" id="lang-toggle" aria-label="Toggle language">
@@ -15,4 +14,5 @@
             </button>
         </div>
     </div>
+    <div class="nav-menu-overlay" id="nav-menu-overlay"></div>
 </nav>

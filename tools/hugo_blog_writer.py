@@ -40,6 +40,79 @@ CATEGORY_TO_SERIES = {
     "技术工程": "Tech & Engineering",
 }
 
+# 文章模板预设
+ARTICLE_TEMPLATES = {
+    "标准文章": """---
+title: "{title}"
+date: {date}
+categories: ["{category}"]
+series: ["{series}"]
+{tags}draft: {draft}
+{featured}{summary}
+---
+
+# {title}
+
+文章内容从这里开始...
+""",
+    "技术教程": """---
+title: "{title}"
+date: {date}
+categories: ["{category}"]
+series: ["{series}"]
+{tags}draft: {draft}
+{featured}{summary}
+---
+
+# {title}
+
+## 背景
+
+描述问题的背景和动机。
+
+## 解决方案
+
+详细说明解决方案。
+
+## 代码示例
+
+\`\`\`python
+# 代码示例
+\`\`\`
+
+## 总结
+
+总结要点。
+""",
+    "市场分析": """---
+title: "{title}"
+date: {date}
+categories: ["{category}"]
+series: ["{series}"]
+{tags}draft: {draft}
+{featured}{summary}
+---
+
+# {title}
+
+## 市场概况
+
+分析当前市场状况。
+
+## 技术分析
+
+关键技术指标分析。
+
+## 风险提示
+
+风险提示和注意事项。
+
+## 结论
+
+结论和建议。
+""",
+}
+
 
 def slugify_title(title: str) -> str:
     """将标题转为用于文件名的 slug（支持中文转拼音）"""
@@ -127,6 +200,21 @@ class HugoBlogWriterApp(ctk.CTk):
         )
         self.tags_entry.pack(fill="x", pady=(4, 12))
 
+        # 文章模板选择
+        ctk.CTkLabel(main_frame, text="文章模板 (Template)", font=ctk.CTkFont(size=13)).pack(anchor="w")
+        self.template_var = ctk.StringVar(value="标准文章")
+        self.template_combo = ctk.CTkComboBox(
+            main_frame, values=list(ARTICLE_TEMPLATES.keys()), variable=self.template_var, height=36
+        )
+        self.template_combo.pack(fill="x", pady=(4, 12))
+
+        # 是否置顶
+        self.featured_var = ctk.BooleanVar(value=False)
+        self.featured_check = ctk.CTkCheckBox(
+            main_frame, text="设为精选文章 (Featured)", variable=self.featured_var
+        )
+        self.featured_check.pack(anchor="w", pady=(4, 8))
+
         # 博客目录
         dir_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
         dir_frame.pack(fill="x", pady=(4, 12))
@@ -201,6 +289,8 @@ class HugoBlogWriterApp(ctk.CTk):
         category = self.category_var.get().strip() or DEFAULT_CATEGORIES[0]
         tags_str = self.tags_entry.get().strip()
         tags = [t.strip() for t in tags_str.split(",") if t.strip()] if tags_str else []
+        template_name = self.template_var.get().strip() or "标准文章"
+        featured = self.featured_var.get()
 
         date_str = datetime.now().strftime("%Y-%m-%d")
         iso_time = get_iso_datetime()
@@ -208,19 +298,26 @@ class HugoBlogWriterApp(ctk.CTk):
         filename = f"{date_str}-{slug}.md" if slug else f"{date_str}-post.md"
         filepath = os.path.join(posts_dir, filename)
 
-        # 构建 Front Matter（含 series 以匹配博客专栏）
+        # 构建 Front Matter
         tags_lines = "\n  - ".join([f'"{t}"' for t in tags]) if tags else ""
         tags_block = f"tags:\n  - {tags_lines}\n" if tags_lines else "tags: []\n"
         series = CATEGORY_TO_SERIES.get(category, "Tech & Engineering")
-        front_matter = f"""---
-title: "{title}"
-date: {iso_time}
-categories: ["{category}"]
-series: ["{series}"]
-{tags_block}draft: false
----
-
-"""
+        featured_line = "featured: true\n" if featured else ""
+        
+        # 获取模板
+        template = ARTICLE_TEMPLATES.get(template_name, ARTICLE_TEMPLATES["标准文章"])
+        
+        # 填充模板
+        front_matter = template.format(
+            title=title,
+            date=iso_time,
+            category=category,
+            series=series,
+            tags=tags_block,
+            draft="false",
+            featured=featured_line,
+            summary=f'summary: "{title[:100]}..."\n' if len(title) > 0 else ""
+        )
         try:
             with open(filepath, "w", encoding="utf-8") as f:
                 f.write(front_matter)

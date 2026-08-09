@@ -1,11 +1,33 @@
 baseURL = "https://walessong.github.io/"
-languageCode = "en-us"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh-CN"
 title = "Woke Soul"
 buildFuture = true
+enableRobotsTXT = true
+enableGitInfo = true
 
-# 专栏（系列）导航：与 front matter 中 series 对应
+# 启用所有分类功能
 [taxonomies]
+  category = "categories"
+  tag = "tags"
   series = "series"
+
+# SEO 优化：输出格式
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# SEO 优化：Sitemap 配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# SEO 优化：Permalinks 配置
+[permalinks]
+  posts = "/:year/:month/:slug/"
 
 [params]
   # 置顶导读页 slug（与某篇 post 的 slug 一致时，该文在首页置顶显示）
@@ -13,12 +35,107 @@ buildFuture = true
   description = "Crypto Trader & Analyst exploring the intersection of quantitative patterns and literary aesthetics."
   # 首页头像：将图片放到 static/images/ 下，此处填路径，如 "images/avatar.jpg"
   avatar = "images/avatar.jpg"
-
+  
+  # SEO 优化：关键词
+  keywords = ["加密货币", "量化交易", "区块链分析", "机器学习", "AI", "交易策略", "技术博客"]
+  
+  # SEO 优化：Open Graph 默认图片
+  images = ["images/og-default.jpg"]
+  
+  # SEO 优化：作者信息
   [params.author]
     name = "Woke Soul"
     title = "Crypto Trader & Analyst | Patterns / Fractals | Machine Learning | Literature"
+    email = ""  # 可选：添加你的邮箱
+  
+  # SEO 优化：社交媒体链接
+  [params.social]
+    github = "walessong"
+    twitter = ""  # 可选：添加 Twitter 账号
+    # linkedin = ""  # 可选
+    # youtube = ""   # 可选
 
+# Markup 配置
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+# 导航菜单配置
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+  i18n_zh = "首页"
+  i18n_en = "Home"
+
+[[menu.main]]
+  name = "市场"
+  url = "/series/markets--quant/"
+  weight = 2
+  i18n_zh = "市场"
+  i18n_en = "Market"
+
+[[menu.main]]
+  name = "技术"
+  url = "/series/tech--engineering/"
+  weight = 3
+  i18n_zh = "技术"
+  i18n_en = "Tech"
+
+[[menu.main]]
+  name = "摸鱼"
+  url = "/series/aesthetics--words/"
+  weight = 4
+  i18n_zh = "摸鱼"
+  i18n_en = "Leisure"
+
+[[menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 5
+  i18n_zh = "关于"
+  i18n_en = "About"
+
+# 图片优化配置
+[imaging]
+  resampleFilter = "Lanczos"
+  quality = 75
+  anchor = "smart"
+  bgColor = "#ffffff"
+
+# 资源压缩配置
+[minify]
+  [minify.css]
+    enable = true
+    [minify.css.options]
+      keepCSS2 = true
+  [minify.js]
+    enable = true
+  [minify.html]
+    enable = true
+  [minify.xml]
+    enable = true
+  [minify.json]
+    enable = true
+
+# 隐私设置
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true

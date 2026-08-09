@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    {{ partial "head.html" . }}
     <style>
         @font-face { font-family: '仓耳今楷02W4'; src: url('/fonts/CangErJinKai02W4.woff2') format('woff2'), url('/fonts/CangErJinKai02W4.woff') format('woff'), url('/fonts/CangErJinKai02W4.ttf') format('truetype'); font-display: swap; }
     </style>

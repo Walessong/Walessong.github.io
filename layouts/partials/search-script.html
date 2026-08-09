@@ -1,6 +1,7 @@
 <script>
 (function() {
     var LANG_KEY = 'site-lang';
+    var SEARCH_HISTORY_KEY = 'search-history';
     var defaultLang = 'zh';
     function getLang() { try { return localStorage.getItem(LANG_KEY) || defaultLang; } catch(e) { return defaultLang; } }
     function setLang(lang) { try { localStorage.setItem(LANG_KEY, lang); } catch(e) {} }
@@ -13,7 +14,7 @@
         var label = document.getElementById('lang-label');
         if (label) label.textContent = lang === 'zh' ? 'EN' : '中文';
         var ph = document.getElementById('search-input');
-        if (ph) ph.placeholder = lang === 'zh' ? '输入标题或摘要搜索…' : 'Search by title or summary…';
+        if (ph) ph.placeholder = lang === 'zh' ? '搜索文章标题、摘要、分类、标签...' : 'Search by title, summary, category, tags...';
     }
 
     var langToggle = document.getElementById('lang-toggle');
@@ -26,6 +27,31 @@
     }
     applyLang(getLang());
 
+    // 移动端菜单功能
+    var navToggle = document.getElementById('nav-toggle');
+    var navMenu = document.getElementById('nav-menu');
+    var navMenuOverlay = document.getElementById('nav-menu-overlay');
+
+    function toggleNavMenu() {
+        if (navMenu) navMenu.classList.toggle('open');
+        if (navMenuOverlay) navMenuOverlay.classList.toggle('open');
+        // 防止背景滚动
+        document.body.style.overflow = navMenu && navMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    if (navToggle) navToggle.addEventListener('click', toggleNavMenu);
+    if (navMenuOverlay) navMenuOverlay.addEventListener('click', toggleNavMenu);
+
+    // 点击菜单项后关闭菜单
+    var navMenuLinks = document.querySelectorAll('.nav-menu a');
+    navMenuLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (navMenu && navMenu.classList.contains('open')) {
+                toggleNavMenu();
+            }
+        });
+    });
+
     var overlay = document.getElementById('search-overlay');
     var searchOpen = document.getElementById('search-open');
     var searchClose = document.getElementById('search-close');
@@ -33,6 +59,43 @@
     var searchResults = document.getElementById('search-results');
     var searchDataEl = document.getElementById('search-data');
     var searchData = searchDataEl ? JSON.parse(searchDataEl.textContent || '[]') : [];
+
+    // 搜索历史管理
+    function getSearchHistory() {
+        try {
+            return JSON.parse(localStorage.getItem(SEARCH_HISTORY_KEY) || '[]');
+        } catch(e) {
+            return [];
+        }
+    }
+
+    function saveSearchHistory(query) {
+        if (!query || query.trim().length === 0) return;
+        try {
+            var history = getSearchHistory();
+            // 移除重复项
+            history = history.filter(function(item) { return item !== query; });
+            // 添加到开头
+            history.unshift(query);
+            // 限制历史记录数量
+            if (history.length > 10) history = history.slice(0, 10);
+            localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(history));
+        } catch(e) {}
+    }
+
+    function clearSearchHistory() {
+        try {
+            localStorage.removeItem(SEARCH_HISTORY_KEY);
+        } catch(e) {}
+    }
+
+    // 高亮搜索词
+    function highlightText(text, query) {
+        if (!query || query.trim().length === 0) return escapeHtml(text);
+        var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var regex = new RegExp('(' + escapedQuery + ')', 'gi');
+        return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+    }
 
     function openSearch() {
         if (overlay) { overlay.classList.add('search-overlay-open'); overlay.setAttribute('aria-hidden', 'false'); }
@@ -46,31 +109,99 @@
     if (overlay) overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeSearch();
+        // 快捷键：Ctrl+K 或 Cmd+K 打开搜索
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearch();
+        }
     });
 
     function runSearch(q) {
         q = (q || '').trim().toLowerCase();
         var html = '';
+        var results = [];
+        
         if (!q) {
-            searchData.slice(0, 10).forEach(function(item) {
-                html += '<a class="search-result-item" href="' + item.url + '"><span class="search-result-title">' + escapeHtml(item.title) + '</span><span class="search-result-meta">' + escapeHtml(item.date) + '</span></a>';
-            });
+            // 没有搜索词时，显示搜索历史
+            var history = getSearchHistory();
+            if (history.length > 0) {
+                html = '<div class="search-history">' +
+                       '<div class="search-history-header">' +
+                       '<span>' + (getLang() === 'zh' ? '搜索历史' : 'Search History') + '</span>' +
+                       '<button class="search-history-clear" onclick="clearSearchHistory()">' + (getLang() === 'zh' ? '清除' : 'Clear') + '</button>' +
+                       '</div>' +
+                       '<div class="search-history-items">';
+                history.forEach(function(item) {
+                    html += '<button class="search-history-item" onclick="document.getElementById(\'search-input\').value=\'' + escapeHtml(item) + '\';document.getElementById(\'search-input\').dispatchEvent(new Event(\'input\'));">' + escapeHtml(item) + '</button>';
+                });
+                html += '</div></div>';
+            }
+            // 同时显示最新的 10 篇文章
+            results = searchData.slice(0, 10);
         } else {
+            // 保存搜索历史
+            saveSearchHistory(q);
+            
+            // 搜索算法：匹配标题、摘要、分类、标签、系列
             searchData.forEach(function(item) {
                 var title = (item.title || '').toLowerCase();
                 var summary = (item.summary || '').toLowerCase();
-                if (title.indexOf(q) !== -1 || summary.indexOf(q) !== -1) {
-                    html += '<a class="search-result-item" href="' + item.url + '"><span class="search-result-title">' + escapeHtml(item.title) + '</span><span class="search-result-meta">' + escapeHtml(item.date) + '</span></a>';
+                var categories = (item.categories || []).join(' ').toLowerCase();
+                var tags = (item.tags || []).join(' ').toLowerCase();
+                var series = (item.series || []).join(' ').toLowerCase();
+                var searchText = title + ' ' + summary + ' ' + categories + ' ' + tags + ' ' + series;
+                
+                // 计算相关度分数
+                var score = 0;
+                if (title.indexOf(q) !== -1) score += 10; // 标题匹配权重最高
+                if (summary.indexOf(q) !== -1) score += 5;
+                if (categories.indexOf(q) !== -1) score += 7;
+                if (tags.indexOf(q) !== -1) score += 6;
+                if (series.indexOf(q) !== -1) score += 8;
+                
+                if (score > 0) {
+                    results.push({ item: item, score: score });
                 }
             });
+            
+            // 按相关度排序
+            results.sort(function(a, b) { return b.score - a.score; });
+            results = results.map(function(r) { return r.item; });
         }
-        if (searchResults) searchResults.innerHTML = html || '<p class="search-result-empty">' + (getLang() === 'zh' ? '无结果' : 'No results') + '</p>';
+        
+        // 渲染结果
+        if (results.length > 0) {
+            results.forEach(function(item) {
+                var meta = escapeHtml(item.date);
+                if (item.categories && item.categories.length > 0) {
+                    meta += ' • ' + escapeHtml(item.categories[0]);
+                }
+                html += '<a class="search-result-item" href="' + item.url + '">' +
+                        '<span class="search-result-title">' + highlightText(item.title, q) + '</span>' +
+                        '<span class="search-result-meta">' + meta + '</span>';
+                if (item.summary) {
+                    html += '<span class="search-result-summary">' + highlightText(item.summary, q) + '</span>';
+                }
+                html += '</a>';
+            });
+        } else if (!q && html === '') {
+            html = '<p class="search-result-empty">' + (getLang() === 'zh' ? '输入关键词搜索文章' : 'Type to search articles') + '</p>';
+        } else if (q) {
+            html = '<p class="search-result-empty">' + (getLang() === 'zh' ? '无结果' : 'No results') + '</p>';
+        }
+        
+        if (searchResults) searchResults.innerHTML = html;
     }
+    
     function escapeHtml(s) {
         var div = document.createElement('div');
         div.textContent = s;
         return div.innerHTML;
     }
+    
     if (searchInput) searchInput.addEventListener('input', function() { runSearch(this.value); });
+    
+    // 全局暴露清除历史记录函数
+    window.clearSearchHistory = clearSearchHistory;
 })();
 </script>

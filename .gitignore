@@ -2,3 +2,11 @@ public/
 .hugo_build.lock
 hugo.exe
 .vscode/
+resources/
+.DS_Store
+*.log
+*.tmp
+*.bak
+node_modules/
+.cache/
+.parcel-cache/

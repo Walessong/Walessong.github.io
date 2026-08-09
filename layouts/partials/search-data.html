@@ -2,6 +2,14 @@
 {{ $pages := where .Site.RegularPages "Section" "posts" }}
 [
 {{ range $i, $p := $pages }}{{ if $i }},{{ end }}
-{"title":{{ .Title | jsonify }},"url":{{ .RelPermalink | jsonify }},"summary":{{ (.Summary | plainify | truncate 200) | jsonify }},"date":{{ .Date.Format "2006-01-02" | jsonify }}}{{ end }}
+{
+  "title": {{ .Title | jsonify }},
+  "url": {{ .RelPermalink | jsonify }},
+  "summary": {{ (.Summary | plainify | truncate 200) | jsonify }},
+  "date": {{ .Date.Format "2006-01-02" | jsonify }},
+  "categories": [{{ range $ci, $cat := .Params.categories }}{{ if $ci }},{{ end }}{{ $cat | jsonify }}{{ end }}],
+  "tags": [{{ range $ti, $tag := .Params.tags }}{{ if $ti }},{{ end }}{{ $tag | jsonify }}{{ end }}],
+  "series": [{{ range $si, $ser := .Params.series }}{{ if $si }},{{ end }}{{ $ser | jsonify }}{{ end }}]
+}{{ end }}
 ]
 </script>
