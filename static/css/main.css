@@ -1,6 +1,6 @@
 /* CSS变量系统 - 统一管理设计令牌 */
 :root {
-    /* 颜色系统 */
+    /* 颜色系统 - 亮色模式 */
     --color-primary: #2C5F8D;
     --color-text: #111827;
     --color-text-muted: #6B7280;
@@ -900,4 +900,241 @@ pre {
 .share-email:hover {
     background: #666;
     border-color: #666;
+}
+
+/* 评论系统样式 */
+.comments-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.giscus-frame {
+    border-radius: var(--radius-md);
+}
+
+/* 暗色模式支持 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #60A5FA;
+        --color-text: #F3F4F6;
+        --color-text-muted: #9CA3AF;
+        --color-text-light: #6B7280;
+        --color-bg: #111827;
+        --color-bg-alt: #1F2937;
+        --color-border: #374151;
+        --color-border-light: #2D3748;
+    }
+}
+
+/* 手动暗色模式切换 */
+[data-theme="dark"] {
+    --color-primary: #60A5FA;
+    --color-text: #F3F4F6;
+    --color-text-muted: #9CA3AF;
+    --color-text-light: #6B7280;
+    --color-bg: #111827;
+    --color-bg-alt: #1F2937;
+    --color-border: #374151;
+    --color-border-light: #2D3748;
+}
+
+/* 暗色模式特定样式调整 */
+[data-theme="dark"] body {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+[data-theme="dark"] nav {
+    background: rgba(17, 24, 39, 0.95);
+    border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .post-item-pinned {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border);
+}
+
+[data-theme="dark] .tag, 
+[data-theme="dark"] .post-category {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .toc-container {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border);
+}
+
+[data-theme="dark"] .related-post-item {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .back-to-top {
+    background: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+[data-theme="dark"] .share-button {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border-light);
+    color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .error-page {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .copy-button {
+    background: var(--color-bg-alt);
+    border-color: var(--color-border-light);
+    color: var(--color-text-muted);
+}
+
+/* 打印样式 */
+@media print {
+    /* 隐藏不需要打印的元素 */
+    nav, .reading-progress, .back-to-top, .share-buttons, .comments-section, .toc-container, .breadcrumb, .tags, .nav-toggle, .nav-menu-overlay {
+        display: none !important;
+    }
+    
+    /* 优化页面布局 */
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    article {
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+        page-break-before: avoid;
+    }
+    
+    /* 优化链接显示 */
+    a {
+        text-decoration: underline;
+        color: black;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    /* 优化图片显示 */
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+    
+    /* 优化代码块 */
+    pre, code {
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    /* 打印页脚信息 */
+    footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #000;
+        font-size: 10pt;
+    }
+    
+    /* 隐藏暗色模式相关元素 */
+    [data-theme="dark"] {
+        --color-bg: white;
+        --color-text: black;
+    }
+}
+
+/* 系列导航样式 */
+.series-nav {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+}
+
+.series-info {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.series-label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.series-name {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.series-name:hover {
+    text-decoration: underline;
+}
+
+.series-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.series-article {
+    padding: 0.75rem 1rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.series-article:hover {
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+}
+
+.series-article-current {
+    border-color: var(--color-primary);
+    background: var(--color-bg-alt);
+}
+
+.series-article-title {
+    font-size: 0.875rem;
+    color: var(--color-text);
+}
+
+.series-article-current .series-article-title {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.series-article-current-mark {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 500;
 }

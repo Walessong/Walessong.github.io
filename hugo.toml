@@ -77,6 +77,21 @@ enableGitInfo = true
     twitter = ""  # 可选：添加 Twitter 账号
     # linkedin = ""  # 可选
     # youtube = ""   # 可选
+  
+  # Giscus 评论系统配置
+  [params.giscus]
+    enable = false  # 设置为 true 启用评论系统
+    repo = "Walessong/Walessong.github.io"  # GitHub 仓库格式：owner/repo
+    repoId = ""  # 从 https://giscus.app 获取
+    category = "Announcements"  # 讨论分类
+    categoryId = ""  # 从 https://giscus.app 获取
+    mapping = "pathname"  # 映射方式：pathname, url, title
+    strict = "0"  # 严格模式
+    reactionsEnabled = "1"  # 启用反应
+    emitMetadata = "0"  # 发送元数据
+    inputPosition = "bottom"  # 输入框位置
+    theme = "light"  # 主题
+    lang = "zh-CN"  # 语言
 
 # Markup 配置
 [markup]

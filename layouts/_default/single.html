@@ -34,6 +34,31 @@
                 {{ end }}
             </div>
             {{ end }}
+            
+            <!-- 系列导航 -->
+            {{ with .Params.series }}
+            {{ $series := index . 0 }}
+            {{ $seriesPages := where $.Site.RegularPages "Params.series" $series }}
+            {{ if gt (len $seriesPages) 1 }}
+            <div class="series-nav">
+                <div class="series-info">
+                    <span class="series-label">系列：</span>
+                    <a href="/series/{{ $series | urlize }}/" class="series-name">{{ $series }}</a>
+                </div>
+                <div class="series-articles">
+                    {{ range $seriesPages }}
+                    <a href="{{ .RelPermalink }}" class="series-article {{ if eq . $.Permalink }}series-article-current{{ end }}">
+                        <span class="series-article-title">{{ .Title }}</span>
+                        {{ if eq . $.Permalink }}
+                        <span class="series-article-current-mark">（当前）</span>
+                        {{ end }}
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+            
             <div class="content">{{ .Content }}</div>
         </article>
         {{ with .TableOfContents }}
@@ -69,6 +94,11 @@
             <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="share-button share-facebook" aria-label="Share on Facebook">Facebook</a>
             <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="share-button share-linkedin" aria-label="Share on LinkedIn">LinkedIn</a>
             <a href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}" class="share-button share-email" aria-label="Share via Email">Email</a>
+        </div>
+        
+        <!-- 评论系统 -->
+        <div class="comments-section">
+            {{ partial "giscus.html" . }}
         </div>
     </div>
     <footer><div class="footer-container"><p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p></div></footer>
