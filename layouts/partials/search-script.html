@@ -63,8 +63,8 @@
     
     function initTheme() {
         var savedTheme = getTheme();
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = savedTheme === 'system' ? (prefersDark ? 'dark' : 'light') : savedTheme;
+        // 如果没有保存的主题，默认使用浅色模式
+        var theme = savedTheme || 'light';
         setTheme(theme);
     }
     
