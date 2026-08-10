@@ -62,10 +62,13 @@
     }
     
     function initTheme() {
-        var savedTheme = getTheme();
-        // 如果没有保存的主题，默认使用浅色模式
-        var theme = savedTheme || 'light';
-        setTheme(theme);
+        // 强制重置为浅色模式，清除可能保存的错误设置
+        try {
+            localStorage.removeItem(THEME_KEY);
+        } catch(e) {}
+        
+        // 默认使用浅色模式
+        setTheme('light');
     }
     
     if (themeToggle) {
