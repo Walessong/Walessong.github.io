@@ -1,0 +1,15 @@
+{{- if ne .Permalink .Site.BaseURL }}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="breadcrumb-inner">
+        <a href="/" class="breadcrumb-item">首页</a>
+        {{- if .Section }}
+        <span class="breadcrumb-separator">/</span>
+        <a href="/{{ .Section }}/" class="breadcrumb-item">{{ .Section | humanize }}</a>
+        {{- end }}
+        {{- if .IsPage }}
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-item breadcrumb-item-current">{{ .Title }}</span>
+        {{- end }}
+    </div>
+</nav>
+{{- end }}

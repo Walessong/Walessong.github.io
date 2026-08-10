@@ -26,7 +26,16 @@
             <h2 class="posts-header" data-i18n-zh="从这里开始" data-i18n-en="Start Here">从这里开始</h2>
             {{ range $pinned }}
             <article class="post-item post-item-pinned" onclick="window.location.href='{{ .RelPermalink }}'" style="border: 1px solid #E8E8E8; border-radius: 12px; padding: 2rem; background: #F8FAFC;">
-                <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+                <div class="post-meta-row">
+                    <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+                    {{ with .Params.categories }}
+                    <div class="post-categories">
+                        {{ range . }}
+                        <span class="post-category">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
                 <h3 class="post-title">{{ .Title }}</h3>
                 {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 280 }}</p>{{ end }}
             </article>
@@ -40,7 +49,16 @@
             <h2 class="posts-header" data-i18n-zh="精选文章" data-i18n-en="Featured">精选文章</h2>
             {{ range first 4 (sort $featured "Date" "desc") }}
             <article class="post-item" onclick="window.location.href='{{ .RelPermalink }}'">
-                <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+                <div class="post-meta-row">
+                    <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+                    {{ with .Params.categories }}
+                    <div class="post-categories">
+                        {{ range . }}
+                        <span class="post-category">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
                 <h3 class="post-title">{{ .Title }}</h3>
                 {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 200 }}</p>{{ end }}
             </article>
@@ -57,7 +75,16 @@
             <h2 class="posts-header" data-i18n-zh="最新更新" data-i18n-en="Latest">最新更新</h2>
             {{ range first 8 (sort $latestPool "Date" "desc") }}
             <article class="post-item" onclick="window.location.href='{{ .RelPermalink }}'">
-                <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+                <div class="post-meta-row">
+                    <div class="post-date">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+                    {{ with .Params.categories }}
+                    <div class="post-categories">
+                        {{ range . }}
+                        <span class="post-category">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
                 <h3 class="post-title">{{ .Title }}</h3>
                 {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 180 }}</p>{{ end }}
             </article>

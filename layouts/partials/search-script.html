@@ -233,5 +233,44 @@
             readingProgress.style.width = progress + '%';
         });
     }
+
+    // 代码块复制功能
+    function addCopyButtons() {
+        var codeBlocks = document.querySelectorAll('pre code');
+        codeBlocks.forEach(function(codeBlock) {
+            var pre = codeBlock.parentElement;
+            if (pre.querySelector('.copy-button')) return;
+            
+            var copyButton = document.createElement('button');
+            copyButton.className = 'copy-button';
+            copyButton.textContent = '复制';
+            copyButton.setAttribute('aria-label', 'Copy code');
+            
+            copyButton.addEventListener('click', function() {
+                var text = codeBlock.textContent;
+                navigator.clipboard.writeText(text).then(function() {
+                    copyButton.textContent = '已复制';
+                    setTimeout(function() {
+                        copyButton.textContent = '复制';
+                    }, 2000);
+                }).catch(function() {
+                    copyButton.textContent = '复制失败';
+                    setTimeout(function() {
+                        copyButton.textContent = '复制';
+                    }, 2000);
+                });
+            });
+            
+            pre.style.position = 'relative';
+            pre.appendChild(copyButton);
+        });
+    }
+    
+    // 页面加载完成后添加复制按钮
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addCopyButtons);
+    } else {
+        addCopyButtons();
+    }
 })();
 </script>

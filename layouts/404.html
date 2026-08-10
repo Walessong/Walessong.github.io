@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+    {{ partial "nav-search-styles.html" . }}
+</head>
+<body>
+    {{ partial "nav.html" . }}
+    <div class="container">
+        <div class="error-page">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">页面未找到</h2>
+            <p class="error-description">抱歉，您访问的页面不存在或已被移动。</p>
+            <div class="error-actions">
+                <a href="/" class="error-button">返回首页</a>
+                <button onclick="history.back()" class="error-button error-button-secondary">返回上一页</button>
+            </div>
+        </div>
+    </div>
+    <footer><div class="footer-container"><p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p></div></footer>
+    {{ partial "search-modal.html" . }}
+    {{ partial "search-data.html" . }}
+    {{ partial "search-script.html" . }}
+</body>
+</html>
