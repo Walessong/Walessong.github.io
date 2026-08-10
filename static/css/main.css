@@ -263,10 +263,10 @@ nav {
 
 /* 页脚样式 */
 footer {
-    border-top: 1px solid #E8E8E8;
+    border-top: 1px solid var(--color-border);
     margin-top: 6rem;
     padding: 3rem 0;
-    background: #F8F8F8;
+    background: var(--color-bg-alt);
 }
 
 .footer-container {
@@ -278,7 +278,7 @@ footer {
 
 .footer-text {
     font-size: 0.875rem;
-    color: #9CA3AF;
+    color: var(--color-text-light);
     font-weight: 300;
     letter-spacing: 0.05em;
 }
@@ -394,14 +394,14 @@ footer {
 article h1 {
     font-size: 2.3rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--color-text);
     margin-bottom: 1.75rem;
     letter-spacing: -0.01em;
 }
 
 .meta {
     font-size: 0.875rem;
-    color: #9CA3AF;
+    color: var(--color-text-light);
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-border);
@@ -559,7 +559,7 @@ article h1 {
 .content hr {
     margin: 2rem 0;
     border: none;
-    border-top: 1px solid #E8E8E8;
+    border-top: 1px solid var(--color-border);
     display: block;
 }
 
@@ -568,7 +568,7 @@ article h1 {
 }
 
 .content a {
-    color: #2C5F8D;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -583,8 +583,8 @@ article h1 {
     max-height: calc(100vh - 140px);
     overflow-y: auto;
     font-size: 0.875rem;
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border-light);
     border-radius: 12px;
     padding: 1rem 1.25rem;
 }
@@ -594,7 +594,7 @@ article h1 {
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #9CA3AF;
+    color: var(--color-text-light);
     margin-bottom: 0.75rem;
 }
 
@@ -615,18 +615,18 @@ article h1 {
 
 .toc-body ul ul {
     padding-left: 1rem;
-    border-left: 1px solid #E5E7EB;
+    border-left: 1px solid var(--color-border-light);
     margin-top: 0.25rem;
 }
 
 .toc-body a {
-    color: #6B7280;
+    color: var(--color-text-muted);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--transition-fast);
 }
 
 .toc-body a:hover {
-    color: #2C5F8D;
+    color: var(--color-primary);
 }
 
 /* 响应式设计 */
@@ -815,7 +815,7 @@ pre {
 }
 
 .error-button:hover {
-    background: #1e4a6e;
+    background: var(--color-primary);
     transform: translateY(-2px);
 }
 
@@ -1031,7 +1031,7 @@ pre {
     a[href]:after {
         content: " (" attr(href) ")";
         font-size: 0.8em;
-        color: #666;
+        color: var(--color-text-muted);
     }
     
     /* 优化图片显示 */
@@ -1042,8 +1042,8 @@ pre {
     
     /* 优化代码块 */
     pre, code {
-        background: #f5f5f5;
-        border: 1px solid #ddd;
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border-light);
         page-break-inside: avoid;
     }
     
@@ -1051,7 +1051,7 @@ pre {
     footer {
         margin-top: 2rem;
         padding-top: 1rem;
-        border-top: 1px solid #000;
+        border-top: 1px solid var(--color-text);
         font-size: 10pt;
     }
     
@@ -1059,6 +1059,14 @@ pre {
     [data-theme="dark"] {
         --color-bg: white;
         --color-text: black;
+    }
+    
+    /* 强制使用亮色模式变量 */
+    body {
+        --color-bg: white !important;
+        --color-text: black !important;
+        --color-bg-alt: #f5f5f5 !important;
+        --color-border: #ddd !important;
     }
 }
 
