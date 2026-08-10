@@ -36,6 +36,22 @@
 {{- /* Canonical URL */ -}}
 <link rel="canonical" href="{{ .Permalink }}">
 
+{{- /* Hreflang for multilingual SEO */ -}}
+{{- if .IsHome -}}
+  {{- range .Site.Languages -}}
+    {{- $langURL := replace $.Site.BaseURL "/$" "" -}}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ $langURL }}" />
+  {{- end -}}
+{{- else -}}
+  {{- range .Site.Languages -}}
+    {{- $langBase := $.Site.BaseURL -}}
+    {{- if ne .Lang "zh-cn" -}}
+      {{- $langBase = printf "%s/%s" $.Site.BaseURL .Lang -}}
+    {{- end -}}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ $langBase }}{{ $.RelPermalink }}" />
+  {{- end -}}
+{{- end -}}
+
 {{- /* RSS Feed */ -}}
 {{ with .OutputFormats.Get "RSS" }}
 <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
@@ -43,6 +59,21 @@
 
 {{- /* Favicon */ -}}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+{{- /* 字体预加载和优化 */ -}}
+<link rel="preload" href="/fonts/CangErJinKai02W4.ttf" as="font" type="font/ttf" crossorigin>
+{{- /* 如果有WOFF2版本，优先使用 */ -}}
+{{- /* <link rel="preload" href="/fonts/CangErJinKai02W4.woff2" as="font" type="font/woff2" crossorigin> */ -}}
+
+<style>
+@font-face {
+    font-family: "仓耳今楷02W4";
+    src: url('/fonts/CangErJinKai02W4.ttf') format('truetype');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
 
 {{- /* 关键CSS内联 - 提升首屏性能 */ -}}
 <style>

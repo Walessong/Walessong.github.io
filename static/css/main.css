@@ -1,28 +1,82 @@
+/* CSS变量系统 - 统一管理设计令牌 */
+:root {
+    /* 颜色系统 */
+    --color-primary: #2C5F8D;
+    --color-text: #111827;
+    --color-text-muted: #6B7280;
+    --color-text-light: #9CA3AF;
+    --color-bg: #FAFAFA;
+    --color-bg-alt: #F8FAFC;
+    --color-border: #E8E8E8;
+    --color-border-light: #F3F4F6;
+    
+    /* 间距系统 */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* 字体系统 */
+    --font-base: 17px;
+    --font-h1: 2.5rem;
+    --font-h2: 1.75rem;
+    --font-h3: 1.375rem;
+    --font-small: 0.875rem;
+    --font-smaller: 0.9375rem;
+    
+    /* 行高系统 */
+    --line-height-base: 1.7;
+    --line-height-tight: 1.25;
+    --line-height-relaxed: 1.9;
+    
+    /* 间距系统 */
+    --letter-spacing-base: 0.01em;
+    --letter-spacing-tight: -0.01em;
+    --letter-spacing-wide: 0.06em;
+    --letter-spacing-wider: 0.02em;
+    --letter-spacing-widest: 0.05em;
+    
+    /* 过渡系统 */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    
+    /* 边框半径 */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    
+    /* 容器宽度 */
+    --container-max: 900px;
+    --hero-max: 720px;
+}
+
 /* 全局重置和基础样式 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-size: 17px;
-    line-height: 1.7;
-    letter-spacing: 0.01em;
-    background: #FAFAFA;
-    color: #111827;
+    font-size: var(--font-base);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 /* 导航栏样式 */
 nav {
     background: rgba(250, 250, 250, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .nav-container {
-    max-width: 900px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 1.5rem 2rem;
+    padding: var(--spacing-lg) var(--spacing-xl);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,9 +85,9 @@ nav {
 .nav-logo {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #111827;
+    color: var(--color-text);
     text-decoration: none;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--letter-spacing-wide);
     text-transform: uppercase;
 }
 
@@ -43,24 +97,24 @@ nav {
 }
 
 .nav-menu a {
-    font-size: 0.9375rem;
+    font-size: var(--font-smaller);
     font-weight: 400;
-    color: #6B7280;
+    color: var(--color-text-muted);
     text-decoration: none;
-    transition: color 0.3s ease;
-    letter-spacing: 0.02em;
+    transition: color var(--transition-base);
+    letter-spacing: var(--letter-spacing-wider);
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: #2C5F8D;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--spacing-md);
 }
 
 .nav-btn {
@@ -68,9 +122,9 @@ nav {
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: background 0.2s ease;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
 }
 
 .nav-btn:hover {
@@ -78,46 +132,46 @@ nav {
 }
 
 .nav-btn-lang {
-    font-size: 0.875rem;
+    font-size: var(--font-small);
     font-weight: 500;
-    color: #6B7280;
+    color: var(--color-text-muted);
     min-width: 2.5rem;
 }
 
 /* 容器样式 */
 .container {
-    max-width: 900px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 4.5rem 2rem 4rem;
+    padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-3xl);
 }
 
 /* 首页 Hero 区域 */
 .hero {
-    max-width: 720px;
-    margin: 0 auto 4.5rem;
-    padding: 3.5rem 0 2.5rem;
+    max-width: var(--hero-max);
+    margin: 0 auto var(--spacing-3xl);
+    padding: var(--spacing-2xl) 0 var(--spacing-lg);
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: var(--font-h1);
     font-weight: 700;
-    color: #111827;
+    color: var(--color-text);
     margin-bottom: 1.75rem;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
 }
 
 .hero-content .subtitle {
     font-size: 1.02rem;
-    color: #4B5563;
-    line-height: 1.9;
+    color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
     margin-bottom: 0.9rem;
     max-width: 40rem;
 }
 
 .hero-content .tagline {
     font-size: 0.95rem;
-    color: #9CA3AF;
+    color: var(--color-text-light);
     font-style: italic;
     margin-top: 1.75rem;
 }
@@ -125,12 +179,12 @@ nav {
 /* 文章列表样式 */
 .posts-header {
     font-family: "仓耳今楷02W4", serif;
-    font-size: 1.75rem;
+    font-size: var(--font-h2);
     font-weight: 600;
-    color: #1A1A1A;
+    color: var(--color-text);
     margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #E8E8E8;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-border);
 }
 
 .home-section {
@@ -139,9 +193,9 @@ nav {
 
 .post-item {
     padding: 1.75rem 0;
-    border-bottom: 1px solid #F3F4F6;
+    border-bottom: 1px solid var(--color-border-light);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
 }
 
 .post-item:hover {
@@ -149,38 +203,38 @@ nav {
 }
 
 .post-item-pinned {
-    border: 1px solid #E8E8E8;
-    border-radius: 12px;
-    padding: 2rem;
-    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    background: var(--color-bg-alt);
 }
 
 .post-date {
-    font-size: 0.875rem;
-    color: #9CA3AF;
-    margin-bottom: 0.75rem;
+    font-size: var(--font-small);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
     font-weight: 300;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--letter-spacing-widest);
 }
 
 .post-title {
     font-family: "仓耳今楷02W4", serif;
-    font-size: 1.375rem;
+    font-size: var(--font-h3);
     font-weight: 600;
-    color: #1A1A1A;
-    margin-bottom: 0.75rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
     line-height: 1.4;
-    transition: color 0.3s ease;
+    transition: color var(--transition-base);
 }
 
 .post-item:hover .post-title {
-    color: #2C5F8D;
+    color: var(--color-primary);
 }
 
 .post-summary {
-    font-size: 0.9375rem;
-    color: #6B7280;
-    line-height: 1.7;
+    font-size: var(--font-smaller);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-base);
 }
 
 /* 页脚样式 */
@@ -405,7 +459,51 @@ article h1 {
     }
 
     .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--color-bg);
+        flex-direction: column;
+        gap: 0;
+        padding: 5rem 2rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu a {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--color-border-light);
+        font-size: 1rem;
+    }
+
+    .nav-menu-overlay {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-menu-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     .hero-content h1 {
@@ -414,5 +512,12 @@ article h1 {
 
     .container {
         padding: 2rem 1rem 2rem;
+    }
+}
+
+/* 桌面端隐藏移动端菜单按钮 */
+@media (min-width: 641px) {
+    .nav-toggle {
+        display: none;
     }
 }
