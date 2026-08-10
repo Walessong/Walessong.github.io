@@ -177,7 +177,13 @@ nav { background: rgba(250, 250, 250, 0.95); backdrop-filter: blur(10px); border
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
   "author": {
     "@type": "Person",
-    "name": "{{ .Site.Params.author.name }}"
+    "name": "{{ .Site.Params.author.name }}",
+    {{- with .Site.Params.author.email }}
+    "email": "{{ . }}",
+    {{- end }}
+    {{- with .Site.Params.author.title }}
+    "jobTitle": "{{ . }}"
+    {{- end }}
   },
   {{- with .Params.categories }}
   "articleSection": "{{ index . 0 }}",
@@ -185,6 +191,8 @@ nav { background: rgba(250, 250, 250, 0.95); backdrop-filter: blur(10px); border
   {{- with .Params.tags }}
   "keywords": "{{ delimit . ", " }}",
   {{- end }}
+  "wordCount": {{ .WordCount }},
+  "readingTime": "{{ .ReadingTime }}",
   {{- end }}
   {{- if .IsHome }}
   "name": "{{ .Site.Title }}",

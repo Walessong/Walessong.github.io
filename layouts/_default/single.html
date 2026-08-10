@@ -5,11 +5,31 @@
     {{ partial "nav-search-styles.html" . }}
 </head>
 <body>
+    <!-- 阅读进度条 -->
+    <div class="reading-progress" id="reading-progress"></div>
+    
     {{ partial "nav.html" . }}
     <div class="container">
         <article>
             <h1>{{ .Title }}</h1>
-            <div class="meta">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</div>
+            <div class="meta">
+                <span>{{ .Date.Format "January 2, 2006" }}</span>
+                <span>·</span>
+                <span>{{ .ReadingTime }} min read</span>
+                <span>·</span>
+                <span>{{ .WordCount }} words</span>
+                {{- with .Lastmod }}
+                <span>·</span>
+                <span>Updated {{ .Format "January 2, 2006" }}</span>
+                {{- end }}
+            </div>
+            {{ with .Params.tags }}
+            <div class="tags">
+                {{ range . }}
+                <a href="/tags/{{ . | urlize }}" class="tag">#{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
             <div class="content">{{ .Content }}</div>
         </article>
         {{ with .TableOfContents }}
@@ -20,8 +40,29 @@
             </nav>
         </aside>
         {{ end }}
+        
+        <!-- 相关文章推荐 -->
+        {{ $related := .Site.RegularPages.Related . | first 4 }}
+        {{ with $related }}
+        <section class="related-posts">
+            <h3 class="related-posts-title">相关文章</h3>
+            <div class="related-posts-list">
+                {{ range . }}
+                <a href="{{ .RelPermalink }}" class="related-post-item">
+                    <div class="related-post-date">{{ .Date.Format "January 2, 2006" }}</div>
+                    <h4 class="related-post-title">{{ .Title }}</h4>
+                    {{ with .Summary }}<p class="related-post-summary">{{ . | plainify | truncate 120 }}</p>{{ end }}
+                </a>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
     </div>
     <footer><div class="footer-container"><p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p></div></footer>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+    
     {{ partial "search-modal.html" . }}
     {{ partial "search-data.html" . }}
     {{ partial "search-script.html" . }}

@@ -203,5 +203,35 @@
     
     // 全局暴露清除历史记录函数
     window.clearSearchHistory = clearSearchHistory;
+
+    // 返回顶部按钮功能
+    var backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // 阅读进度条功能
+    var readingProgress = document.getElementById('reading-progress');
+    if (readingProgress) {
+        window.addEventListener('scroll', function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var progress = (scrollTop / docHeight) * 100;
+            readingProgress.style.width = progress + '%';
+        });
+    }
 })();
 </script>
