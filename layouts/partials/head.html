@@ -78,17 +78,36 @@
 {{- /* 关键CSS内联 - 提升首屏性能 */ -}}
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-size: 17px; line-height: 1.7; letter-spacing: 0.01em; background: #FAFAFA; color: #111827; }
-nav { background: rgba(250, 250, 250, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #E8E8E8; position: sticky; top: 0; z-index: 100; }
+:root {
+    --color-primary: #2C5F8D;
+    --color-text: #111827;
+    --color-text-muted: #6B7280;
+    --color-text-light: #9CA3AF;
+    --color-bg: #FAFAFA;
+    --color-bg-alt: #F8FAFC;
+    --color-border: #E8E8E8;
+}
+[data-theme="dark"] {
+    --color-primary: #60A5FA;
+    --color-text: #F3F4F6;
+    --color-text-muted: #9CA3AF;
+    --color-text-light: #6B7280;
+    --color-bg: #111827;
+    --color-bg-alt: #1F2937;
+    --color-border: #374151;
+}
+body { font-size: 17px; line-height: 1.7; letter-spacing: 0.01em; background: var(--color-bg); color: var(--color-text); }
+nav { background: rgba(250, 250, 250, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 100; }
+[data-theme="dark"] nav { background: rgba(17, 24, 39, 0.95); }
 .nav-container { max-width: 900px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-.nav-logo { font-size: 1.1rem; font-weight: 600; color: #111827; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+.nav-logo { font-size: 1.1rem; font-weight: 600; color: var(--color-text); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
 .nav-menu { display: flex; gap: 2.5rem; }
-.nav-menu a { font-size: 0.9375rem; font-weight: 400; color: #6B7280; text-decoration: none; transition: color 0.3s ease; letter-spacing: 0.02em; }
-.nav-menu a:hover, .nav-menu a.active { color: #2C5F8D; font-weight: 600; }
+.nav-menu a { font-size: 0.9375rem; font-weight: 400; color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease; letter-spacing: 0.02em; }
+.nav-menu a:hover, .nav-menu a.active { color: var(--color-primary); font-weight: 600; }
 .container { max-width: 900px; margin: 0 auto; padding: 4.5rem 2rem 4rem; }
 .hero { max-width: 720px; margin: 0 auto 4.5rem; padding: 3.5rem 0 2.5rem; }
-.hero-content h1 { font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 1.75rem; line-height: 1.25; letter-spacing: -0.01em; }
-.hero-content .subtitle { font-size: 1.02rem; color: #4B5563; line-height: 1.9; margin-bottom: 0.9rem; max-width: 40rem; }
+.hero-content h1 { font-size: 2.5rem; font-weight: 700; color: var(--color-text); margin-bottom: 1.75rem; line-height: 1.25; letter-spacing: -0.01em; }
+.hero-content .subtitle { font-size: 1.02rem; color: var(--color-text-muted); line-height: 1.9; margin-bottom: 0.9rem; max-width: 40rem; }
 @media (max-width: 768px) {
     .container { padding: 3rem 1.5rem 3rem; }
     .hero { padding: 2.5rem 0 2rem; margin-bottom: 3.5rem; }
