@@ -206,7 +206,7 @@ nav {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--spacing-xl);
-    background: var(--color-bg-alt);
+    background: var(--color-bg); /* 强制与 body 背景一致，解决浅色模式显示问题 */
 }
 
 .post-date {
