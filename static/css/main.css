@@ -150,6 +150,12 @@ nav {
     max-width: var(--hero-max);
     margin: 0 auto var(--spacing-3xl);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
+    background-image: url('/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--radius-md);
+    position: relative;
 }
 
 .hero-content h1 {
