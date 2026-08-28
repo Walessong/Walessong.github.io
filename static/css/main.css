@@ -60,6 +60,11 @@ body {
     line-height: var(--line-height-base);
     letter-spacing: var(--letter-spacing-base);
     background: var(--color-bg);
+    background-image: url('/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--color-text);
 }
 
@@ -150,10 +155,6 @@ nav {
     max-width: var(--hero-max);
     margin: 0 auto var(--spacing-3xl);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
-    background-image: url('/images/hero-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     border-radius: var(--radius-md);
     position: relative;
 }
