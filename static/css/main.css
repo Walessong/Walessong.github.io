@@ -60,11 +60,6 @@ body {
     line-height: var(--line-height-base);
     letter-spacing: var(--letter-spacing-base);
     background: var(--color-bg);
-    background-image: url('/images/hero-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--color-text);
 }
 
