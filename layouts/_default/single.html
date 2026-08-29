@@ -9,7 +9,7 @@
             background: #FDF6E3 !important;
             color: #4A3728 !important;
         }
-        .container {
+        .article-container {
             background: #FDF6E3 !important;
         }
         article h1 {
@@ -69,7 +69,7 @@
     <!-- 面包屑导航 -->
     {{ partial "breadcrumb.html" . }}
     
-    <div class="container">
+    <div class="article-container">
         <article>
             <h1>{{ .Title }}</h1>
             <div class="meta">
@@ -90,7 +90,7 @@
                 {{ end }}
             </div>
             {{ end }}
-            
+
             <!-- 系列导航 -->
             {{ with .Params.series }}
             {{ $series := index . 0 }}
@@ -114,7 +114,7 @@
             </div>
             {{ end }}
             {{ end }}
-            
+
             <div class="content">{{ .Content }}</div>
         </article>
         {{ with .TableOfContents }}

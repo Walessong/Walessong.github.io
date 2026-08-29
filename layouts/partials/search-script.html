@@ -345,4 +345,68 @@
         addCopyButtons();
     }
 })();
+
+// 目录滚动监听和平滑滚动
+(function() {
+    // 平滑滚动
+    document.querySelectorAll('.toc-body a').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('href');
+            var targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                var offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // 滚动监听 - 高亮当前章节
+    function updateActiveToc() {
+        var headings = document.querySelectorAll('.content h2, .content h3, .content h4');
+        var tocLinks = document.querySelectorAll('.toc-body a');
+        var scrollPosition = window.scrollY + 100;
+        
+        var currentHeading = null;
+        headings.forEach(function(heading) {
+            if (heading.offsetTop <= scrollPosition) {
+                currentHeading = heading;
+            }
+        });
+        
+        tocLinks.forEach(function(link) {
+            link.style.color = '';
+            link.style.fontWeight = '';
+        });
+        
+        if (currentHeading) {
+            var currentId = currentHeading.getAttribute('id');
+            var activeLink = document.querySelector('.toc-body a[href="#' + currentId + '"]');
+            if (activeLink) {
+                activeLink.style.color = '#B45309';
+                activeLink.style.fontWeight = '600';
+            }
+        }
+    }
+    
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateActiveToc();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateActiveToc);
+    } else {
+        updateActiveToc();
+    }
+})();
 </script>

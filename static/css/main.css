@@ -398,6 +398,20 @@ footer {
     align-items: flex-start;
 }
 
+.article-container > article {
+    grid-column: 1;
+}
+
+.article-container > .toc-container {
+    grid-column: 2;
+}
+
+.article-container > .related-posts,
+.article-container > .share-buttons,
+.article-container > .comments-section {
+    grid-column: 1 / -1;
+}
+
 article h1 {
     font-size: 2.3rem;
     font-weight: 700;
@@ -594,6 +608,26 @@ article h1 {
     border: 1px solid var(--color-border-light);
     border-radius: 12px;
     padding: 1rem 1.25rem;
+    /* 优化滚动条样式 */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-light) transparent;
+}
+
+.toc-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.toc-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.toc-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-light);
+    border-radius: 3px;
+}
+
+.toc-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-text-muted);
 }
 
 .toc-title {
@@ -630,6 +664,8 @@ article h1 {
     color: var(--color-text-muted);
     text-decoration: none;
     transition: color var(--transition-fast);
+    display: block;
+    padding: 0.25rem 0;
 }
 
 .toc-body a:hover {
