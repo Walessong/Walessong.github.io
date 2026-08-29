@@ -9,7 +9,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: "仓耳今楷02W4", serif; font-size: 17px; line-height: 1.7; background: #FAFAFA; color: #2C3E50; }
         {{ if eq .Title "Tech & Engineering" }}
-        body { background-image: url('/images/series-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+        body { background-image: url('/images/series-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; position: relative; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: -1; }
         {{ end }}
         nav { background: rgba(250, 250, 250, 0.95); border-bottom: 1px solid #E8E8E8; position: sticky; top: 0; z-index: 100; }
         .nav-container { max-width: 900px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
