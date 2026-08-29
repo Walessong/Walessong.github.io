@@ -254,6 +254,29 @@
 
     window.clearSearchHistory = clearSearchHistory;
 
+    // 导航栏自动隐藏功能
+    var nav = document.querySelector('nav');
+    var lastScrollTop = 0;
+    var scrollThreshold = 100;
+    var scrollTimeout;
+
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                // 向下滚动，隐藏导航栏
+                if (nav) nav.classList.add('nav-hidden');
+            } else {
+                // 向上滚动，显示导航栏
+                if (nav) nav.classList.remove('nav-hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        }, 10);
+    });
+
     // 返回顶部按钮功能
     var backToTop = document.getElementById('back-to-top');
     if (backToTop) {
