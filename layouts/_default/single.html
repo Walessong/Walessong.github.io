@@ -3,6 +3,62 @@
 <head>
     {{ partial "head.html" . }}
     {{ partial "nav-search-styles.html" . }}
+    <style>
+        /* 文章页面暖色系样式 */
+        body {
+            background: #FDF6E3 !important;
+            color: #4A3728 !important;
+        }
+        .container {
+            background: #FDF6E3 !important;
+        }
+        article h1 {
+            color: #3D2E20 !important;
+        }
+        .meta {
+            color: #8B7355 !important;
+        }
+        .content {
+            color: #4A3728 !important;
+        }
+        .content h2, .content h3, .content h4 {
+            color: #3D2E20 !important;
+        }
+        .content a {
+            color: #B45309 !important;
+        }
+        .toc-container {
+            background: #FAF5EF !important;
+            border: 1px solid #E8DDD0 !important;
+        }
+        .toc-title {
+            color: #3D2E20 !important;
+        }
+        .toc-body a {
+            color: #8B7355 !important;
+        }
+        .toc-body a:hover {
+            color: #B45309 !important;
+        }
+        .related-posts-title {
+            color: #3D2E20 !important;
+        }
+        .related-post-item {
+            background: #FAF5EF !important;
+            border: 1px solid #E8DDD0 !important;
+        }
+        .related-post-title {
+            color: #4A3728 !important;
+        }
+        .share-button {
+            background: #FAF5EF !important;
+            color: #8B7355 !important;
+            border: 1px solid #E8DDD0 !important;
+        }
+        .share-button:hover {
+            background: #E8DDD0 !important;
+        }
+    </style>
 </head>
 <body>
     <!-- 阅读进度条 -->
