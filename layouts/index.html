@@ -4,6 +4,13 @@
 	<meta name="generator" content="Hugo {{ hugo.Version }}">
     {{ partial "head.html" . }}
     {{ partial "nav-search-styles.html" . }}
+    <style>
+        /* 首页专属背景 */
+        body {
+            background: url('/images/home-background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
     <body>
         {{ partial "nav.html" . }}
