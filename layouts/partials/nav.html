@@ -2,14 +2,65 @@
     <div class="nav-container">
         <a href="/" class="nav-logo">{{ .Site.Title }}</a>
         <div class="nav-actions">
-            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
             <div class="nav-menu" id="nav-menu">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }} data-i18n-zh="{{ .Params.i18n_zh }}" data-i18n-en="{{ .Params.i18n_en }}">{{ .Name }}</a>
+                <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }} data-i18n-zh="{{ .Params.i18n_zh }}" data-i18n-en="{{ .Params.i18n_en }}">
+                    <span class="nav-item-icon">
+                        {{ if eq .Name "首页" }}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        {{ else if eq .Name "市场" }}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                        </svg>
+                        {{ else if eq .Name "技术" }}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        {{ else if eq .Name "摸鱼" }}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                            <line x1="6" y1="1" x2="6" y2="4"></line>
+                            <line x1="10" y1="1" x2="10" y2="4"></line>
+                            <line x1="14" y1="1" x2="14" y2="4"></line>
+                        </svg>
+                        {{ else if eq .Name "关于" }}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        {{ end }}
+                    </span>
+                    <span class="nav-item-text">{{ .Name }}</span>
+                </a>
                 {{ end }}
             </div>
-            <button type="button" class="nav-btn nav-btn-search" id="search-open" aria-label="Search">🔍</button>
+            <button type="button" class="nav-btn nav-btn-search" id="search-open" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
             <button type="button" class="nav-btn nav-btn-lang" id="lang-toggle" aria-label="Toggle language">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
                 <span id="lang-label">EN</span>
             </button>
         </div>
