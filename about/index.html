@@ -6,10 +6,10 @@
     <title>关于 | Woke Soul</title>
     <meta name="description" content="王松 / Woke Soul 做自己，不随波逐流。
 热爱自由，拥有稳定的自信心和内驱力。相信技术改变世界，坚持人文精神滋养心灵。
-我是一名 Crypto Trader &amp; Analyst，专注于 Patterns / Fractals 分析、Machine Learning 应用和 Literature 阅读。
+我是一名 Crypto Trader & Analyst，专注于 Patterns / Fractals 分析、Machine Learning 应用和 Literature 阅读。
 技能 Machine Learning
 Python · TensorFlow · PyTorch · Pandas · Scikit-learn · LSTM
-Trading &amp; Finance
+Trading & Finance
 Quantitative Analysis · Technical Indicators · Risk Management · Backtesting
 Web Development
 Hugo · Markdown · GitHub Actions · Netlify
@@ -22,196 +22,489 @@ Python · TensorFlow · Pandas · Flask
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/main.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-            background: #FAFAFA;
-            color: #2C3E50;
+        /* 关于页专用样式 - 极简奢华风格 */
+        .about-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #FAFAFA 0%, #F8FAFC 50%, #F0F4F8 100%);
+            position: relative;
+            overflow-x: hidden;
         }
-        
-        nav {
-            background: rgba(250, 250, 250, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #E8E8E8;
-            position: sticky;
+
+        /* 噪声纹理背景 */
+        .about-page::before {
+            content: '';
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
         }
-        
-        .nav-container {
-            max-width: 900px;
+
+        .about-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
         }
-        
-        .nav-logo {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1A1A1A;
-            text-decoration: none;
+
+        /* Hero 个人信息区域 */
+        .about-hero {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease-out;
         }
-        
-        .nav-menu {
-            display: flex;
-            gap: 2.5rem;
+
+        .about-hero-left {
+            position: relative;
         }
-        
-        .nav-menu a {
-            font-size: 0.9375rem;
-            color: #6B7280;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-menu a:hover {
-            color: #2C5F8D;
-        }
-        
-        .container {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        
-        article h1 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 2.25rem;
+
+        .about-hero-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 700;
-            color: #1A1A1A;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
+            line-height: 1.1;
+            color: var(--color-text);
+            margin-bottom: 2rem;
             letter-spacing: -0.02em;
         }
-        
-        .meta {
-            font-size: 0.875rem;
-            color: #9CA3AF;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #E8E8E8;
+
+        .about-hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem;
             font-weight: 300;
-            letter-spacing: 0.05em;
-        }
-        
-        .content {
+            color: var(--color-text-muted);
             line-height: 1.8;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
         }
-        
-        .content h2 {
+
+        .about-hero-tagline {
             font-family: 'Noto Serif SC', serif;
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #1A1A1A;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            line-height: 1.6;
+            border-left: 3px solid var(--color-primary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
         }
-        
-        .content h3 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 1.375rem;
+
+        .about-hero-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-role {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .about-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-specialty {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            background: rgba(44, 95, 141, 0.08);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            letter-spacing: 0.02em;
+            transition: all var(--transition-smooth);
+        }
+
+        .about-specialty:hover {
+            background: rgba(44, 95, 141, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* 玻璃拟态卡片容器 */
+        .about-section {
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .about-section:nth-child(2) { animation-delay: 0.1s; }
+        .about-section:nth-child(3) { animation-delay: 0.2s; }
+        .about-section:nth-child(4) { animation-delay: 0.3s; }
+        .about-section:nth-child(5) { animation-delay: 0.4s; }
+
+        .about-section-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 2rem;
             font-weight: 600;
-            color: #2C3E50;
-            margin-top: 2.5rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
+        }
+
+        /* 技能卡片网格 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, #8B7355 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-smooth);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
             margin-bottom: 1rem;
         }
-        
-        .content p {
-            margin-bottom: 1.5rem;
-            color: #374151;
+
+        .skill-card-items {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
         }
-        
-        .content a {
-            color: #2C5F8D;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(44, 95, 141, 0.3);
-            transition: all 0.3s ease;
+
+        /* 项目卡片 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
-        
-        .content a:hover {
-            color: #1A4D7A;
-            border-bottom-color: #1A4D7A;
-            background-color: rgba(44, 95, 141, 0.05);
+
+        .project-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: all var(--transition-smooth);
+            position: relative;
         }
-        
-        .content code {
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            font-size: 0.9em;
-            background-color: #F3F4F6;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            color: #8B7355;
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
-        
-        .content pre {
-            background-color: #F8F9FA;
-            padding: 1.5rem;
-            overflow-x: auto;
-            margin: 2rem 0;
-            border-radius: 6px;
-            border-left: 3px solid #2C5F8D;
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
         }
-        
-        .content pre code {
-            background: none;
-            padding: 0;
-            color: #2C3E50;
+
+        .project-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
         }
-        
-        .content blockquote {
-            border-left: 3px solid #8B7355;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            color: #6B7280;
+
+        .project-card-status {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            background: rgba(44, 95, 141, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-card-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .project-card-tech {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: var(--color-text-light);
             font-style: italic;
         }
-        
-        .content ul, .content ol {
+
+        /* 时间线 */
+        .timeline {
+            position: relative;
             padding-left: 2rem;
-            margin: 1.5rem 0;
         }
-        
-        .content li {
-            margin-bottom: 0.75rem;
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-border) 100%);
         }
-        
-        footer {
-            border-top: 1px solid #E8E8E8;
-            margin-top: 6rem;
-            padding: 3rem 0;
-            background: #F8F8F8;
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 2rem;
         }
-        
-        .footer-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.5rem;
+            width: 10px;
+            height: 10px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            border: 2px solid var(--color-bg);
+            box-shadow: 0 0 0 3px rgba(44, 95, 141, 0.2);
+        }
+
+        .timeline-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* 影响作品 */
+        .influences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .influence-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            transition: all var(--transition-smooth);
             text-align: center;
         }
-        
-        .footer-text {
-            font-size: 0.875rem;
-            color: #9CA3AF;
-            font-weight: 300;
+
+        .influence-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                gap: 1.5rem;
+
+        .influence-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .influence-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: var(--color-primary);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .influence-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* 联系方式区域 */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(44, 95, 141, 0.05) 0%, rgba(139, 115, 85, 0.05) 100%);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-primary);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all var(--transition-smooth);
+            padding-bottom: 0.25rem;
+        }
+
+        .contact-link:hover {
+            border-bottom-color: var(--color-primary);
+            color: var(--color-text);
+        }
+
+        /* 动画关键帧 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-            article h1 {
-                font-size: 1.875rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .about-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-hero-title {
+                font-size: clamp(2.5rem, 6vw, 3.5rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .about-hero {
+                margin-bottom: 4rem;
+            }
+
+            .about-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-hero-tagline {
+                font-size: 1.25rem;
+            }
+
+            .about-role {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .influences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -224,81 +517,173 @@ Python · TensorFlow · Pandas · Flask
                 <a href="/">首页</a>
                 <a href="/posts/">文章</a>
                 <a href="/archives/">归档</a>
-                <a href="/about/">关于</a>
+                <a href="/about/" class="active">关于</a>
             </div>
         </div>
     </nav>
     
-    <article class="container">
-        <h1>关于</h1>
-        <div class="meta">
-            
-                January 1, 2024
-            
-            · 1 min read
-        </div>
-        <div class="content">
-            <h2 id="王松--woke-soul">王松 / Woke Soul</h2>
-<p>做自己，不随波逐流。</p>
-<p>热爱自由，拥有稳定的自信心和内驱力。相信技术改变世界，坚持人文精神滋养心灵。</p>
-<p>我是一名 <strong>Crypto Trader &amp; Analyst</strong>，专注于 <strong>Patterns / Fractals</strong> 分析、<strong>Machine Learning</strong> 应用和 <strong>Literature</strong> 阅读。</p>
-<hr>
-<h2 id="技能">技能</h2>
-<p><strong>Machine Learning</strong><br>
-Python · TensorFlow · PyTorch · Pandas · Scikit-learn · LSTM</p>
-<p><strong>Trading &amp; Finance</strong><br>
-Quantitative Analysis · Technical Indicators · Risk Management · Backtesting</p>
-<p><strong>Web Development</strong><br>
-Hugo · Markdown · GitHub Actions · Netlify</p>
-<p><strong>Tools</strong><br>
-Git · Docker · VS Code · ccxt · Neo4j</p>
-<hr>
-<h2 id="项目">项目</h2>
-<p><strong>🤖 智能股票分析系统</strong> <code>进行中</code><br>
-基于机器学习的股票价格预测和投资策略分析系统，结合技术指标和基本面分析。<br>
-<em>Python · TensorFlow · Pandas · Flask</em></p>
-<p><strong>📊 加密货币交易机器人</strong> <code>已完成</code><br>
-自动化加密货币交易系统，实现多种交易策略，包括网格交易、均线策略等。<br>
-<em>Python · ccxt · numpy</em></p>
-<p><strong>📝 个人博客系统</strong> <code>持续更新</code><br>
-基于Hugo的个人博客，分享技术思考、投资心得、读书笔记和生活感悟。<br>
-<em>Hugo · Markdown · GitHub Actions</em></p>
-<p><strong>🎬 电影推荐算法</strong> <code>计划中</code><br>
-基于协同过滤和内容推荐的电影推荐系统，结合个人观影历史和偏好。<br>
-<em>Python · scikit-learn · Neo4j</em></p>
-<hr>
-<h2 id="时间线">时间线</h2>
-<p><strong>2025年</strong> - 持续成长<br>
-继续在技术、投资、文学等领域深耕，追求技术与人文的完美结合。</p>
-<p><strong>2024年12月</strong> - 博客创建<br>
-创建个人博客，开始系统性地分享学习心得和人生感悟。</p>
-<p><strong>2024年6月</strong> - 量化交易探索<br>
-开发第一个加密货币交易机器人，将技术与投资相结合。</p>
-<p><strong>2024年1月</strong> - 深度学习实践<br>
-完成第一个深度学习项目，开始探索神经网络在金融预测中的应用。</p>
-<p><strong>2023年8月</strong> - 投资理财入门<br>
-开始关注股票市场，学习价值投资理念，阅读《聪明的投资者》等经典著作。</p>
-<p><strong>2023年3月</strong> - 机器学习启蒙<br>
-开始系统学习Python和机器学习，完成第一个数据分析项目。</p>
-<p><strong>2022年9月</strong> - 进入北航<br>
-开始电子信息工程学院的学习生涯，初次接触编程和电子工程基础知识。</p>
-<hr>
-<h2 id="影响我的作品">影响我的作品</h2>
-<p><strong>《老人与海》</strong> - 海明威<br>
-坚韧不拔的精神力量</p>
-<p><strong>《黄金时代》</strong> - 王小波<br>
-理性思辨与幽默智慧</p>
-<p><strong>《平原上的摩西》</strong> - 双雪涛<br>
-现实主义的深刻洞察</p>
-<p><strong>《美国往事》</strong> - 莱昂内<br>
-时间与记忆的史诗叙事</p>
-<hr>
-<h2 id="联系方式">联系方式</h2>
-<p>如果你对机器学习、投资理财、文学电影或技术开发感兴趣，欢迎与我交流。</p>
-<p><a href="https://github.com/Walessong">GitHub</a> · <a href="https://x.com/w45867">Twitter</a> · <a href="mailto:shouldnotwe@gmail.com">Email</a></p>
+    <div class="about-page">
+        <div class="about-container">
+            <!-- Hero 个人信息区域 -->
+            <section class="about-hero">
+                <div class="about-hero-left">
+                    <h1 class="about-hero-title">王松<br>Woke Soul</h1>
+                    <p class="about-hero-subtitle">做自己，不随波逐流。热爱自由，拥有稳定的自信心和内驱力。相信技术改变世界，坚持人文精神滋养心灵。</p>
+                    <p class="about-hero-tagline">技术改变世界 · 人文滋养心灵</p>
+                </div>
+                <div class="about-hero-right">
+                    <h2 class="about-role">Crypto Trader & Analyst</h2>
+                    <div class="about-specialties">
+                        <span class="about-specialty">Patterns / Fractals</span>
+                        <span class="about-specialty">Machine Learning</span>
+                        <span class="about-specialty">Literature</span>
+                    </div>
+                </div>
+            </section>
 
+            <!-- 技能区域 -->
+            <section class="about-section">
+                <h2 class="about-section-title">技能</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 class="skill-card-title">Machine Learning</h3>
+                        <p class="skill-card-items">Python · TensorFlow · PyTorch · Pandas · Scikit-learn · LSTM</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-card-title">Trading & Finance</h3>
+                        <p class="skill-card-items">Quantitative Analysis · Technical Indicators · Risk Management · Backtesting</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-card-title">Web Development</h3>
+                        <p class="skill-card-items">Hugo · Markdown · GitHub Actions · Netlify</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-card-title">Tools</h3>
+                        <p class="skill-card-items">Git · Docker · VS Code · ccxt · Neo4j</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目区域 -->
+            <section class="about-section">
+                <h2 class="about-section-title">项目</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-card-title">🤖 智能股票分析系统</h3>
+                            <span class="project-card-status">进行中</span>
+                        </div>
+                        <p class="project-card-description">基于机器学习的股票价格预测和投资策略分析系统，结合技术指标和基本面分析。</p>
+                        <p class="project-card-tech">Python · TensorFlow · Pandas · Flask</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-card-title">📊 加密货币交易机器人</h3>
+                            <span class="project-card-status">已完成</span>
+                        </div>
+                        <p class="project-card-description">自动化加密货币交易系统，实现多种交易策略，包括网格交易、均线策略等。</p>
+                        <p class="project-card-tech">Python · ccxt · numpy</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-card-title">📝 个人博客系统</h3>
+                            <span class="project-card-status">持续更新</span>
+                        </div>
+                        <p class="project-card-description">基于Hugo的个人博客，分享技术思考、投资心得、读书笔记和生活感悟。</p>
+                        <p class="project-card-tech">Hugo · Markdown · GitHub Actions</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-card-title">🎬 电影推荐算法</h3>
+                            <span class="project-card-status">计划中</span>
+                        </div>
+                        <p class="project-card-description">基于协同过滤和内容推荐的电影推荐系统，结合个人观影历史和偏好。</p>
+                        <p class="project-card-tech">Python · scikit-learn · Neo4j</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 时间线区域 -->
+            <section class="about-section">
+                <h2 class="about-section-title">时间线</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025年</div>
+                        <h3 class="timeline-title">持续成长</h3>
+                        <p class="timeline-description">继续在技术、投资、文学等领域深耕，追求技术与人文的完美结合。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024年12月</div>
+                        <h3 class="timeline-title">博客创建</h3>
+                        <p class="timeline-description">创建个人博客，开始系统性地分享学习心得和人生感悟。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024年6月</div>
+                        <h3 class="timeline-title">量化交易探索</h3>
+                        <p class="timeline-description">开发第一个加密货币交易机器人，将技术与投资相结合。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024年1月</div>
+                        <h3 class="timeline-title">深度学习实践</h3>
+                        <p class="timeline-description">完成第一个深度学习项目，开始探索神经网络在金融预测中的应用。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023年8月</div>
+                        <h3 class="timeline-title">投资理财入门</h3>
+                        <p class="timeline-description">开始关注股票市场，学习价值投资理念，阅读《聪明的投资者》等经典著作。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023年3月</div>
+                        <h3 class="timeline-title">机器学习启蒙</h3>
+                        <p class="timeline-description">开始系统学习Python和机器学习，完成第一个数据分析项目。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022年9月</div>
+                        <h3 class="timeline-title">进入北航</h3>
+                        <p class="timeline-description">开始电子信息工程学院的学习生涯，初次接触编程和电子工程基础知识。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 影响作品区域 -->
+            <section class="about-section">
+                <h2 class="about-section-title">影响我的作品</h2>
+                <div class="influences-grid">
+                    <div class="influence-card">
+                        <h3 class="influence-title">《老人与海》</h3>
+                        <p class="influence-author">海明威</p>
+                        <p class="influence-description">坚韧不拔的精神力量</p>
+                    </div>
+                    <div class="influence-card">
+                        <h3 class="influence-title">《黄金时代》</h3>
+                        <p class="influence-author">王小波</p>
+                        <p class="influence-description">理性思辨与幽默智慧</p>
+                    </div>
+                    <div class="influence-card">
+                        <h3 class="influence-title">《平原上的摩西》</h3>
+                        <p class="influence-author">双雪涛</p>
+                        <p class="influence-description">现实主义的深刻洞察</p>
+                    </div>
+                    <div class="influence-card">
+                        <h3 class="influence-title">《美国往事》</h3>
+                        <p class="influence-author">莱昂内</p>
+                        <p class="influence-description">时间与记忆的史诗叙事</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系方式区域 -->
+            <section class="contact-section">
+                <h2 class="contact-title">联系方式</h2>
+                <p class="contact-description">如果你对机器学习、投资理财、文学电影或技术开发感兴趣，欢迎与我交流。</p>
+                <div class="contact-links">
+                    <a href="https://github.com/Walessong" class="contact-link">GitHub</a>
+                    <a href="https://x.com/w45867" class="contact-link">Twitter</a>
+                    <a href="mailto:shouldnotwe@gmail.com" class="contact-link">Email</a>
+                </div>
+            </section>
         </div>
-    </article>
+    </div>
     
     <footer>
         <div class="footer-container">
