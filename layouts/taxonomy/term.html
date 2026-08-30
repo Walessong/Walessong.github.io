@@ -1,97 +1,83 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}"
+>
 <head>
     {{ partial "head.html" . }}
-    <style>
-        @font-face { font-family: '仓耳今楷02W4'; src: url('/fonts/CangErJinKai02W4.woff2') format('woff2'), url('/fonts/CangErJinKai02W4.woff') format('woff'), url('/fonts/CangErJinKai02W4.ttf') format('truetype'); font-display: swap; }
-    </style>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "仓耳今楷02W4", serif; font-size: 17px; line-height: 1.7; background: #FAFAFA; color: #2C3E50; }
-        {{ if eq .Title "Tech & Engineering" }}
-        body { background-image: url('/images/series-bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; position: relative; color: #FFFFFF; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: -1; }
-        .breadcrumb { color: #E0E0E0; }
-        .breadcrumb a { color: #B0B0B0; }
-        .breadcrumb a:hover { color: #FFFFFF; }
-        h1 { color: #FFFFFF; }
-        .page-meta { color: #E0E0E0; }
-        .taxonomy-badge { background: rgba(255, 255, 255, 0.2); color: #FFFFFF; }
-        .post-count { color: #E0E0E0; }
-        .post-item { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-        .post-date { color: #B0B0B0; }
-        .post-title { color: #FFFFFF; }
-        .post-item:hover .post-title { color: #E0E0E0; }
-        .post-summary { color: #D0D0D0; }
-        .post-meta { color: #B0B0B0; }
-        .footer-text { color: #B0B0B0; }
-        {{ end }}
-        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
-        .page-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 2px solid #E8E8E8; }
-        h1 { font-family: "仓耳今楷02W4", serif; font-size: 2rem; font-weight: 600; color: #1A1A1A; margin-bottom: 1rem; }
-        .page-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.9375rem; color: #6B7280; }
-        .taxonomy-badge { display: inline-block; padding: 0.35rem 0.75rem; background: #E0F2FE; color: #0369A1; border-radius: 6px; font-size: 0.875rem; font-weight: 500; }
-        .breadcrumb { font-size: 0.875rem; color: #9CA3AF; margin-bottom: 1rem; }
-        .breadcrumb a { color: #6B7280; text-decoration: none; }
-        .breadcrumb a:hover { color: #2C5F8D; }
-        .post-count { font-size: 0.9375rem; color: #6B7280; margin-bottom: 2rem; }
-        .post-item { padding: 2rem 0; border-bottom: 1px solid #F3F4F6; cursor: pointer; transition: all 0.3s ease; }
-        .post-item:hover { transform: translateX(8px); }
-        .post-date { font-size: 0.875rem; color: #9CA3AF; margin-bottom: 0.75rem; }
-        .post-title { font-family: "仓耳今楷02W4", serif; font-size: 1.375rem; font-weight: 600; color: #1A1A1A; margin-bottom: 0.75rem; }
-        .post-item:hover .post-title { color: #2C5F8D; }
-        .post-summary { font-size: 0.9375rem; color: #6B7280; line-height: 1.7; margin-bottom: 0.75rem; }
-        .post-meta { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.8125rem; color: #9CA3AF; }
-        .post-meta-item { display: flex; align-items: center; gap: 0.25rem; }
-        footer { border-top: 1px solid #E8E8E8; margin-top: 6rem; padding: 3rem 0; background: #F8F8F8; text-align: center; }
-        .footer-text { font-size: 0.875rem; color: #9CA3AF; }
-    </style>
     {{ partial "nav-search-styles.html" . }}
 </head>
 <body>
     {{ partial "nav.html" . }}
+    
+    <!-- 面包屑导航 -->
+    {{ partial "breadcrumb.html" . }}
+    
     <div class="container">
-        <div class="breadcrumb">
-            <a href="/">首页</a> / 
-            <a href="/{{ .Data.Plural }}/">{{ if eq .Data.Plural "categories" }}分类{{ else if eq .Data.Plural "tags" }}标签{{ else if eq .Data.Plural "series" }}系列{{ else }}{{ .Data.Plural }}{{ end }}</a> / 
-            <span>{{ .Title }}</span>
-        </div>
-        
         <div class="page-header">
             <h1>{{ .Title }}</h1>
             <div class="page-meta">
                 <span class="taxonomy-badge">
-                    {{ if eq .Data.Plural "categories" }}📁 分类
-                    {{ else if eq .Data.Plural "tags" }}🏷️ 标签
-                    {{ else if eq .Data.Plural "series" }}📚 系列
-                    {{ else }}{{ .Data.Singular }}
+                    {{ if eq .Data.Plural "categories" }}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    分类
+                    {{ else if eq .Data.Plural "tags" }}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    标签
+                    {{ else if eq .Data.Plural "series" }}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    系列
+                    {{ else }}
+                    {{ .Data.Singular }}
                     {{ end }}
                 </span>
-                <span>{{ len .Pages }} 篇文章</span>
+                <span class="taxonomy-count">{{ len .Pages }} 篇文章</span>
             </div>
         </div>
 
-        {{ range .Pages.ByDate.Reverse }}
-        <article class="post-item" onclick="window.location.href='{{ .RelPermalink }}'">
-            <div class="post-date">{{ .Date.Format "2006-01-02" }}</div>
-            <h2 class="post-title">{{ .Title }}</h2>
-            {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 200 }}</p>{{ end }}
-            <div class="post-meta">
-                {{ with .Params.categories }}
-                <span class="post-meta-item">📁 {{ delimit . ", " }}</span>
-                {{ end }}
-                {{ with .Params.tags }}
-                <span class="post-meta-item">🏷️ {{ delimit (first 3 .) ", " }}</span>
-                {{ end }}
-            </div>
-        </article>
-        {{ end }}
-    </div>
-    <footer>
-        <div class="footer-container">
-            <p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p>
+        <div class="taxonomy-posts">
+            {{ range .Pages.ByDate.Reverse }}
+            <article class="post-item" onclick="window.location.href='{{ .RelPermalink }}'">
+                <div class="post-meta-row">
+                    <div class="post-date">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem; vertical-align: middle;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        {{ .Date.Format "January 2, 2006" }}
+                    </div>
+                    {{ with .Params.categories }}
+                    <div class="post-categories">
+                        {{ range . }}
+                        <span class="post-category">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                <h2 class="post-title">{{ .Title }}</h2>
+                {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 200 }}</p>{{ end }}
+                <div class="post-meta">
+                    {{ with .Params.tags }}
+                    <div class="post-tags">
+                        {{ range . }}
+                        <span class="post-tag">#{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    <span class="post-reading-time">{{ .ReadingTime }} min read</span>
+                </div>
+            </article>
+            {{ end }}
         </div>
-    </footer>
+    </div>
+    
+    {{ partial "footer.html" . }}
     {{ partial "search-modal.html" . }}
     {{ partial "search-data.html" . }}
     {{ partial "search-script.html" . }}

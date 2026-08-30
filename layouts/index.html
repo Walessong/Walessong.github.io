@@ -16,8 +16,8 @@
         {{ partial "nav.html" . }}
         <div class="container">
         <section class="hero">
-            <div class="hero-content">
-                <h1>{{ .Site.Title }}</h1>
+            <div class="hero-content hero-glass-card">
+                <h1 class="hero-title">{{ .Site.Title }}</h1>
                 <p class="subtitle">{{ .Site.Params.description }}</p>
                 <p class="subtitle">Where fractals meet philosophy, and algorithms dance with words.</p>
                 <p class="tagline">"In the chaos of markets, I seek patterns. In the silence of pages, I find meaning."</p>
@@ -99,11 +99,7 @@
         </section>
         {{ end }}
     </div>
-    <footer>
-        <div class="footer-container">
-            <p class="footer-text">© {{ now.Format "2006" }} {{ .Site.Title }}. Quant & Poet.</p>
-        </div>
-    </footer>
+    {{ partial "footer.html" . }}
     {{ partial "search-modal.html" . }}
     {{ partial "search-data.html" . }}
     {{ partial "search-script.html" . }}
