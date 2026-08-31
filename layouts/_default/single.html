@@ -4,6 +4,20 @@
 <head>
     {{ partial "head.html" . }}
     {{ partial "nav-search-styles.html" . }}
+    <style>
+        {{ if eq .Title "关于" }}
+        body {
+            min-height: 100vh;
+            background: url('/static/images/about-background.png') no-repeat center center fixed !important;
+            background-size: cover !important;
+            position: relative;
+        }
+        .article-container {
+            position: relative;
+            z-index: 1;
+        }
+        {{ end }}
+    </style>
 </head>
 <body>
     <!-- 阅读进度条 -->

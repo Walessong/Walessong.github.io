@@ -26,16 +26,16 @@ Python · TensorFlow · Pandas · Flask
     <link rel="stylesheet" href="/static/css/main.css">
     <style>
         /* 关于页专用样式 - 极简奢华风格 */
-        .about-page {
+        body {
             min-height: 100vh;
-            background: url('/static/images/about-background.png') no-repeat center center fixed;
-            background-size: cover;
+            background: url('/static/images/about-background.png') no-repeat center center fixed !important;
+            background-size: cover !important;
             position: relative;
             overflow-x: hidden;
         }
 
         /* 噪声纹理背景 */
-        .about-page::before {
+        body::before {
             content: '';
             position: fixed;
             top: 0;
@@ -46,6 +46,11 @@ Python · TensorFlow · Pandas · Flask
             opacity: 0.03;
             pointer-events: none;
             z-index: 0;
+        }
+
+        .about-page {
+            position: relative;
+            z-index: 1;
         }
 
         .about-container {
