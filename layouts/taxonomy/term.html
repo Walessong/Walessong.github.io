@@ -4,8 +4,22 @@
 <head>
     {{ partial "head.html" . }}
     {{ partial "nav-search-styles.html" . }}
+    <style>
+        {{ if eq .Title "技术" }}
+        .taxonomy-page-tech {
+            min-height: 100vh;
+            background: url('/static/images/tech-background.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        .taxonomy-page-tech .container {
+            position: relative;
+            z-index: 1;
+        }
+        {{ end }}
+    </style>
 </head>
-<body>
+<body class="{{ if eq .Title "技术" }}taxonomy-page-tech{{ end }}">
     {{ partial "nav.html" . }}
     
     <!-- 面包屑导航 -->
