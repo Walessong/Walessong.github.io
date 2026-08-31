@@ -6,7 +6,7 @@ date: 2024-01-01
 <style>
     body {
         min-height: 100vh;
-        background: url('/static/images/about-background.png') no-repeat center center fixed !important;
+        background: url('/images/about-background.png') no-repeat center center fixed !important;
         background-size: cover !important;
         position: relative;
     }

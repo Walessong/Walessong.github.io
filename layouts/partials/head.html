@@ -60,18 +60,29 @@
 {{- /* Favicon */ -}}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-{{- /* 字体预加载和优化 */ -}}
+{{- /* 字体预加载和优化 - 性能优化版本 */ -}}
+{{- /* Google Fonts - Playfair Display for headings, JetBrains Mono for body/code */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+{{- /* 中文字体 - 仓耳今楷02W4 - 添加font-display优化 */ -}}
 <link rel="preload" href="/fonts/CangErJinKai02W4.ttf" as="font" type="font/ttf" crossorigin>
-{{- /* 如果有WOFF2版本，优先使用 */ -}}
-{{- /* <link rel="preload" href="/fonts/CangErJinKai02W4.woff2" as="font" type="font/woff2" crossorigin> */ -}}
 
 <style>
 @font-face {
     font-family: "仓耳今楷02W4";
     src: url('/fonts/CangErJinKai02W4.ttf') format('truetype');
-    font-display: swap;
+    font-display: swap; /* 优化字体加载，减少FOIT */
     font-weight: normal;
     font-style: normal;
+}
+
+/* 字体变量系统 */
+:root {
+    --font-display: "Playfair Display", "仓耳今楷02W4", serif;
+    --font-body: "JetBrains Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-code: "JetBrains Mono", "Fira Code", monospace;
 }
 </style>
 
@@ -118,6 +129,12 @@ nav { background: var(--color-bg); backdrop-filter: blur(10px); border-bottom: 1
 {{- /* 完整CSS异步加载 */ -}}
 <link rel="preload" href="{{ "css/main.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ "css/main.css" | relURL }}"></noscript>
+
+{{- /* 主题切换脚本 */ -}}
+<script src="{{ "js/theme-toggle.js" | relURL }}" defer></script>
+
+{{- /* 滚动触发动画脚本 */ -}}
+<script src="{{ "js/scroll-reveal.js" | relURL }}" defer></script>
 
 {{- /* Open Graph / Facebook */ -}}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
