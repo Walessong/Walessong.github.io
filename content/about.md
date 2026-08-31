@@ -3,6 +3,19 @@ title: "关于"
 date: 2024-01-01
 ---
 
+<style>
+    body {
+        min-height: 100vh;
+        background: url('/static/images/about-background.png') no-repeat center center fixed !important;
+        background-size: cover !important;
+        position: relative;
+    }
+    .article-container {
+        position: relative;
+        z-index: 1;
+    }
+</style>
+
 ## About Woke Soul
 
 > "In the chaos of markets, I seek patterns. In the silence of pages, I find meaning."
